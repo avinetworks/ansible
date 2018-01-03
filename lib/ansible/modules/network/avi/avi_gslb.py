@@ -70,6 +70,7 @@ options:
         description:
             - Mark this site as leader of gslb configuration.
             - This site is the one among the avi sites.
+        required: true
     maintenance_mode:
         description:
             - This field disables the configuration operations on the leader for all federated objects.
@@ -152,7 +153,7 @@ def main():
         description=dict(type='str',),
         dns_configs=dict(type='list',),
         is_federated=dict(type='bool',),
-        leader_cluster_uuid=dict(type='str',),
+        leader_cluster_uuid=dict(type='str', required=True),
         maintenance_mode=dict(type='bool',),
         name=dict(type='str', required=True),
         send_interval=dict(type='int',),
