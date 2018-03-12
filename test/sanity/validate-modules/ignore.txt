@@ -1726,6 +1726,7 @@ lib/ansible/modules/network/avi/avi_healthmonitor.py E324
 lib/ansible/modules/network/avi/avi_httppolicyset.py E324
 lib/ansible/modules/network/avi/avi_ipaddrgroup.py E324
 lib/ansible/modules/network/avi/avi_ipamdnsproviderprofile.py E324
+lib/ansible/modules/network/avi/avi_l4policyset.py E324
 lib/ansible/modules/network/avi/avi_microservicegroup.py E324
 lib/ansible/modules/network/avi/avi_network.py E324
 lib/ansible/modules/network/avi/avi_networkprofile.py E324
