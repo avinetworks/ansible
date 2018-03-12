@@ -1749,6 +1749,7 @@ lib/ansible/modules/network/avi/avi_stringgroup.py E324
 lib/ansible/modules/network/avi/avi_systemconfiguration.py E324
 lib/ansible/modules/network/avi/avi_tenant.py E324
 lib/ansible/modules/network/avi/avi_trafficcloneprofile.py E324
+lib/ansible/modules/network/avi/avi_useraccount.py E324
 lib/ansible/modules/network/avi/avi_useraccountprofile.py E324
 lib/ansible/modules/network/avi/avi_virtualservice.py E324
 lib/ansible/modules/network/avi/avi_vrfcontext.py E324
