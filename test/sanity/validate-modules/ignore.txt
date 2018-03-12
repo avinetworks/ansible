@@ -1701,6 +1701,7 @@ lib/ansible/modules/network/avi/avi_api_version.py E324
 lib/ansible/modules/network/avi/avi_applicationpersistenceprofile.py E324
 lib/ansible/modules/network/avi/avi_applicationprofile.py E324
 lib/ansible/modules/network/avi/avi_authprofile.py E324
+lib/ansible/modules/network/avi/avi_autoscalelaunchconfig.py E324
 lib/ansible/modules/network/avi/avi_backup.py E324
 lib/ansible/modules/network/avi/avi_backupconfiguration.py E324
 lib/ansible/modules/network/avi/avi_certificatemanagementprofile.py E324
