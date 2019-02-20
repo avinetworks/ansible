@@ -42,6 +42,8 @@ import sys
 import tempfile
 import traceback
 
+from contextlib import contextmanager
+
 try:
     import httplib
 except ImportError:
@@ -71,13 +73,13 @@ urllib_request.HTTPRedirectHandler.http_error_308 = urllib_request.HTTPRedirectH
 try:
     from ansible.module_utils.six.moves.urllib.parse import urlparse, urlunparse
     HAS_URLPARSE = True
-except:
+except Exception:
     HAS_URLPARSE = False
 
 try:
     import ssl
     HAS_SSL = True
-except:
+except Exception:
     HAS_SSL = False
 
 try:
@@ -136,6 +138,10 @@ if not HAS_SSLCONTEXT and HAS_SSL:
         del libssl
 
 
+# The following makes it easier for us to script updates of the bundled backports.ssl_match_hostname
+# The bundled backports.ssl_match_hostname should really be moved into its own file for processing
+_BUNDLED_METADATA = {"pypi_name": "backports.ssl_match_hostname", "version": "3.5.0.1"}
+
 LOADED_VERIFY_LOCATIONS = set()
 
 HAS_MATCH_HOSTNAME = True
@@ -146,6 +152,13 @@ except ImportError:
         from backports.ssl_match_hostname import match_hostname, CertificateError
     except ImportError:
         HAS_MATCH_HOSTNAME = False
+
+
+try:
+    import urllib_gssapi
+    HAS_GSSAPI = True
+except ImportError:
+    HAS_GSSAPI = False
 
 if not HAS_MATCH_HOSTNAME:
     # The following block of code is under the terms and conditions of the
@@ -248,8 +261,8 @@ if not HAS_MATCH_HOSTNAME:
     HAS_MATCH_HOSTNAME = True
 
 
-# This is a dummy cacert provided for Mac OS since you need at least 1
-# ca cert, regardless of validity, for Python on Mac OS to use the
+# This is a dummy cacert provided for macOS since you need at least 1
+# ca cert, regardless of validity, for Python on macOS to use the
 # keychain functionality in OpenSSL for validating SSL certificates.
 # See: http://mercurial.selenic.com/wiki/CACertificates#Mac_OS_X_10.6_and_higher
 b_DUMMY_CA_CERT = b"""-----BEGIN CERTIFICATE-----
@@ -295,9 +308,12 @@ class NoSSLError(SSLValidationError):
     """Needed to connect to an HTTPS url but no ssl library available to verify the certificate"""
     pass
 
+
 # Some environments (Google Compute Engine's CoreOS deploys) do not compile
 # against openssl and thus do not have any HTTPS support.
-CustomHTTPSConnection = CustomHTTPSHandler = None
+CustomHTTPSConnection = None
+CustomHTTPSHandler = None
+HTTPSClientAuthHandler = None
 if hasattr(httplib, 'HTTPSConnection') and hasattr(urllib_request, 'HTTPSHandler'):
     class CustomHTTPSConnection(httplib.HTTPSConnection):
         def __init__(self, *args, **kwargs):
@@ -341,32 +357,92 @@ if hasattr(httplib, 'HTTPSConnection') and hasattr(urllib_request, 'HTTPSHandler
 
         https_request = AbstractHTTPHandler.do_request_
 
+    class HTTPSClientAuthHandler(urllib_request.HTTPSHandler):
+        '''Handles client authentication via cert/key
 
-class HTTPSClientAuthHandler(urllib_request.HTTPSHandler):
-    '''Handles client authentication via cert/key
+        This is a fairly lightweight extension on HTTPSHandler, and can be used
+        in place of HTTPSHandler
+        '''
 
-    This is a fairly lightweight extension on HTTPSHandler, and can be used
-    in place of HTTPSHandler
+        def __init__(self, client_cert=None, client_key=None, unix_socket=None, **kwargs):
+            urllib_request.HTTPSHandler.__init__(self, **kwargs)
+            self.client_cert = client_cert
+            self.client_key = client_key
+            self._unix_socket = unix_socket
+
+        def https_open(self, req):
+            return self.do_open(self._build_https_connection, req)
+
+        def _build_https_connection(self, host, **kwargs):
+            kwargs.update({
+                'cert_file': self.client_cert,
+                'key_file': self.client_key,
+            })
+            try:
+                kwargs['context'] = self._context
+            except AttributeError:
+                pass
+            if self._unix_socket:
+                return UnixHTTPSConnection(self._unix_socket)(host, **kwargs)
+            return httplib.HTTPSConnection(host, **kwargs)
+
+
+@contextmanager
+def unix_socket_patch_httpconnection_connect():
+    '''Monkey patch ``httplib.HTTPConnection.connect`` to be ``UnixHTTPConnection.connect``
+    so that when calling ``super(UnixHTTPSConnection, self).connect()`` we get the
+    correct behavior of creating self.sock for the unix socket
     '''
+    _connect = httplib.HTTPConnection.connect
+    httplib.HTTPConnection.connect = UnixHTTPConnection.connect
+    yield
+    httplib.HTTPConnection.connect = _connect
 
-    def __init__(self, client_cert=None, client_key=None, **kwargs):
-        urllib_request.HTTPSHandler.__init__(self, **kwargs)
-        self.client_cert = client_cert
-        self.client_key = client_key
 
-    def https_open(self, req):
-        return self.do_open(self._build_https_connection, req)
+class UnixHTTPSConnection(httplib.HTTPSConnection):
+    def __init__(self, unix_socket):
+        self._unix_socket = unix_socket
 
-    def _build_https_connection(self, host, **kwargs):
-        kwargs.update({
-            'cert_file': self.client_cert,
-            'key_file': self.client_key,
-        })
+    def connect(self):
+        # This method exists simply to ensure we monkeypatch
+        # httplib.HTTPConnection.connect to call UnixHTTPConnection.connect
+        with unix_socket_patch_httpconnection_connect():
+            super(UnixHTTPSConnection, self).connect()
+
+    def __call__(self, *args, **kwargs):
+        httplib.HTTPSConnection.__init__(self, *args, **kwargs)
+        return self
+
+
+class UnixHTTPConnection(httplib.HTTPConnection):
+    '''Handles http requests to a unix socket file'''
+
+    def __init__(self, unix_socket):
+        self._unix_socket = unix_socket
+
+    def connect(self):
+        self.sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         try:
-            kwargs['context'] = self._context
-        except AttributeError:
-            pass
-        return httplib.HTTPSConnection(host, **kwargs)
+            self.sock.connect(self._unix_socket)
+        except OSError as e:
+            raise OSError('Invalid Socket File (%s): %s' % (self._unix_socket, e))
+        if self.timeout is not socket._GLOBAL_DEFAULT_TIMEOUT:
+            self.sock.settimeout(self.timeout)
+
+    def __call__(self, *args, **kwargs):
+        httplib.HTTPConnection.__init__(self, *args, **kwargs)
+        return self
+
+
+class UnixHTTPHandler(urllib_request.HTTPHandler):
+    '''Handler for Unix urls'''
+
+    def __init__(self, unix_socket, **kwargs):
+        urllib_request.HTTPHandler.__init__(self, **kwargs)
+        self._unix_socket = unix_socket
+
+    def http_open(self, req):
+        return self.do_open(UnixHTTPConnection(self._unix_socket), req)
 
 
 class ParseResultDottedDict(dict):
@@ -435,7 +511,7 @@ def generic_urlparse(parts):
             generic_parts['password'] = password
             generic_parts['hostname'] = hostname
             generic_parts['port'] = port
-        except:
+        except Exception:
             generic_parts['username'] = None
             generic_parts['password'] = None
             generic_parts['hostname'] = parts[1]
@@ -587,7 +663,7 @@ class SSLValidationHandler(urllib_request.BaseHandler):
     http://stackoverflow.com/questions/1087227/validate-ssl-certificates-with-python
     http://techknack.net/python-urllib2-handlers/
     '''
-    CONNECT_COMMAND = "CONNECT %s:%s HTTP/1.0\r\nConnection: close\r\n"
+    CONNECT_COMMAND = "CONNECT %s:%s HTTP/1.0\r\n"
 
     def __init__(self, hostname, port):
         self.hostname = hostname
@@ -625,7 +701,7 @@ class SSLValidationHandler(urllib_request.BaseHandler):
         to_add_fd, to_add_path = tempfile.mkstemp()
         to_add = False
 
-        # Write the dummy ca cert if we are running on Mac OS X
+        # Write the dummy ca cert if we are running on macOS
         if system == u'Darwin':
             os.write(tmp_fd, b_DUMMY_CA_CERT)
             # Default Homebrew path for OpenSSL certs
@@ -672,7 +748,7 @@ class SSLValidationHandler(urllib_request.BaseHandler):
             (http_version, resp_code, msg) = re.match(br'(HTTP/\d\.\d) (\d\d\d) (.*)', response).groups()
             if int(resp_code) not in valid_codes:
                 raise Exception
-        except:
+        except Exception:
             raise ProxyError('Connection to proxy failed')
 
     def detect_no_proxy(self, url):
@@ -734,7 +810,12 @@ class SSLValidationHandler(urllib_request.BaseHandler):
             if https_proxy:
                 proxy_parts = generic_urlparse(urlparse(https_proxy))
                 port = proxy_parts.get('port') or 443
-                s = socket.create_connection((proxy_parts.get('hostname'), port))
+                proxy_hostname = proxy_parts.get('hostname', None)
+                if proxy_hostname is None or proxy_parts.get('scheme') == '':
+                    raise ProxyError("Failed to parse https_proxy environment variable."
+                                     " Please make sure you export https proxy as 'https_proxy=<SCHEME>://<IP_ADDRESS>:<PORT>'")
+
+                s = socket.create_connection((proxy_hostname, port))
                 if proxy_parts.get('scheme') == 'http':
                     s.sendall(to_bytes(self.CONNECT_COMMAND % (self.hostname, self.port), errors='surrogate_or_strict'))
                     if proxy_parts.get('username'):
@@ -778,7 +859,7 @@ class SSLValidationHandler(urllib_request.BaseHandler):
             # cleanup the temp file created, don't worry
             # if it fails for some reason
             os.remove(tmp_ca_cert_path)
-        except:
+        except Exception:
             pass
 
         try:
@@ -786,7 +867,7 @@ class SSLValidationHandler(urllib_request.BaseHandler):
             # if it fails for some reason
             if to_add_ca_cert_path:
                 os.remove(to_add_ca_cert_path)
-        except:
+        except Exception:
             pass
 
         return req
@@ -816,10 +897,27 @@ def maybe_add_ssl_handler(url, validate_certs):
         return SSLValidationHandler(hostname, port)
 
 
+def rfc2822_date_string(timetuple, zone='-0000'):
+    """Accepts a timetuple and optional zone which defaults to ``-0000``
+    and returns a date string as specified by RFC 2822, e.g.:
+
+    Fri, 09 Nov 2001 01:08:47 -0000
+
+    Copied from email.utils.formatdate and modified for separate use
+    """
+    return '%s, %02d %s %04d %02d:%02d:%02d %s' % (
+        ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][timetuple[6]],
+        timetuple[2],
+        ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][timetuple[1] - 1],
+        timetuple[0], timetuple[3], timetuple[4], timetuple[5],
+        zone)
+
+
 class Request:
     def __init__(self, headers=None, use_proxy=True, force=False, timeout=10, validate_certs=True,
                  url_username=None, url_password=None, http_agent=None, force_basic_auth=False,
-                 follow_redirects='urllib2', client_cert=None, client_key=None, cookies=None):
+                 follow_redirects='urllib2', client_cert=None, client_key=None, cookies=None, unix_socket=None):
         """This class works somewhat similarly to the ``Session`` class of from requests
         by defining a cookiejar that an be used across requests as well as cascaded defaults that
         can apply to repeated requests
@@ -840,7 +938,7 @@ class Request:
 
         self.headers = headers or {}
         if not isinstance(self.headers, dict):
-            raise ValueError("headers must be a dict")
+            raise ValueError("headers must be a dict: %r" % self.headers)
         self.use_proxy = use_proxy
         self.force = force
         self.timeout = timeout
@@ -852,6 +950,7 @@ class Request:
         self.follow_redirects = follow_redirects
         self.client_cert = client_cert
         self.client_key = client_key
+        self.unix_socket = unix_socket
         if isinstance(cookies, cookiejar.CookieJar):
             self.cookies = cookies
         else:
@@ -866,7 +965,8 @@ class Request:
              force=None, last_mod_time=None, timeout=None, validate_certs=None,
              url_username=None, url_password=None, http_agent=None,
              force_basic_auth=None, follow_redirects=None,
-             client_cert=None, client_key=None, cookies=None):
+             client_cert=None, client_key=None, cookies=None, use_gssapi=False,
+             unix_socket=None):
         """
         Sends a request via HTTP(S) or FTP using urllib2 (Python2) or urllib (Python3)
 
@@ -900,6 +1000,9 @@ class Request:
             authentication. If client_cert contains both the certificate and key, this option is not required
         :kwarg cookies: (optional) CookieJar object to send with the
             request
+        :kwarg use_gssapi: (optional) Use GSSAPI handler of requests.
+        :kwarg unix_socket: (optional) String of file system path to unix socket file to use when establishing
+        connection to the provided url
         :returns: HTTPResponse
         """
 
@@ -923,11 +1026,18 @@ class Request:
         client_cert = self._fallback(client_cert, self.client_cert)
         client_key = self._fallback(client_key, self.client_key)
         cookies = self._fallback(cookies, self.cookies)
+        unix_socket = self._fallback(unix_socket, self.unix_socket)
 
         handlers = []
+
+        if unix_socket:
+            handlers.append(UnixHTTPHandler(unix_socket))
+
         ssl_handler = maybe_add_ssl_handler(url, validate_certs)
         if ssl_handler:
             handlers.append(ssl_handler)
+        if HAS_GSSAPI and use_gssapi:
+            handlers.append(urllib_gssapi.HTTPSPNEGOAuthHandler())
 
         parsed = generic_urlparse(urlparse(url))
         if parsed.scheme != 'ftp':
@@ -995,10 +1105,12 @@ class Request:
             context.check_hostname = False
             handlers.append(HTTPSClientAuthHandler(client_cert=client_cert,
                                                    client_key=client_key,
-                                                   context=context))
-        elif client_cert:
+                                                   context=context,
+                                                   unix_socket=unix_socket))
+        elif client_cert or unix_socket:
             handlers.append(HTTPSClientAuthHandler(client_cert=client_cert,
-                                                   client_key=client_key))
+                                                   client_key=client_key,
+                                                   unix_socket=unix_socket))
 
         # pre-2.6 versions of python cannot use the custom https
         # handler, since the socket class is lacking create_connection.
@@ -1031,7 +1143,7 @@ class Request:
             request.add_header('cache-control', 'no-cache')
         # or we do it if the original is more recent than our copy
         elif last_mod_time:
-            tstamp = last_mod_time.strftime('%a, %d %b %Y %H:%M:%S +0000')
+            tstamp = rfc2822_date_string(last_mod_time.timetuple())
             request.add_header('If-Modified-Since', tstamp)
 
         # user defined headers now, which may override things we've set above
@@ -1125,18 +1237,20 @@ def open_url(url, data=None, headers=None, method=None, use_proxy=True,
              force=False, last_mod_time=None, timeout=10, validate_certs=True,
              url_username=None, url_password=None, http_agent=None,
              force_basic_auth=False, follow_redirects='urllib2',
-             client_cert=None, client_key=None, cookies=None):
+             client_cert=None, client_key=None, cookies=None,
+             use_gssapi=False, unix_socket=None):
     '''
     Sends a request via HTTP(S) or FTP using urllib2 (Python2) or urllib (Python3)
 
     Does not require the module environment
     '''
-    method = method or 'GET'
+    method = method or ('POST' if data else 'GET')
     return Request().open(method, url, data=data, headers=headers, use_proxy=use_proxy,
                           force=force, last_mod_time=last_mod_time, timeout=timeout, validate_certs=validate_certs,
                           url_username=url_username, url_password=url_password, http_agent=http_agent,
                           force_basic_auth=force_basic_auth, follow_redirects=follow_redirects,
-                          client_cert=client_cert, client_key=client_key, cookies=cookies)
+                          client_cert=client_cert, client_key=client_key, cookies=cookies,
+                          use_gssapi=use_gssapi, unix_socket=unix_socket)
 
 
 #
@@ -1157,21 +1271,22 @@ def url_argument_spec():
     that will be requesting content via urllib/urllib2
     '''
     return dict(
-        url=dict(),
-        force=dict(default='no', aliases=['thirsty'], type='bool'),
-        http_agent=dict(default='ansible-httpget'),
-        use_proxy=dict(default='yes', type='bool'),
-        validate_certs=dict(default='yes', type='bool'),
-        url_username=dict(required=False),
-        url_password=dict(required=False, no_log=True),
-        force_basic_auth=dict(required=False, type='bool', default='no'),
-        client_cert=dict(required=False, type='path', default=None),
-        client_key=dict(required=False, type='path', default=None),
+        url=dict(type='str'),
+        force=dict(type='bool', default=False, aliases=['thirsty']),
+        http_agent=dict(type='str', default='ansible-httpget'),
+        use_proxy=dict(type='bool', default=True),
+        validate_certs=dict(type='bool', default=True),
+        url_username=dict(type='str'),
+        url_password=dict(type='str', no_log=True),
+        force_basic_auth=dict(type='bool', default=False),
+        client_cert=dict(type='path'),
+        client_key=dict(type='path'),
     )
 
 
 def fetch_url(module, url, data=None, headers=None, method=None,
-              use_proxy=True, force=False, last_mod_time=None, timeout=10):
+              use_proxy=True, force=False, last_mod_time=None, timeout=10,
+              use_gssapi=False, unix_socket=None):
     """Sends a request via HTTP(S) or FTP (needs the module as parameter)
 
     :arg module: The AnsibleModule (used to get username, password etc. (s.b.).
@@ -1184,6 +1299,9 @@ def fetch_url(module, url, data=None, headers=None, method=None,
     :kwarg boolean force: If True: Do not get a cached copy (Default: False)
     :kwarg last_mod_time: Default: None
     :kwarg int timeout:   Default: 10
+    :kwarg boolean use_gssapi:   Default: False
+    :kwarg unix_socket: (optional) String of file system path to unix socket file to use when establishing
+    connection to the provided url
 
     :returns: A tuple of (**response**, **info**). Use ``response.read()`` to read the data.
         The **info** contains the 'status' and other meta data. When a HttpError (status > 400)
@@ -1233,7 +1351,8 @@ def fetch_url(module, url, data=None, headers=None, method=None,
                      validate_certs=validate_certs, url_username=username,
                      url_password=password, http_agent=http_agent, force_basic_auth=force_basic_auth,
                      follow_redirects=follow_redirects, client_cert=client_cert,
-                     client_key=client_key, cookies=cookies)
+                     client_key=client_key, cookies=cookies, use_gssapi=use_gssapi,
+                     unix_socket=unix_socket)
         # Lowercase keys, to conform to py2 behavior, so that py3 and py2 are predictable
         info.update(dict((k.lower(), v) for k, v in r.info().items()))
 
@@ -1280,8 +1399,9 @@ def fetch_url(module, url, data=None, headers=None, method=None,
 
         # Try to add exception info to the output but don't fail if we can't
         try:
-            info.update(dict(**e.info()))
-        except:
+            # Lowercase keys, to conform to py2 behavior, so that py3 and py2 are predictable
+            info.update(dict((k.lower(), v) for k, v in e.info().items()))
+        except Exception:
             pass
 
         info.update({'msg': to_native(e), 'body': body, 'status': e.code})
@@ -1300,3 +1420,40 @@ def fetch_url(module, url, data=None, headers=None, method=None,
         tempfile.tempdir = old_tempdir
 
     return r, info
+
+
+def fetch_file(module, url, data=None, headers=None, method=None,
+               use_proxy=True, force=False, last_mod_time=None, timeout=10):
+    '''Download and save a file via HTTP(S) or FTP (needs the module as parameter).
+    This is basically a wrapper around fetch_url().
+
+    :arg module: The AnsibleModule (used to get username, password etc. (s.b.).
+    :arg url:             The url to use.
+
+    :kwarg data:          The data to be sent (in case of POST/PUT).
+    :kwarg headers:       A dict with the request headers.
+    :kwarg method:        "POST", "PUT", etc.
+    :kwarg boolean use_proxy:     Default: True
+    :kwarg boolean force: If True: Do not get a cached copy (Default: False)
+    :kwarg last_mod_time: Default: None
+    :kwarg int timeout:   Default: 10
+
+    :returns: A string, the path to the downloaded file.
+    '''
+    # download file
+    bufsize = 65536
+    file_name, file_ext = os.path.splitext(str(url.rsplit('/', 1)[1]))
+    fetch_temp_file = tempfile.NamedTemporaryFile(dir=module.tmpdir, prefix=file_name, suffix=file_ext, delete=False)
+    module.add_cleanup_file(fetch_temp_file.name)
+    try:
+        rsp, info = fetch_url(module, url, data, headers, method, use_proxy, force, last_mod_time, timeout)
+        if not rsp:
+            module.fail_json(msg="Failure downloading %s, %s" % (url, info['msg']))
+        data = rsp.read(bufsize)
+        while data:
+            fetch_temp_file.write(data)
+            data = rsp.read(bufsize)
+        fetch_temp_file.close()
+    except Exception as e:
+        module.fail_json(msg="Failure downloading %s, %s" % (url, to_native(e)))
+    return fetch_temp_file.name

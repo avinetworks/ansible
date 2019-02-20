@@ -82,7 +82,7 @@ EXAMPLES = '''
     iam_type: group
     name: "{{ item }}"
     state: present
-  with_items:
+  loop:
      - Mario
      - Luigi
   register: new_groups
@@ -94,7 +94,7 @@ EXAMPLES = '''
     policy_name: "READ-ONLY"
     policy_document: readonlypolicy.json
     state: present
-  with_items: "{{ new_groups.results }}"
+  loop: "{{ new_groups.results }}"
 
 # Create a new S3 policy with prefix per user
 - name: Create S3 policy from template
@@ -104,7 +104,7 @@ EXAMPLES = '''
     policy_name: "s3_limited_access_{{ item.prefix }}"
     state: present
     policy_json: " {{ lookup( 'template', 's3_policy.json.j2') }} "
-    with_items:
+    loop:
       - user: s3_user
         prefix: s3_user_prefix
 
@@ -286,7 +286,6 @@ def main():
     if not HAS_BOTO:
         module.fail_json(msg='boto required for this module')
 
-    state = module.params.get('state').lower()
     iam_type = module.params.get('iam_type').lower()
     state = module.params.get('state')
     name = module.params.get('iam_name')
@@ -302,7 +301,7 @@ def main():
             with open(policy_document, 'r') as json_data:
                 pdoc = json.dumps(json.load(json_data))
                 json_data.close()
-        except IOError:
+        except IOError as e:
             if e.errno == 2:
                 module.fail_json(
                     msg='policy_document {0:!r} does not exist'.format(policy_document))

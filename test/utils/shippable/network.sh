@@ -1,6 +1,6 @@
-#!/bin/bash -eux
+#!/usr/bin/env bash
 
-set -o pipefail
+set -o pipefail -eux
 
 # shellcheck disable=SC2086
 ansible-test network-integration --explain ${CHANGED:+"$CHANGED"} ${UNSTABLE:+"$UNSTABLE"} 2>&1 \
@@ -11,7 +11,7 @@ if [ "${COVERAGE}" ]; then
     echo "coverage" > /tmp/network.txt
 fi
 
-target="network/ci/"
+target="shippable/network/"
 
 stage="${S:-prod}"
 provider="${P:-default}"

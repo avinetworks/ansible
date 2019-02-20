@@ -1,7 +1,7 @@
 #!/usr/bin/python
-#
-# Copyright (c) 2016 Thomas Stringer, <tomstr@microsoft.com>
-#
+# -*- coding: utf-8 -*-
+
+# Copyright: (c) 2016, Thomas Stringer <tomstr@microsoft.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
@@ -48,7 +48,6 @@ options:
         description:
             - Assert the state of the Function App. Use 'present' to create or update a Function App and
               'absent' to delete.
-        required: false
         default: present
         choices:
             - absent
@@ -67,11 +66,13 @@ EXAMPLES = '''
   azure_rm_functionapp:
       resource_group: ansible-rg
       name: myfunctionapp
+      storage_account: mystorageaccount
 
 - name: create a function app with app settings
   azure_rm_functionapp:
       resource_group: ansible-rg
       name: myfunctionapp
+      storage_account: mystorageaccount
       app_settings:
           setting1: value1
           setting2: value2
@@ -143,10 +144,9 @@ class AzureRMFunctionApp(AzureRMModuleBase):
             resource_group=dict(type='str', required=True, aliases=['resource_group_name']),
             name=dict(type='str', required=True),
             state=dict(type='str', default='present', choices=['present', 'absent']),
-            location=dict(type='str', required=False),
+            location=dict(type='str'),
             storage_account=dict(
                 type='str',
-                required=False,
                 aliases=['storage', 'storage_account_name']
             ),
             app_settings=dict(type='dict')
@@ -207,7 +207,7 @@ class AzureRMFunctionApp(AzureRMModuleBase):
                     )
                     self.results['changed'] = True
                 except CloudError as exc:
-                    self.fail('Failure while deleting web app: {}'.format(exc))
+                    self.fail('Failure while deleting web app: {0}'.format(exc))
             else:
                 self.results['changed'] = False
         else:
@@ -235,7 +235,7 @@ class AzureRMFunctionApp(AzureRMModuleBase):
                     ).result()
                     self.results['state'] = new_function_app.as_dict()
                 except CloudError as exc:
-                    self.fail('Error creating or updating web app: {}'.format(exc))
+                    self.fail('Error creating or updating web app: {0}'.format(exc))
 
         return self.results
 
@@ -271,7 +271,7 @@ class AzureRMFunctionApp(AzureRMModuleBase):
             function_app_settings.append(NameValuePair(name=key, value=self.storage_connection_string))
         function_app_settings.append(NameValuePair(name='FUNCTIONS_EXTENSION_VERSION', value='~1'))
         function_app_settings.append(NameValuePair(name='WEBSITE_NODE_DEFAULT_VERSION', value='6.5.0'))
-        function_app_settings.append(NameValuePair(name='WEBSITE_CONTENTSHARE', value=self.storage_account))
+        function_app_settings.append(NameValuePair(name='WEBSITE_CONTENTSHARE', value=self.name))
         return function_app_settings
 
     def aggregated_app_settings(self):
@@ -289,7 +289,7 @@ class AzureRMFunctionApp(AzureRMModuleBase):
     def storage_connection_string(self):
         """Construct the storage account connection string"""
 
-        return 'DefaultEndpointsProtocol=https;AccountName={};AccountKey={}'.format(
+        return 'DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}'.format(
             self.storage_account,
             self.storage_key
         )
@@ -308,6 +308,7 @@ def main():
     """Main function execution"""
 
     AzureRMFunctionApp()
+
 
 if __name__ == '__main__':
     main()

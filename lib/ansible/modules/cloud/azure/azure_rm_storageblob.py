@@ -11,7 +11,7 @@ __metaclass__ = type
 
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
-                    'supported_by': 'certified'}
+                    'supported_by': 'community'}
 
 
 DOCUMENTATION = '''
@@ -125,14 +125,14 @@ author:
 EXAMPLES = '''
 - name: Remove container foo
   azure_rm_storageblob:
-    resource_group: testing
+    resource_group: myResourceGroup
     storage_account_name: clh0002
     container: foo
     state: absent
 
 - name: Create container foo and upload a file
   azure_rm_storageblob:
-    resource_group: Testing
+    resource_group: myResourceGroup
     storage_account_name: clh0002
     container: foo
     blob: graylog.png
@@ -142,7 +142,7 @@ EXAMPLES = '''
 
 - name: Download the file
   azure_rm_storageblob:
-    resource_group: Testing
+    resource_group: myResourceGroup
     storage_account_name: clh0002
     container: foo
     blob: graylog.png
@@ -429,7 +429,7 @@ class AzureRMStorageBlob(AzureRMModuleBase):
                 else:
                     try:
                         self.log('Attempting to makedirs {0}'.format(self.dest))
-                        os.makddirs(self.dest)
+                        os.makedirs(self.dest)
                     except IOError as exc:
                         self.fail("Failed to create directory {0} - {1}".format(self.dest, str(exc)))
                     self.dest += self.blob
@@ -544,6 +544,7 @@ class AzureRMStorageBlob(AzureRMModuleBase):
 
 def main():
     AzureRMStorageBlob()
+
 
 if __name__ == '__main__':
     main()

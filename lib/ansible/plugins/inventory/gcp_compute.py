@@ -16,8 +16,12 @@ DOCUMENTATION = '''
         - inventory_cache
     description:
         - Get inventory hosts from Google Cloud Platform GCE.
-        - Uses a <name>.gcp.yaml (or <name>.gcp.yml) YAML configuration file.
+        - Uses a YAML configuration file that ends with gcp_compute.(yml|yaml) or gcp.(yml|yaml).
     options:
+        plugin:
+            description: token that ensures this is a source file for the 'gcp_compute' plugin.
+            required: True
+            choices: ['gcp_compute']
         zones:
           description: A list of regions in which to describe GCE instances.
           default: all zones available to a given project
@@ -44,6 +48,9 @@ DOCUMENTATION = '''
             description:
                 - An optional service account email address if machineaccount is selected
                   and the user does not wish to use the default email.
+        vars_prefix:
+            description: prefix to apply to host variables, does not include facts nor params
+            default: ''
 '''
 
 EXAMPLES = '''
@@ -56,11 +63,21 @@ projects:
 filters:
   - machineType = n1-standard-1
   - scheduling.automaticRestart = true AND machineType = n1-standard-1
-
 scopes:
   - https://www.googleapis.com/auth/compute
 service_account_file: /tmp/service_account.json
 auth_kind: serviceaccount
+keyed_groups:
+  # Create groups from GCE labels
+  - prefix: gcp
+    key: labels
+hostnames:
+  # List host by name instead of the default public ip
+  - name
+compose:
+  # Set an inventory parameter to use the Public IP address to connect to the host
+  # For Private ip use "networkInterfaces[0].networkIP"
+  ansible_host: networkInterfaces[0].accessConfigs[0].natIP
 '''
 
 from ansible.errors import AnsibleError, AnsibleParserError
@@ -97,7 +114,10 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
         hostname = self._get_hostname(item)
         self.inventory.add_host(hostname)
         for key in item:
-            self.inventory.set_variable(hostname, key, item[key])
+            try:
+                self.inventory.set_variable(hostname, self.get_option('vars_prefix') + key, item[key])
+            except (ValueError, TypeError) as e:
+                self.display.warning("Could not set host info hostvar for %s, skipping %s: %s" % (hostname, key, to_native(e)))
         self.inventory.add_child('all', hostname)
 
     def verify_file(self, path):
@@ -106,9 +126,9 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
             :return the contents of the config file
         '''
         if super(InventoryModule, self).verify_file(path):
-            if path.endswith('.gcp.yml') or path.endswith('.gcp.yaml'):
+            if path.endswith(('gcp.yml', 'gcp.yaml')):
                 return True
-            elif path.endswith('.gcp_compute.yml') or path.endswith('.gcp_compute.yaml'):
+            elif path.endswith(('gcp_compute.yml', 'gcp_compute.yaml')):
                 return True
         return False
 
@@ -303,8 +323,7 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
         super(InventoryModule, self).parse(inventory, loader, path)
 
         config_data = {}
-        if self.verify_file(path):
-            config_data = self._read_config_data(path)
+        config_data = self._read_config_data(path)
 
         # get user specifications
         if 'zones' in config_data:
@@ -317,6 +336,10 @@ class InventoryModule(BaseInventoryPlugin, Constructable, Cacheable):
 
         if not isinstance(config_data['projects'], list):
             raise AnsibleParserError("Projects must be a list in GCP inventory YAML files")
+
+        # add in documented defaults
+        if 'filters' not in config_data:
+            config_data['filters'] = None
 
         projects = config_data['projects']
         zones = config_data.get('zones')

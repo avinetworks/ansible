@@ -16,7 +16,7 @@ DOCUMENTATION = """
       remote_addr:
         description:
             - Container identifier
-        default: The set user as per docker's configuration
+        default: inventory_hostname
         vars:
             - name: ansible_host
             - name: ansible_lxc_host
@@ -54,7 +54,6 @@ class Connection(ConnectionBase):
 
     transport = 'lxc'
     has_pipelining = True
-    become_methods = frozenset(C.BECOME_METHODS)
     default_user = 'root'
 
     def __init__(self, play_context, new_stdin, *args, **kwargs):
