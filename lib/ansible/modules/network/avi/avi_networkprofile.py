@@ -9,6 +9,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 
+
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -42,6 +43,13 @@ options:
             - Patch operation to use when using avi_api_update_method as patch.
         version_added: "2.5"
         choices: ["add", "replace", "delete"]
+    connection_mirror:
+        description:
+            - When enabled, avi mirrors all tcp fastpath connections to standby.
+            - Applicable only in legacy ha mode.
+            - Field introduced in 18.1.3,18.2.1.
+            - Default value when not specified in API or module is interpreted by Avi Controller as False.
+        type: bool
     description:
         description:
             - User defined description for the object.
@@ -90,11 +98,9 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-try:
-    from ansible.module_utils.network.avi.avi import (
-        avi_common_argument_spec, HAS_AVI, avi_ansible_api)
-except ImportError:
-    HAS_AVI = False
+from ansible.module_utils.network.avi.avi import (avi_common_argument_spec, HAS_AVI)
+from pkg_resources import parse_version
+from ansible.module_utils.network.avi.ansible_utils import avi_ansible_api
 
 
 def main():
@@ -104,6 +110,7 @@ def main():
         avi_api_update_method=dict(default='put',
                                    choices=['put', 'patch']),
         avi_api_patch_op=dict(choices=['add', 'replace', 'delete']),
+        connection_mirror=dict(type='bool',),
         description=dict(type='str',),
         name=dict(type='str', required=True),
         profile=dict(type='dict', required=True),

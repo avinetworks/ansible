@@ -8,6 +8,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 
+
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -44,11 +45,13 @@ options:
     app_name:
         description:
             - Name of the virtual service which generated the error page.
+            - Field deprecated in 18.1.1.
             - Field introduced in 17.2.4.
             - Default value when not specified in API or module is interpreted by Avi Controller as VS Name.
     company_name:
         description:
             - Name of the company to show in error page.
+            - Field deprecated in 18.1.1.
             - Field introduced in 17.2.4.
             - Default value when not specified in API or module is interpreted by Avi Controller as Avi Networks.
     error_pages:
@@ -58,6 +61,7 @@ options:
     host_name:
         description:
             - Fully qualified domain name for which the error page is generated.
+            - Field deprecated in 18.1.1.
             - Field introduced in 17.2.4.
             - Default value when not specified in API or module is interpreted by Avi Controller as Host Header.
     name:
@@ -96,11 +100,9 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-try:
-    from ansible.module_utils.network.avi.avi import (
-        avi_common_argument_spec, HAS_AVI, avi_ansible_api)
-except ImportError:
-    HAS_AVI = False
+from ansible.module_utils.network.avi.avi import (avi_common_argument_spec, HAS_AVI)
+from pkg_resources import parse_version
+from ansible.module_utils.network.avi.ansible_utils import avi_ansible_api
 
 
 def main():

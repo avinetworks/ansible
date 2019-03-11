@@ -8,6 +8,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 
+
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -91,7 +92,6 @@ options:
         description:
             - Cooldown period during which no new scalein is triggered to allow previous scalein to successfully complete.
             - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-            - Units(SEC).
     scaleout_alertconfig_refs:
         description:
             - Trigger scaleout when alerts due to any of these alert configurations are raised.
@@ -100,7 +100,6 @@ options:
         description:
             - Cooldown period during which no new scaleout is triggered to allow previous scaleout to successfully complete.
             - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-            - Units(SEC).
     tenant_ref:
         description:
             - It is a reference to an object of type tenant.
@@ -137,11 +136,9 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-try:
-    from ansible.module_utils.network.avi.avi import (
-        avi_common_argument_spec, HAS_AVI, avi_ansible_api)
-except ImportError:
-    HAS_AVI = False
+from ansible.module_utils.network.avi.avi import (avi_common_argument_spec, HAS_AVI)
+from pkg_resources import parse_version
+from ansible.module_utils.network.avi.ansible_utils import avi_ansible_api
 
 
 def main():

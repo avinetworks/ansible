@@ -9,6 +9,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 
+
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -82,6 +83,12 @@ options:
             - This is used to provide the isolation of the set of networks the application is attached to.
             - It is a reference to an object of type vrfcontext.
             - Field introduced in 17.1.1.
+    vsvip_cloud_config_cksum:
+        description:
+            - Checksum of cloud configuration for vsvip.
+            - Internally set by cloud connector.
+            - Field introduced in 17.2.9, 18.1.2.
+        version_added: "2.7"
 extends_documentation_fragment:
     - avi
 '''
@@ -104,11 +111,9 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-try:
-    from ansible.module_utils.network.avi.avi import (
-        avi_common_argument_spec, HAS_AVI, avi_ansible_api)
-except ImportError:
-    HAS_AVI = False
+from ansible.module_utils.network.avi.avi import (avi_common_argument_spec, HAS_AVI)
+from pkg_resources import parse_version
+from ansible.module_utils.network.avi.ansible_utils import avi_ansible_api
 
 
 def main():
@@ -127,6 +132,7 @@ def main():
         uuid=dict(type='str',),
         vip=dict(type='list',),
         vrf_context_ref=dict(type='str',),
+        vsvip_cloud_config_cksum=dict(type='str',),
     )
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(

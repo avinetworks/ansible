@@ -9,6 +9,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 
+
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -50,10 +51,18 @@ options:
         description:
             - Field introduced in 17.2.1.
         version_added: "2.5"
+    gcp_credentials:
+        description:
+            - Credentials for google cloud platform.
+            - Field introduced in 18.2.1.
     name:
         description:
             - Name of the object.
         required: true
+    oci_credentials:
+        description:
+            - Credentials for oracle cloud infrastructure.
+            - Field introduced in 18.2.1,18.1.3.
     private_key:
         description:
             - Private_key of cloudconnectoruser.
@@ -95,11 +104,9 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-try:
-    from ansible.module_utils.network.avi.avi import (
-        avi_common_argument_spec, HAS_AVI, avi_ansible_api)
-except ImportError:
-    HAS_AVI = False
+from ansible.module_utils.network.avi.avi import (avi_common_argument_spec, HAS_AVI)
+from pkg_resources import parse_version
+from ansible.module_utils.network.avi.ansible_utils import avi_ansible_api
 
 
 def main():
@@ -111,7 +118,9 @@ def main():
         avi_api_patch_op=dict(choices=['add', 'replace', 'delete']),
         azure_serviceprincipal=dict(type='dict',),
         azure_userpass=dict(type='dict',),
+        gcp_credentials=dict(type='dict',),
         name=dict(type='str', required=True),
+        oci_credentials=dict(type='dict',),
         private_key=dict(type='str', no_log=True,),
         public_key=dict(type='str',),
         tenant_ref=dict(type='str',),

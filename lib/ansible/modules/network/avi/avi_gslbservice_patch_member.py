@@ -113,11 +113,11 @@ from copy import deepcopy
 HAS_AVI = True
 try:
     from ansible.module_utils.network.avi.avi import (
-        avi_common_argument_spec, HAS_AVI)
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_obj_cmp, cleanup_absent_fields, ansible_return,
-        AviCheckModeResponse)
+        avi_common_argument_spec, ansible_return, AviCredentials, HAS_AVI)
+    from ansible.module_utils.network.avi.avi_api import ApiSession, AviCredentials
+    from ansible.ansible_utils import avi_obj_cmp, cleanup_absent_fields
+    from pkg_resources import parse_version
+    HAS_AVI = True
 except ImportError:
     HAS_AVI = False
 

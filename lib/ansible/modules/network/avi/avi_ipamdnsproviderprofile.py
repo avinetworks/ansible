@@ -8,6 +8,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 
+
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -74,6 +75,10 @@ options:
         description:
             - Name for the ipam/dns provider profile.
         required: true
+    oci_profile:
+        description:
+            - Provider details for oracle cloud.
+            - Field introduced in 18.2.1,18.1.3.
     openstack_profile:
         description:
             - Provider details if type is openstack.
@@ -87,7 +92,8 @@ options:
         description:
             - Provider type for the ipam/dns provider profile.
             - Enum options - IPAMDNS_TYPE_INFOBLOX, IPAMDNS_TYPE_AWS, IPAMDNS_TYPE_OPENSTACK, IPAMDNS_TYPE_GCP, IPAMDNS_TYPE_INFOBLOX_DNS, IPAMDNS_TYPE_CUSTOM,
-            - IPAMDNS_TYPE_CUSTOM_DNS, IPAMDNS_TYPE_AZURE, IPAMDNS_TYPE_INTERNAL, IPAMDNS_TYPE_INTERNAL_DNS, IPAMDNS_TYPE_AWS_DNS, IPAMDNS_TYPE_AZURE_DNS.
+            - IPAMDNS_TYPE_CUSTOM_DNS, IPAMDNS_TYPE_AZURE, IPAMDNS_TYPE_OCI, IPAMDNS_TYPE_INTERNAL, IPAMDNS_TYPE_INTERNAL_DNS, IPAMDNS_TYPE_AWS_DNS,
+            - IPAMDNS_TYPE_AZURE_DNS.
         required: true
     url:
         description:
@@ -129,11 +135,9 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-try:
-    from ansible.module_utils.network.avi.avi import (
-        avi_common_argument_spec, HAS_AVI, avi_ansible_api)
-except ImportError:
-    HAS_AVI = False
+from ansible.module_utils.network.avi.avi import (avi_common_argument_spec, HAS_AVI)
+from pkg_resources import parse_version
+from ansible.module_utils.network.avi.ansible_utils import avi_ansible_api
 
 
 def main():
@@ -151,6 +155,7 @@ def main():
         infoblox_profile=dict(type='dict',),
         internal_profile=dict(type='dict',),
         name=dict(type='str', required=True),
+        oci_profile=dict(type='dict',),
         openstack_profile=dict(type='dict',),
         proxy_configuration=dict(type='dict',),
         tenant_ref=dict(type='str',),

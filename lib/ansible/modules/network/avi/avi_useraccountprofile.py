@@ -9,6 +9,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 
+
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -47,13 +48,11 @@ options:
             - Lock timeout period (in minutes).
             - Default is 30 minutes.
             - Default value when not specified in API or module is interpreted by Avi Controller as 30.
-            - Units(MIN).
     credentials_timeout_threshold:
         description:
             - The time period after which credentials expire.
             - Default is 180 days.
             - Default value when not specified in API or module is interpreted by Avi Controller as 180.
-            - Units(DAYS).
     max_concurrent_sessions:
         description:
             - Maximum number of concurrent sessions allowed.
@@ -101,11 +100,9 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-try:
-    from ansible.module_utils.network.avi.avi import (
-        avi_common_argument_spec, HAS_AVI, avi_ansible_api)
-except ImportError:
-    HAS_AVI = False
+from ansible.module_utils.network.avi.avi import (avi_common_argument_spec, HAS_AVI)
+from pkg_resources import parse_version
+from ansible.module_utils.network.avi.ansible_utils import avi_ansible_api
 
 
 def main():
