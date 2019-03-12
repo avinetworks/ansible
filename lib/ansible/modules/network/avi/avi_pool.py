@@ -9,7 +9,6 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 
-
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -60,11 +59,13 @@ options:
         description:
             - Determines analytics settings for the pool.
             - Field introduced in 18.1.5, 18.2.1.
+        version_added: "2.8"
     analytics_profile_ref:
         description:
             - Specifies settings related to analytics.
             - It is a reference to an object of type analyticsprofile.
             - Field introduced in 18.1.4,18.2.1.
+        version_added: "2.8"
     apic_epg_name:
         description:
             - Synchronize cisco apic epg members with pool servers.
@@ -106,6 +107,7 @@ options:
         description:
             - Connnection pool properties.
             - Field introduced in 18.2.1.
+        version_added: "2.8"
     connection_ramp_duration:
         description:
             - Duration for which new connections will be gradually ramped up to a server recently brought online.
@@ -130,6 +132,7 @@ options:
             - They are disabled, if the knob is set to false.
             - Field introduced in 18.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
+        version_added: "2.8"
         type: bool
     description:
         description:
@@ -242,10 +245,12 @@ options:
         description:
             - Minimum number of health monitors in up state to mark server up.
             - Field introduced in 18.2.1, 17.2.12.
+        version_added: "2.8"
     min_servers_up:
         description:
             - Minimum number of servers in up state for marking the pool up.
             - Field introduced in 18.2.1, 17.2.12.
+        version_added: "2.8"
     name:
         description:
             - The name of the pool.
@@ -316,6 +321,7 @@ options:
             - Allowed values are 0-3600000.
             - Field introduced in 18.1.5,18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
+        version_added: "2.8"
     servers:
         description:
             - The pool directs load balanced traffic to this list of destination servers.
@@ -326,6 +332,7 @@ options:
             - In openshift/kubernetes environments, app metadata info is stored.
             - Any user input to this field will be overwritten by avi vantage.
             - Field introduced in 17.2.14,18.1.5,18.2.1.
+        version_added: "2.8"
     sni_enabled:
         description:
             - Enable tls sni for server connections.
@@ -408,9 +415,12 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible.module_utils.network.avi.avi import (avi_common_argument_spec, HAS_AVI)
-from pkg_resources import parse_version
-from ansible.module_utils.network.avi.ansible_utils import avi_ansible_api
+try:
+    HAS_AVI = True
+    from ansible.module_utils.network.avi.avi import (
+        avi_common_argument_spec, avi_ansible_api)
+except ImportError:
+    HAS_AVI = False
 
 
 def main():

@@ -81,12 +81,12 @@ from ansible.module_utils.basic import AnsibleModule
 from copy import deepcopy
 
 try:
-    from ansible.module_utils.network.avi.avi import (
-        avi_common_argument_spec, ansible_return, AviCredentials, HAS_AVI)
-    from ansible.module_utils.network.avi.avi_api import ApiSession, AviCredentials
-    from ansible.ansible_utils import avi_obj_cmp, cleanup_absent_fields
-    from pkg_resources import parse_version
     HAS_AVI = True
+    from ansible.module_utils.network.avi.avi import (
+        avi_common_argument_spec, ansible_return, avi_obj_cmp,
+        cleanup_absent_fields)
+    from ansible.module_utils.network.avi.avi_api import (
+        ApiSession, AviCredentials)
 except ImportError:
     HAS_AVI = False
 

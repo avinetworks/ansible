@@ -9,7 +9,6 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 
-
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -161,7 +160,7 @@ options:
             - In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
             - Field introduced in 18.1.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.7"
+        version_added: "2.8"
         type: bool
     disable_se_analytics:
         description:
@@ -181,6 +180,7 @@ options:
             - This flag disables metrics and healthscore for virtualservice.
             - Field introduced in 18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
+        version_added: "2.8"
         type: bool
     enable_advanced_analytics:
         description:
@@ -189,6 +189,7 @@ options:
             - However, setting it to false reduces cpu and memory requirements for analytics subsystem.
             - Field introduced in 17.2.13, 18.1.5, 18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
+        version_added: "2.8"
         type: bool
     exclude_client_close_before_request_as_error:
         description:
@@ -251,6 +252,7 @@ options:
         description:
             - List of sip status codes to be excluded from being classified as an error.
             - Field introduced in 17.2.13, 18.1.5, 18.2.1.
+        version_added: "2.8"
     exclude_syn_retransmit_as_error:
         description:
             - Exclude 'server unanswered syns' from the list of errors.
@@ -273,6 +275,7 @@ options:
             - Special values are 0- 'server health score is disabled'.
             - Field introduced in 17.2.13, 18.1.4.
             - Default value when not specified in API or module is interpreted by Avi Controller as 20.
+        version_added: "2.8"
     hs_event_throttle_window:
         description:
             - Time window (in secs) within which only unique health change events should occur.
@@ -430,6 +433,7 @@ options:
             - Allowed values are 1-1000.
             - Field introduced in 17.2.13, 18.1.5, 18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as 20.
+        version_added: "2.8"
     tenant_ref:
         description:
             - It is a reference to an object of type tenant.
@@ -512,9 +516,12 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible.module_utils.network.avi.avi import (avi_common_argument_spec, HAS_AVI)
-from pkg_resources import parse_version
-from ansible.module_utils.network.avi.ansible_utils import avi_ansible_api
+try:
+    HAS_AVI = True
+    from ansible.module_utils.network.avi.avi import (
+        avi_common_argument_spec, avi_ansible_api)
+except ImportError:
+    HAS_AVI = False
 
 
 def main():

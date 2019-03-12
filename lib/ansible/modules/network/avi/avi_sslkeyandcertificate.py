@@ -9,7 +9,6 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 
-
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -55,7 +54,7 @@ options:
             - States if the certificate is base64 encoded.
             - Field introduced in 18.1.2, 18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.7"
+        version_added: "2.8"
         type: bool
     certificate_management_profile_ref:
         description:
@@ -80,7 +79,7 @@ options:
             - Enum options - SSL_PEM, SSL_PKCS12.
             - Field introduced in 18.1.2, 18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as SSL_PEM.
-        version_added: "2.7"
+        version_added: "2.8"
     hardwaresecuritymodulegroup_ref:
         description:
             - It is a reference to an object of type hardwaresecuritymodulegroup.
@@ -92,7 +91,7 @@ options:
             - States if the private key is base64 encoded.
             - Field introduced in 18.1.2, 18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.7"
+        version_added: "2.8"
         type: bool
     key_params:
         description:
@@ -101,7 +100,7 @@ options:
         description:
             - Passphrase used to encrypt the private key.
             - Field introduced in 18.1.2, 18.2.1.
-        version_added: "2.7"
+        version_added: "2.8"
     name:
         description:
             - Name of the object.
@@ -154,9 +153,12 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible.module_utils.network.avi.avi import (avi_common_argument_spec, HAS_AVI)
-from pkg_resources import parse_version
-from ansible.module_utils.network.avi.ansible_utils import avi_ansible_api
+try:
+    HAS_AVI = True
+    from ansible.module_utils.network.avi.avi import (
+        avi_common_argument_spec, avi_ansible_api)
+except ImportError:
+    HAS_AVI = False
 
 
 def main():

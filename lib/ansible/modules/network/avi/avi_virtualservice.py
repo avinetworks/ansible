@@ -9,7 +9,6 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 
-
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -66,7 +65,7 @@ options:
             - Should be in the <contract name> <graph name> format.
             - This is applicable only for service integration mode with cisco apic controller.
             - Field introduced in 17.2.12,18.1.2.
-        version_added: "2.7"
+        version_added: "2.8"
     application_profile_ref:
         description:
             - Enable application layer specific features for the virtual service.
@@ -101,7 +100,7 @@ options:
             - Azure availability set to which this vs is associated.
             - Internally set by the cloud connector.
             - Field introduced in 17.2.12, 18.1.2.
-        version_added: "2.7"
+        version_added: "2.8"
     bulk_sync_kvcache:
         description:
             - (this is a beta feature).
@@ -274,6 +273,7 @@ options:
         description:
             - Minimum number of up pools to mark vs up.
             - Field introduced in 18.2.1, 17.2.12.
+        version_added: "2.8"
     name:
         description:
             - Name for the virtual service.
@@ -336,6 +336,7 @@ options:
             - This policy is used to perform security actions such as distributed denial of service (ddos) attack mitigation, etc.
             - It is a reference to an object of type securitypolicy.
             - Field introduced in 18.2.1.
+        version_added: "2.8"
     server_network_profile_ref:
         description:
             - Determines the network settings profile for the server side of tcp proxied connections.
@@ -385,6 +386,7 @@ options:
         description:
             - Client authentication and authorization policy for the virtualservice.
             - Field introduced in 18.2.1.
+        version_added: "2.8"
     static_dns_records:
         description:
             - List of static dns records applied to this virtual service.
@@ -466,7 +468,7 @@ options:
             - Checksum of cloud configuration for vsvip.
             - Internally set by cloud connector.
             - Field introduced in 17.2.9, 18.1.2.
-        version_added: "2.7"
+        version_added: "2.8"
     vsvip_ref:
         description:
             - Mostly used during the creation of shared vs, this field refers to entities that can be shared across virtual services.
@@ -521,9 +523,12 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible.module_utils.network.avi.avi import (avi_common_argument_spec, HAS_AVI)
-from pkg_resources import parse_version
-from ansible.module_utils.network.avi.ansible_utils import avi_ansible_api
+try:
+    HAS_AVI = True
+    from ansible.module_utils.network.avi.avi import (
+        avi_common_argument_spec, avi_ansible_api)
+except ImportError:
+    HAS_AVI = False
 
 
 def main():

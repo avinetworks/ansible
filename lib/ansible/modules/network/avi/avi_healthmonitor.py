@@ -9,7 +9,6 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 
-
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -98,7 +97,7 @@ options:
         description:
             - Health monitor for sip.
             - Field introduced in 17.2.8, 18.1.3, 18.2.1.
-        version_added: "2.7"
+        version_added: "2.8"
     successful_checks:
         description:
             - Number of continuous successful health checks before server is marked up.
@@ -156,9 +155,12 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible.module_utils.network.avi.avi import (avi_common_argument_spec, HAS_AVI)
-from pkg_resources import parse_version
-from ansible.module_utils.network.avi.ansible_utils import avi_ansible_api
+try:
+    HAS_AVI = True
+    from ansible.module_utils.network.avi.avi import (
+        avi_common_argument_spec, avi_ansible_api)
+except ImportError:
+    HAS_AVI = False
 
 
 def main():
