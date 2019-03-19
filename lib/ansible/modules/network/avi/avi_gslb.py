@@ -231,12 +231,8 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-try:
-    HAS_AVI = True
-    from ansible.module_utils.network.avi.avi import (
-        avi_common_argument_spec, avi_ansible_api)
-except ImportError:
-    HAS_AVI = False
+from ansible.module_utils.network.avi.avi import (
+    avi_common_argument_spec, avi_ansible_api)
 
 
 def main():
@@ -265,10 +261,6 @@ def main():
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(
         argument_spec=argument_specs, supports_check_mode=True)
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk>=17.1) is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
     api_method = module.params['avi_api_update_method']
     if str(api_method).lower() == 'patch':
         patch_op = module.params['avi_api_patch_op']

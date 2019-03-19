@@ -99,15 +99,12 @@ try:
 except ImportError:
     HAS_LIB = False
 
-try:
-    HAS_AVI = True
-    from ansible.module_utils.network.avi.avi import (
-        avi_common_argument_spec, ansible_return, avi_obj_cmp,
-        cleanup_absent_fields)
-    from ansible.module_utils.network.avi.avi_api import (
-        ApiSession, AviCredentials)
-except ImportError:
-    HAS_AVI = False
+
+from ansible.module_utils.network.avi.avi import (
+    avi_common_argument_spec, ansible_return, avi_obj_cmp,
+    cleanup_absent_fields)
+from ansible.module_utils.network.avi.avi_api import (
+    ApiSession, AviCredentials)
 
 
 def main():
@@ -122,11 +119,6 @@ def main():
     )
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(argument_spec=argument_specs)
-
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk) is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
 
     if not HAS_LIB:
         return module.fail_json(
