@@ -105,6 +105,7 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
+HAS_AVI = True
 from ansible.module_utils.network.avi.avi import (
     avi_common_argument_spec, avi_ansible_api)
 
@@ -130,6 +131,12 @@ def main():
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(
         argument_spec=argument_specs, supports_check_mode=True)
+
+    if not HAS_AVI:
+        return module.fail_json(msg=(
+            'Avi python API SDK (avisdk) is not installed. '
+            'For more details visit https://github.com/avinetworks/sdk.'))
+
     return avi_ansible_api(module, 'cloudconnectoruser',
                            set(['private_key']))
 

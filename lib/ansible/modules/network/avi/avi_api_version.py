@@ -54,6 +54,7 @@ obj:
 from ansible.module_utils.basic import AnsibleModule
 
 
+HAS_AVI = True
 from ansible.module_utils.network.avi.avi import (
     avi_common_argument_spec, ansible_return)
 from ansible.module_utils.network.avi.avi_api import (
@@ -62,6 +63,12 @@ from ansible.module_utils.network.avi.avi_api import (
 
 def main():
     module = AnsibleModule(argument_spec=avi_common_argument_spec())
+
+    if not HAS_AVI:
+        return module.fail_json(msg=(
+            'Avi python API SDK (avisdk) is not installed. '
+            'For more details visit https://github.com/avinetworks/sdk.'))
+
     try:
         api_creds = AviCredentials()
         api_creds.update_from_ansible_module(module)
