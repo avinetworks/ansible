@@ -45,6 +45,12 @@ options:
         description:
             - Error page body sent to client when match.
             - Field introduced in 17.2.4.
+    format:
+        description:
+            - Format of an error page body {html, json}.
+            - Enum options - ERROR_PAGE_FORMAT_HTML, ERROR_PAGE_FORMAT_JSON.
+            - Field introduced in 18.2.3.
+            - Default value when not specified in API or module is interpreted by Avi Controller as ERROR_PAGE_FORMAT_HTML.
     name:
         description:
             - Field introduced in 17.2.4.
@@ -94,6 +100,7 @@ def main():
                                    choices=['put', 'patch']),
         avi_api_patch_op=dict(choices=['add', 'replace', 'delete']),
         error_page_body=dict(type='str',),
+        format=dict(type='str',),
         name=dict(type='str', required=True),
         tenant_ref=dict(type='str',),
         url=dict(type='str',),
@@ -102,12 +109,6 @@ def main():
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(
         argument_spec=argument_specs, supports_check_mode=True)
-
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk) is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
-
     return avi_ansible_api(module, 'errorpagebody',
                            set([]))
 

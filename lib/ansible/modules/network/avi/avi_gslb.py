@@ -92,6 +92,13 @@ options:
             - Frequency with which group members communicate.
             - Allowed values are 1-3600.
             - Default value when not specified in API or module is interpreted by Avi Controller as 15.
+    send_interval_prior_to_maintenance_mode:
+        description:
+            - The user can specify a send-interval while entering maintenance mode.
+            - The validity of this 'maintenance send-interval' is only during maintenance mode.
+            - When the user leaves maintenance mode, the original send-interval is reinstated.
+            - This internal variable is used to store the original send-interval.
+            - Field introduced in 18.2.3.
     sites:
         description:
             - Select avi site member belonging to this gslb.
@@ -252,6 +259,7 @@ def main():
         maintenance_mode=dict(type='bool',),
         name=dict(type='str', required=True),
         send_interval=dict(type='int',),
+        send_interval_prior_to_maintenance_mode=dict(type='int',),
         sites=dict(type='list',),
         tenant_ref=dict(type='str',),
         third_party_sites=dict(type='list',),
@@ -262,12 +270,6 @@ def main():
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(
         argument_spec=argument_specs, supports_check_mode=True)
-
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk) is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
-
     api_method = module.params['avi_api_update_method']
     if str(api_method).lower() == 'patch':
         patch_op = module.params['avi_api_patch_op']

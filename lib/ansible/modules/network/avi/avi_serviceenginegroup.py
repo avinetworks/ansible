@@ -92,6 +92,13 @@ options:
             - Field introduced in 18.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
         version_added: "2.8"
+    app_learning_memory_percent:
+        description:
+            - A percent value of total se memory reserved for application learning.
+            - This is an se bootup property and requires se restart.
+            - Allowed values are 0 - 10.
+            - Field introduced in 18.2.3.
+            - Default value when not specified in API or module is interpreted by Avi Controller as 0.
     archive_shm_limit:
         description:
             - Amount of se memory in gb until which shared memory is collected in core archive.
@@ -881,6 +888,7 @@ options:
         description:
             - Frequency with which se publishes waf learning.
             - Allowed values are 1-43200.
+            - Field deprecated in 18.2.3.
             - Field introduced in 18.1.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as 10.
         version_added: "2.8"
@@ -888,6 +896,7 @@ options:
         description:
             - Amount of memory reserved on se for waf learning.
             - This can be atmost 5% of se memory.
+            - Field deprecated in 18.2.3.
             - Field introduced in 18.1.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
         version_added: "2.8"
@@ -946,6 +955,7 @@ def main():
         algo=dict(type='str',),
         allow_burst=dict(type='bool',),
         app_cache_percent=dict(type='int',),
+        app_learning_memory_percent=dict(type='int',),
         archive_shm_limit=dict(type='int',),
         async_ssl=dict(type='bool',),
         async_ssl_threads=dict(type='int',),
@@ -1093,12 +1103,6 @@ def main():
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(
         argument_spec=argument_specs, supports_check_mode=True)
-
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk) is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
-
     return avi_ansible_api(module, 'serviceenginegroup',
                            set([]))
 

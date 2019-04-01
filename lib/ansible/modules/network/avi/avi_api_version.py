@@ -21,7 +21,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 DOCUMENTATION = '''
 ---
 module: avi_api_version
-author: Vilian Atmadzhov (@grastogi23) <vilian.atmadzhov@paddypowerbetfair.com>
+author: Vilian Atmadzhov (@vivobg) <vilian.atmadzhov@paddypowerbetfair.com>
 
 short_description: Avi API Version Module
 description:
@@ -63,12 +63,6 @@ from ansible.module_utils.network.avi.avi_api import (
 
 def main():
     module = AnsibleModule(argument_spec=avi_common_argument_spec())
-
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk) is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
-
     try:
         api_creds = AviCredentials()
         api_creds.update_from_ansible_module(module)

@@ -120,12 +120,6 @@ def main():
     )
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(argument_spec=argument_specs)
-
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk) is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
-
     if not HAS_LIB:
         return module.fail_json(
             msg='avi_api_fileservice, requests_toolbelt is required for this module')
