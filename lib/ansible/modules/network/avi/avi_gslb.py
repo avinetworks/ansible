@@ -99,6 +99,7 @@ options:
             - When the user leaves maintenance mode, the original send-interval is reinstated.
             - This internal variable is used to store the original send-interval.
             - Field introduced in 18.2.3.
+        version_added: "2.8"
     sites:
         description:
             - Select avi site member belonging to this gslb.

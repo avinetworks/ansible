@@ -51,6 +51,7 @@ options:
             - Enum options - ERROR_PAGE_FORMAT_HTML, ERROR_PAGE_FORMAT_JSON.
             - Field introduced in 18.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as ERROR_PAGE_FORMAT_HTML.
+        version_added: "2.8"
     name:
         description:
             - Field introduced in 17.2.4.

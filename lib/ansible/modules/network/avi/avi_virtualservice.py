@@ -58,6 +58,7 @@ options:
             - Datascript apis need to be used for processing of such requests.
             - Field introduced in 18.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
+        version_added: "2.8"
         type: bool
     analytics_policy:
         description:

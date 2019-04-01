@@ -142,6 +142,7 @@ options:
             - algorithm.
             - Field introduced in 18.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
+        version_added: "2.8"
         type: bool
     tenant_ref:
         description:

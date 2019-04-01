@@ -3,6 +3,7 @@
 # @author: Gaurav Rastogi (grastogi@avinetworks.com)
 #          Eric Anderson (eanderson@avinetworks.com)
 # module_check: supported
+# Avi Version: 18.2.3
 #
 # Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
@@ -15,14 +16,14 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 DOCUMENTATION = '''
 ---
 module: avi_serviceenginepolicy
-author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
+author: Chaitanya Deshpande (@chaitanyaavi) <chaitanya.deshpande@avinetworks.com>
 
 short_description: Module for setup of ServiceEnginePolicy Avi RESTful Object
 description:
     - This module is used to configure ServiceEnginePolicy object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.7"
+version_added: "2.8"
 options:
     state:
         description:

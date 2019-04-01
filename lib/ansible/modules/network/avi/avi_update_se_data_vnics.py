@@ -20,7 +20,7 @@ short_description: Avi API Module for update data vnics and vlan interfaces.
 description:
     - Module to update Service Engine's data vnics/vlans configurations.
 requirements: [ avisdk ]
-version_added: 2.7
+version_added: 2.8
 options:
     data_vnics_config:
         description:
