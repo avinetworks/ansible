@@ -4,12 +4,14 @@ __metaclass__ = type
 
 DOCUMENTATION = """
 lookup: avi
-author: Eric Anderson <eanderson@avinetworks.com>
+author: Sandeep Bandi <sandeepb@avinetworks.com>
 version_added: 2.8
 short_description: Look up ``Avi`` objects.
 description:
     - Given an object_type, fetch all the objects of that type or fetch
       the specific object that matches the name/uuid given via options.
+    - For single object lookup. If you want the output to be a list, you may
+      want to pass option wantlist=True to the plugin.
 
 options:
     obj_type:
@@ -26,74 +28,93 @@ extends_documentation_fragment: avi
 """
 
 EXAMPLES = """
-- debug: msg="{{ lookup('avi', obj_type='virtualservice',
-    tenant='admin', controller_ip='controller_ip', username='username', password='password') }}"
-- debug: msg="{{ lookup('avi', obj_name='vs1', obj_type='virtualservice',
-    tenant='admin', controller_ip='controller_ip', username='username', password='password') }}"
-- debug: msg="{{ lookup('avi', obj_uuid='virtualservice-5c0e183a-690a-45d8-8d6f-88c30a52550d',
-    obj_type='virtualservice', tenant='admin', controller_ip='controller_ip', username='username',
-    password='password') }}"
+- debug: msg="{{ lookup('avi', avi_credentials=avi_credentials, obj_type='virtualservice') }}"
+- debug: msg="{{ lookup('avi', avi_credentials=avi_credentials, obj_name='vs1', obj_type='virtualservice', wantlist=True) }}"
+- debug: msg="{{ lookup('avi', obj_uuid='virtualservice-5c0e183a-690a-45d8-8d6f-88c30a52550d', obj_type='virtualservice') }}"
+# Using query passes wantlist implicitly
+- debug: msg="{{ query('avi', obj_uuid='virtualservice-5c0e183a-690a-45d8-8d6f-88c30a52550d', obj_type='virtualservice') }}"
 """
 
 RETURN = """
- _list:
+ _raw:
      description:
          - One ore more objects returned from ``Avi`` API.
      type: list
      elements: dictionary
 """
 
+from ansible.module_utils._text import to_native
 from ansible.errors import AnsibleError, AnsibleParserError
 from ansible.plugins.lookup import LookupBase
 from ansible.utils.display import Display
-from ansible.module_utils.networks.avi.avi_api import ApiSession
+from ansible.module_utils.network.avi.avi_api import (ApiSession,
+                                                      AviCredentials,
+                                                      AviServerError,
+                                                      ObjectNotFound,
+                                                      APIError)
 
 display = Display()
 
 
+def _api(avi_session, path, **kwargs):
+    '''
+    Generic function to handle both /<obj_type>/<obj_uuid> and /<obj_type>
+    API resource endpoints.
+    '''
+    rsp = []
+    try:
+        rsp_data = avi_session.get(path, **kwargs).json()
+        if 'results' in rsp_data:
+            rsp = rsp_data['results']
+        else:
+            rsp.append(rsp_data)
+    except ObjectNotFound:
+        pass
+    except (AviServerError, APIError) as e:
+        raise AnsibleError(to_native(e))
+    except Exception as e:
+        # Generic excption handling for connection failures
+        raise AnsibleError('Unable to communicate with controller'
+                           'due to error: %s' % to_native(e))
+
+    return rsp
+
+
 class LookupModule(LookupBase):
-    def run(self, terms, variables=None, **kwargs):
+    def run(self, terms, variables=None, avi_credentials=None, **kwargs):
+
+        api_creds = AviCredentials(**avi_credentials)
+        # Create the session using avi_credentials
         try:
-            session_params = {
-                'controller_ip': kwargs.get('controller_ip', None),
-                'username': kwargs.get('username', None),
-                'password': kwargs.get('password', None),
-                'token': kwargs.get('token', None),
-                'tenant': kwargs.get('tenant', None),
-                'tenant_uuid': kwargs.get('tenant_uuid', None),
-                'verify': kwargs.get('verify', None),
-                'port': kwargs.get('port', None),
-                'timeout': kwargs.get('timeout', None),
-                'api_version': kwargs.get('api_version', None),
-                'retry_conxn_errors': kwargs.get('retry_conxn_errors', None),
-                'data_log': kwargs.get('data_log', None),
-                'avi_credentials': kwargs.get('avi_credentials', None),
-                'session_id': kwargs.get('session_id', None),
-                'csrftoken': kwargs.get('csrftoken', None),
-                'lazy_authentication': kwargs.get('lazy_authentication', None),
-                'max_api_retries': kwargs.get('max_api_retries', None),
-            }
-            get_params = {
-                'tenant': kwargs.get('tenant', None),
-                'tenant_uuid': kwargs.get('tenant_uuid', None),
-                'timeout': kwargs.get('timeout', None),
-                'params': kwargs.get('params', None),
-                'api_version': kwargs.get('api_version', None),
-            }
-            avi = ApiSession(**session_params)
-            path = kwargs['obj_type']
+            avi = ApiSession(avi_credentials=api_creds)
+        except Exception as e:
+            raise AnsibleError(to_native(e))
 
-            if kwargs.get('obj_name', None):
-                name = kwargs['obj_name']
-                response = [avi.get_object_by_name(path, name, **get_params)]
-            elif kwargs.get('obj_uuid', None):
-                obj_uuid = kwargs['obj_uuid']
-                obj_path = "%s/%s" % (path, obj_uuid)
-                response = [avi.get(obj_path, **get_params).json()]
-            else:
-                response = avi.get(path, **get_params).json().get('results', [])
+        # Return an empty list if the object is not found
+        rsp = []
+        try:
+            path = kwargs.pop('obj_type')
+        except KeyError:
+            raise AnsibleError("Please pass the obj_type for lookup")
 
-        except AnsibleParserError:
-            raise AnsibleError("Unable to query the Avi Controller")
+        if kwargs.get('obj_name', None):
+            name = kwargs.pop('obj_name')
+            try:
+                display.v("Fetching obj: %s of type: %s" % (name, path))
+                rsp_data = avi.get_object_by_name(path, name, **kwargs)
+                if rsp_data:
+                    # Append the return data only if it is not None. i.e object
+                    # with specified name is present
+                    rsp.append(rsp_data)
+            except AviServerError as e:
+                raise AnsibleError(to_native(e))
+        elif kwargs.get('obj_uuid', None):
+            obj_uuid = kwargs.pop('obj_uuid')
+            obj_path = "%s/%s" % (path, obj_uuid)
+            display.v("Fetching obj: %s of type: %s" % (obj_uuid, path))
+            rsp = _api(avi, obj_path, **kwargs)
+        else:
+            display.v("Fetching all objects of type: %s" % path)
+            rsp = _api(avi, path, **kwargs)
 
-        return response
+        return rsp
