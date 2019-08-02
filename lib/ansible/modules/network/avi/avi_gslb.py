@@ -156,7 +156,7 @@ EXAMPLES = """
         password: "gslb_password"
         ip_addresses:
           - type: "V4"
-            addr: "10.10.28.83"
+            addr: "192.0.2.10"
         enabled: True
         member_type: "GSLB_ACTIVE_MEMBER"
         port: 443
@@ -166,7 +166,7 @@ EXAMPLES = """
         password: "gslb_password"
         ip_addresses:
           - type: "V4"
-            addr: "10.10.28.86"
+            addr: "192.0.2.11"
         enabled: True
         member_type: "GSLB_ACTIVE_MEMBER"
         port: 443
@@ -195,7 +195,7 @@ EXAMPLES = """
         password: "gslb_password"
         ip_addresses:
           - type: "V4"
-            addr: "10.10.21.13"
+            addr: "192.0.2.12"
         enabled: True
         member_type: "GSLB_ACTIVE_MEMBER"
         port: 283
@@ -221,7 +221,7 @@ EXAMPLES = """
         password: "gslb_password"
         ip_addresses:
           - type: "V4"
-            addr: "10.10.11.24"
+            addr: "192.0.2.13"
         enabled: True
         member_type: "GSLB_ACTIVE_MEMBER"
         port: 283
@@ -240,8 +240,8 @@ EXAMPLES = """
     avi_api_patch_op: delete
     dns_configs:
     sites:
-      - ip_addresses: "10.10.28.83"
-      - ip_addresses: "10.10.28.86"
+      - ip_addresses: "192.0.2.14"
+      - ip_addresses: "192.0.2.15"
 """
 
 RETURN = '''

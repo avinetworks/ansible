@@ -710,6 +710,7 @@ options:
             - Time (in seconds) service engine waits for after generating a vnic transmit queue stall event before resetting thenic.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
+        version_added: "2.9"
     se_dp_vnic_queue_stall_threshold:
         description:
             - Number of consecutive transmit failures to look for before generating a vnic transmit queue stall event.

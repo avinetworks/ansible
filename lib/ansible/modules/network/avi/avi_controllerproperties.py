@@ -250,6 +250,7 @@ options:
             - Ssl certificates in the admin tenant can be used in non-admin tenants.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
+        version_added: "2.9"
         type: bool
     ssl_certificate_expiry_warning_days:
         description:
