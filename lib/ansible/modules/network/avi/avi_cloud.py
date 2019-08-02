@@ -52,7 +52,8 @@ options:
         type: bool
     autoscale_polling_interval:
         description:
-            - Cloudconnector polling interval for external autoscale groups.
+            - Cloudconnector polling interval in seconds for external autoscale groups, minimum 60 seconds.
+            - Allowed values are 60-3600.
             - Field introduced in 18.2.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as 60.
         version_added: "2.9"
@@ -166,6 +167,12 @@ options:
     rancher_configuration:
         description:
             - Rancherconfiguration settings for cloud.
+    se_group_template_ref:
+        description:
+            - The service engine group to use as template.
+            - It is a reference to an object of type serviceenginegroup.
+            - Field introduced in 18.2.5.
+        version_added: "2.9"
     state_based_dns_registration:
         description:
             - Dns records for vips are added/deleted based on the operational state of the vips.
@@ -200,7 +207,7 @@ extends_documentation_fragment:
 '''
 
 EXAMPLES = """
-  - name: Create a VMware cloud with write access mode
+  - name: Create a VMWare cloud with write access mode
     avi_cloud:
       username: '{{ username }}'
       controller: '{{ controller }}'
@@ -210,7 +217,7 @@ EXAMPLES = """
       enable_vip_static_routes: false
       license_type: LIC_CORES
       mtu: 1500
-      name: vCenter Cloud
+      name: VCenter Cloud
       prefer_static_routes: false
       tenant_ref: admin
       vcenter_configuration:
@@ -274,6 +281,7 @@ def main():
         prefer_static_routes=dict(type='bool',),
         proxy_configuration=dict(type='dict',),
         rancher_configuration=dict(type='dict',),
+        se_group_template_ref=dict(type='str',),
         state_based_dns_registration=dict(type='bool',),
         tenant_ref=dict(type='str',),
         url=dict(type='str',),
