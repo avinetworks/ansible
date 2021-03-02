@@ -1,0 +1,146 @@
+#!/usr/bin/python3
+#
+# @author: Gaurav Rastogi (grastogi@avinetworks.com)
+#          Eric Anderson (eanderson@avinetworks.com)
+# module_check: supported
+# Avi Version: 17.1.1
+#
+# Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+#
+
+
+from __future__ import (absolute_import, division, print_function)
+
+
+DOCUMENTATION = '''
+---
+module: avi_cloudconnectoruser
+author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
+short_description: Module for setup of CloudConnectorUser Avi RESTful Object
+description:
+    - This module is used to configure CloudConnectorUser object
+    - more examples at U(https://github.com/avinetworks/devops)
+requirements: [ avisdk ]
+version_added: "2.4"
+options:
+    state:
+        description:
+            - The state that should be applied on the entity.
+        default: present
+        choices: ["absent", "present"]
+        type: str
+    avi_api_update_method:
+        description:
+            - Default method for object update is HTTP PUT.
+            - Setting to patch will override that behavior to use HTTP PATCH.
+        version_added: "2.5"
+        default: put
+        choices: ["put", "patch"]
+        type: str
+    avi_api_patch_op:
+        description:
+            - Patch operation to use when using avi_api_update_method as patch.
+        version_added: "2.5"
+        choices: ["add", "replace", "delete"]
+        type: str
+    azure_serviceprincipal:
+        description:
+            - Field introduced in 17.2.1.
+            - Allowed in basic edition, essentials edition, enterprise edition.
+        version_added: "2.5"
+        type: dict
+    azure_userpass:
+        description:
+            - Field introduced in 17.2.1.
+            - Allowed in basic edition, essentials edition, enterprise edition.
+        version_added: "2.5"
+        type: dict
+    gcp_credentials:
+        description:
+            - Credentials for google cloud platform.
+            - Field introduced in 18.2.1.
+            - Allowed in basic edition, essentials edition, enterprise edition.
+        version_added: "2.9"
+        type: dict
+    name:
+        description:
+            - Name of the object.
+        required: true
+        type: str
+    nsxt_credentials:
+        description:
+            - Credentials to talk to nsx-t manager.
+            - Field introduced in 20.1.1.
+            - Allowed in essentials edition, enterprise edition.
+        type: dict
+    obj_password:
+        description:
+            - Password of cloudconnectoruser.
+        version_added: "2.9"
+        type: str
+    oci_credentials:
+        description:
+            - Credentials for oracle cloud infrastructure.
+            - Field introduced in 18.2.1,18.1.3.
+            - Allowed in basic edition, essentials edition, enterprise edition.
+        version_added: "2.9"
+        type: dict
+    private_key:
+        description:
+            - Private_key of cloudconnectoruser.
+        type: str
+    public_key:
+        description:
+            - Public_key of cloudconnectoruser.
+        type: str
+    tenant_ref:
+        description:
+            - It is a reference to an object of type tenant.
+        type: str
+    tencent_credentials:
+        description:
+            - Credentials for tencent cloud.
+            - Field introduced in 18.2.3.
+            - Allowed in basic edition, essentials edition, enterprise edition.
+        version_added: "2.9"
+        type: dict
+    url:
+        description:
+            - Avi controller URL of the object.
+        type: str
+    uuid:
+        description:
+            - Unique object identifier of the object.
+        type: str
+    vcenter_credentials:
+        description:
+            - Credentials to talk to vcenter.
+            - Field introduced in 20.1.1.
+        type: dict
+extends_documentation_fragment:
+    - avi
+'''
+
+EXAMPLES = """
+  - name: Create a Cloud connector user that is used for integration into cloud platforms
+    avi_cloudconnectoruser:
+      controller: '{{ controller }}'
+      name: root
+      password: '{{ password }}'
+      private_key: |
+        -----BEGIN RSA PRIVATE KEY-----
+        -----END RSA PRIVATE KEY-----'
+      public_key: 'ssh-rsa ...'
+      tenant_ref: /api/tenant?name=admin
+      username: '{{ username }}'
+"""
+
+RETURN = '''
+obj:
+    description: CloudConnectorUser (api/cloudconnectoruser) object
+    returned: success, changed
+    type: dict
+'''
+
+
