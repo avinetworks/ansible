@@ -22,8 +22,8 @@
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 #
 """
-
-from __future__ import (absolute_import, division, print_function)
+from __future__ import absolute_import, division, print_function
+__metaclass__ = type
 
 
 ANSIBLE_METADATA = {'metadata_version': '1.1',
@@ -59,7 +59,7 @@ options:
 
 
 extends_documentation_fragment:
-    - avi
+    - vmware.nsx_alb
 '''
 
 EXAMPLES = '''
@@ -83,6 +83,7 @@ obj:
     type: dict
 '''
 
+import sys
 import time
 from ansible.module_utils.basic import AnsibleModule
 try:
@@ -142,12 +143,13 @@ def main():
         # Retry after every rount_wait time to check for controller state.
         round_wait=dict(type='int', default=10),
     )
+    if not HAS_AVI:
+        return sys.exit(
+            'Avi python API SDK (avisdk) is not installed. '
+            'For more details visit https://github.com/avinetworks/sdk.')
+
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(argument_spec=argument_specs)
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk) is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
 
     api_creds = AviCredentials()
     api_creds.update_from_ansible_module(module)

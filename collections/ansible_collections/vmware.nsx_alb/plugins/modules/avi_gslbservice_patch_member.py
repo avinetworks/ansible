@@ -10,8 +10,8 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 """
-
-from __future__ import (absolute_import, division, print_function)
+from __future__ import absolute_import, division, print_function
+__metaclass__ = type
 
 
 ANSIBLE_METADATA = {'metadata_version': '1.1',
@@ -54,7 +54,7 @@ options:
 
 
 extends_documentation_fragment:
-    - avi
+    - vmware.nsx_alb
 '''
 
 EXAMPLES = '''
@@ -114,8 +114,8 @@ obj:
     type: dict
 '''
 
-import json
-import time
+
+import sys
 from ansible.module_utils.basic import AnsibleModule
 from copy import deepcopy
 
@@ -243,12 +243,13 @@ def main():
         state=dict(default='present',
                    choices=['absent', 'present'])
     )
+    if not HAS_AVI:
+        return sys.exit(
+            'Avi python API SDK (avisdk>=17.1) or ansible>=2.8 is not installed. '
+            'For more details visit https://github.com/avinetworks/sdk.')
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(argument_spec=argument_specs)
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk>=17.1) or ansible>=2.8 is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
+
     api_creds = AviCredentials()
     api_creds.update_from_ansible_module(module)
     api = ApiSession.get_session(

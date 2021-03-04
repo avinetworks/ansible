@@ -26,6 +26,7 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
+
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
                     'supported_by': 'community'}
@@ -102,7 +103,7 @@ options:
 
 
 extends_documentation_fragment:
-    - avi
+    - vmware.nsx_alb
 '''
 
 EXAMPLES = '''
@@ -151,6 +152,7 @@ obj:
 '''
 
 
+import sys
 from ansible.module_utils.basic import AnsibleModule
 
 
@@ -180,12 +182,13 @@ def main():
         user_profile_ref=dict(type='str'),
         default_tenant_ref=dict(type='str', default='/api/tenant?name=admin'),
     )
+    if not HAS_AVI:
+        return sys.exit(
+            'Avi python API SDK (avisdk>=17.1) or requests is not installed. '
+            'For more details visit https://github.com/avinetworks/sdk.')
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
+
     return avi_ansible_api(module, 'user',
                            set([]))
 

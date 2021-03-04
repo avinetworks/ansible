@@ -63,7 +63,7 @@ options:
 
 
 extends_documentation_fragment:
-    - avi
+    - vmware.nsx_alb
 '''
 
 EXAMPLES = '''
@@ -83,6 +83,8 @@ obj:
     type: dict
 '''
 
+
+import sys
 import json
 from copy import deepcopy
 from ansible.module_utils.basic import AnsibleModule
@@ -173,13 +175,14 @@ def main():
         base_waf_policy=dict(type='str', required=True),
         patch_file=dict(type='str', required=True),
     )
+    if not HAS_AVI:
+        return sys.exit(
+            'Avi python API SDK (avisdk>=17.1) or requests is not installed. '
+            'For more details visit https://github.com/avinetworks/sdk.')
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(argument_spec=argument_specs,
                            supports_check_mode=True)
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
+
     api_creds = AviCredentials()
     api_creds.update_from_ansible_module(module)
     api = ApiSession.get_session(

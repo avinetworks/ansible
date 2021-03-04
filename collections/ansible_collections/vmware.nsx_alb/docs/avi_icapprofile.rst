@@ -7,8 +7,6 @@
 # Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
-
-
 from __future__ import (absolute_import, division, print_function)
 
 
@@ -169,7 +167,7 @@ options:
             - Default value when not specified in API or module is interpreted by Avi Controller as ICAP_VENDOR_OPSWAT.
         type: str
 extends_documentation_fragment:
-    - avi
+    - vmware.nsx_alb
 '''
 
 EXAMPLES = """

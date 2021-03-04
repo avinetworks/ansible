@@ -22,8 +22,8 @@
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 #
 """
-
-from __future__ import (absolute_import, division, print_function)
+from __future__ import absolute_import, division, print_function
+__metaclass__ = type
 
 
 ANSIBLE_METADATA = {'metadata_version': '1.1',
@@ -63,7 +63,7 @@ options:
 
 
 extends_documentation_fragment:
-    - avi
+    - vmware.nsx_alb
 '''
 
 EXAMPLES = '''
@@ -92,10 +92,9 @@ obj:
     type: dict
 '''
 
-import json
-import time
+
+import sys
 from ansible.module_utils.basic import AnsibleModule
-from copy import deepcopy
 
 try:
     from avi.sdk.avi_api import ApiSession, AviCredentials
@@ -116,12 +115,13 @@ def main():
         # To handle both Saas and conventional (Entire state in playbook) scenario.
         force_change=dict(type='bool', default=False)
     )
+    if not HAS_AVI:
+        return sys.exit(
+            'Avi python API SDK (avisdk>=17.1) or requests is not installed. '
+            'For more details visit https://github.com/avinetworks/sdk.')
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(argument_spec=argument_specs)
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
+
     api_creds = AviCredentials()
     api_creds.update_from_ansible_module(module)
     full_name = module.params.get('full_name')

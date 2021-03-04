@@ -10,8 +10,11 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 """
+from __future__ import absolute_import, division, print_function
+__metaclass__ = type
 
-from __future__ import (absolute_import, division, print_function)
+
+import sys
 from ansible.module_utils.basic import AnsibleModule
 try:
     from avi.sdk.avi_api import ApiSession, AviCredentials
@@ -61,7 +64,7 @@ options:
 
 
 extends_documentation_fragment:
-    - avi
+    - vmware.nsx_alb
 '''
 
 EXAMPLES = '''
@@ -142,13 +145,14 @@ def main():
     argument_specs = dict(
         idp_class=dict(type=str, required=True, ),
     )
+
+    if not HAS_AVI:
+        return sys.exit(
+            'Avi python API SDK (avisdk) is not installed. '
+            'For more details visit https://github.com/avinetworks/sdk.')
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(argument_spec=argument_specs)
 
-    if not HAS_AVI:
-        return module.fail_json(msg=(
-            'Avi python API SDK (avisdk) is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
     idp_class = module.params.get("idp_class", None)
     idp = get_idp_class(idp_class)
     if not idp:
