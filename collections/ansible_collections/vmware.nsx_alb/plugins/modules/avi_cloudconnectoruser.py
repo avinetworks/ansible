@@ -57,7 +57,7 @@ def main():
         argument_spec=argument_specs, supports_check_mode=True)
 
     return avi_ansible_api(module, 'cloudconnectoruser',
-                           {'password', 'private_key'})
+                           {'private_key', 'password'})
 
 if __name__ == '__main__':
     main()

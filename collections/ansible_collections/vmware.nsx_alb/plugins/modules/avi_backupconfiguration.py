@@ -58,7 +58,7 @@ def main():
         argument_spec=argument_specs, supports_check_mode=True)
 
     return avi_ansible_api(module, 'backupconfiguration',
-                           {'aws_access_key', 'aws_secret_access', 'backup_passphrase'})
+                           {'aws_secret_access', 'aws_access_key', 'backup_passphrase'})
 
 if __name__ == '__main__':
     main()

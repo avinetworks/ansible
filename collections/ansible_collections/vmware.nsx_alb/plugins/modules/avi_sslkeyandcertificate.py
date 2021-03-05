@@ -69,7 +69,7 @@ def main():
         argument_spec=argument_specs, supports_check_mode=True)
 
     return avi_ansible_api(module, 'sslkeyandcertificate',
-                           {'key_passphrase', 'key'})
+                           {'key', 'key_passphrase'})
 
 if __name__ == '__main__':
     main()
