@@ -1,13 +1,3 @@
-#!/usr/bin/python3
-#
-# @author: Gaurav Rastogi (grastogi@avinetworks.com)
-#          Eric Anderson (eanderson@avinetworks.com)
-# module_check: supported
-# Avi Version: 17.1.2
-#
-# Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
-#
 .. vmware.nsx_alb.avi_controllerproperties:
 
 
@@ -49,6 +39,66 @@ Parameters
             <th>Choices/<font color="blue">Defaults</font></th>
             <th width="100%">Comments</th>
         </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>state</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: present
+                    choices: ["absent", "present"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - The state that should be applied on the entity.
+                </div>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_update_method</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: put
+                    choices: ["put", "patch"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Default method for object update is HTTP PUT.
+                </div><br>
+                <div style="font-size: small">
+                    - Setting to patch will override that behavior to use HTTP PATCH.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_patch_op</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    choices: ["add", "replace", "delete"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Patch operation to use when using avi_api_update_method as patch.
+                </div>
+            </td>
+        </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
@@ -59,12 +109,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Allow non-admin tenants to update admin vrfcontext and network objects.
-                         - Field introduced in 18.2.7, 20.1.1.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Allow non-admin tenants to update admin vrfcontext and network objects.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.7, 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -76,11 +132,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Field introduced in 17.1.1.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Field introduced in 17.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -92,11 +152,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Allow unauthenticated access for special apis.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Allow unauthenticated access for special apis.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -108,11 +172,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Boolean flag to set allow_unauthenticated_nodes.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Boolean flag to set allow_unauthenticated_nodes.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -124,12 +192,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Allowed values are 0-1440.
-                         - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 15.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Allowed values are 0-1440.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 15.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -141,14 +215,24 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Threshold to log request timing in portal_performance.log and server-timing response header.
-                         - Any stage taking longer than 1% of the threshold will be included in the server-timing header.
-                         - Field introduced in 18.1.4, 18.2.1.
-                         - Unit is milliseconds.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 10000.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Threshold to log request timing in portal_performance.log and server-timing response header.
+                </div><br>
+                                <div style="font-size: small">
+                 - Any stage taking longer than 1% of the threshold will be included in the server-timing header.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.1.4, 18.2.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is milliseconds.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -160,13 +244,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Export configuration in appviewx compatibility mode.
-                         - Field introduced in 17.1.1.
-                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Export configuration in appviewx compatibility mode.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 17.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -178,15 +270,27 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for which asynchronous patch requests are queued.
-                         - Allowed values are 30-120.
-                         - Special values are 0 - 'deactivated'.
-                         - Field introduced in 18.2.11, 20.1.3.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for which asynchronous patch requests are queued.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed values are 30-120.
+                </div><br>
+                                <div style="font-size: small">
+                 - Special values are 0 - 'deactivated'.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.11, 20.1.3.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -198,14 +302,24 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Duration for which asynchronous patch requests should be kept, after being marked as success or fail.
-                         - Allowed values are 5-120.
-                         - Field introduced in 18.2.11, 20.1.3.
-                         - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Duration for which asynchronous patch requests should be kept, after being marked as success or fail.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed values are 5-120.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.11, 20.1.3.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -217,11 +331,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 360.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 360.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -233,11 +351,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Number of attach_ip_retry_limit.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 4.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Number of attach_ip_retry_limit.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 4.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -249,12 +371,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Use ansible for se creation in baremetal.
-                         - Field introduced in 17.2.2.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Use ansible for se creation in baremetal.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 17.2.2.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -266,13 +394,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for auth token cleanup job.
-                         - Field introduced in 18.1.1.
-                         - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for auth token cleanup job.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -284,13 +420,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for sessions cleanup job.
-                         - Field introduced in 18.1.1.
-                         - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for sessions cleanup job.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -302,12 +446,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Enable/disable periodic reconcile for all the clouds.
-                         - Field introduced in 17.2.14,18.1.5,18.2.1.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Enable/disable periodic reconcile for all the clouds.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 17.2.14,18.1.5,18.2.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -319,12 +469,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for cluster ip gratuitous arp job.
-                         - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for cluster ip gratuitous arp job.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -336,13 +492,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for consistency check job.
-                         - Field introduced in 18.1.1.
-                         - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for consistency check job.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -354,13 +518,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Periodically collect stats.
-                         - Field introduced in 20.1.3.
-                         - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 30.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Periodically collect stats.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.3.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 30.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -372,11 +544,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 900.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 900.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -388,11 +564,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 360.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 360.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -404,15 +584,27 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Minimum api timeout value.if this value is not 60, it will be the default timeout for all apis that do not have a specific timeout.if an api has
-                         - a specific timeout but is less than this value, this value will become the new timeout.
-                         - Allowed values are 60-3600.
-                         - Field introduced in 18.2.6.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Minimum api timeout value.if this value is not 60, it will be the default timeout for all apis that do not have a specific timeout.if an api has
+                </div><br>
+                                <div style="font-size: small">
+                 - a specific timeout but is less than this value, this value will become the new timeout.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed values are 60-3600.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.6.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -424,13 +616,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for refresh pool and gslb dns job.
-                         - Unit is min.
-                         - Allowed in basic(allowed values- 60) edition, essentials(allowed values- 60) edition, enterprise edition.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for refresh pool and gslb dns job.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic(allowed values- 60) edition, essentials(allowed values- 60) edition, enterprise edition.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -442,10 +642,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Number of dummy.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Number of dummy.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -457,15 +659,27 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Allow editing of system limits.
-                         - Keep in mind that these system limits have been carefully selected based on rigorous testing in our testig environments.
-                         - Modifying these limits could destabilize your cluster.
-                         - Do this at your own risk!.
-                         - Field introduced in 20.1.1.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Allow editing of system limits.
+                </div><br>
+                                <div style="font-size: small">
+                 - Keep in mind that these system limits have been carefully selected based on rigorous testing in our testig environments.
+                </div><br>
+                                <div style="font-size: small">
+                 - Modifying these limits could destabilize your cluster.
+                </div><br>
+                                <div style="font-size: small">
+                 - Do this at your own risk!.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -477,12 +691,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - This setting enables the controller leader to shard api requests to the followers (if any).
-                         - Field introduced in 18.1.5, 18.2.1.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                                    </td>
+                                                <div style="font-size: small">
+                 - This setting enables the controller leader to shard api requests to the followers (if any).
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.1.5, 18.2.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -494,12 +714,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Enable/disable memory balancer.
-                         - Field introduced in 17.2.8.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Enable/disable memory balancer.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 17.2.8.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -511,11 +737,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 120.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 120.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -527,13 +757,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Federated datastore will not cleanup diffs unless they are at least this duration in the past.
-                         - Field introduced in 20.1.1.
-                         - Unit is hours.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 120.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Federated datastore will not cleanup diffs unless they are at least this duration in the past.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is hours.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 120.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -545,13 +783,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for file object cleanup job.
-                         - Field introduced in 20.1.1.
-                         - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 1440.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for file object cleanup job.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 1440.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -563,11 +809,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Number of max_dead_se_in_grp.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Number of max_dead_se_in_grp.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -579,11 +829,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Maximum number of pcap files stored per tenant.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 4.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Maximum number of pcap files stored per tenant.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 4.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -595,13 +849,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Maximum delay possible to add to se_spawn_retry_interval after successive se spawn failure.
-                         - Field introduced in 20.1.1.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 1800.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Maximum delay possible to add to se_spawn_retry_interval after successive se spawn failure.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 1800.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -613,12 +875,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Maximum number of consecutive attach ip failures that halts vs placement.
-                         - Field introduced in 17.2.2.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 3.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Maximum number of consecutive attach ip failures that halts vs placement.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 17.2.2.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 3.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -630,11 +898,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Number of max_seq_vnic_failures.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 3.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Number of max_seq_vnic_failures.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 3.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -646,13 +918,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Maximum number of threads in threadpool used by cloud connector ccvipbgworker.
-                         - Allowed values are 1-100.
-                         - Field introduced in 20.1.3.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 20.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Maximum number of threads in threadpool used by cloud connector ccvipbgworker.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed values are 1-100.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.3.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -664,12 +944,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Network and vrfcontext objects from the admin tenant will not be shared to non-admin tenants unless admin permissions are granted.
-                         - Field introduced in 18.2.7, 20.1.1.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Network and vrfcontext objects from the admin tenant will not be shared to non-admin tenants unless admin permissions are granted.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.7, 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -681,15 +967,27 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for rotate app persistence keys job.
-                         - Allowed values are 1-1051200.
-                         - Special values are 0 - 'disabled'.
-                         - Unit is min.
-                         - Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for rotate app persistence keys job.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed values are 1-1051200.
+                </div><br>
+                                <div style="font-size: small">
+                 - Special values are 0 - 'disabled'.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -701,13 +999,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Burst limit on number of incoming requests.
-                         - 0 to disable.
-                         - Field introduced in 20.1.1.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Burst limit on number of incoming requests.
+                </div><br>
+                                <div style="font-size: small">
+                 - 0 to disable.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -719,14 +1025,24 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Maximum average number of requests allowed per second.
-                         - 0 to disable.
-                         - Field introduced in 20.1.1.
-                         - Unit is per_second.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Maximum average number of requests allowed per second.
+                </div><br>
+                                <div style="font-size: small">
+                 - 0 to disable.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is per_second.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -738,11 +1054,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Token used for uploading tech-support to portal.
-                         - Field introduced in 16.4.6,17.1.2.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Token used for uploading tech-support to portal.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 16.4.6,17.1.2.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -754,13 +1074,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for process locked user accounts job.
-                         - Field introduced in 18.1.1.
-                         - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for process locked user accounts job.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -772,13 +1100,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for process pki profile job.
-                         - Field introduced in 18.1.1.
-                         - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 1440.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for process pki profile job.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 1440.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -790,11 +1126,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 180.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 180.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -806,14 +1146,24 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for each cycle of log caching in resource manager.
-                         - At the end of each cycle, the in memory cached log history will be cleared.
-                         - Field introduced in 20.1.5.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 21600.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for each cycle of log caching in resource manager.
+                </div><br>
+                                <div style="font-size: small">
+                 - At the end of each cycle, the in memory cached log history will be cleared.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.5.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 21600.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -825,11 +1175,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Version of the safenet package installed on the controller.
-                         - Field introduced in 16.5.2,17.2.3.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Version of the safenet package installed on the controller.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 16.5.2,17.2.3.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -841,11 +1195,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 900.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 900.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -857,12 +1215,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Interval between attempting failovers to an se.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Interval between attempting failovers to an se.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -874,14 +1238,24 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - This setting decides whether se is to be deployed from the cloud marketplace or to be created by the controller.
-                         - The setting is applicable only when byol license is selected.
-                         - Enum options - MARKETPLACE, IMAGE.
-                         - Field introduced in 18.1.4, 18.2.1.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as IMAGE.
-                                    </td>
+                                                <div style="font-size: small">
+                 - This setting decides whether se is to be deployed from the cloud marketplace or to be created by the controller.
+                </div><br>
+                                <div style="font-size: small">
+                 - The setting is applicable only when byol license is selected.
+                </div><br>
+                                <div style="font-size: small">
+                 - Enum options - MARKETPLACE, IMAGE.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.1.4, 18.2.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as IMAGE.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -893,11 +1267,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 172000.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 172000.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -909,13 +1287,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Default retry period before attempting another service engine spawn in se group.
-                         - Field introduced in 20.1.1.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Default retry period before attempting another service engine spawn in se group.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -927,11 +1313,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 120.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 120.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -943,14 +1333,24 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Duration to wait after last vnic addition before proceeding with vnic garbage collection.
-                         - Used for testing purposes.
-                         - Field introduced in 20.1.4.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Duration to wait after last vnic addition before proceeding with vnic garbage collection.
+                </div><br>
+                                <div style="font-size: small">
+                 - Used for testing purposes.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.4.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -962,12 +1362,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for secure channel cleanup job.
-                         - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for secure channel cleanup job.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -979,11 +1385,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -995,11 +1405,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1011,14 +1425,24 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - This parameter defines the number of simultaneous se image downloads in a segroup.
-                         - It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
-                         - A value of 0 will disable the pacing scheme and all the se(s) in the segroup will attempt to download the image.
-                         - Field introduced in 18.2.6.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 5.
-                                    </td>
+                                                <div style="font-size: small">
+                 - This parameter defines the number of simultaneous se image downloads in a segroup.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is used to pace the se downloads so that controller network/cpu bandwidth is a bounded operation.
+                </div><br>
+                                <div style="font-size: small">
+                 - A value of 0 will disable the pacing scheme and all the se(s) in the segroup will attempt to download the image.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.6.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 5.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1030,11 +1454,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Pool size used for all fabric commands during se upgrade.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 20.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Pool size used for all fabric commands during se upgrade.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1046,12 +1474,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Time to wait before marking segroup upgrade as stuck.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 360.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Time to wait before marking segroup upgrade as stuck.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 360.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1063,12 +1497,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Ssl certificates in the admin tenant can be used in non-admin tenants.
-                         - Field introduced in 18.2.5.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Ssl certificates in the admin tenant can be used in non-admin tenants.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.5.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1080,11 +1520,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Number of days for ssl certificate expiry warning.
-                         - Unit is days.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Number of days for ssl certificate expiry warning.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is days.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1096,11 +1540,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1112,15 +1560,27 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Time to account for dns ttl during upgrade.
-                         - This is in addition to vs_scalein_timeout_for_upgrade in se_group.
-                         - Field introduced in 17.1.1.
-                         - Unit is sec.
-                         - Allowed in basic(allowed values- 5) edition, essentials(allowed values- 5) edition, enterprise edition.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 5.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Time to account for dns ttl during upgrade.
+                </div><br>
+                                <div style="font-size: small">
+                 - This is in addition to vs_scalein_timeout_for_upgrade in se_group.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 17.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic(allowed values- 5) edition, essentials(allowed values- 5) edition, enterprise edition.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 5.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1132,13 +1592,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Amount of time controller waits for a large-sized se (>=128gb memory) to reconnect after it is rebooted during upgrade.
-                         - Field introduced in 18.2.10, 20.1.1.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 1200.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Amount of time controller waits for a large-sized se (>=128gb memory) to reconnect after it is rebooted during upgrade.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.10, 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 1200.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1150,13 +1618,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Amount of time controller waits for a regular-sized se (<128gb memory) to reconnect after it is rebooted during upgrade.
-                         - Starting 18.2.10/20.1.1, the default time has increased from 360 seconds to 600 seconds.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 600.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Amount of time controller waits for a regular-sized se (<128gb memory) to reconnect after it is rebooted during upgrade.
+                </div><br>
+                                <div style="font-size: small">
+                 - Starting 18.2.10/20.1.1, the default time has increased from 360 seconds to 600 seconds.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 600.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1168,15 +1644,27 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - This parameter defines the upper-bound value of the vs scale-in or vs scale-out operation executed in the sescalein and sescale context.
-                         - User can tweak this parameter to a higher value if the segroup gets suspended due to sescalein or sescaleout timeout failure typically associated
-                         - with high number of vs(es) scaled out.
-                         - Field introduced in 18.2.10, 20.1.1.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 3.
-                                    </td>
+                                                <div style="font-size: small">
+                 - This parameter defines the upper-bound value of the vs scale-in or vs scale-out operation executed in the sescalein and sescale context.
+                </div><br>
+                                <div style="font-size: small">
+                 - User can tweak this parameter to a higher value if the segroup gets suspended due to sescalein or sescaleout timeout failure typically associated
+                </div><br>
+                                <div style="font-size: small">
+                 - with high number of vs(es) scaled out.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.10, 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 3.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1188,10 +1676,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Avi controller URL of the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Avi controller URL of the object.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1203,10 +1693,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unique object identifier of the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unique object identifier of the object.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1218,11 +1710,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 180.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 180.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1234,12 +1730,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Time to wait for the scaled out se to become ready before marking the scaleout done, applies to apic configuration only.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 360.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Time to wait for the scaled out se to become ready before marking the scaleout done, applies to apic configuration only.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 360.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1251,11 +1753,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1267,14 +1773,24 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Period for rotate vs keys job.
-                         - Allowed values are 1-1051200.
-                         - Special values are 0 - 'disabled'.
-                         - Unit is min.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 360.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Period for rotate vs keys job.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed values are 1-1051200.
+                </div><br>
+                                <div style="font-size: small">
+                 - Special values are 0 - 'disabled'.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is min.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 360.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1286,13 +1802,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Interval for checking scaleout_ready status while controller is waiting for scaleoutready rpc from the service engine.
-                         - Field introduced in 18.2.2.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Interval for checking scaleout_ready status while controller is waiting for scaleoutready rpc from the service engine.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.2.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1304,13 +1828,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Time to wait before marking attach ip operation on an se as failed.
-                         - Field introduced in 17.2.2.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 600.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Time to wait before marking attach ip operation on an se as failed.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 17.2.2.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 600.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1322,11 +1854,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 480.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 480.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1338,11 +1874,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 1500.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 1500.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1354,11 +1894,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1370,11 +1914,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1386,11 +1934,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 120.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 120.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1402,11 +1954,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 480.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 480.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -1418,13 +1974,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Timeout for warmstart vs resync.
-                         - Field introduced in 18.1.4, 18.2.1.
-                         - Unit is sec.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Timeout for warmstart vs resync.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.1.4, 18.2.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Unit is sec.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                </div><br>
+                                            </td>
         </tr>
             </table>
     <br/>

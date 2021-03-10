@@ -1,12 +1,3 @@
-#!/usr/bin/python3
-#
-# @author: Gaurav Rastogi (grastogi@avinetworks.com)
-#          Eric Anderson (eanderson@avinetworks.com)
-# module_check: supported
-#
-# Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
-#
 .. vmware.nsx_alb.avi_siteversion:
 
 
@@ -48,6 +39,66 @@ Parameters
             <th>Choices/<font color="blue">Defaults</font></th>
             <th width="100%">Comments</th>
         </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>state</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: present
+                    choices: ["absent", "present"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - The state that should be applied on the entity.
+                </div>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_update_method</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: put
+                    choices: ["put", "patch"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Default method for object update is HTTP PUT.
+                </div><br>
+                <div style="font-size: small">
+                    - Setting to patch will override that behavior to use HTTP PATCH.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_patch_op</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    choices: ["add", "replace", "delete"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Patch operation to use when using avi_api_update_method as patch.
+                </div>
+            </td>
+        </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
@@ -58,11 +109,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - This field represents the creation time of the federateddiff.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - This field represents the creation time of the federateddiff.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -74,14 +129,18 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - Name of the site.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Name of the site.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -93,11 +152,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Previous targer version for a site.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Previous targer version for a site.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -109,13 +172,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Replication state for a site.
-                         - Enum options - REPLICATION_STATE_FASTFORWARD, REPLICATION_STATE_FORCESYNC, REPLICATION_STATE_STREAMING, REPLICATION_STATE_SUSPENDED,
-                         - REPLICATION_STATE_INIT, REPLICATION_STATE_WAIT, REPLICATION_STATE_NOT_APPLICABLE.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Replication state for a site.
+                </div><br>
+                                <div style="font-size: small">
+                 - Enum options - REPLICATION_STATE_FASTFORWARD, REPLICATION_STATE_FORCESYNC, REPLICATION_STATE_STREAMING, REPLICATION_STATE_SUSPENDED,
+                </div><br>
+                                <div style="font-size: small">
+                 - REPLICATION_STATE_INIT, REPLICATION_STATE_WAIT, REPLICATION_STATE_NOT_APPLICABLE.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -127,11 +198,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Cluster uuid of the site.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Cluster uuid of the site.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -143,11 +218,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Target timeline of the site.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Target timeline of the site.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -159,11 +238,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Target version of the site.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Target version of the site.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -175,12 +258,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Tenant that this object belongs to.
-                         - It is a reference to an object of type tenant.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Tenant that this object belongs to.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is a reference to an object of type tenant.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -192,11 +281,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Timeline of the site.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Timeline of the site.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -208,10 +301,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Avi controller URL of the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Avi controller URL of the object.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -223,11 +318,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Uuid of the siteversion object.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Uuid of the siteversion object.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -239,11 +338,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Version of the site.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Version of the site.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -255,12 +358,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Type of message for which version is maintained.
-                         - Enum options - CONFIG_VERSION, HEALTH_STATUS_VERSION.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Type of message for which version is maintained.
+                </div><br>
+                                <div style="font-size: small">
+                 - Enum options - CONFIG_VERSION, HEALTH_STATUS_VERSION.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
             </table>
     <br/>

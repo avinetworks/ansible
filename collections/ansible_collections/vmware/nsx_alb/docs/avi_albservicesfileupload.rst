@@ -1,12 +1,3 @@
-#!/usr/bin/python3
-#
-# @author: Gaurav Rastogi (grastogi@avinetworks.com)
-#          Eric Anderson (eanderson@avinetworks.com)
-# module_check: supported
-#
-# Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
-#
 .. vmware.nsx_alb.avi_albservicesfileupload:
 
 
@@ -48,6 +39,66 @@ Parameters
             <th>Choices/<font color="blue">Defaults</font></th>
             <th width="100%">Comments</th>
         </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>state</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: present
+                    choices: ["absent", "present"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - The state that should be applied on the entity.
+                </div>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_update_method</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: put
+                    choices: ["put", "patch"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Default method for object update is HTTP PUT.
+                </div><br>
+                <div style="font-size: small">
+                    - Setting to patch will override that behavior to use HTTP PATCH.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_patch_op</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    choices: ["add", "replace", "delete"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Patch operation to use when using avi_api_update_method as patch.
+                </div>
+            </td>
+        </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
@@ -58,11 +109,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Salesforce alphanumeric caseid to attach uploaded file to.
-                         - Field introduced in 18.2.6.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Salesforce alphanumeric caseid to attach uploaded file to.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.6.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -74,11 +129,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Error reported during file upload.
-                         - Field introduced in 18.2.6.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Error reported during file upload.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.6.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -90,14 +149,18 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - Stores output file path, for upload to aws s3.
-                         - Field introduced in 18.2.6.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Stores output file path, for upload to aws s3.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.6.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -109,13 +172,15 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - Field introduced in 18.2.6.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Field introduced in 18.2.6.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -127,11 +192,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Custom aws s3 directory path to upload file.
-                         - Field introduced in 18.2.6.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Custom aws s3 directory path to upload file.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.6.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -143,14 +212,24 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Captures status for file upload.
-                         - Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
-                         - SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
-                         - SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
-                         - Field introduced in 18.2.6.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Captures status for file upload.
+                </div><br>
+                                <div style="font-size: small">
+                 - Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
+                </div><br>
+                                <div style="font-size: small">
+                 - SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
+                </div><br>
+                                <div style="font-size: small">
+                 - SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.6.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -162,11 +241,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - It is a reference to an object of type tenant.
-                         - Field introduced in 18.2.6.
-                                    </td>
+                                                <div style="font-size: small">
+                 - It is a reference to an object of type tenant.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.6.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -178,10 +261,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Avi controller URL of the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Avi controller URL of the object.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -193,10 +278,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unique object identifier of the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unique object identifier of the object.
+                </div><br>
+                                            </td>
         </tr>
             </table>
     <br/>

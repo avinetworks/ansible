@@ -1,12 +1,3 @@
-#!/usr/bin/python3
-#
-# @author: Gaurav Rastogi (grastogi@avinetworks.com)
-#          Eric Anderson (eanderson@avinetworks.com)
-# module_check: supported
-#
-# Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
-#
 .. vmware.nsx_alb.avi_nsxtsegmentruntime:
 
 
@@ -48,6 +39,66 @@ Parameters
             <th>Choices/<font color="blue">Defaults</font></th>
             <th width="100%">Comments</th>
         </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>state</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: present
+                    choices: ["absent", "present"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - The state that should be applied on the entity.
+                </div>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_update_method</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: put
+                    choices: ["put", "patch"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Default method for object update is HTTP PUT.
+                </div><br>
+                <div style="font-size: small">
+                    - Setting to patch will override that behavior to use HTTP PATCH.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_patch_op</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    choices: ["add", "replace", "delete"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Patch operation to use when using avi_api_update_method as patch.
+                </div>
+            </td>
+        </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
@@ -58,12 +109,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Nsxt segment belongs to cloud.
-                         - It is a reference to an object of type cloud.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Nsxt segment belongs to cloud.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is a reference to an object of type cloud.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -75,11 +132,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - V6 dhcp ranges configured in nsxt.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - V6 dhcp ranges configured in nsxt.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -91,12 +152,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Ip address management scheme for this segment associated network.
-                         - Field introduced in 20.1.1.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Ip address management scheme for this segment associated network.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -108,11 +175,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Dhcp ranges configured in nsxt.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Dhcp ranges configured in nsxt.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -124,11 +195,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Segment object name.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Segment object name.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -140,11 +215,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Network name.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Network name.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -156,12 +235,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Corresponding network object in avi.
-                         - It is a reference to an object of type network.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Corresponding network object in avi.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is a reference to an object of type network.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -173,11 +258,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Opaque network id.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Opaque network id.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -189,11 +278,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Segment gateway.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Segment gateway.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -205,11 +298,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - V6 segment gateway.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - V6 segment gateway.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -221,11 +318,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Segment id.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Segment id.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -237,11 +338,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Segment name.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Segment name.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -253,11 +358,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Segment cidr.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Segment cidr.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -269,11 +378,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - V6 segment cidr.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - V6 segment cidr.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -285,12 +398,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Nsxt segment belongs to tenant.
-                         - It is a reference to an object of type tenant.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Nsxt segment belongs to tenant.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is a reference to an object of type tenant.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -302,11 +421,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Tier1 router id.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Tier1 router id.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -318,10 +441,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Avi controller URL of the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Avi controller URL of the object.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -333,11 +458,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Uuid.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Uuid.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -349,12 +478,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Corresponding vrf context object in avi.
-                         - It is a reference to an object of type vrfcontext.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Corresponding vrf context object in avi.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is a reference to an object of type vrfcontext.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
             </table>
     <br/>

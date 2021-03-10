@@ -1,12 +1,3 @@
-#!/usr/bin/python3
-#
-# @author: Gaurav Rastogi (grastogi@avinetworks.com)
-#          Eric Anderson (eanderson@avinetworks.com)
-# module_check: supported
-#
-# Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
-#
 .. vmware.nsx_alb.avi_albservicesconfig:
 
 
@@ -48,6 +39,66 @@ Parameters
             <th>Choices/<font color="blue">Defaults</font></th>
             <th width="100%">Comments</th>
         </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>state</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: present
+                    choices: ["absent", "present"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - The state that should be applied on the entity.
+                </div>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_update_method</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: put
+                    choices: ["put", "patch"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Default method for object update is HTTP PUT.
+                </div><br>
+                <div style="font-size: small">
+                    - Setting to patch will override that behavior to use HTTP PATCH.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_patch_op</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    choices: ["add", "replace", "delete"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Patch operation to use when using avi_api_update_method as patch.
+                </div>
+            </td>
+        </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
@@ -58,15 +109,21 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - Default values to be used for application signature sync.
-                         - Field introduced in 20.1.4.
-                         - Allowed in basic edition, essentials edition, enterprise edition.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Default values to be used for application signature sync.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.4.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic edition, essentials edition, enterprise edition.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -78,11 +135,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Information about the default contact for this controller cluster.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Information about the default contact for this controller cluster.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -94,14 +155,18 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - Information about the portal features opted in for controller.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Information about the portal features opted in for controller.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -113,14 +178,18 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - Default values to be used for ip reputation sync.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Default values to be used for ip reputation sync.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -132,15 +201,27 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Mode helps log collection and upload.
-                         - Enum options - SALESFORCE, SYSTEST, MYVMWARE.
-                         - Field introduced in 20.1.2.
-                         - Allowed in basic(allowed values- salesforce,myvmware,systest) edition, essentials(allowed values- salesforce,myvmware,systest) edition,
-                         - enterprise edition.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as MYVMWARE.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Mode helps log collection and upload.
+                </div><br>
+                                <div style="font-size: small">
+                 - Enum options - SALESFORCE, SYSTEST, MYVMWARE.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.2.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic(allowed values- salesforce,myvmware,systest) edition, essentials(allowed values- salesforce,myvmware,systest) edition,
+                </div><br>
+                                <div style="font-size: small">
+                 - enterprise edition.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as MYVMWARE.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -152,13 +233,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Time interval in minutes.
-                         - Allowed values are 5-60.
-                         - Field introduced in 18.2.6.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as 10.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Time interval in minutes.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed values are 5-60.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.6.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as 10.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -170,14 +259,18 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - The fqdn or ip address of the customer portal.
-                         - Field introduced in 18.2.6.
-                                    </td>
+                                                <div style="font-size: small">
+                 - The fqdn or ip address of the customer portal.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.6.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -189,14 +282,18 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - Default values to be used during proactive case creation and techsupport attachment.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Default values to be used during proactive case creation and techsupport attachment.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -208,11 +305,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Split proxy configuration to connect external pulse services.
-                         - Field introduced in 20.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Split proxy configuration to connect external pulse services.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -224,10 +325,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Avi controller URL of the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Avi controller URL of the object.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -239,12 +342,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - By default, use system proxy configuration.if true, use split proxy configuration.
-                         - Field introduced in 20.1.1.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - By default, use system proxy configuration.if true, use split proxy configuration.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -256,12 +365,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Secure the controller to pulse communication over tls.
-                         - Field introduced in 20.1.3.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Secure the controller to pulse communication over tls.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.3.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -273,10 +388,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Field introduced in 18.2.6.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Field introduced in 18.2.6.
+                </div><br>
+                                            </td>
         </tr>
             </table>
     <br/>

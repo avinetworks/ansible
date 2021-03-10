@@ -1,13 +1,3 @@
-#!/usr/bin/python3
-#
-# @author: Gaurav Rastogi (grastogi@avinetworks.com)
-#          Eric Anderson (eanderson@avinetworks.com)
-# module_check: supported
-# Avi Version: 17.1.1
-#
-# Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
-#
 .. vmware.nsx_alb.avi_sslkeyandcertificate:
 
 
@@ -49,6 +39,66 @@ Parameters
             <th>Choices/<font color="blue">Defaults</font></th>
             <th width="100%">Comments</th>
         </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>state</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: present
+                    choices: ["absent", "present"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - The state that should be applied on the entity.
+                </div>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_update_method</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: put
+                    choices: ["put", "patch"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Default method for object update is HTTP PUT.
+                </div><br>
+                <div style="font-size: small">
+                    - Setting to patch will override that behavior to use HTTP PATCH.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_patch_op</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    choices: ["add", "replace", "delete"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Patch operation to use when using avi_api_update_method as patch.
+                </div>
+            </td>
+        </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
@@ -59,10 +109,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Ca certificates in certificate chain.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Ca certificates in certificate chain.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -74,13 +126,15 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - Sslcertificate settings for sslkeyandcertificate.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Sslcertificate settings for sslkeyandcertificate.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -92,11 +146,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - States if the certificate is base64 encoded.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - States if the certificate is base64 encoded.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -108,10 +166,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - It is a reference to an object of type certificatemanagementprofile.
-                                    </td>
+                                                <div style="font-size: small">
+                 - It is a reference to an object of type certificatemanagementprofile.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -123,10 +183,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Creator name.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Creator name.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -138,10 +200,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Dynamic parameters needed for certificate management profile.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Dynamic parameters needed for certificate management profile.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -153,13 +217,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Enables ocsp stapling.
-                         - Field introduced in 20.1.1.
-                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Enables ocsp stapling.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -171,11 +243,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Encrypted private key corresponding to the private key (e.g.
-                         - Those generated by an hsm such as thales nshield).
-                                    </td>
+                                                <div style="font-size: small">
+                 - Encrypted private key corresponding to the private key (e.g.
+                </div><br>
+                                <div style="font-size: small">
+                 - Those generated by an hsm such as thales nshield).
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -187,11 +263,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Name of the encrypted private key (e.g.
-                         - Those generated by an hsm such as thales nshield).
-                                    </td>
+                                                <div style="font-size: small">
+                 - Name of the encrypted private key (e.g.
+                </div><br>
+                                <div style="font-size: small">
+                 - Those generated by an hsm such as thales nshield).
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -203,12 +283,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Format of the key/certificate file.
-                         - Enum options - SSL_PEM, SSL_PKCS12.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as SSL_PEM.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Format of the key/certificate file.
+                </div><br>
+                                <div style="font-size: small">
+                 - Enum options - SSL_PEM, SSL_PKCS12.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as SSL_PEM.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -220,10 +306,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - It is a reference to an object of type hardwaresecuritymodulegroup.
-                                    </td>
+                                                <div style="font-size: small">
+                 - It is a reference to an object of type hardwaresecuritymodulegroup.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -235,10 +323,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Private key.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Private key.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -250,11 +340,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - States if the private key is base64 encoded.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - States if the private key is base64 encoded.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -266,10 +360,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Sslkeyparams settings for sslkeyandcertificate.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Sslkeyparams settings for sslkeyandcertificate.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -281,10 +377,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Passphrase used to encrypt the private key.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Passphrase used to encrypt the private key.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -296,13 +394,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Key value pairs for granular object access control.
-                         - Also allows for classification and tagging of similar objects.
-                         - Field introduced in 20.1.2.
-                         - Maximum of 4 items allowed.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Key value pairs for granular object access control.
+                </div><br>
+                                <div style="font-size: small">
+                 - Also allows for classification and tagging of similar objects.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.2.
+                </div><br>
+                                <div style="font-size: small">
+                 - Maximum of 4 items allowed.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -314,13 +420,15 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - Name of the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Name of the object.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -332,12 +440,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Configuration related to ocsp.
-                         - Field introduced in 20.1.1.
-                         - Allowed in basic edition, essentials edition, enterprise edition.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Configuration related to ocsp.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic edition, essentials edition, enterprise edition.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -349,19 +463,39 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Error reported during ocsp status query.
-                         - Enum options - OCSP_ERR_CERTSTATUS_GOOD, OCSP_ERR_CERTSTATUS_REVOKED, OCSP_ERR_CERTSTATUS_UNKNOWN, OCSP_ERR_CERTSTATUS_SERVERFAIL_ERR,
-                         - OCSP_ERR_CERTSTATUS_JOBDB, OCSP_ERR_CERTSTATUS_DISABLED, OCSP_ERR_CERTSTATUS_GETCERT, OCSP_ERR_CERTSTATUS_NONVSCERT,
-                         - OCSP_ERR_CERTSTATUS_SELFSIGNED, OCSP_ERR_CERTSTATUS_CERTFINISH, OCSP_ERR_CERTSTATUS_CACERT, OCSP_ERR_CERTSTATUS_REQUEST,
-                         - OCSP_ERR_CERTSTATUS_ISSUER_REVOKED, OCSP_ERR_CERTSTATUS_PARSE_CERT, OCSP_ERR_CERTSTATUS_HTTP_REQ, OCSP_ERR_CERTSTATUS_URL_LIST,
-                         - OCSP_ERR_CERTSTATUS_HTTP_SEND, OCSP_ERR_CERTSTATUS_HTTP_RECV, OCSP_ERR_CERTSTATUS_HTTP_RESP.
-                         - Field introduced in 20.1.1.
-                         - Allowed in basic(allowed values- ocsp_err_certstatus_disabled) edition, essentials(allowed values- ocsp_err_certstatus_disabled) edition,
-                         - enterprise edition.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as OCSP_ERR_CERTSTATUS_DISABLED.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Error reported during ocsp status query.
+                </div><br>
+                                <div style="font-size: small">
+                 - Enum options - OCSP_ERR_CERTSTATUS_GOOD, OCSP_ERR_CERTSTATUS_REVOKED, OCSP_ERR_CERTSTATUS_UNKNOWN, OCSP_ERR_CERTSTATUS_SERVERFAIL_ERR,
+                </div><br>
+                                <div style="font-size: small">
+                 - OCSP_ERR_CERTSTATUS_JOBDB, OCSP_ERR_CERTSTATUS_DISABLED, OCSP_ERR_CERTSTATUS_GETCERT, OCSP_ERR_CERTSTATUS_NONVSCERT,
+                </div><br>
+                                <div style="font-size: small">
+                 - OCSP_ERR_CERTSTATUS_SELFSIGNED, OCSP_ERR_CERTSTATUS_CERTFINISH, OCSP_ERR_CERTSTATUS_CACERT, OCSP_ERR_CERTSTATUS_REQUEST,
+                </div><br>
+                                <div style="font-size: small">
+                 - OCSP_ERR_CERTSTATUS_ISSUER_REVOKED, OCSP_ERR_CERTSTATUS_PARSE_CERT, OCSP_ERR_CERTSTATUS_HTTP_REQ, OCSP_ERR_CERTSTATUS_URL_LIST,
+                </div><br>
+                                <div style="font-size: small">
+                 - OCSP_ERR_CERTSTATUS_HTTP_SEND, OCSP_ERR_CERTSTATUS_HTTP_RECV, OCSP_ERR_CERTSTATUS_HTTP_RESP.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic(allowed values- ocsp_err_certstatus_disabled) edition, essentials(allowed values- ocsp_err_certstatus_disabled) edition,
+                </div><br>
+                                <div style="font-size: small">
+                 - enterprise edition.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as OCSP_ERR_CERTSTATUS_DISABLED.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -373,12 +507,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - This is an internal field to store the ocsp responder urls contained in the certificate.
-                         - Field introduced in 20.1.1.
-                         - Allowed in basic edition, essentials edition, enterprise edition.
-                                    </td>
+                                                <div style="font-size: small">
+                 - This is an internal field to store the ocsp responder urls contained in the certificate.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic edition, essentials edition, enterprise edition.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -390,12 +530,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Information related to ocsp response.
-                         - Field introduced in 20.1.1.
-                         - Allowed in basic edition, essentials edition, enterprise edition.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Information related to ocsp response.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic edition, essentials edition, enterprise edition.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -407,11 +553,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as SSL_CERTIFICATE_FINISHED.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Enum options - SSL_CERTIFICATE_FINISHED, SSL_CERTIFICATE_PENDING.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as SSL_CERTIFICATE_FINISHED.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -423,10 +573,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - It is a reference to an object of type tenant.
-                                    </td>
+                                                <div style="font-size: small">
+                 - It is a reference to an object of type tenant.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -438,10 +590,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Enum options - SSL_CERTIFICATE_TYPE_VIRTUALSERVICE, SSL_CERTIFICATE_TYPE_SYSTEM, SSL_CERTIFICATE_TYPE_CA.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -453,10 +607,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Avi controller URL of the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Avi controller URL of the object.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -468,10 +624,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Unique object identifier of the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Unique object identifier of the object.
+                </div><br>
+                                            </td>
         </tr>
             </table>
     <br/>

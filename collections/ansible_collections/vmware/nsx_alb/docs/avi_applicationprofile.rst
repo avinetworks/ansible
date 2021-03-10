@@ -1,13 +1,3 @@
-#!/usr/bin/python3
-#
-# @author: Gaurav Rastogi (grastogi@avinetworks.com)
-#          Eric Anderson (eanderson@avinetworks.com)
-# module_check: supported
-# Avi Version: 17.1.1
-#
-# Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
-#
 .. vmware.nsx_alb.avi_applicationprofile:
 
 
@@ -49,6 +39,66 @@ Parameters
             <th>Choices/<font color="blue">Defaults</font></th>
             <th width="100%">Comments</th>
         </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>state</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: present
+                    choices: ["absent", "present"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - The state that should be applied on the entity.
+                </div>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_update_method</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: put
+                    choices: ["put", "patch"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Default method for object update is HTTP PUT.
+                </div><br>
+                <div style="font-size: small">
+                    - Setting to patch will override that behavior to use HTTP PATCH.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_patch_op</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    choices: ["add", "replace", "delete"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Patch operation to use when using avi_api_update_method as patch.
+                </div>
+            </td>
+        </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
@@ -59,12 +109,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Checksum of application profiles.
-                         - Internally set by cloud connector.
-                         - Field introduced in 17.2.14, 18.1.5, 18.2.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Checksum of application profiles.
+                </div><br>
+                                <div style="font-size: small">
+                 - Internally set by cloud connector.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 17.2.14, 18.1.5, 18.2.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -76,11 +132,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Name of the application profile creator.
-                         - Field introduced in 17.2.14, 18.1.5, 18.2.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Name of the application profile creator.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 17.2.14, 18.1.5, 18.2.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -92,10 +152,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - User defined description for the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - User defined description for the object.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -107,10 +169,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Specifies various dns service related controls for virtual service.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Specifies various dns service related controls for virtual service.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -122,10 +186,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Specifies various security related controls for virtual service.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Specifies various security related controls for virtual service.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -137,10 +203,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Specifies the http application proxy profile parameters.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Specifies the http application proxy profile parameters.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -152,13 +220,15 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - The name of the application profile.
-                                    </td>
+                                                <div style="font-size: small">
+                 - The name of the application profile.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -170,12 +240,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Specifies if client ip needs to be preserved for backend connection.
-                         - Not compatible with connection multiplexing.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Specifies if client ip needs to be preserved for backend connection.
+                </div><br>
+                                <div style="font-size: small">
+                 - Not compatible with connection multiplexing.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -187,12 +263,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Specifies if we need to preserve client port while preserving client ip for backend connections.
-                         - Field introduced in 17.2.7.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Specifies if we need to preserve client port while preserving client ip for backend connections.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 17.2.7.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -204,13 +286,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Specifies if destination ip and port needs to be preserved for backend connection.
-                         - Field introduced in 20.1.1.
-                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Specifies if destination ip and port needs to be preserved for backend connection.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                </div><br>
+                                <div style="font-size: small">
+                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -222,12 +312,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Specifies various sip service related controls for virtual service.
-                         - Field introduced in 17.2.8, 18.1.3, 18.2.1.
-                         - Allowed in basic edition, essentials edition, enterprise edition.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Specifies various sip service related controls for virtual service.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 17.2.8, 18.1.3, 18.2.1.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic edition, essentials edition, enterprise edition.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -239,10 +335,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Specifies the tcp application proxy profile parameters.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Specifies the tcp application proxy profile parameters.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -254,10 +352,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - It is a reference to an object of type tenant.
-                                    </td>
+                                                <div style="font-size: small">
+                 - It is a reference to an object of type tenant.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -269,17 +369,27 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - Specifies which application layer proxy is enabled for the virtual service.
-                         - Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
-                         - APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
-                         - Allowed in basic(allowed values- application_profile_type_l4,application_profile_type_http) edition, essentials(allowed values-
-                         - application_profile_type_l4) edition, enterprise edition.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Specifies which application layer proxy is enabled for the virtual service.
+                </div><br>
+                                <div style="font-size: small">
+                 - Enum options - APPLICATION_PROFILE_TYPE_L4, APPLICATION_PROFILE_TYPE_HTTP, APPLICATION_PROFILE_TYPE_SYSLOG, APPLICATION_PROFILE_TYPE_DNS,
+                </div><br>
+                                <div style="font-size: small">
+                 - APPLICATION_PROFILE_TYPE_SSL, APPLICATION_PROFILE_TYPE_SIP.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic(allowed values- application_profile_type_l4,application_profile_type_http) edition, essentials(allowed values-
+                </div><br>
+                                <div style="font-size: small">
+                 - application_profile_type_l4) edition, enterprise edition.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -291,10 +401,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Avi controller URL of the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Avi controller URL of the object.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -306,10 +418,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Uuid of the application profile.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Uuid of the application profile.
+                </div><br>
+                                            </td>
         </tr>
             </table>
     <br/>

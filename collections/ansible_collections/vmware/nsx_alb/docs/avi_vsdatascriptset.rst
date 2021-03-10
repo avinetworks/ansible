@@ -1,13 +1,3 @@
-#!/usr/bin/python3
-#
-# @author: Gaurav Rastogi (grastogi@avinetworks.com)
-#          Eric Anderson (eanderson@avinetworks.com)
-# module_check: supported
-# Avi Version: 17.1.1
-#
-# Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
-# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
-#
 .. vmware.nsx_alb.avi_vsdatascriptset:
 
 
@@ -49,6 +39,66 @@ Parameters
             <th>Choices/<font color="blue">Defaults</font></th>
             <th width="100%">Comments</th>
         </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>state</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: present
+                    choices: ["absent", "present"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - The state that should be applied on the entity.
+                </div>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_update_method</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    default: put
+                    choices: ["put", "patch"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Default method for object update is HTTP PUT.
+                </div><br>
+                <div style="font-size: small">
+                    - Setting to patch will override that behavior to use HTTP PATCH.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>avi_api_patch_op</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+                <div style="font-size: small">
+                    choices: ["add", "replace", "delete"]
+                </div>
+            <td>
+                <div style="font-size: small">
+                    - Patch operation to use when using avi_api_update_method as patch.
+                </div>
+            </td>
+        </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
@@ -59,11 +109,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Creator name.
-                         - Field introduced in 17.1.11,17.2.4.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Creator name.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 17.1.11,17.2.4.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -75,10 +129,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Datascripts to execute.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Datascripts to execute.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -90,10 +146,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - User defined description for the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - User defined description for the object.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -105,12 +163,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Geo location mapping database used by this datascriptset.
-                         - It is a reference to an object of type geodb.
-                         - Field introduced in 21.1.1.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Geo location mapping database used by this datascriptset.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is a reference to an object of type geodb.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 21.1.1.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -122,12 +186,18 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Ip reputation database that can be used by datascript functions.
-                         - It is a reference to an object of type ipreputationdb.
-                         - Field introduced in 20.1.3.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Ip reputation database that can be used by datascript functions.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is a reference to an object of type ipreputationdb.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.3.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -139,11 +209,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Uuid of ip groups that could be referred by vsdatascriptset objects.
-                         - It is a reference to an object of type ipaddrgroup.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Uuid of ip groups that could be referred by vsdatascriptset objects.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is a reference to an object of type ipaddrgroup.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -155,13 +229,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Key value pairs for granular object access control.
-                         - Also allows for classification and tagging of similar objects.
-                         - Field introduced in 20.1.2.
-                         - Maximum of 4 items allowed.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Key value pairs for granular object access control.
+                </div><br>
+                                <div style="font-size: small">
+                 - Also allows for classification and tagging of similar objects.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 20.1.2.
+                </div><br>
+                                <div style="font-size: small">
+                 - Maximum of 4 items allowed.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -173,13 +255,15 @@ Parameters
                 </div>
             </td>
             <td>
-                            <div style="font-size: small">
+                                <div style="font-size: small">
                 required: true
                 </div>
-                        </td>
+                            </td>
             <td>
-                                     - Name for the virtual service datascript collection.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Name for the virtual service datascript collection.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -191,11 +275,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Uuid of pool groups that could be referred by vsdatascriptset objects.
-                         - It is a reference to an object of type poolgroup.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Uuid of pool groups that could be referred by vsdatascriptset objects.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is a reference to an object of type poolgroup.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -207,11 +295,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Uuid of pools that could be referred by vsdatascriptset objects.
-                         - It is a reference to an object of type pool.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Uuid of pools that could be referred by vsdatascriptset objects.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is a reference to an object of type pool.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -223,13 +315,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - List of protocol parsers that could be referred by vsdatascriptset objects.
-                         - It is a reference to an object of type protocolparser.
-                         - Field introduced in 18.2.3.
-                         - Allowed in basic edition, essentials edition, enterprise edition.
-                                    </td>
+                                                <div style="font-size: small">
+                 - List of protocol parsers that could be referred by vsdatascriptset objects.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is a reference to an object of type protocolparser.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.3.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic edition, essentials edition, enterprise edition.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -241,13 +341,21 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - The rate limit definitions needed for this datascript.
-                         - The name is composed of the virtual service name and the datascript name.
-                         - Field introduced in 18.2.9.
-                         - Allowed in basic edition, essentials edition, enterprise edition.
-                                    </td>
+                                                <div style="font-size: small">
+                 - The rate limit definitions needed for this datascript.
+                </div><br>
+                                <div style="font-size: small">
+                 - The name is composed of the virtual service name and the datascript name.
+                </div><br>
+                                <div style="font-size: small">
+                 - Field introduced in 18.2.9.
+                </div><br>
+                                <div style="font-size: small">
+                 - Allowed in basic edition, essentials edition, enterprise edition.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -259,11 +367,15 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Uuid of string groups that could be referred by vsdatascriptset objects.
-                         - It is a reference to an object of type stringgroup.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Uuid of string groups that could be referred by vsdatascriptset objects.
+                </div><br>
+                                <div style="font-size: small">
+                 - It is a reference to an object of type stringgroup.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -275,10 +387,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - It is a reference to an object of type tenant.
-                                    </td>
+                                                <div style="font-size: small">
+                 - It is a reference to an object of type tenant.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -290,10 +404,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Avi controller URL of the object.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Avi controller URL of the object.
+                </div><br>
+                                            </td>
         </tr>
                 <tr>
             <td colspan="2">
@@ -305,10 +421,12 @@ Parameters
                 </div>
             </td>
             <td>
-                                                </td>
+                                                            </td>
             <td>
-                                     - Uuid of the virtual service datascript collection.
-                                    </td>
+                                                <div style="font-size: small">
+                 - Uuid of the virtual service datascript collection.
+                </div><br>
+                                            </td>
         </tr>
             </table>
     <br/>
