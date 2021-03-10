@@ -8,674 +8,1652 @@
 # Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
-from __future__ import (absolute_import, division, print_function)
-__metaclass__ = type
+.. vmware.nsx_alb.avi_analyticsprofile:
 
 
-ANSIBLE_METADATA = {'metadata_version': '1.1',
-                    'status': ['preview'],
-                    'supported_by': 'community'}
+*****************************
+vmware.nsx_alb.avi_analyticsprofile
+*****************************
 
-DOCUMENTATION = '''
----
-module: avi_analyticsprofile
-author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
-short_description: Module for setup of AnalyticsProfile Avi RESTful Object
-description:
-    - This module is used to configure AnalyticsProfile object
-    - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
-version_added: "2.3"
-options:
-    state:
-        description:
-            - The state that should be applied on the entity.
-        default: present
-        choices: ["absent", "present"]
-        type: str
-    avi_api_update_method:
-        description:
-            - Default method for object update is HTTP PUT.
-            - Setting to patch will override that behavior to use HTTP PATCH.
-        version_added: "2.5"
-        default: put
-        choices: ["put", "patch"]
-        type: str
-    avi_api_patch_op:
-        description:
-            - Patch operation to use when using avi_api_update_method as patch.
-        version_added: "2.5"
-        choices: ["add", "replace", "delete"]
-        type: str
-    apdex_response_threshold:
-        description:
-            - If a client receives an http response in less than the satisfactory latency threshold, the request is considered satisfied.
-            - It is considered tolerated if it is not satisfied and less than tolerated latency factor multiplied by the satisfactory latency threshold.
-            - Greater than this number and the client's request is considered frustrated.
-            - Allowed values are 1-30000.
-            - Unit is milliseconds.
-            - Allowed in basic(allowed values- 500) edition, essentials(allowed values- 500) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 500.
-        type: int
-    apdex_response_tolerated_factor:
-        description:
-            - Client tolerated response latency factor.
-            - Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated.
-            - Allowed values are 1-1000.
-            - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
-        type: float
-    apdex_rtt_threshold:
-        description:
-            - Satisfactory client to avi round trip time(rtt).
-            - Allowed values are 1-2000.
-            - Unit is milliseconds.
-            - Allowed in basic(allowed values- 250) edition, essentials(allowed values- 250) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 250.
-        type: int
-    apdex_rtt_tolerated_factor:
-        description:
-            - Tolerated client to avi round trip time(rtt) factor.
-            - It is a multiple of apdex_rtt_tolerated_factor.
-            - Allowed values are 1-1000.
-            - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
-        type: float
-    apdex_rum_threshold:
-        description:
-            - If a client is able to load a page in less than the satisfactory latency threshold, the pageload is considered satisfied.
-            - It is considered tolerated if it is greater than satisfied but less than the tolerated latency multiplied by satisifed latency.
-            - Greater than this number and the client's request is considered frustrated.
-            - A pageload includes the time for dns lookup, download of all http objects, and page render time.
-            - Allowed values are 1-30000.
-            - Unit is milliseconds.
-            - Allowed in basic(allowed values- 5000) edition, essentials(allowed values- 5000) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 5000.
-        type: int
-    apdex_rum_tolerated_factor:
-        description:
-            - Virtual service threshold factor for tolerated page load time (plt) as multiple of apdex_rum_threshold.
-            - Allowed values are 1-1000.
-            - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
-        type: float
-    apdex_server_response_threshold:
-        description:
-            - A server http response is considered satisfied if latency is less than the satisfactory latency threshold.
-            - The response is considered tolerated when it is greater than satisfied but less than the tolerated latency factor * s_latency.
-            - Greater than this number and the server response is considered frustrated.
-            - Allowed values are 1-30000.
-            - Unit is milliseconds.
-            - Allowed in basic(allowed values- 400) edition, essentials(allowed values- 400) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 400.
-        type: int
-    apdex_server_response_tolerated_factor:
-        description:
-            - Server tolerated response latency factor.
-            - Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated.
-            - Allowed values are 1-1000.
-            - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
-        type: float
-    apdex_server_rtt_threshold:
-        description:
-            - Satisfactory client to avi round trip time(rtt).
-            - Allowed values are 1-2000.
-            - Unit is milliseconds.
-            - Allowed in basic(allowed values- 125) edition, essentials(allowed values- 125) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 125.
-        type: int
-    apdex_server_rtt_tolerated_factor:
-        description:
-            - Tolerated client to avi round trip time(rtt) factor.
-            - It is a multiple of apdex_rtt_tolerated_factor.
-            - Allowed values are 1-1000.
-            - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
-        type: float
-    client_log_config:
-        description:
-            - Configure which logs are sent to the avi controller from ses and how they are processed.
-        type: dict
-    client_log_streaming_config:
-        description:
-            - Configure to stream logs to an external server.
-            - Field introduced in 17.1.1.
-            - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.4"
-        type: dict
-    conn_lossy_ooo_threshold:
-        description:
-            - A connection between client and avi is considered lossy when more than this percentage of out of order packets are received.
-            - Allowed values are 1-100.
-            - Unit is percent.
-            - Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 50.
-        type: int
-    conn_lossy_timeo_rexmt_threshold:
-        description:
-            - A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted due to timeout.
-            - Allowed values are 1-100.
-            - Unit is percent.
-            - Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 20.
-        type: int
-    conn_lossy_total_rexmt_threshold:
-        description:
-            - A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted.
-            - Allowed values are 1-100.
-            - Unit is percent.
-            - Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 50.
-        type: int
-    conn_lossy_zero_win_size_event_threshold:
-        description:
-            - A client connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
-            - Allowed values are 0-100.
-            - Unit is percent.
-            - Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 2.
-        type: int
-    conn_server_lossy_ooo_threshold:
-        description:
-            - A connection between avi and server is considered lossy when more than this percentage of out of order packets are received.
-            - Allowed values are 1-100.
-            - Unit is percent.
-            - Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 50.
-        type: int
-    conn_server_lossy_timeo_rexmt_threshold:
-        description:
-            - A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout.
-            - Allowed values are 1-100.
-            - Unit is percent.
-            - Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 20.
-        type: int
-    conn_server_lossy_total_rexmt_threshold:
-        description:
-            - A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted.
-            - Allowed values are 1-100.
-            - Unit is percent.
-            - Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 50.
-        type: int
-    conn_server_lossy_zero_win_size_event_threshold:
-        description:
-            - A server connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
-            - Allowed values are 0-100.
-            - Unit is percent.
-            - Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 2.
-        type: int
-    description:
-        description:
-            - User defined description for the object.
-        type: str
-    disable_ondemand_metrics:
-        description:
-            - Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
-            - In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
-            - Field deprecated in 20.1.3.
-            - Field introduced in 18.1.1.
-        type: bool
-    disable_se_analytics:
-        description:
-            - Disable node (service engine) level analytics forvs metrics.
-            - Field deprecated in 20.1.3.
-        type: bool
-    disable_server_analytics:
-        description:
-            - Disable analytics on backend servers.
-            - This may be desired in container environment when there are large number of ephemeral servers.
-            - Additionally, no healthscore of servers is computed when server analytics is disabled.
-            - Field deprecated in 20.1.3.
-        type: bool
-    disable_vs_analytics:
-        description:
-            - Disable virtualservice (frontend) analytics.
-            - This flag disables metrics and healthscore for virtualservice.
-            - Field deprecated in 20.1.3.
-            - Field introduced in 18.2.1.
-        type: bool
-    enable_adaptive_config:
-        description:
-            - Enable adaptive configuration for optimizing resource usage.
-            - Field introduced in 20.1.1.
-            - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        type: bool
-    enable_advanced_analytics:
-        description:
-            - Enables advanced analytics features like anomaly detection.
-            - If set to false, anomaly computation (and associated rules/events) for vs, pool and server metrics will be deactivated.
-            - However, setting it to false reduces cpu and memory requirements for analytics subsystem.
-            - Field introduced in 17.2.13, 18.1.5, 18.2.1.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Special default for basic edition is false, essentials edition is false, enterprise is true.
-            - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.9"
-        type: bool
-    enable_ondemand_metrics:
-        description:
-            - Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
-            - In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
-            - Field introduced in 20.1.3.
-            - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.9"
-        type: bool
-    enable_se_analytics:
-        description:
-            - Enable node (service engine) level analytics forvs metrics.
-            - Field introduced in 20.1.3.
-            - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        type: bool
-    enable_server_analytics:
-        description:
-            - Enables analytics on backend servers.
-            - This may be desired in container environment when there are large number of ephemeral servers.
-            - Additionally, no healthscore of servers is computed when server analytics is enabled.
-            - Field introduced in 20.1.3.
-            - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        type: bool
-    enable_vs_analytics:
-        description:
-            - Enable virtualservice (frontend) analytics.
-            - This flag enables metrics and healthscore for virtualservice.
-            - Field introduced in 20.1.3.
-            - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.9"
-        type: bool
-    exclude_client_close_before_request_as_error:
-        description:
-            - Exclude client closed connection before an http request could be completed from being classified as an error.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    exclude_dns_policy_drop_as_significant:
-        description:
-            - Exclude dns policy drops from the list of errors.
-            - Field introduced in 17.2.2.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
-        type: bool
-    exclude_gs_down_as_error:
-        description:
-            - Exclude queries to gslb services that are operationally down from the list of errors.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    exclude_http_error_codes:
-        description:
-            - List of http status codes to be excluded from being classified as an error.
-            - Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a dos attack.
-        type: list
-    exclude_invalid_dns_domain_as_error:
-        description:
-            - Exclude dns queries to domains outside the domains configured in the dns application profile from the list of errors.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    exclude_invalid_dns_query_as_error:
-        description:
-            - Exclude invalid dns queries from the list of errors.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    exclude_issuer_revoked_ocsp_responses_as_error:
-        description:
-            - Exclude the issuer-revoked ocsp responses from the list of errors.
-            - Field introduced in 20.1.1.
-            - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        type: bool
-    exclude_no_dns_record_as_error:
-        description:
-            - Exclude queries to domains that did not have configured services/records from the list of errors.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    exclude_no_valid_gs_member_as_error:
-        description:
-            - Exclude queries to gslb services that have no available members from the list of errors.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    exclude_persistence_change_as_error:
-        description:
-            - Exclude persistence server changed while load balancing' from the list of errors.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    exclude_revoked_ocsp_responses_as_error:
-        description:
-            - Exclude the revoked ocsp certificate status responses from the list of errors.
-            - Field introduced in 20.1.1.
-            - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        type: bool
-    exclude_server_dns_error_as_error:
-        description:
-            - Exclude server dns error response from the list of errors.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    exclude_server_tcp_reset_as_error:
-        description:
-            - Exclude server tcp reset from errors.
-            - It is common for applications like ms exchange.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    exclude_sip_error_codes:
-        description:
-            - List of sip status codes to be excluded from being classified as an error.
-            - Field introduced in 17.2.13, 18.1.5, 18.2.1.
-            - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
-        type: list
-    exclude_stale_ocsp_responses_as_error:
-        description:
-            - Exclude the stale ocsp certificate status responses from the list of errors.
-            - Field introduced in 20.1.1.
-            - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        type: bool
-    exclude_syn_retransmit_as_error:
-        description:
-            - Exclude 'server unanswered syns' from the list of errors.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    exclude_tcp_reset_as_error:
-        description:
-            - Exclude tcp resets by client from the list of potential errors.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    exclude_unavailable_ocsp_responses_as_error:
-        description:
-            - Exclude the unavailable ocsp responses from the list of errors.
-            - Field introduced in 20.1.1.
-            - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        type: bool
-    exclude_unsupported_dns_query_as_error:
-        description:
-            - Exclude unsupported dns queries from the list of errors.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    healthscore_max_server_limit:
-        description:
-            - Skips health score computation of pool servers when number of servers in a pool is more than this setting.
-            - Allowed values are 0-5000.
-            - Special values are 0- 'server health score is deactivated'.
-            - Field introduced in 17.2.13, 18.1.4.
-            - Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
-            - Special default for basic edition is 0, essentials edition is 0, enterprise is 20.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 20.
-        version_added: "2.9"
-        type: int
-    hs_event_throttle_window:
-        description:
-            - Time window (in secs) within which only unique health change events should occur.
-            - Allowed in basic(allowed values- 1209600) edition, essentials(allowed values- 1209600) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 1209600.
-        type: int
-    hs_max_anomaly_penalty:
-        description:
-            - Maximum penalty that may be deducted from health score for anomalies.
-            - Allowed values are 0-100.
-            - Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 10.
-        type: int
-    hs_max_resources_penalty:
-        description:
-            - Maximum penalty that may be deducted from health score for high resource utilization.
-            - Allowed values are 0-100.
-            - Allowed in basic(allowed values- 25) edition, essentials(allowed values- 25) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 25.
-        type: int
-    hs_max_security_penalty:
-        description:
-            - Maximum penalty that may be deducted from health score based on security assessment.
-            - Allowed values are 0-100.
-            - Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 100.
-        type: int
-    hs_min_dos_rate:
-        description:
-            - Dos connection rate below which the dos security assessment will not kick in.
-            - Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 1000.
-        type: int
-    hs_performance_boost:
-        description:
-            - Adds free performance score credits to health score.
-            - It can be used for compensating health score for known slow applications.
-            - Allowed values are 0-100.
-            - Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        type: int
-    hs_pscore_traffic_threshold_l4_client:
-        description:
-            - Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
-            - Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 10.0.
-        type: float
-    hs_pscore_traffic_threshold_l4_server:
-        description:
-            - Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
-            - Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 10.0.
-        type: float
-    hs_security_certscore_expired:
-        description:
-            - Score assigned when the certificate has expired.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
-        type: float
-    hs_security_certscore_gt30d:
-        description:
-            - Score assigned when the certificate expires in more than 30 days.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
-        type: float
-    hs_security_certscore_le07d:
-        description:
-            - Score assigned when the certificate expires in less than or equal to 7 days.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 2.0) edition, essentials(allowed values- 2.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 2.0.
-        type: float
-    hs_security_certscore_le30d:
-        description:
-            - Score assigned when the certificate expires in less than or equal to 30 days.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 4.0) edition, essentials(allowed values- 4.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
-        type: float
-    hs_security_chain_invalidity_penalty:
-        description:
-            - Penalty for allowing certificates with invalid chain.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
-        type: float
-    hs_security_cipherscore_eq000b:
-        description:
-            - Score assigned when the minimum cipher strength is 0 bits.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
-        type: float
-    hs_security_cipherscore_ge128b:
-        description:
-            - Score assigned when the minimum cipher strength is greater than equal to 128 bits.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
-        type: float
-    hs_security_cipherscore_lt128b:
-        description:
-            - Score assigned when the minimum cipher strength is less than 128 bits.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 3.5.
-        type: float
-    hs_security_encalgo_score_none:
-        description:
-            - Score assigned when no algorithm is used for encryption.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
-        type: float
-    hs_security_encalgo_score_rc4:
-        description:
-            - Score assigned when rc4 algorithm is used for encryption.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 2.5) edition, essentials(allowed values- 2.5) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 2.5.
-        type: float
-    hs_security_hsts_penalty:
-        description:
-            - Penalty for not enabling hsts.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
-        type: float
-    hs_security_nonpfs_penalty:
-        description:
-            - Penalty for allowing non-pfs handshakes.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
-        type: float
-    hs_security_ocsp_revoked_score:
-        description:
-            - Score assigned when ocsp certificate status is set to revoked or issuer revoked.
-            - Allowed values are 0.0-5.0.
-            - Field introduced in 20.1.1.
-            - Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
-        type: float
-    hs_security_selfsignedcert_penalty:
-        description:
-            - Deprecated.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
-        type: float
-    hs_security_ssl30_score:
-        description:
-            - Score assigned when supporting ssl3.0 encryption protocol.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 3.5.
-        type: float
-    hs_security_tls10_score:
-        description:
-            - Score assigned when supporting tls1.0 encryption protocol.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
-        type: float
-    hs_security_tls11_score:
-        description:
-            - Score assigned when supporting tls1.1 encryption protocol.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
-        type: float
-    hs_security_tls12_score:
-        description:
-            - Score assigned when supporting tls1.2 encryption protocol.
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
-        type: float
-    hs_security_tls13_score:
-        description:
-            - Score assigned when supporting tls1.3 encryption protocol.
-            - Allowed values are 0-5.
-            - Field introduced in 18.2.6.
-            - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
-        type: float
-    hs_security_weak_signature_algo_penalty:
-        description:
-            - Penalty for allowing weak signature algorithm(s).
-            - Allowed values are 0-5.
-            - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
-        type: float
-    labels:
-        description:
-            - Key value pairs for granular object access control.
-            - Also allows for classification and tagging of similar objects.
-            - Field introduced in 20.1.2.
-            - Maximum of 4 items allowed.
-        type: list
-    name:
-        description:
-            - The name of the analytics profile.
-        required: true
-        type: str
-    ondemand_metrics_idle_timeout:
-        description:
-            - This flag sets the time duration of no live data traffic after which virtual service metrics processing is suspended.
-            - It is applicable only when enable_ondemand_metrics is set to false.
-            - Field introduced in 18.1.1.
-            - Unit is seconds.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 1800.
-        version_added: "2.9"
-        type: int
-    ranges:
-        description:
-            - List of http status code ranges to be excluded from being classified as an error.
-        type: list
-    resp_code_block:
-        description:
-            - Block of http response codes to be excluded from being classified as an error.
-            - Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX.
-        type: list
-    sensitive_log_profile:
-        description:
-            - Rules applied to the http application log for filtering sensitive information.
-            - Field introduced in 17.2.10, 18.1.2.
-            - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
-        type: dict
-    sip_log_depth:
-        description:
-            - Maximum number of sip messages added in logs for a sip transaction.
-            - By default, this value is 20.
-            - Allowed values are 1-1000.
-            - Field introduced in 17.2.13, 18.1.5, 18.2.1.
-            - Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 20.
-        version_added: "2.9"
-        type: int
-    tenant_ref:
-        description:
-            - It is a reference to an object of type tenant.
-        type: str
-    url:
-        description:
-            - Avi controller URL of the object.
-        type: str
-    uuid:
-        description:
-            - Uuid of the analytics profile.
-        type: str
-extends_documentation_fragment:
-    - avi
-'''
+**Module for setup of AnalyticsProfile Avi RESTful Object**
 
-EXAMPLES = """
+
+Version added: "1.0.0"
+
+.. contents::
+   :local:
+   :depth: 1
+
+
+Synopsis
+--------
+- This module is used to configure AnalyticsProfile object
+- more examples at U(https://github.com/avinetworks/devops)
+
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- avisdk
+
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="2">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+            <th width="100%">Comments</th>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>apdex_response_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - If a client receives an http response in less than the satisfactory latency threshold, the request is considered satisfied.
+                         - It is considered tolerated if it is not satisfied and less than tolerated latency factor multiplied by the satisfactory latency threshold.
+                         - Greater than this number and the client's request is considered frustrated.
+                         - Allowed values are 1-30000.
+                         - Unit is milliseconds.
+                         - Allowed in basic(allowed values- 500) edition, essentials(allowed values- 500) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 500.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>apdex_response_tolerated_factor:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Client tolerated response latency factor.
+                         - Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated.
+                         - Allowed values are 1-1000.
+                         - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>apdex_rtt_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Satisfactory client to avi round trip time(rtt).
+                         - Allowed values are 1-2000.
+                         - Unit is milliseconds.
+                         - Allowed in basic(allowed values- 250) edition, essentials(allowed values- 250) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 250.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>apdex_rtt_tolerated_factor:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Tolerated client to avi round trip time(rtt) factor.
+                         - It is a multiple of apdex_rtt_tolerated_factor.
+                         - Allowed values are 1-1000.
+                         - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>apdex_rum_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - If a client is able to load a page in less than the satisfactory latency threshold, the pageload is considered satisfied.
+                         - It is considered tolerated if it is greater than satisfied but less than the tolerated latency multiplied by satisifed latency.
+                         - Greater than this number and the client's request is considered frustrated.
+                         - A pageload includes the time for dns lookup, download of all http objects, and page render time.
+                         - Allowed values are 1-30000.
+                         - Unit is milliseconds.
+                         - Allowed in basic(allowed values- 5000) edition, essentials(allowed values- 5000) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 5000.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>apdex_rum_tolerated_factor:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Virtual service threshold factor for tolerated page load time (plt) as multiple of apdex_rum_threshold.
+                         - Allowed values are 1-1000.
+                         - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>apdex_server_response_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - A server http response is considered satisfied if latency is less than the satisfactory latency threshold.
+                         - The response is considered tolerated when it is greater than satisfied but less than the tolerated latency factor * s_latency.
+                         - Greater than this number and the server response is considered frustrated.
+                         - Allowed values are 1-30000.
+                         - Unit is milliseconds.
+                         - Allowed in basic(allowed values- 400) edition, essentials(allowed values- 400) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 400.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>apdex_server_response_tolerated_factor:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Server tolerated response latency factor.
+                         - Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated.
+                         - Allowed values are 1-1000.
+                         - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>apdex_server_rtt_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Satisfactory client to avi round trip time(rtt).
+                         - Allowed values are 1-2000.
+                         - Unit is milliseconds.
+                         - Allowed in basic(allowed values- 125) edition, essentials(allowed values- 125) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 125.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>apdex_server_rtt_tolerated_factor:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Tolerated client to avi round trip time(rtt) factor.
+                         - It is a multiple of apdex_rtt_tolerated_factor.
+                         - Allowed values are 1-1000.
+                         - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>client_log_config:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Configure which logs are sent to the avi controller from ses and how they are processed.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>client_log_streaming_config:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Configure to stream logs to an external server.
+                         - Field introduced in 17.1.1.
+                         - Allowed in basic edition, essentials edition, enterprise edition.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>conn_lossy_ooo_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - A connection between client and avi is considered lossy when more than this percentage of out of order packets are received.
+                         - Allowed values are 1-100.
+                         - Unit is percent.
+                         - Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 50.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>conn_lossy_timeo_rexmt_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted due to timeout.
+                         - Allowed values are 1-100.
+                         - Unit is percent.
+                         - Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>conn_lossy_total_rexmt_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted.
+                         - Allowed values are 1-100.
+                         - Unit is percent.
+                         - Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 50.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>conn_lossy_zero_win_size_event_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - A client connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
+                         - Allowed values are 0-100.
+                         - Unit is percent.
+                         - Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 2.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>conn_server_lossy_ooo_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - A connection between avi and server is considered lossy when more than this percentage of out of order packets are received.
+                         - Allowed values are 1-100.
+                         - Unit is percent.
+                         - Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 50.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>conn_server_lossy_timeo_rexmt_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout.
+                         - Allowed values are 1-100.
+                         - Unit is percent.
+                         - Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>conn_server_lossy_total_rexmt_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted.
+                         - Allowed values are 1-100.
+                         - Unit is percent.
+                         - Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 50.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>conn_server_lossy_zero_win_size_event_threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - A server connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
+                         - Allowed values are 0-100.
+                         - Unit is percent.
+                         - Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 2.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>description:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - User defined description for the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>disable_ondemand_metrics:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
+                         - In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
+                         - Field deprecated in 20.1.3.
+                         - Field introduced in 18.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>disable_se_analytics:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Disable node (service engine) level analytics forvs metrics.
+                         - Field deprecated in 20.1.3.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>disable_server_analytics:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Disable analytics on backend servers.
+                         - This may be desired in container environment when there are large number of ephemeral servers.
+                         - Additionally, no healthscore of servers is computed when server analytics is disabled.
+                         - Field deprecated in 20.1.3.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>disable_vs_analytics:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Disable virtualservice (frontend) analytics.
+                         - This flag disables metrics and healthscore for virtualservice.
+                         - Field deprecated in 20.1.3.
+                         - Field introduced in 18.2.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>enable_adaptive_config:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Enable adaptive configuration for optimizing resource usage.
+                         - Field introduced in 20.1.1.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>enable_advanced_analytics:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Enables advanced analytics features like anomaly detection.
+                         - If set to false, anomaly computation (and associated rules/events) for vs, pool and server metrics will be deactivated.
+                         - However, setting it to false reduces cpu and memory requirements for analytics subsystem.
+                         - Field introduced in 17.2.13, 18.1.5, 18.2.1.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Special default for basic edition is false, essentials edition is false, enterprise is true.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>enable_ondemand_metrics:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
+                         - In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
+                         - Field introduced in 20.1.3.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>enable_se_analytics:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Enable node (service engine) level analytics forvs metrics.
+                         - Field introduced in 20.1.3.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>enable_server_analytics:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Enables analytics on backend servers.
+                         - This may be desired in container environment when there are large number of ephemeral servers.
+                         - Additionally, no healthscore of servers is computed when server analytics is enabled.
+                         - Field introduced in 20.1.3.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>enable_vs_analytics:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Enable virtualservice (frontend) analytics.
+                         - This flag enables metrics and healthscore for virtualservice.
+                         - Field introduced in 20.1.3.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_client_close_before_request_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude client closed connection before an http request could be completed from being classified as an error.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_dns_policy_drop_as_significant:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude dns policy drops from the list of errors.
+                         - Field introduced in 17.2.2.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_gs_down_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude queries to gslb services that are operationally down from the list of errors.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_http_error_codes:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - List of http status codes to be excluded from being classified as an error.
+                         - Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a dos attack.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_invalid_dns_domain_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude dns queries to domains outside the domains configured in the dns application profile from the list of errors.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_invalid_dns_query_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude invalid dns queries from the list of errors.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_issuer_revoked_ocsp_responses_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude the issuer-revoked ocsp responses from the list of errors.
+                         - Field introduced in 20.1.1.
+                         - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_no_dns_record_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude queries to domains that did not have configured services/records from the list of errors.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_no_valid_gs_member_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude queries to gslb services that have no available members from the list of errors.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_persistence_change_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude persistence server changed while load balancing' from the list of errors.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_revoked_ocsp_responses_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude the revoked ocsp certificate status responses from the list of errors.
+                         - Field introduced in 20.1.1.
+                         - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_server_dns_error_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude server dns error response from the list of errors.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_server_tcp_reset_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude server tcp reset from errors.
+                         - It is common for applications like ms exchange.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_sip_error_codes:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - List of sip status codes to be excluded from being classified as an error.
+                         - Field introduced in 17.2.13, 18.1.5, 18.2.1.
+                         - Allowed in basic edition, essentials edition, enterprise edition.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_stale_ocsp_responses_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude the stale ocsp certificate status responses from the list of errors.
+                         - Field introduced in 20.1.1.
+                         - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_syn_retransmit_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude 'server unanswered syns' from the list of errors.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_tcp_reset_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude tcp resets by client from the list of potential errors.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_unavailable_ocsp_responses_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude the unavailable ocsp responses from the list of errors.
+                         - Field introduced in 20.1.1.
+                         - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>exclude_unsupported_dns_query_as_error:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Exclude unsupported dns queries from the list of errors.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>healthscore_max_server_limit:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Skips health score computation of pool servers when number of servers in a pool is more than this setting.
+                         - Allowed values are 0-5000.
+                         - Special values are 0- 'server health score is deactivated'.
+                         - Field introduced in 17.2.13, 18.1.4.
+                         - Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+                         - Special default for basic edition is 0, essentials edition is 0, enterprise is 20.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_event_throttle_window:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Time window (in secs) within which only unique health change events should occur.
+                         - Allowed in basic(allowed values- 1209600) edition, essentials(allowed values- 1209600) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 1209600.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_max_anomaly_penalty:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Maximum penalty that may be deducted from health score for anomalies.
+                         - Allowed values are 0-100.
+                         - Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 10.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_max_resources_penalty:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Maximum penalty that may be deducted from health score for high resource utilization.
+                         - Allowed values are 0-100.
+                         - Allowed in basic(allowed values- 25) edition, essentials(allowed values- 25) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 25.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_max_security_penalty:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Maximum penalty that may be deducted from health score based on security assessment.
+                         - Allowed values are 0-100.
+                         - Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 100.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_min_dos_rate:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Dos connection rate below which the dos security assessment will not kick in.
+                         - Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_performance_boost:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Adds free performance score credits to health score.
+                         - It can be used for compensating health score for known slow applications.
+                         - Allowed values are 0-100.
+                         - Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_pscore_traffic_threshold_l4_client:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
+                         - Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 10.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_pscore_traffic_threshold_l4_server:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
+                         - Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 10.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_certscore_expired:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when the certificate has expired.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_certscore_gt30d:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when the certificate expires in more than 30 days.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_certscore_le07d:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when the certificate expires in less than or equal to 7 days.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 2.0) edition, essentials(allowed values- 2.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 2.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_certscore_le30d:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when the certificate expires in less than or equal to 30 days.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 4.0) edition, essentials(allowed values- 4.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_chain_invalidity_penalty:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Penalty for allowing certificates with invalid chain.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_cipherscore_eq000b:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when the minimum cipher strength is 0 bits.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_cipherscore_ge128b:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when the minimum cipher strength is greater than equal to 128 bits.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_cipherscore_lt128b:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when the minimum cipher strength is less than 128 bits.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 3.5.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_encalgo_score_none:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when no algorithm is used for encryption.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_encalgo_score_rc4:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when rc4 algorithm is used for encryption.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 2.5) edition, essentials(allowed values- 2.5) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 2.5.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_hsts_penalty:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Penalty for not enabling hsts.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_nonpfs_penalty:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Penalty for allowing non-pfs handshakes.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_ocsp_revoked_score:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when ocsp certificate status is set to revoked or issuer revoked.
+                         - Allowed values are 0.0-5.0.
+                         - Field introduced in 20.1.1.
+                         - Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_selfsignedcert_penalty:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Deprecated.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_ssl30_score:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when supporting ssl3.0 encryption protocol.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 3.5.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_tls10_score:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when supporting tls1.0 encryption protocol.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_tls11_score:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when supporting tls1.1 encryption protocol.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_tls12_score:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when supporting tls1.2 encryption protocol.
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_tls13_score:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Score assigned when supporting tls1.3 encryption protocol.
+                         - Allowed values are 0-5.
+                         - Field introduced in 18.2.6.
+                         - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>hs_security_weak_signature_algo_penalty:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">float</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Penalty for allowing weak signature algorithm(s).
+                         - Allowed values are 0-5.
+                         - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>labels:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Key value pairs for granular object access control.
+                         - Also allows for classification and tagging of similar objects.
+                         - Field introduced in 20.1.2.
+                         - Maximum of 4 items allowed.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>name:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - The name of the analytics profile.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>ondemand_metrics_idle_timeout:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - This flag sets the time duration of no live data traffic after which virtual service metrics processing is suspended.
+                         - It is applicable only when enable_ondemand_metrics is set to false.
+                         - Field introduced in 18.1.1.
+                         - Unit is seconds.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 1800.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>ranges:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - List of http status code ranges to be excluded from being classified as an error.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>resp_code_block:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Block of http response codes to be excluded from being classified as an error.
+                         - Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>sensitive_log_profile:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Rules applied to the http application log for filtering sensitive information.
+                         - Field introduced in 17.2.10, 18.1.2.
+                         - Allowed in basic edition, essentials edition, enterprise edition.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>sip_log_depth:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Maximum number of sip messages added in logs for a sip transaction.
+                         - By default, this value is 20.
+                         - Allowed values are 1-1000.
+                         - Field introduced in 17.2.13, 18.1.5, 18.2.1.
+                         - Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>tenant_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - It is a reference to an object of type tenant.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>url:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Avi controller URL of the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>uuid:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Uuid of the analytics profile.
+                                    </td>
+        </tr>
+            </table>
+    <br/>
+
+
+Examples
+--------
+
+.. code-block:: yaml
+
+    
   - name: Create a custom Analytics profile object
     avi_analyticsprofile:
       controller: '{{ controller }}'
@@ -734,124 +1712,18 @@ EXAMPLES = """
       hs_security_weak_signature_algo_penalty: 1.0
       name: jason-analytics-profile
       tenant_ref: /api/tenant?name=Demo
-"""
-
-RETURN = '''
-obj:
-    description: AnalyticsProfile (api/analyticsprofile) object
-    returned: success, changed
-    type: dict
-'''
-
-from ansible.module_utils.basic import AnsibleModule
 
 
-def main():
-    argument_specs = dict(
-        state=dict(default='present',
-                   choices=['absent', 'present']),
-        avi_api_update_method=dict(default='put',
-                                   choices=['put', 'patch']),
-        avi_api_patch_op=dict(choices=['add', 'replace', 'delete']),
-        apdex_response_threshold=dict(type='int',),
-        apdex_response_tolerated_factor=dict(type='float',),
-        apdex_rtt_threshold=dict(type='int',),
-        apdex_rtt_tolerated_factor=dict(type='float',),
-        apdex_rum_threshold=dict(type='int',),
-        apdex_rum_tolerated_factor=dict(type='float',),
-        apdex_server_response_threshold=dict(type='int',),
-        apdex_server_response_tolerated_factor=dict(type='float',),
-        apdex_server_rtt_threshold=dict(type='int',),
-        apdex_server_rtt_tolerated_factor=dict(type='float',),
-        client_log_config=dict(type='dict',),
-        client_log_streaming_config=dict(type='dict',),
-        conn_lossy_ooo_threshold=dict(type='int',),
-        conn_lossy_timeo_rexmt_threshold=dict(type='int',),
-        conn_lossy_total_rexmt_threshold=dict(type='int',),
-        conn_lossy_zero_win_size_event_threshold=dict(type='int',),
-        conn_server_lossy_ooo_threshold=dict(type='int',),
-        conn_server_lossy_timeo_rexmt_threshold=dict(type='int',),
-        conn_server_lossy_total_rexmt_threshold=dict(type='int',),
-        conn_server_lossy_zero_win_size_event_threshold=dict(type='int',),
-        description=dict(type='str',),
-        disable_ondemand_metrics=dict(type='bool',),
-        disable_se_analytics=dict(type='bool',),
-        disable_server_analytics=dict(type='bool',),
-        disable_vs_analytics=dict(type='bool',),
-        enable_adaptive_config=dict(type='bool',),
-        enable_advanced_analytics=dict(type='bool',),
-        enable_ondemand_metrics=dict(type='bool',),
-        enable_se_analytics=dict(type='bool',),
-        enable_server_analytics=dict(type='bool',),
-        enable_vs_analytics=dict(type='bool',),
-        exclude_client_close_before_request_as_error=dict(type='bool',),
-        exclude_dns_policy_drop_as_significant=dict(type='bool',),
-        exclude_gs_down_as_error=dict(type='bool',),
-        exclude_http_error_codes=dict(type='list',),
-        exclude_invalid_dns_domain_as_error=dict(type='bool',),
-        exclude_invalid_dns_query_as_error=dict(type='bool',),
-        exclude_issuer_revoked_ocsp_responses_as_error=dict(type='bool',),
-        exclude_no_dns_record_as_error=dict(type='bool',),
-        exclude_no_valid_gs_member_as_error=dict(type='bool',),
-        exclude_persistence_change_as_error=dict(type='bool',),
-        exclude_revoked_ocsp_responses_as_error=dict(type='bool',),
-        exclude_server_dns_error_as_error=dict(type='bool',),
-        exclude_server_tcp_reset_as_error=dict(type='bool',),
-        exclude_sip_error_codes=dict(type='list',),
-        exclude_stale_ocsp_responses_as_error=dict(type='bool',),
-        exclude_syn_retransmit_as_error=dict(type='bool',),
-        exclude_tcp_reset_as_error=dict(type='bool',),
-        exclude_unavailable_ocsp_responses_as_error=dict(type='bool',),
-        exclude_unsupported_dns_query_as_error=dict(type='bool',),
-        healthscore_max_server_limit=dict(type='int',),
-        hs_event_throttle_window=dict(type='int',),
-        hs_max_anomaly_penalty=dict(type='int',),
-        hs_max_resources_penalty=dict(type='int',),
-        hs_max_security_penalty=dict(type='int',),
-        hs_min_dos_rate=dict(type='int',),
-        hs_performance_boost=dict(type='int',),
-        hs_pscore_traffic_threshold_l4_client=dict(type='float',),
-        hs_pscore_traffic_threshold_l4_server=dict(type='float',),
-        hs_security_certscore_expired=dict(type='float',),
-        hs_security_certscore_gt30d=dict(type='float',),
-        hs_security_certscore_le07d=dict(type='float',),
-        hs_security_certscore_le30d=dict(type='float',),
-        hs_security_chain_invalidity_penalty=dict(type='float',),
-        hs_security_cipherscore_eq000b=dict(type='float',),
-        hs_security_cipherscore_ge128b=dict(type='float',),
-        hs_security_cipherscore_lt128b=dict(type='float',),
-        hs_security_encalgo_score_none=dict(type='float',),
-        hs_security_encalgo_score_rc4=dict(type='float',),
-        hs_security_hsts_penalty=dict(type='float',),
-        hs_security_nonpfs_penalty=dict(type='float',),
-        hs_security_ocsp_revoked_score=dict(type='float',),
-        hs_security_selfsignedcert_penalty=dict(type='float',),
-        hs_security_ssl30_score=dict(type='float',),
-        hs_security_tls10_score=dict(type='float',),
-        hs_security_tls11_score=dict(type='float',),
-        hs_security_tls12_score=dict(type='float',),
-        hs_security_tls13_score=dict(type='float',),
-        hs_security_weak_signature_algo_penalty=dict(type='float',),
-        labels=dict(type='list',),
-        name=dict(type='str', required=True),
-        ondemand_metrics_idle_timeout=dict(type='int',),
-        ranges=dict(type='list',),
-        resp_code_block=dict(type='list',),
-        sensitive_log_profile=dict(type='dict',),
-        sip_log_depth=dict(type='int',),
-        tenant_ref=dict(type='str',),
-        url=dict(type='str',),
-        uuid=dict(type='str',),
-    )
-    argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
-    if not HAS_AVI:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
 
-    return avi_ansible_api(module, 'analyticsprofile',
-                           set())
+Status
+------
 
 
-if __name__ == "__main__":
-    main()
+Authors
+~~~~~~~
+
+- Gaurav Rastogi (grastogi@avinetworks.com)
+- Sandeep Bandi (sbandi@avinetworks.com)
+
+
+

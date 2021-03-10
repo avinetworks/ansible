@@ -7,176 +7,304 @@
 # Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
-from __future__ import (absolute_import, division, print_function)
-__metaclass__ = type
+.. vmware.nsx_alb.avi_albservicesconfig:
 
 
-ANSIBLE_METADATA = {'metadata_version': '1.1',
-                    'status': ['preview'],
-                    'supported_by': 'community'}
+*****************************
+vmware.nsx_alb.avi_albservicesconfig
+*****************************
 
-DOCUMENTATION = '''
----
-module: avi_albservicesconfig
-author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
-short_description: Module for setup of ALBServicesConfig Avi RESTful Object
-description:
-    - This module is used to configure ALBServicesConfig object
-    - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
-version_added: "2.7"
-options:
-    state:
-        description:
-            - The state that should be applied on the entity.
-        default: present
-        choices: ["absent", "present"]
-        type: str
-    avi_api_update_method:
-        description:
-            - Default method for object update is HTTP PUT.
-            - Setting to patch will override that behavior to use HTTP PATCH.
-        version_added: "2.5"
-        default: put
-        choices: ["put", "patch"]
-        type: str
-    avi_api_patch_op:
-        description:
-            - Patch operation to use when using avi_api_update_method as patch.
-        version_added: "2.5"
-        choices: ["add", "replace", "delete"]
-        type: str
-    app_signature_config:
-        description:
-            - Default values to be used for application signature sync.
-            - Field introduced in 20.1.4.
-            - Allowed in basic edition, essentials edition, enterprise edition.
-        required: true
-        type: dict
-    asset_contact:
-        description:
-            - Information about the default contact for this controller cluster.
-            - Field introduced in 20.1.1.
-        type: dict
-    feature_opt_in_status:
-        description:
-            - Information about the portal features opted in for controller.
-            - Field introduced in 20.1.1.
-        required: true
-        type: dict
-    ip_reputation_config:
-        description:
-            - Default values to be used for ip reputation sync.
-            - Field introduced in 20.1.1.
-        required: true
-        type: dict
-    mode:
-        description:
-            - Mode helps log collection and upload.
-            - Enum options - SALESFORCE, SYSTEST, MYVMWARE.
-            - Field introduced in 20.1.2.
-            - Allowed in basic(allowed values- salesforce,myvmware,systest) edition, essentials(allowed values- salesforce,myvmware,systest) edition,
-            - enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as MYVMWARE.
-        type: str
-    polling_interval:
-        description:
-            - Time interval in minutes.
-            - Allowed values are 5-60.
-            - Field introduced in 18.2.6.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 10.
-        type: int
-    portal_url:
-        description:
-            - The fqdn or ip address of the customer portal.
-            - Field introduced in 18.2.6.
-        required: true
-        type: str
-    proactive_support_defaults:
-        description:
-            - Default values to be used during proactive case creation and techsupport attachment.
-            - Field introduced in 20.1.1.
-        required: true
-        type: dict
-    split_proxy_configuration:
-        description:
-            - Split proxy configuration to connect external pulse services.
-            - Field introduced in 20.1.1.
-        type: dict
-    url:
-        description:
-            - Avi controller URL of the object.
-        type: str
-    use_split_proxy:
-        description:
-            - By default, use system proxy configuration.if true, use split proxy configuration.
-            - Field introduced in 20.1.1.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    use_tls:
-        description:
-            - Secure the controller to pulse communication over tls.
-            - Field introduced in 20.1.3.
-            - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        type: bool
-    uuid:
-        description:
-            - Field introduced in 18.2.6.
-        type: str
-extends_documentation_fragment:
-    - avi
-'''
-
-EXAMPLES = """
-- name: Example to create ALBServicesConfig object
-  avi_albservicesconfig:
-    controller: 10.10.25.42
-    username: admin
-    password: something
-    state: present
-    name: sample_albservicesconfig
-"""
-
-RETURN = '''
-obj:
-    description: ALBServicesConfig (api/albservicesconfig) object
-    returned: success, changed
-    type: dict
-'''
-
-from ansible.module_utils.basic import AnsibleModule
+**Module for setup of ALBServicesConfig Avi RESTful Object**
 
 
-def main():
-    argument_specs = dict(
-        state=dict(default='present',
-                   choices=['absent', 'present']),
-        avi_api_update_method=dict(default='put',
-                                   choices=['put', 'patch']),
-        avi_api_patch_op=dict(choices=['add', 'replace', 'delete']),
-        app_signature_config=dict(type='dict', required=True),
-        asset_contact=dict(type='dict',),
-        feature_opt_in_status=dict(type='dict', required=True),
-        ip_reputation_config=dict(type='dict', required=True),
-        mode=dict(type='str',),
-        polling_interval=dict(type='int',),
-        portal_url=dict(type='str', required=True),
-        proactive_support_defaults=dict(type='dict', required=True),
-        split_proxy_configuration=dict(type='dict',),
-        url=dict(type='str',),
-        use_split_proxy=dict(type='bool',),
-        use_tls=dict(type='bool',),
-        uuid=dict(type='str',),
-    )
-    argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
-    if not HAS_AVI:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
+Version added: "1.0.0"
 
-    return avi_ansible_api(module, 'albservicesconfig',
-                           set())
+.. contents::
+   :local:
+   :depth: 1
 
 
-if __name__ == "__main__":
-    main()
+Synopsis
+--------
+- This module is used to configure ALBServicesConfig object
+- more examples at U(https://github.com/avinetworks/devops)
+
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- avisdk
+
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="2">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+            <th width="100%">Comments</th>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>app_signature_config:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Default values to be used for application signature sync.
+                         - Field introduced in 20.1.4.
+                         - Allowed in basic edition, essentials edition, enterprise edition.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>asset_contact:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Information about the default contact for this controller cluster.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>feature_opt_in_status:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Information about the portal features opted in for controller.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>ip_reputation_config:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Default values to be used for ip reputation sync.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>mode:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Mode helps log collection and upload.
+                         - Enum options - SALESFORCE, SYSTEST, MYVMWARE.
+                         - Field introduced in 20.1.2.
+                         - Allowed in basic(allowed values- salesforce,myvmware,systest) edition, essentials(allowed values- salesforce,myvmware,systest) edition,
+                         - enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as MYVMWARE.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>polling_interval:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Time interval in minutes.
+                         - Allowed values are 5-60.
+                         - Field introduced in 18.2.6.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 10.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>portal_url:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - The fqdn or ip address of the customer portal.
+                         - Field introduced in 18.2.6.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>proactive_support_defaults:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Default values to be used during proactive case creation and techsupport attachment.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>split_proxy_configuration:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Split proxy configuration to connect external pulse services.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>url:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Avi controller URL of the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>use_split_proxy:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - By default, use system proxy configuration.if true, use split proxy configuration.
+                         - Field introduced in 20.1.1.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>use_tls:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Secure the controller to pulse communication over tls.
+                         - Field introduced in 20.1.3.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>uuid:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Field introduced in 18.2.6.
+                                    </td>
+        </tr>
+            </table>
+    <br/>
+
+
+Examples
+--------
+
+.. code-block:: yaml
+
+    - name: Example to create ALBServicesConfig object
+      avi_albservicesconfig:
+        controller: 10.10.25.42
+        username: admin
+        password: something
+        state: present
+        name: sample_albservicesconfig
+
+
+Status
+------
+
+
+Authors
+~~~~~~~
+
+- Gaurav Rastogi (grastogi@avinetworks.com)
+- Sandeep Bandi (sbandi@avinetworks.com)
+
+
+

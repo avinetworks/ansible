@@ -8,135 +8,296 @@
 # Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
-from __future__ import (absolute_import, division, print_function)
-__metaclass__ = type
+.. vmware.nsx_alb.avi_vsvip:
 
 
-ANSIBLE_METADATA = {'metadata_version': '1.1',
-                    'status': ['preview'],
-                    'supported_by': 'community'}
+*****************************
+vmware.nsx_alb.avi_vsvip
+*****************************
 
-DOCUMENTATION = '''
----
-module: avi_vsvip
-author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
-short_description: Module for setup of VsVip Avi RESTful Object
-description:
-    - This module is used to configure VsVip object
-    - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
-version_added: "2.4"
-options:
-    state:
-        description:
-            - The state that should be applied on the entity.
-        default: present
-        choices: ["absent", "present"]
-        type: str
-    avi_api_update_method:
-        description:
-            - Default method for object update is HTTP PUT.
-            - Setting to patch will override that behavior to use HTTP PATCH.
-        version_added: "2.5"
-        default: put
-        choices: ["put", "patch"]
-        type: str
-    avi_api_patch_op:
-        description:
-            - Patch operation to use when using avi_api_update_method as patch.
-        version_added: "2.5"
-        choices: ["add", "replace", "delete"]
-        type: str
-    cloud_ref:
-        description:
-            - It is a reference to an object of type cloud.
-            - Field introduced in 17.1.1.
-        type: str
-    dns_info:
-        description:
-            - Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
-            - Field introduced in 17.1.1.
-            - Maximum of 1000 items allowed.
-            - Allowed in basic edition, essentials edition, enterprise edition.
-        type: list
-    east_west_placement:
-        description:
-            - Force placement on all service engines in the service engine group (container clouds only).
-            - Field introduced in 17.1.1.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    ipam_selector:
-        description:
-            - Determines the set of ipam networks to use for this vsvip.
-            - Selector type must be selector_ipam and only one label is supported.
-            - Field introduced in 20.1.3.
-        type: dict
-    labels:
-        description:
-            - Key value pairs for granular object access control.
-            - Also allows for classification and tagging of similar objects.
-            - Field introduced in 20.1.2.
-            - Maximum of 4 items allowed.
-        type: list
-    name:
-        description:
-            - Name for the vsvip object.
-            - Field introduced in 17.1.1.
-        required: true
-        type: str
-    tenant_ref:
-        description:
-            - It is a reference to an object of type tenant.
-            - Field introduced in 17.1.1.
-        type: str
-    tier1_lr:
-        description:
-            - This sets the placement scope of virtualservice to given tier1 logical router in nsx-t.
-            - Field introduced in 20.1.1.
-        type: str
-    url:
-        description:
-            - Avi controller URL of the object.
-        type: str
-    use_standard_alb:
-        description:
-            - This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is
-            - set.
-            - This is only used when fip is used for vs on azure cloud.
-            - Field introduced in 18.2.3.
-            - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
-        type: bool
-    uuid:
-        description:
-            - Uuid of the vsvip object.
-            - Field introduced in 17.1.1.
-        type: str
-    vip:
-        description:
-            - List of virtual service ips and other shareable entities.
-            - Field introduced in 17.1.1.
-        type: list
-    vrf_context_ref:
-        description:
-            - Virtual routing context that the virtual service is bound to.
-            - This is used to provide the isolation of the set of networks the application is attached to.
-            - It is a reference to an object of type vrfcontext.
-            - Field introduced in 17.1.1.
-        type: str
-    vsvip_cloud_config_cksum:
-        description:
-            - Checksum of cloud configuration for vsvip.
-            - Internally set by cloud connector.
-            - Field introduced in 17.2.9, 18.1.2.
-        version_added: "2.9"
-        type: str
-extends_documentation_fragment:
-    - avi
-'''
+**Module for setup of VsVip Avi RESTful Object**
 
-EXAMPLES = """
+
+Version added: "1.0.0"
+
+.. contents::
+   :local:
+   :depth: 1
+
+
+Synopsis
+--------
+- This module is used to configure VsVip object
+- more examples at U(https://github.com/avinetworks/devops)
+
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- avisdk
+
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="2">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+            <th width="100%">Comments</th>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>cloud_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - It is a reference to an object of type cloud.
+                         - Field introduced in 17.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>dns_info:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
+                         - Field introduced in 17.1.1.
+                         - Maximum of 1000 items allowed.
+                         - Allowed in basic edition, essentials edition, enterprise edition.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>east_west_placement:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Force placement on all service engines in the service engine group (container clouds only).
+                         - Field introduced in 17.1.1.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>ipam_selector:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Determines the set of ipam networks to use for this vsvip.
+                         - Selector type must be selector_ipam and only one label is supported.
+                         - Field introduced in 20.1.3.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>labels:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Key value pairs for granular object access control.
+                         - Also allows for classification and tagging of similar objects.
+                         - Field introduced in 20.1.2.
+                         - Maximum of 4 items allowed.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>name:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Name for the vsvip object.
+                         - Field introduced in 17.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>tenant_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - It is a reference to an object of type tenant.
+                         - Field introduced in 17.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>tier1_lr:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - This sets the placement scope of virtualservice to given tier1 logical router in nsx-t.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>url:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Avi controller URL of the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>use_standard_alb:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is
+                         - set.
+                         - This is only used when fip is used for vs on azure cloud.
+                         - Field introduced in 18.2.3.
+                         - Allowed in basic edition, essentials edition, enterprise edition.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>uuid:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Uuid of the vsvip object.
+                         - Field introduced in 17.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>vip:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - List of virtual service ips and other shareable entities.
+                         - Field introduced in 17.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>vrf_context_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Virtual routing context that the virtual service is bound to.
+                         - This is used to provide the isolation of the set of networks the application is attached to.
+                         - It is a reference to an object of type vrfcontext.
+                         - Field introduced in 17.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>vsvip_cloud_config_cksum:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Checksum of cloud configuration for vsvip.
+                         - Internally set by cloud connector.
+                         - Field introduced in 17.2.9, 18.1.2.
+                                    </td>
+        </tr>
+            </table>
+    <br/>
+
+
+Examples
+--------
+
+.. code-block:: yaml
+
+    
 - name: Create vsvip for virtualservice for newtestvs
   avi_vsvip:
     name: vsvip-newtestvs-Default-Cloud
@@ -156,49 +317,18 @@ EXAMPLES = """
       ip_address:
         type: V4
         addr: 198.51.100.101
-"""
-
-RETURN = '''
-obj:
-    description: VsVip (api/vsvip) object
-    returned: success, changed
-    type: dict
-'''
-
-from ansible.module_utils.basic import AnsibleModule
 
 
-def main():
-    argument_specs = dict(
-        state=dict(default='present',
-                   choices=['absent', 'present']),
-        avi_api_update_method=dict(default='put',
-                                   choices=['put', 'patch']),
-        avi_api_patch_op=dict(choices=['add', 'replace', 'delete']),
-        cloud_ref=dict(type='str',),
-        dns_info=dict(type='list',),
-        east_west_placement=dict(type='bool',),
-        ipam_selector=dict(type='dict',),
-        labels=dict(type='list',),
-        name=dict(type='str', required=True),
-        tenant_ref=dict(type='str',),
-        tier1_lr=dict(type='str',),
-        url=dict(type='str',),
-        use_standard_alb=dict(type='bool',),
-        uuid=dict(type='str',),
-        vip=dict(type='list',),
-        vrf_context_ref=dict(type='str',),
-        vsvip_cloud_config_cksum=dict(type='str',),
-    )
-    argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
-    if not HAS_AVI:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
 
-    return avi_ansible_api(module, 'vsvip',
-                           set())
+Status
+------
 
 
-if __name__ == "__main__":
-    main()
+Authors
+~~~~~~~
+
+- Gaurav Rastogi (grastogi@avinetworks.com)
+- Sandeep Bandi (sbandi@avinetworks.com)
+
+
+

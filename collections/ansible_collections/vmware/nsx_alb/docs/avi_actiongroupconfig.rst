@@ -7,159 +7,273 @@
 # Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
-from __future__ import (absolute_import, division, print_function)
-__metaclass__ = type
+.. vmware.nsx_alb.avi_actiongroupconfig:
 
 
-ANSIBLE_METADATA = {'metadata_version': '1.1',
-                    'status': ['preview'],
-                    'supported_by': 'community'}
+*****************************
+vmware.nsx_alb.avi_actiongroupconfig
+*****************************
 
-DOCUMENTATION = '''
----
-module: avi_actiongroupconfig
-author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
-short_description: Module for setup of ActionGroupConfig Avi RESTful Object
-description:
-    - This module is used to configure ActionGroupConfig object
-    - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
-version_added: "2.4"
-options:
-    state:
-        description:
-            - The state that should be applied on the entity.
-        default: present
-        choices: ["absent", "present"]
-        type: str
-    avi_api_update_method:
-        description:
-            - Default method for object update is HTTP PUT.
-            - Setting to patch will override that behavior to use HTTP PATCH.
-        version_added: "2.5"
-        default: put
-        choices: ["put", "patch"]
-        type: str
-    avi_api_patch_op:
-        description:
-            - Patch operation to use when using avi_api_update_method as patch.
-        version_added: "2.5"
-        choices: ["add", "replace", "delete"]
-        type: str
-    action_script_config_ref:
-        description:
-            - Reference of the action script configuration to be used.
-            - It is a reference to an object of type alertscriptconfig.
-        type: str
-    autoscale_trigger_notification:
-        description:
-            - Trigger notification to autoscale manager.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        type: bool
-    description:
-        description:
-            - User defined description for the object.
-        type: str
-    email_config_ref:
-        description:
-            - Select the email notification configuration to use when sending alerts via email.
-            - It is a reference to an object of type alertemailconfig.
-        type: str
-    external_only:
-        description:
-            - Generate alert only to external destinations.
-            - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-            - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        required: true
-        type: bool
-    level:
-        description:
-            - When an alert is generated, mark its priority via the alert level.
-            - Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.
-            - Default value when not specified in API or module is interpreted by Avi Controller as ALERT_LOW.
-        required: true
-        type: str
-    name:
-        description:
-            - Name of the object.
-        required: true
-        type: str
-    snmp_trap_profile_ref:
-        description:
-            - Select the snmp trap notification to use when sending alerts via snmp trap.
-            - It is a reference to an object of type snmptrapprofile.
-        type: str
-    syslog_config_ref:
-        description:
-            - Select the syslog notification configuration to use when sending alerts via syslog.
-            - It is a reference to an object of type alertsyslogconfig.
-        type: str
-    tenant_ref:
-        description:
-            - It is a reference to an object of type tenant.
-        type: str
-    url:
-        description:
-            - Avi controller URL of the object.
-        type: str
-    uuid:
-        description:
-            - Unique object identifier of the object.
-        type: str
-extends_documentation_fragment:
-    - avi
-'''
-
-EXAMPLES = """
-- name: Example to create ActionGroupConfig object
-  avi_actiongroupconfig:
-    controller: 10.10.25.42
-    username: admin
-    password: something
-    state: present
-    name: sample_actiongroupconfig
-"""
-
-RETURN = '''
-obj:
-    description: ActionGroupConfig (api/actiongroupconfig) object
-    returned: success, changed
-    type: dict
-'''
-
-from ansible.module_utils.basic import AnsibleModule
+**Module for setup of ActionGroupConfig Avi RESTful Object**
 
 
-def main():
-    argument_specs = dict(
-        state=dict(default='present',
-                   choices=['absent', 'present']),
-        avi_api_update_method=dict(default='put',
-                                   choices=['put', 'patch']),
-        avi_api_patch_op=dict(choices=['add', 'replace', 'delete']),
-        action_script_config_ref=dict(type='str',),
-        autoscale_trigger_notification=dict(type='bool',),
-        description=dict(type='str',),
-        email_config_ref=dict(type='str',),
-        external_only=dict(type='bool', required=True),
-        level=dict(type='str', required=True),
-        name=dict(type='str', required=True),
-        snmp_trap_profile_ref=dict(type='str',),
-        syslog_config_ref=dict(type='str',),
-        tenant_ref=dict(type='str',),
-        url=dict(type='str',),
-        uuid=dict(type='str',),
-    )
-    argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
-    if not HAS_AVI:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
+Version added: "1.0.0"
 
-    return avi_ansible_api(module, 'actiongroupconfig',
-                           set())
+.. contents::
+   :local:
+   :depth: 1
 
 
-if __name__ == "__main__":
-    main()
+Synopsis
+--------
+- This module is used to configure ActionGroupConfig object
+- more examples at U(https://github.com/avinetworks/devops)
+
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- avisdk
+
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="2">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+            <th width="100%">Comments</th>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>action_script_config_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Reference of the action script configuration to be used.
+                         - It is a reference to an object of type alertscriptconfig.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>autoscale_trigger_notification:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Trigger notification to autoscale manager.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>description:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - User defined description for the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>email_config_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Select the email notification configuration to use when sending alerts via email.
+                         - It is a reference to an object of type alertemailconfig.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>external_only:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Generate alert only to external destinations.
+                         - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as False.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>level:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - When an alert is generated, mark its priority via the alert level.
+                         - Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as ALERT_LOW.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>name:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Name of the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>snmp_trap_profile_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Select the snmp trap notification to use when sending alerts via snmp trap.
+                         - It is a reference to an object of type snmptrapprofile.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>syslog_config_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Select the syslog notification configuration to use when sending alerts via syslog.
+                         - It is a reference to an object of type alertsyslogconfig.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>tenant_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - It is a reference to an object of type tenant.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>url:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Avi controller URL of the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>uuid:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Unique object identifier of the object.
+                                    </td>
+        </tr>
+            </table>
+    <br/>
+
+
+Examples
+--------
+
+.. code-block:: yaml
+
+    - name: Example to create ActionGroupConfig object
+      avi_actiongroupconfig:
+        controller: 10.10.25.42
+        username: admin
+        password: something
+        state: present
+        name: sample_actiongroupconfig
+
+
+Status
+------
+
+
+Authors
+~~~~~~~
+
+- Gaurav Rastogi (grastogi@avinetworks.com)
+- Sandeep Bandi (sbandi@avinetworks.com)
+
+
+

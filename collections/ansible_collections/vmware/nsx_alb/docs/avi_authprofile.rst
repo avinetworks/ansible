@@ -8,109 +8,250 @@
 # Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
-from __future__ import (absolute_import, division, print_function)
-__metaclass__ = type
+.. vmware.nsx_alb.avi_authprofile:
 
 
-ANSIBLE_METADATA = {'metadata_version': '1.1',
-                    'status': ['preview'],
-                    'supported_by': 'community'}
+*****************************
+vmware.nsx_alb.avi_authprofile
+*****************************
 
-DOCUMENTATION = '''
----
-module: avi_authprofile
-author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
-short_description: Module for setup of AuthProfile Avi RESTful Object
-description:
-    - This module is used to configure AuthProfile object
-    - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
-version_added: "2.4"
-options:
-    state:
-        description:
-            - The state that should be applied on the entity.
-        default: present
-        choices: ["absent", "present"]
-        type: str
-    avi_api_update_method:
-        description:
-            - Default method for object update is HTTP PUT.
-            - Setting to patch will override that behavior to use HTTP PATCH.
-        version_added: "2.5"
-        default: put
-        choices: ["put", "patch"]
-        type: str
-    avi_api_patch_op:
-        description:
-            - Patch operation to use when using avi_api_update_method as patch.
-        version_added: "2.5"
-        choices: ["add", "replace", "delete"]
-        type: str
-    description:
-        description:
-            - User defined description for the object.
-        type: str
-    http:
-        description:
-            - Http user authentication params.
-        type: dict
-    jwt_profile_ref:
-        description:
-            - Jwtserverprofile to be used for authentication.
-            - It is a reference to an object of type jwtserverprofile.
-            - Field introduced in 20.1.3.
-        type: str
-    ldap:
-        description:
-            - Ldap server and directory settings.
-        type: dict
-    name:
-        description:
-            - Name of the auth profile.
-        required: true
-        type: str
-    pa_agent_ref:
-        description:
-            - Pingaccessagent uuid.
-            - It is a reference to an object of type pingaccessagent.
-            - Field introduced in 18.2.3.
-            - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
-        type: str
-    saml:
-        description:
-            - Saml settings.
-            - Field introduced in 17.2.3.
-        version_added: "2.5"
-        type: dict
-    tacacs_plus:
-        description:
-            - Tacacs+ settings.
-        type: dict
-    tenant_ref:
-        description:
-            - It is a reference to an object of type tenant.
-        type: str
-    type:
-        description:
-            - Type of the auth profile.
-            - Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT.
-        required: true
-        type: str
-    url:
-        description:
-            - Avi controller URL of the object.
-        type: str
-    uuid:
-        description:
-            - Uuid of the auth profile.
-        type: str
-extends_documentation_fragment:
-    - avi
-'''
+**Module for setup of AuthProfile Avi RESTful Object**
 
-EXAMPLES = """
+
+Version added: "1.0.0"
+
+.. contents::
+   :local:
+   :depth: 1
+
+
+Synopsis
+--------
+- This module is used to configure AuthProfile object
+- more examples at U(https://github.com/avinetworks/devops)
+
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- avisdk
+
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="2">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+            <th width="100%">Comments</th>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>description:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - User defined description for the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>http:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Http user authentication params.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>jwt_profile_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Jwtserverprofile to be used for authentication.
+                         - It is a reference to an object of type jwtserverprofile.
+                         - Field introduced in 20.1.3.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>ldap:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Ldap server and directory settings.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>name:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Name of the auth profile.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>pa_agent_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Pingaccessagent uuid.
+                         - It is a reference to an object of type pingaccessagent.
+                         - Field introduced in 18.2.3.
+                         - Allowed in basic edition, essentials edition, enterprise edition.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>saml:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Saml settings.
+                         - Field introduced in 17.2.3.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>tacacs_plus:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Tacacs+ settings.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>tenant_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - It is a reference to an object of type tenant.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>type:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Type of the auth profile.
+                         - Enum options - AUTH_PROFILE_LDAP, AUTH_PROFILE_TACACS_PLUS, AUTH_PROFILE_SAML, AUTH_PROFILE_PINGACCESS, AUTH_PROFILE_JWT.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>url:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Avi controller URL of the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>uuid:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Uuid of the auth profile.
+                                    </td>
+        </tr>
+            </table>
+    <br/>
+
+
+Examples
+--------
+
+.. code-block:: yaml
+
+    
   - name: Create user authorization profile based on the LDAP
     avi_authprofile:
       controller: '{{ controller }}'
@@ -141,47 +282,18 @@ EXAMPLES = """
       name: ProdAuth
       tenant_ref: /api/tenant?name=admin
       type: AUTH_PROFILE_LDAP
-"""
-
-RETURN = '''
-obj:
-    description: AuthProfile (api/authprofile) object
-    returned: success, changed
-    type: dict
-'''
-
-from ansible.module_utils.basic import AnsibleModule
 
 
-def main():
-    argument_specs = dict(
-        state=dict(default='present',
-                   choices=['absent', 'present']),
-        avi_api_update_method=dict(default='put',
-                                   choices=['put', 'patch']),
-        avi_api_patch_op=dict(choices=['add', 'replace', 'delete']),
-        description=dict(type='str',),
-        http=dict(type='dict',),
-        jwt_profile_ref=dict(type='str',),
-        ldap=dict(type='dict',),
-        name=dict(type='str', required=True),
-        pa_agent_ref=dict(type='str',),
-        saml=dict(type='dict',),
-        tacacs_plus=dict(type='dict',),
-        tenant_ref=dict(type='str',),
-        type=dict(type='str', required=True),
-        url=dict(type='str',),
-        uuid=dict(type='str',),
-    )
-    argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
-    if not HAS_AVI:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
 
-    return avi_ansible_api(module, 'authprofile',
-                           set())
+Status
+------
 
 
-if __name__ == "__main__":
-    main()
+Authors
+~~~~~~~
+
+- Gaurav Rastogi (grastogi@avinetworks.com)
+- Sandeep Bandi (sbandi@avinetworks.com)
+
+
+

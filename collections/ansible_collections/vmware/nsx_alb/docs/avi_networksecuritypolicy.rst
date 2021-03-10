@@ -8,103 +8,231 @@
 # Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
-from __future__ import (absolute_import, division, print_function)
-__metaclass__ = type
+.. vmware.nsx_alb.avi_networksecuritypolicy:
 
 
-ANSIBLE_METADATA = {'metadata_version': '1.1',
-                    'status': ['preview'],
-                    'supported_by': 'community'}
+*****************************
+vmware.nsx_alb.avi_networksecuritypolicy
+*****************************
 
-DOCUMENTATION = '''
----
-module: avi_networksecuritypolicy
-author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
-short_description: Module for setup of NetworkSecurityPolicy Avi RESTful Object
-description:
-    - This module is used to configure NetworkSecurityPolicy object
-    - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
-version_added: "2.4"
-options:
-    state:
-        description:
-            - The state that should be applied on the entity.
-        default: present
-        choices: ["absent", "present"]
-        type: str
-    avi_api_update_method:
-        description:
-            - Default method for object update is HTTP PUT.
-            - Setting to patch will override that behavior to use HTTP PATCH.
-        version_added: "2.5"
-        default: put
-        choices: ["put", "patch"]
-        type: str
-    avi_api_patch_op:
-        description:
-            - Patch operation to use when using avi_api_update_method as patch.
-        version_added: "2.5"
-        choices: ["add", "replace", "delete"]
-        type: str
-    cloud_config_cksum:
-        description:
-            - Checksum of cloud configuration for network sec policy.
-            - Internally set by cloud connector.
-        type: str
-    created_by:
-        description:
-            - Creator name.
-        type: str
-    description:
-        description:
-            - User defined description for the object.
-        type: str
-    geo_db_ref:
-        description:
-            - Geo database.
-            - It is a reference to an object of type geodb.
-            - Field introduced in 21.1.1.
-        type: str
-    ip_reputation_db_ref:
-        description:
-            - Ip reputation database.
-            - It is a reference to an object of type ipreputationdb.
-            - Field introduced in 20.1.1.
-            - Allowed in basic edition, essentials edition, enterprise edition.
-        type: str
-    labels:
-        description:
-            - Key value pairs for granular object access control.
-            - Also allows for classification and tagging of similar objects.
-            - Field introduced in 20.1.2.
-            - Maximum of 4 items allowed.
-        type: list
-    name:
-        description:
-            - Name of the object.
-        type: str
-    rules:
-        description:
-            - List of networksecurityrule.
-        type: list
-    tenant_ref:
-        description:
-            - It is a reference to an object of type tenant.
-        type: str
-    url:
-        description:
-            - Avi controller URL of the object.
-        type: str
-    uuid:
-        description:
-            - Unique object identifier of the object.
-        type: str
-extends_documentation_fragment:
-    - avi
-'''
+**Module for setup of NetworkSecurityPolicy Avi RESTful Object**
 
-EXAMPLES = """
+
+Version added: "1.0.0"
+
+.. contents::
+   :local:
+   :depth: 1
+
+
+Synopsis
+--------
+- This module is used to configure NetworkSecurityPolicy object
+- more examples at U(https://github.com/avinetworks/devops)
+
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- avisdk
+
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="2">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+            <th width="100%">Comments</th>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>cloud_config_cksum:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Checksum of cloud configuration for network sec policy.
+                         - Internally set by cloud connector.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>created_by:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Creator name.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>description:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - User defined description for the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>geo_db_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Geo database.
+                         - It is a reference to an object of type geodb.
+                         - Field introduced in 21.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>ip_reputation_db_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Ip reputation database.
+                         - It is a reference to an object of type ipreputationdb.
+                         - Field introduced in 20.1.1.
+                         - Allowed in basic edition, essentials edition, enterprise edition.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>labels:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Key value pairs for granular object access control.
+                         - Also allows for classification and tagging of similar objects.
+                         - Field introduced in 20.1.2.
+                         - Maximum of 4 items allowed.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>name:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Name of the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>rules:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - List of networksecurityrule.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>tenant_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - It is a reference to an object of type tenant.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>url:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Avi controller URL of the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>uuid:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Unique object identifier of the object.
+                                    </td>
+        </tr>
+            </table>
+    <br/>
+
+
+Examples
+--------
+
+.. code-block:: yaml
+
+    
   - name: Create a network security policy to block clients represented by ip group known_attackers
     avi_networksecuritypolicy:
       controller: '{{ controller }}'
@@ -124,46 +252,18 @@ EXAMPLES = """
             match_criteria: IS_IN
         name: Rule 1
       tenant_ref: /api/tenant?name=Demo
-"""
-
-RETURN = '''
-obj:
-    description: NetworkSecurityPolicy (api/networksecuritypolicy) object
-    returned: success, changed
-    type: dict
-'''
-
-from ansible.module_utils.basic import AnsibleModule
 
 
-def main():
-    argument_specs = dict(
-        state=dict(default='present',
-                   choices=['absent', 'present']),
-        avi_api_update_method=dict(default='put',
-                                   choices=['put', 'patch']),
-        avi_api_patch_op=dict(choices=['add', 'replace', 'delete']),
-        cloud_config_cksum=dict(type='str',),
-        created_by=dict(type='str',),
-        description=dict(type='str',),
-        geo_db_ref=dict(type='str',),
-        ip_reputation_db_ref=dict(type='str',),
-        labels=dict(type='list',),
-        name=dict(type='str',),
-        rules=dict(type='list',),
-        tenant_ref=dict(type='str',),
-        url=dict(type='str',),
-        uuid=dict(type='str',),
-    )
-    argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
-    if not HAS_AVI:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
 
-    return avi_ansible_api(module, 'networksecuritypolicy',
-                           set())
+Status
+------
 
 
-if __name__ == "__main__":
-    main()
+Authors
+~~~~~~~
+
+- Gaurav Rastogi (grastogi@avinetworks.com)
+- Sandeep Bandi (sbandi@avinetworks.com)
+
+
+

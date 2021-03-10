@@ -7,207 +7,393 @@
 # Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
-from __future__ import (absolute_import, division, print_function)
-__metaclass__ = type
+.. vmware.nsx_alb.avi_alertconfig:
 
 
-ANSIBLE_METADATA = {'metadata_version': '1.1',
-                    'status': ['preview'],
-                    'supported_by': 'community'}
+*****************************
+vmware.nsx_alb.avi_alertconfig
+*****************************
 
-DOCUMENTATION = '''
----
-module: avi_alertconfig
-author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
-short_description: Module for setup of AlertConfig Avi RESTful Object
-description:
-    - This module is used to configure AlertConfig object
-    - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
-version_added: "2.4"
-options:
-    state:
-        description:
-            - The state that should be applied on the entity.
-        default: present
-        choices: ["absent", "present"]
-        type: str
-    avi_api_update_method:
-        description:
-            - Default method for object update is HTTP PUT.
-            - Setting to patch will override that behavior to use HTTP PATCH.
-        version_added: "2.5"
-        default: put
-        choices: ["put", "patch"]
-        type: str
-    avi_api_patch_op:
-        description:
-            - Patch operation to use when using avi_api_update_method as patch.
-        version_added: "2.5"
-        choices: ["add", "replace", "delete"]
-        type: str
-    action_group_ref:
-        description:
-            - The alert config will trigger the selected alert action, which can send notifications and execute a controlscript.
-            - It is a reference to an object of type actiongroupconfig.
-        type: str
-    alert_rule:
-        description:
-            - List of filters matching on events or client logs used for triggering alerts.
-        required: true
-        type: dict
-    autoscale_alert:
-        description:
-            - This alert config applies to auto scale alerts.
-        type: bool
-    category:
-        description:
-            - Determines whether an alert is raised immediately when event occurs (realtime) or after specified number of events occurs within rolling time
-            - window.
-            - Enum options - REALTIME, ROLLINGWINDOW, WATERMARK.
-            - Default value when not specified in API or module is interpreted by Avi Controller as REALTIME.
-        required: true
-        type: str
-    description:
-        description:
-            - A custom description field.
-        type: str
-    enabled:
-        description:
-            - Enable or disable this alert config from generating new alerts.
-            - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        type: bool
-    expiry_time:
-        description:
-            - An alert is expired and deleted after the expiry time has elapsed.
-            - The original event triggering the alert remains in the event's log.
-            - Allowed values are 1-31536000.
-            - Unit is sec.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 86400.
-        type: int
-    name:
-        description:
-            - Name of the alert configuration.
-        required: true
-        type: str
-    obj_uuid:
-        description:
-            - Uuid of the resource for which alert was raised.
-        type: str
-    object_type:
-        description:
-            - The object type to which the alert config is associated with.
-            - Valid object types are - virtual service, pool, service engine.
-            - Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP,
-            - STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT,
-            - PKIPROFILE, AUTHPROFILE, CLOUD...
-        type: str
-    recommendation:
-        description:
-            - Recommendation of alertconfig.
-        type: str
-    rolling_window:
-        description:
-            - Only if the number of events is reached or exceeded within the time window will an alert be generated.
-            - Allowed values are 1-31536000.
-            - Unit is sec.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-        type: int
-    source:
-        description:
-            - Signifies system events or the type of client logsused in this alert configuration.
-            - Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS.
-        required: true
-        type: str
-    summary:
-        description:
-            - Summary of reason why alert is generated.
-        type: str
-    tenant_ref:
-        description:
-            - It is a reference to an object of type tenant.
-        type: str
-    threshold:
-        description:
-            - An alert is created only when the number of events meets or exceeds this number within the chosen time frame.
-            - Allowed values are 1-65536.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 1.
-        type: int
-    throttle:
-        description:
-            - Alerts are suppressed (throttled) for this duration of time since the last alert was raised for this alert config.
-            - Allowed values are 0-31536000.
-            - Unit is sec.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 600.
-        type: int
-    url:
-        description:
-            - Avi controller URL of the object.
-        type: str
-    uuid:
-        description:
-            - Unique object identifier of the object.
-        type: str
-extends_documentation_fragment:
-    - avi
-'''
-
-EXAMPLES = """
-- name: Example to create AlertConfig object
-  avi_alertconfig:
-    controller: 10.10.25.42
-    username: admin
-    password: something
-    state: present
-    name: sample_alertconfig
-"""
-
-RETURN = '''
-obj:
-    description: AlertConfig (api/alertconfig) object
-    returned: success, changed
-    type: dict
-'''
-
-from ansible.module_utils.basic import AnsibleModule
+**Module for setup of AlertConfig Avi RESTful Object**
 
 
-def main():
-    argument_specs = dict(
-        state=dict(default='present',
-                   choices=['absent', 'present']),
-        avi_api_update_method=dict(default='put',
-                                   choices=['put', 'patch']),
-        avi_api_patch_op=dict(choices=['add', 'replace', 'delete']),
-        action_group_ref=dict(type='str',),
-        alert_rule=dict(type='dict', required=True),
-        autoscale_alert=dict(type='bool',),
-        category=dict(type='str', required=True),
-        description=dict(type='str',),
-        enabled=dict(type='bool',),
-        expiry_time=dict(type='int',),
-        name=dict(type='str', required=True),
-        obj_uuid=dict(type='str',),
-        object_type=dict(type='str',),
-        recommendation=dict(type='str',),
-        rolling_window=dict(type='int',),
-        source=dict(type='str', required=True),
-        summary=dict(type='str',),
-        tenant_ref=dict(type='str',),
-        threshold=dict(type='int',),
-        throttle=dict(type='int',),
-        url=dict(type='str',),
-        uuid=dict(type='str',),
-    )
-    argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
-    if not HAS_AVI:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
+Version added: "1.0.0"
 
-    return avi_ansible_api(module, 'alertconfig',
-                           set())
+.. contents::
+   :local:
+   :depth: 1
 
 
-if __name__ == "__main__":
-    main()
+Synopsis
+--------
+- This module is used to configure AlertConfig object
+- more examples at U(https://github.com/avinetworks/devops)
+
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- avisdk
+
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="2">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+            <th width="100%">Comments</th>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>action_group_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - The alert config will trigger the selected alert action, which can send notifications and execute a controlscript.
+                         - It is a reference to an object of type actiongroupconfig.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>alert_rule:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - List of filters matching on events or client logs used for triggering alerts.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>autoscale_alert:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - This alert config applies to auto scale alerts.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>category:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Determines whether an alert is raised immediately when event occurs (realtime) or after specified number of events occurs within rolling time
+                         - window.
+                         - Enum options - REALTIME, ROLLINGWINDOW, WATERMARK.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as REALTIME.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>description:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - A custom description field.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>enabled:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Enable or disable this alert config from generating new alerts.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as True.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>expiry_time:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - An alert is expired and deleted after the expiry time has elapsed.
+                         - The original event triggering the alert remains in the event's log.
+                         - Allowed values are 1-31536000.
+                         - Unit is sec.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 86400.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>name:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Name of the alert configuration.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>obj_uuid:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Uuid of the resource for which alert was raised.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>object_type:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - The object type to which the alert config is associated with.
+                         - Valid object types are - virtual service, pool, service engine.
+                         - Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP,
+                         - STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT,
+                         - PKIPROFILE, AUTHPROFILE, CLOUD...
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>recommendation:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Recommendation of alertconfig.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>rolling_window:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Only if the number of events is reached or exceeded within the time window will an alert be generated.
+                         - Allowed values are 1-31536000.
+                         - Unit is sec.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>source:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Signifies system events or the type of client logsused in this alert configuration.
+                         - Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>summary:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Summary of reason why alert is generated.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>tenant_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - It is a reference to an object of type tenant.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>threshold:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - An alert is created only when the number of events meets or exceeds this number within the chosen time frame.
+                         - Allowed values are 1-65536.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>throttle:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">int</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Alerts are suppressed (throttled) for this duration of time since the last alert was raised for this alert config.
+                         - Allowed values are 0-31536000.
+                         - Unit is sec.
+                         - Default value when not specified in API or module is interpreted by Avi Controller as 600.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>url:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Avi controller URL of the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>uuid:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Unique object identifier of the object.
+                                    </td>
+        </tr>
+            </table>
+    <br/>
+
+
+Examples
+--------
+
+.. code-block:: yaml
+
+    - name: Example to create AlertConfig object
+      avi_alertconfig:
+        controller: 10.10.25.42
+        username: admin
+        password: something
+        state: present
+        name: sample_alertconfig
+
+
+Status
+------
+
+
+Authors
+~~~~~~~
+
+- Gaurav Rastogi (grastogi@avinetworks.com)
+- Sandeep Bandi (sbandi@avinetworks.com)
+
+
+

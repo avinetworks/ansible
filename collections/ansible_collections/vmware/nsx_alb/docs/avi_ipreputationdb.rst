@@ -7,161 +7,263 @@
 # Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
-from __future__ import (absolute_import, division, print_function)
-__metaclass__ = type
+.. vmware.nsx_alb.avi_ipreputationdb:
 
 
-ANSIBLE_METADATA = {'metadata_version': '1.1',
-                    'status': ['preview'],
-                    'supported_by': 'community'}
+*****************************
+vmware.nsx_alb.avi_ipreputationdb
+*****************************
 
-DOCUMENTATION = '''
----
-module: avi_ipreputationdb
-author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
-short_description: Module for setup of IPReputationDB Avi RESTful Object
-description:
-    - This module is used to configure IPReputationDB object
-    - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
-version_added: "2.7"
-options:
-    state:
-        description:
-            - The state that should be applied on the entity.
-        default: present
-        choices: ["absent", "present"]
-        type: str
-    avi_api_update_method:
-        description:
-            - Default method for object update is HTTP PUT.
-            - Setting to patch will override that behavior to use HTTP PATCH.
-        version_added: "2.5"
-        default: put
-        choices: ["put", "patch"]
-        type: str
-    avi_api_patch_op:
-        description:
-            - Patch operation to use when using avi_api_update_method as patch.
-        version_added: "2.5"
-        choices: ["add", "replace", "delete"]
-        type: str
-    base_file_refs:
-        description:
-            - Ip reputation db base file.
-            - It is a reference to an object of type fileobject.
-            - Field introduced in 20.1.1.
-            - Maximum of 1 items allowed.
-        type: list
-    description:
-        description:
-            - Description.
-            - Field introduced in 20.1.1.
-        type: str
-    incremental_file_refs:
-        description:
-            - Ip reputation db incremental update files.
-            - It is a reference to an object of type fileobject.
-            - Field introduced in 20.1.1.
-        type: list
-    labels:
-        description:
-            - Key value pairs for granular object access control.
-            - Also allows for classification and tagging of similar objects.
-            - Field introduced in 20.1.2.
-            - Maximum of 4 items allowed.
-        type: list
-    name:
-        description:
-            - Ip reputation db name.
-            - Field introduced in 20.1.1.
-        required: true
-        type: str
-    service_status:
-        description:
-            - If this object is managed by the ip reputation service, this field contain the status of this syncronization.
-            - Field introduced in 20.1.1.
-        type: dict
-    tenant_ref:
-        description:
-            - Tenant that this object belongs to.
-            - It is a reference to an object of type tenant.
-            - Field introduced in 20.1.1.
-        type: str
-    url:
-        description:
-            - Avi controller URL of the object.
-        type: str
-    uuid:
-        description:
-            - Uuid of this object.
-            - Field introduced in 20.1.1.
-        type: str
-    vendor:
-        description:
-            - Organization providing ip reputation data.
-            - Enum options - IP_REPUTATION_VENDOR_WEBROOT.
-            - Field introduced in 20.1.1.
-        required: true
-        type: str
-    version:
-        description:
-            - A version number for this database object.
-            - This is informal for the consumer of this api only, a tool which manages this object can store version information here.
-            - Field introduced in 20.1.1.
-        type: str
-extends_documentation_fragment:
-    - avi
-'''
-
-EXAMPLES = """
-- name: Example to create IPReputationDB object
-  avi_ipreputationdb:
-    controller: 10.10.25.42
-    username: admin
-    password: something
-    state: present
-    name: sample_ipreputationdb
-"""
-
-RETURN = '''
-obj:
-    description: IPReputationDB (api/ipreputationdb) object
-    returned: success, changed
-    type: dict
-'''
-
-from ansible.module_utils.basic import AnsibleModule
+**Module for setup of IPReputationDB Avi RESTful Object**
 
 
-def main():
-    argument_specs = dict(
-        state=dict(default='present',
-                   choices=['absent', 'present']),
-        avi_api_update_method=dict(default='put',
-                                   choices=['put', 'patch']),
-        avi_api_patch_op=dict(choices=['add', 'replace', 'delete']),
-        base_file_refs=dict(type='list',),
-        description=dict(type='str',),
-        incremental_file_refs=dict(type='list',),
-        labels=dict(type='list',),
-        name=dict(type='str', required=True),
-        service_status=dict(type='dict',),
-        tenant_ref=dict(type='str',),
-        url=dict(type='str',),
-        uuid=dict(type='str',),
-        vendor=dict(type='str', required=True),
-        version=dict(type='str',),
-    )
-    argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
-    if not HAS_AVI:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
+Version added: "1.0.0"
 
-    return avi_ansible_api(module, 'ipreputationdb',
-                           set())
+.. contents::
+   :local:
+   :depth: 1
 
 
-if __name__ == "__main__":
-    main()
+Synopsis
+--------
+- This module is used to configure IPReputationDB object
+- more examples at U(https://github.com/avinetworks/devops)
+
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- avisdk
+
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="2">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+            <th width="100%">Comments</th>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>base_file_refs:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Ip reputation db base file.
+                         - It is a reference to an object of type fileobject.
+                         - Field introduced in 20.1.1.
+                         - Maximum of 1 items allowed.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>description:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Description.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>incremental_file_refs:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Ip reputation db incremental update files.
+                         - It is a reference to an object of type fileobject.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>labels:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Key value pairs for granular object access control.
+                         - Also allows for classification and tagging of similar objects.
+                         - Field introduced in 20.1.2.
+                         - Maximum of 4 items allowed.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>name:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Ip reputation db name.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>service_status:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - If this object is managed by the ip reputation service, this field contain the status of this syncronization.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>tenant_ref:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Tenant that this object belongs to.
+                         - It is a reference to an object of type tenant.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>url:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Avi controller URL of the object.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>uuid:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - Uuid of this object.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>vendor:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                            <div style="font-size: small">
+                required: true
+                </div>
+                        </td>
+            <td>
+                                     - Organization providing ip reputation data.
+                         - Enum options - IP_REPUTATION_VENDOR_WEBROOT.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>version:</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                </td>
+            <td>
+                                     - A version number for this database object.
+                         - This is informal for the consumer of this api only, a tool which manages this object can store version information here.
+                         - Field introduced in 20.1.1.
+                                    </td>
+        </tr>
+            </table>
+    <br/>
+
+
+Examples
+--------
+
+.. code-block:: yaml
+
+    - name: Example to create IPReputationDB object
+      avi_ipreputationdb:
+        controller: 10.10.25.42
+        username: admin
+        password: something
+        state: present
+        name: sample_ipreputationdb
+
+
+Status
+------
+
+
+Authors
+~~~~~~~
+
+- Gaurav Rastogi (grastogi@avinetworks.com)
+- Sandeep Bandi (sbandi@avinetworks.com)
+
+
+
