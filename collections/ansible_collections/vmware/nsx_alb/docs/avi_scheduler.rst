@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th width="100%">Comments</th>
+            <th> width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -48,10 +48,12 @@ Parameters
                     <span style="color: purple">str</span>
                 </div>
             </td>
+            <td>
                 <div style="font-size: small">
                     default: present
                     choices: ["absent", "present"]
                 </div>
+            </td>
             <td>
                 <div style="font-size: small">
                     - The state that should be applied on the entity.
@@ -68,10 +70,12 @@ Parameters
                     <span style="color: purple">str</span>
                 </div>
             </td>
+            <td>
                 <div style="font-size: small">
                     default: put
                     choices: ["put", "patch"]
                 </div>
+            </td>
             <td>
                 <div style="font-size: small">
                     - Default method for object update is HTTP PUT.
@@ -90,9 +94,11 @@ Parameters
                     <span style="color: purple">str</span>
                 </div>
             </td>
+            <td>
                 <div style="font-size: small">
                     choices: ["add", "replace", "delete"]
                 </div>
+            </td>
             <td>
                 <div style="font-size: small">
                     - Patch operation to use when using avi_api_update_method as patch.
