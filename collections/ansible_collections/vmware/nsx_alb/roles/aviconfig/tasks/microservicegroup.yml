@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi MicroServiceGroup | Create or Update MicroServiceGroup
-  avi_microservicegroup:
+  vmware.nsx_alb.avi_microservicegroup:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

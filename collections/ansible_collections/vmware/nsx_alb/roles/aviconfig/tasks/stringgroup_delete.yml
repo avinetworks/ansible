@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi StringGroup | Delete StringGroup
-  avi_stringgroup:
+  vmware.nsx_alb.avi_stringgroup:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

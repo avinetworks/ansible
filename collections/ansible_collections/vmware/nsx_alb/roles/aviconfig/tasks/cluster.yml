@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi Cluster | Create or Update Cluster
-  avi_cluster:
+  vmware.nsx_alb.avi_cluster:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

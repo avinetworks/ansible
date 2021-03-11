@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi SSLProfile | Create or Update SSLProfile
-  avi_sslprofile:
+  vmware.nsx_alb.avi_sslprofile:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

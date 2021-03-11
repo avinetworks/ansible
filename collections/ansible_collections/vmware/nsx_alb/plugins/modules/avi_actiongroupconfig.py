@@ -36,14 +36,12 @@ options:
         description:
             - Default method for object update is HTTP PUT.
             - Setting to patch will override that behavior to use HTTP PATCH.
-        version_added: "2.5"
         default: put
         choices: ["put", "patch"]
         type: str
     avi_api_patch_op:
         description:
             - Patch operation to use when using avi_api_update_method as patch.
-        version_added: "2.5"
         choices: ["add", "replace", "delete"]
         type: str
     action_script_config_ref:

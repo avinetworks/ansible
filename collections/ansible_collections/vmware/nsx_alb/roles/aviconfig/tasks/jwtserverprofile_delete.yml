@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi JWTServerProfile | Delete JWTServerProfile
-  avi_jwtserverprofile:
+  vmware.nsx_alb.avi_jwtserverprofile:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

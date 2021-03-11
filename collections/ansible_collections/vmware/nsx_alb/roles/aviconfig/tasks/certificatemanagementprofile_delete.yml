@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi CertificateManagementProfile | Delete CertificateManagementProfile
-  avi_certificatemanagementprofile:
+  vmware.nsx_alb.avi_certificatemanagementprofile:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

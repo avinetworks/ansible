@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi NetworkSecurityPolicy | Create or Update NetworkSecurityPolicy
-  avi_networksecuritypolicy:
+  vmware.nsx_alb.avi_networksecuritypolicy:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

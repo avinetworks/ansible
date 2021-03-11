@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi BotConfigConsolidator | Delete BotConfigConsolidator
-  avi_botconfigconsolidator:
+  vmware.nsx_alb.avi_botconfigconsolidator:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

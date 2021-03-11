@@ -3,7 +3,8 @@
 ---
 - name: Avi Cloud | Setup Cloud
   no_log: "{{ avi_role_config_log_mode | default(False)}}"
-  avi_cloud:
+  vmware.nsx_alb.avi_cloud:
+
     controller: "{{ avi_controller | default(omit)}}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"
@@ -56,7 +57,8 @@
   with_items: "{{ avi_role_cfg.cloud | default([]) }}"
 
 - name: Fetch cloud status
-  avi_api_session:
+  vmware.nsx_alb.avi_api_session:
+
     controller: "{{ avi_controller | default(omit)}}"
     username: "{{ avi_username  | default(omit)}}"
     password: "{{ avi_password  | default(omit)}}"
@@ -88,7 +90,8 @@
 
 - name: Avi Cloud | Setup Cloud
   no_log: "{{ avi_role_config_log_mode | default(False)}}"
-  avi_cloud:
+  vmware.nsx_alb.avi_cloud:
+
     controller: "{{ avi_controller | default(omit)}}"
     username: "{{ avi_username  | default(omit)}}"
     password: "{{ avi_password  | default(omit)}}"

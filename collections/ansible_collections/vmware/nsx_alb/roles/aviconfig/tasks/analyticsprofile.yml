@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi AnalyticsProfile | Create or Update AnalyticsProfile
-  avi_analyticsprofile:
+  vmware.nsx_alb.avi_analyticsprofile:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

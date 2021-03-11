@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi SnmpTrapProfile | Delete SnmpTrapProfile
-  avi_snmptrapprofile:
+  vmware.nsx_alb.avi_snmptrapprofile:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi ServiceEngine | Create or Update ServiceEngine
-  avi_serviceengine:
+  vmware.nsx_alb.avi_serviceengine:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

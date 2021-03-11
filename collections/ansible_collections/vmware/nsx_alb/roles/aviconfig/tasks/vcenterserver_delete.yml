@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi VCenterServer | Delete VCenterServer
-  avi_vcenterserver:
+  vmware.nsx_alb.avi_vcenterserver:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

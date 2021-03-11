@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi ControllerSite | Delete ControllerSite
-  avi_controllersite:
+  vmware.nsx_alb.avi_controllersite:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

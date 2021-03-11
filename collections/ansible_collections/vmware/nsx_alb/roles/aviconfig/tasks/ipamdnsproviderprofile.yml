@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi IpamDnsProviderProfile | Create or Update IpamDnsProviderProfile
-  avi_ipamdnsproviderprofile:
+  vmware.nsx_alb.avi_ipamdnsproviderprofile:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

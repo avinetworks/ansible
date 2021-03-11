@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi UpgradeStatusSummary | Delete UpgradeStatusSummary
-  avi_upgradestatussummary:
+  vmware.nsx_alb.avi_upgradestatussummary:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

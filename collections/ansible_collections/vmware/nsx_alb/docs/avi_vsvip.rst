@@ -463,8 +463,7 @@ Status
 Authors
 ~~~~~~~
 
-- Gaurav Rastogi (grastogi@avinetworks.com)
-- Sandeep Bandi (sbandi@avinetworks.com)
+- Amol Shinde (samol@vmware.com)
 
 
 

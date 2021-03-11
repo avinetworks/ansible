@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi Role | Create or Update Role
-  avi_role:
+  vmware.nsx_alb.avi_role:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

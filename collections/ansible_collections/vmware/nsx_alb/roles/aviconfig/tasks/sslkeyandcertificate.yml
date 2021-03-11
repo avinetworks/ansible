@@ -2,7 +2,7 @@
 # Copyright Avi Networks
 ---
 - name: Avi SSLKeyAndCertificate | Upload or Update SSL certificate - always changed due to sensitve field
-  avi_sslkeyandcertificate:
+  vmware.nsx_alb.avi_sslkeyandcertificate:
 
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
@@ -89,7 +89,7 @@
     - item.certificate.certificate is undefined
 
 - name: Avi SSLKeyAndCertificate | Create / Update self signed certs
-  avi_sslkeyandcertificate:
+  vmware.nsx_alb.avi_sslkeyandcertificate:
 
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"

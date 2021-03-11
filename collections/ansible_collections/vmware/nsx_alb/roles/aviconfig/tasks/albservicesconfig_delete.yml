@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi ALBServicesConfig | Delete ALBServicesConfig
-  avi_albservicesconfig:
+  vmware.nsx_alb.avi_albservicesconfig:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

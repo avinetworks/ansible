@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi DnsPolicy | Create or Update DnsPolicy
-  avi_dnspolicy:
+  vmware.nsx_alb.avi_dnspolicy:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

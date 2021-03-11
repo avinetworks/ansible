@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi TestSeDatastoreLevel1 | Delete TestSeDatastoreLevel1
-  avi_testsedatastorelevel1:
+  vmware.nsx_alb.avi_testsedatastorelevel1:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

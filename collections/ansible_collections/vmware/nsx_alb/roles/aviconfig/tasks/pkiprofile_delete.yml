@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi PKIProfile | Delete PKIProfile
-  avi_pkiprofile:
+  vmware.nsx_alb.avi_pkiprofile:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

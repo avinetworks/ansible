@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi SystemLimits | Create or Update SystemLimits
-  avi_systemlimits:
+  vmware.nsx_alb.avi_systemlimits:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

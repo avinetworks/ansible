@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi VsVip | Create or Update VsVip
-  avi_vsvip:
+  vmware.nsx_alb.avi_vsvip:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi AuthProfile | Delete AuthProfile
-  avi_authprofile:
+  vmware.nsx_alb.avi_authprofile:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

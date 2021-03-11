@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi SSOPolicy | Create or Update SSOPolicy
-  avi_ssopolicy:
+  vmware.nsx_alb.avi_ssopolicy:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

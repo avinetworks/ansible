@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi GslbService | Create or Update GslbService
-  avi_gslbservice:
+  vmware.nsx_alb.avi_gslbservice:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

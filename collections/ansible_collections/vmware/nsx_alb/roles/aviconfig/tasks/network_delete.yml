@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi Network | Delete Network
-  avi_network:
+  vmware.nsx_alb.avi_network:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

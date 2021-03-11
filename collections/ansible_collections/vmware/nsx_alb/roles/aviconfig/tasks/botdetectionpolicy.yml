@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi BotDetectionPolicy | Create or Update BotDetectionPolicy
-  avi_botdetectionpolicy:
+  vmware.nsx_alb.avi_botdetectionpolicy:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

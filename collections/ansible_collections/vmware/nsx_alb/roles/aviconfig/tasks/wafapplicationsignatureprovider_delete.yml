@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi WafApplicationSignatureProvider | Delete WafApplicationSignatureProvider
-  avi_wafapplicationsignatureprovider:
+  vmware.nsx_alb.avi_wafapplicationsignatureprovider:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

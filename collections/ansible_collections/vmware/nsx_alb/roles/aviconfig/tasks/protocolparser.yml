@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi ProtocolParser | Create or Update ProtocolParser
-  avi_protocolparser:
+  vmware.nsx_alb.avi_protocolparser:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

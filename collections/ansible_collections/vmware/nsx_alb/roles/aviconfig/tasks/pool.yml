@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi Pool | Create or Update Pool
-  avi_pool:
+  vmware.nsx_alb.avi_pool:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

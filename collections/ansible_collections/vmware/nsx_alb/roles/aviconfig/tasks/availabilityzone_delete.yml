@@ -2,7 +2,8 @@
 # Copyright Avi Networks
 ---
 - name: Avi AvailabilityZone | Delete AvailabilityZone
-  avi_availabilityzone:
+  vmware.nsx_alb.avi_availabilityzone:
+
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"
