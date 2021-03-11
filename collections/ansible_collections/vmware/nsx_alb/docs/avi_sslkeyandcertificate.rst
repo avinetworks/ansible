@@ -649,7 +649,7 @@ Examples
     
 - name: Create a SSL Key and Certificate
   avi_sslkeyandcertificate:
-    controller: 10.10.27.90
+    controller: 192.168.138.18
     username: admin
     password: AviNetworks123!
     key: |

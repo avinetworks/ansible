@@ -219,7 +219,7 @@ extends_documentation_fragment:
 EXAMPLES = """
 - name: Create a HTTPS health monitor
   avi_healthmonitor:
-    controller: 10.10.27.90
+    controller: 192.168.138.18
     username: admin
     password: AviNetworks123!
     https_monitor:

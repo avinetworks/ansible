@@ -148,12 +148,12 @@ Examples
 
     - name: Example to create create Pool object
       vmware.nsx_alb.avi_pool:
-        controller: "10.79.16.13"
+        controller: "192.168.15.18"
         username: "admin"
         password: "password"
         name: app1-pool
         lb_algorithm: LB_ALGORITHM_LEAST_LOAD
         servers:
         - ip:
-             addr: 10.90.64.22
+             addr: "192.168.12.15"
              type: 'V4'

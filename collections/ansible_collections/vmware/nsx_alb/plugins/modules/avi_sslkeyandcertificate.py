@@ -190,7 +190,7 @@ extends_documentation_fragment:
 EXAMPLES = """
 - name: Create a SSL Key and Certificate
   avi_sslkeyandcertificate:
-    controller: 10.10.27.90
+    controller: 192.168.138.18
     username: admin
     password: AviNetworks123!
     key: |
@@ -266,7 +266,7 @@ def main():
                                     'For more details visit https://github.com/avinetworks/sdk.')
 
     return avi_ansible_api(module, 'sslkeyandcertificate',
-                           {'key_passphrase', 'key'})
+                           {'key', 'key_passphrase'})
 
 
 if __name__ == "__main__":

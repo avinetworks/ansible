@@ -153,7 +153,7 @@ EXAMPLES = """
       auto_allocate_ip_type: V4_ONLY
       ip_address:
         type: V4
-        addr: 198.51.100.101
+        addr: 192.168.138.18
 """
 
 RETURN = '''

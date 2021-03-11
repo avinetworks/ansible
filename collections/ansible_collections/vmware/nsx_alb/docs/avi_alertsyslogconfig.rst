@@ -226,7 +226,7 @@ Examples
       name: Roberts-syslog
       password: '{{ password }}'
       syslog_servers:
-      - syslog_server: 10.10.0.100
+      - syslog_server: 192.168.15.11
         syslog_server_port: 514
         udp: true
       tenant_ref: /api/tenant?name=admin

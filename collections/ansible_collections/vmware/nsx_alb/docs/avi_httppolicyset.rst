@@ -385,7 +385,7 @@ Examples
     
 - name: Create a HTTP Policy set two switch between testpool1 and testpool2
   avi_httppolicyset:
-    controller: 10.10.27.90
+    controller: 192.168.138.18
     username: admin
     password: AviNetworks123!
     name: test-HTTP-Policy-Set

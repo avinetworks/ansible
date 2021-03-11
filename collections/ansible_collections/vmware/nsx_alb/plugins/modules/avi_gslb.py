@@ -192,7 +192,7 @@ EXAMPLES = """
         password: "gslb_password"
         ip_addresses:
           - type: "V4"
-            addr: "10.10.28.83"
+            addr: "192.168.138.18"
         enabled: True
         member_type: "GSLB_ACTIVE_MEMBER"
         port: 443
@@ -202,7 +202,7 @@ EXAMPLES = """
         password: "gslb_password"
         ip_addresses:
           - type: "V4"
-            addr: "10.10.28.86"
+            addr: "192.168.138.19"
         enabled: True
         member_type: "GSLB_ACTIVE_MEMBER"
         port: 443
@@ -231,7 +231,7 @@ EXAMPLES = """
         password: "gslb_password"
         ip_addresses:
           - type: "V4"
-            addr: "10.10.21.13"
+            addr: "192.168.138.20"
         enabled: True
         member_type: "GSLB_ACTIVE_MEMBER"
         port: 283
@@ -257,7 +257,7 @@ EXAMPLES = """
         password: "gslb_password"
         ip_addresses:
           - type: "V4"
-            addr: "10.10.11.24"
+            addr: "192.168.138.21"
         enabled: True
         member_type: "GSLB_ACTIVE_MEMBER"
         port: 283
@@ -276,8 +276,8 @@ EXAMPLES = """
     avi_api_patch_op: delete
     dns_configs:
     sites:
-      - ip_addresses: "10.10.28.83"
-      - ip_addresses: "10.10.28.86"
+      - ip_addresses: "192.168.138.22"
+      - ip_addresses: "192.168.138.23"
 
 - name: Delete Gslb complete site's configurations (Patch Delete(site) Operation)
   avi_gslb:
@@ -290,7 +290,7 @@ EXAMPLES = """
     leader_cluster_uuid: "cluster-84aa795f-8f09-42bb-97a4-5103f4a53da9"
     dns_configs:
     sites:
-      - ip_addresses: 10.10.28.83
+      - ip_addresses: 192.168.138.24
 """
 
 RETURN = '''

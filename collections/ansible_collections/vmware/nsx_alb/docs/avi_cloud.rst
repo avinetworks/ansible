@@ -970,7 +970,7 @@ Examples
         password: password
         privilege: WRITE_ACCESS
         username: user
-        vcenter_url: 10.10.20.100
+        vcenter_url: 192.168.15.18
       vtype: CLOUD_VCENTER
 
 

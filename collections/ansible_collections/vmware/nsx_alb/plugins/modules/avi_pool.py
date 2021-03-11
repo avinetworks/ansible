@@ -493,7 +493,7 @@ extends_documentation_fragment:
 EXAMPLES = """
 - name: Create a Pool with two servers and HTTP monitor
   avi_pool:
-    controller: 10.10.1.20
+    controller: 192.168.138.18
     username: avi_user
     password: avi_password
     name: testpool1
@@ -503,10 +503,10 @@ EXAMPLES = """
         - '/api/healthmonitor?name=System-HTTP'
     servers:
         - ip:
-            addr: 10.10.2.20
+            addr: 192.168.138.11
             type: V4
         - ip:
-            addr: 10.10.2.21
+            addr: 192.168.138.12
             type: V4
 
 - name: Patch pool with a single server using patch op and avi_credentials
@@ -517,7 +517,7 @@ EXAMPLES = """
     name: test-pool
     servers:
       - ip:
-        addr: 10.90.64.13
+        addr: 192.168.138.13
         type: 'V4'
   register: pool
   when:

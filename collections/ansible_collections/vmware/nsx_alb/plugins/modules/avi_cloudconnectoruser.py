@@ -184,7 +184,7 @@ def main():
                                     'For more details visit https://github.com/avinetworks/sdk.')
 
     return avi_ansible_api(module, 'cloudconnectoruser',
-                           {'private_key', 'password'})
+                           {'password', 'private_key'})
 
 
 if __name__ == "__main__":

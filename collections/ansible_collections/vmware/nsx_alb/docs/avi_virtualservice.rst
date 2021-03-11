@@ -2489,7 +2489,7 @@ Examples
     
 - name: Create SSL Virtual Service using Pool testpool2
   avi_virtualservice:
-    controller: 10.10.27.90
+    controller: 192.168.138.18
     username: admin
     password: AviNetworks123!
     name: newtestvs
