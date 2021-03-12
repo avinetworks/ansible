@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>after_reboot_rollback_fnc:</b>
+                <b>after_reboot_rollback_fnc</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -118,17 +125,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Backward compatible abort function name.
-                </div><br>
+                  Backward compatible abort function name.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.10, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.10, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>after_reboot_task_name:</b>
+                <b>after_reboot_task_name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -138,17 +145,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Backward compatible task dict name.
-                </div><br>
+                  Backward compatible task dict name.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.10, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.10, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>clean:</b>
+                <b>clean</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -158,17 +165,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Flag for clean installation.
-                </div><br>
+                  Flag for clean installation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.10, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.10, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>duration:</b>
+                <b>duration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -178,17 +185,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Duration of upgrade operation in seconds.
-                </div><br>
+                  Duration of upgrade operation in seconds.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>enable_patch_rollback:</b>
+                <b>enable_patch_rollback</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -198,20 +205,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Check if the patch rollback is possible on this node.
-                </div><br>
+                  Check if the patch rollback is possible on this node.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>enable_rollback:</b>
+                <b>enable_rollback</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -221,20 +228,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Check if the rollback is possible on this node.
-                </div><br>
+                  Check if the rollback is possible on this node.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>end_time:</b>
+                <b>end_time</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -244,17 +251,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - End time of upgrade operation.
-                </div><br>
+                  End time of upgrade operation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>enqueue_time:</b>
+                <b>enqueue_time</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -264,17 +271,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Enqueue time of upgrade operation.
-                </div><br>
+                  Enqueue time of upgrade operation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>history:</b>
+                <b>history</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -284,17 +291,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Record of past operations on this node.
-                </div><br>
+                  Record of past operations on this node.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.4.
-                </div><br>
+                  Field introduced in 20.1.4.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>image_path:</b>
+                <b>image_path</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -304,17 +311,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Image path of current base image.
-                </div><br>
+                  Image path of current base image.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.10, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.10, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>image_ref:</b>
+                <b>image_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -324,20 +331,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Image uuid for identifying the current base image.
-                </div><br>
+                  Image uuid for identifying the current base image.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type image.
-                </div><br>
+                  It is a reference to an object of type image.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -347,17 +354,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of the system such as cluster name, se group name and se name.
-                </div><br>
+                  Name of the system such as cluster name, se group name and se name.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>node_type:</b>
+                <b>node_type</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -367,20 +374,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Type of the system such as controller_cluster, se_group or se.
-                </div><br>
+                  Type of the system such as controller_cluster, se_group or se.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
-                </div><br>
+                  Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>obj_cloud_ref:</b>
+                <b>obj_cloud_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -390,20 +397,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Cloud that this object belongs to.
-                </div><br>
+                  Cloud that this object belongs to.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type cloud.
-                </div><br>
+                  It is a reference to an object of type cloud.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>obj_state:</b>
+                <b>obj_state</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -413,17 +420,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Current status of the upgrade operation.
-                </div><br>
+                  Current status of the upgrade operation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>params:</b>
+                <b>params</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -433,17 +440,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Parameters associated with the upgrade operation.
-                </div><br>
+                  Parameters associated with the upgrade operation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>patch_image_path:</b>
+                <b>patch_image_path</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -453,17 +460,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Image path of current patch image.
-                </div><br>
+                  Image path of current patch image.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.10, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.10, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>patch_image_ref:</b>
+                <b>patch_image_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -473,23 +480,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Image uuid for identifying the current patch.example  base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1
-                </div><br>
+                  Image uuid for identifying the current patch.example  base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1
+                </div>
                                 <div style="font-size: small">
-                 - value.
-                </div><br>
+                  value.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type image.
-                </div><br>
+                  It is a reference to an object of type image.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>patch_list:</b>
+                <b>patch_list</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -499,23 +506,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - List of patches applied to this node.
-                </div><br>
+                  List of patches applied to this node.
+                </div>
                                 <div style="font-size: small">
-                 - Example  base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied, this field will indicate the [{'6p1', '6p1_image_uuid'},
-                </div><br>
+                  Example  base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied, this field will indicate the [{'6p1', '6p1_image_uuid'},
+                </div>
                                 <div style="font-size: small">
-                 - {'6p5', '6p5_image_uuid'}] value.
-                </div><br>
+                  {'6p5', '6p5_image_uuid'}] value.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.8, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.8, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>patch_reboot:</b>
+                <b>patch_reboot</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -525,17 +532,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Flag for patch op with reboot.
-                </div><br>
+                  Flag for patch op with reboot.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.10, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.10, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>patch_version:</b>
+                <b>patch_version</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -545,20 +552,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Current patch version applied to this node.
-                </div><br>
+                  Current patch version applied to this node.
+                </div>
                                 <div style="font-size: small">
-                 - Example  base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1 value.
-                </div><br>
+                  Example  base-image is 18.2.6 and a patch 6p1 is applied, then this field will indicate the 6p1 value.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>prev_image_path:</b>
+                <b>prev_image_path</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -568,17 +575,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Image path of previous base image.
-                </div><br>
+                  Image path of previous base image.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.10, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.10, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>prev_patch_image_path:</b>
+                <b>prev_patch_image_path</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -588,17 +595,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Image path of previous patch image.
-                </div><br>
+                  Image path of previous patch image.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.10, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.10, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>previous_image_ref:</b>
+                <b>previous_image_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -608,23 +615,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Image uuid for identifying previous base image.example  base-image was 18.2.5 and an upgrade was done to 18.2.6, then this field will indicate
-                </div><br>
+                  Image uuid for identifying previous base image.example  base-image was 18.2.5 and an upgrade was done to 18.2.6, then this field will indicate
+                </div>
                                 <div style="font-size: small">
-                 - the 18.2.5 value.
-                </div><br>
+                  the 18.2.5 value.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type image.
-                </div><br>
+                  It is a reference to an object of type image.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>previous_patch_image_ref:</b>
+                <b>previous_patch_image_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -634,26 +641,26 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Image uuid for identifying previous patch.example  base-image was 18.2.6 with a patch 6p1.
-                </div><br>
+                  Image uuid for identifying previous patch.example  base-image was 18.2.6 with a patch 6p1.
+                </div>
                                 <div style="font-size: small">
-                 - Upgrade was initiated to 18.2.8 with patch 8p1.
-                </div><br>
+                  Upgrade was initiated to 18.2.8 with patch 8p1.
+                </div>
                                 <div style="font-size: small">
-                 - The previous_image field will contain 18.2.6 and this field will indicate the 6p1 value.
-                </div><br>
+                  The previous_image field will contain 18.2.6 and this field will indicate the 6p1 value.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type image.
-                </div><br>
+                  It is a reference to an object of type image.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>previous_patch_list:</b>
+                <b>previous_patch_list</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -663,17 +670,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - List of patches applied to this node on previous major version.
-                </div><br>
+                  List of patches applied to this node on previous major version.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.8, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.8, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>previous_patch_version:</b>
+                <b>previous_patch_version</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -683,23 +690,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Previous patch version applied to this node.example  base-image was 18.2.6 with a patch 6p1.
-                </div><br>
+                  Previous patch version applied to this node.example  base-image was 18.2.6 with a patch 6p1.
+                </div>
                                 <div style="font-size: small">
-                 - Upgrade was initiated to 18.2.8 with patch 8p1.
-                </div><br>
+                  Upgrade was initiated to 18.2.8 with patch 8p1.
+                </div>
                                 <div style="font-size: small">
-                 - The previous_image field will contain 18.2.6 and this field will indicate the 6p1 value.
-                </div><br>
+                  The previous_image field will contain 18.2.6 and this field will indicate the 6p1 value.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>previous_version:</b>
+                <b>previous_version</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -709,20 +716,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Previous version prior to upgrade.example  base-image was 18.2.5 and an upgrade was done to 18.2.6, then this field will indicate the 18.2.5
-                </div><br>
+                  Previous version prior to upgrade.example  base-image was 18.2.5 and an upgrade was done to 18.2.6, then this field will indicate the 18.2.5
+                </div>
                                 <div style="font-size: small">
-                 - value.
-                </div><br>
+                  value.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>progress:</b>
+                <b>progress</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -732,26 +739,26 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Upgrade operations progress which holds value between 0-100.
-                </div><br>
+                  Upgrade operations progress which holds value between 0-100.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 0-100.
-                </div><br>
+                  Allowed values are 0-100.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.8, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.8, 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is percent.
-                </div><br>
+                  Unit is percent.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>se_patch_image_path:</b>
+                <b>se_patch_image_path</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -761,17 +768,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Image path of se patch image.(required in case of reimage and upgrade + patch).
-                </div><br>
+                  Image path of se patch image.(required in case of reimage and upgrade + patch).
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.10, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.10, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>se_patch_image_ref:</b>
+                <b>se_patch_image_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -781,20 +788,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Image uuid for identifying the current se patch required in case of system upgrade(re-image) with se patch.
-                </div><br>
+                  Image uuid for identifying the current se patch required in case of system upgrade(re-image) with se patch.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type image.
-                </div><br>
+                  It is a reference to an object of type image.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.10, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.10, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>se_upgrade_events:</b>
+                <b>se_upgrade_events</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -804,17 +811,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Serviceenginegroup upgrade errors.
-                </div><br>
+                  Serviceenginegroup upgrade errors.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>seg_params:</b>
+                <b>seg_params</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -824,23 +831,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Se_patch may be different from the controller_patch.
-                </div><br>
+                  Se_patch may be different from the controller_patch.
+                </div>
                                 <div style="font-size: small">
-                 - It has to be saved in the journal for subsequent consumption.
-                </div><br>
+                  It has to be saved in the journal for subsequent consumption.
+                </div>
                                 <div style="font-size: small">
-                 - The segroup params will be saved in the controller entry as seg_params.
-                </div><br>
+                  The segroup params will be saved in the controller entry as seg_params.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.10, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.10, 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>seg_status:</b>
+                <b>seg_status</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -850,17 +857,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Detailed segroup status.
-                </div><br>
+                  Detailed segroup status.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>start_time:</b>
+                <b>start_time</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -870,17 +877,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Start time of upgrade operation.
-                </div><br>
+                  Start time of upgrade operation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>system:</b>
+                <b>system</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -890,17 +897,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Flag is set only in the cluster if the upgrade is initiated as a system-upgrade.
-                </div><br>
+                  Flag is set only in the cluster if the upgrade is initiated as a system-upgrade.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tasks_completed:</b>
+                <b>tasks_completed</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -910,17 +917,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Completed set of tasks in the upgrade operation.
-                </div><br>
+                  Completed set of tasks in the upgrade operation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -930,20 +937,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Tenant that this object belongs to.
-                </div><br>
+                  Tenant that this object belongs to.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>total_tasks:</b>
+                <b>total_tasks</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -953,17 +960,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Total number of tasks in the upgrade operation.
-                </div><br>
+                  Total number of tasks in the upgrade operation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>upgrade_events:</b>
+                <b>upgrade_events</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -973,17 +980,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Events performed for upgrade operation.
-                </div><br>
+                  Events performed for upgrade operation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>upgrade_ops:</b>
+                <b>upgrade_ops</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -993,20 +1000,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Upgrade operations requested.
-                </div><br>
+                  Upgrade operations requested.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
-                </div><br>
+                  Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -1016,14 +1023,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -1033,17 +1040,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Uuid identifier for the system such as cluster, se group and se.
-                </div><br>
+                  Uuid identifier for the system such as cluster, se group and se.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>version:</b>
+                <b>version</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -1053,11 +1060,11 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Current base image applied to this node.
-                </div><br>
+                  Current base image applied to this node.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -1068,23 +1075,18 @@ Examples
 --------
 
 .. code-block:: yaml
-
     - name: Example to create UpgradeStatusInfo object
-      avi_upgradestatusinfo:
-        controller: 10.10.25.42
+      vmware.nsx_alb.avi_upgradestatusinfo:
+        controller: 192.168.15.18
         username: admin
         password: something
         state: present
         name: sample_upgradestatusinfo
-
-
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

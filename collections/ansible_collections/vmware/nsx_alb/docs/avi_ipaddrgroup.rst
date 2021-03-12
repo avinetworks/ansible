@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>addrs:</b>
+                <b>addrs</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -118,14 +125,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Configure ip address(es).
-                </div><br>
+                  Configure ip address(es).
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>apic_epg_name:</b>
+                <b>apic_epg_name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -135,14 +142,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Populate ip addresses from members of this cisco apic epg.
-                </div><br>
+                  Populate ip addresses from members of this cisco apic epg.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>country_codes:</b>
+                <b>country_codes</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -152,14 +159,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Populate the ip address ranges from the geo database for this country.
-                </div><br>
+                  Populate the ip address ranges from the geo database for this country.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>description:</b>
+                <b>description</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -169,14 +176,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - User defined description for the object.
-                </div><br>
+                  User defined description for the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ip_ports:</b>
+                <b>ip_ports</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -186,14 +193,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Configure (ip address, port) tuple(s).
-                </div><br>
+                  Configure (ip address, port) tuple(s).
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>labels:</b>
+                <b>labels</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -203,23 +210,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Key value pairs for granular object access control.
-                </div><br>
+                  Key value pairs for granular object access control.
+                </div>
                                 <div style="font-size: small">
-                 - Also allows for classification and tagging of similar objects.
-                </div><br>
+                  Also allows for classification and tagging of similar objects.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.2.
-                </div><br>
+                  Field introduced in 20.1.2.
+                </div>
                                 <div style="font-size: small">
-                 - Maximum of 4 items allowed.
-                </div><br>
+                  Maximum of 4 items allowed.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>marathon_app_name:</b>
+                <b>marathon_app_name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -229,14 +236,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Populate ip addresses from tasks of this marathon app.
-                </div><br>
+                  Populate ip addresses from tasks of this marathon app.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>marathon_service_port:</b>
+                <b>marathon_service_port</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -246,20 +253,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Task port associated with marathon service port.
-                </div><br>
+                  Task port associated with marathon service port.
+                </div>
                                 <div style="font-size: small">
-                 - If marathon app has multiple service ports, this is required.
-                </div><br>
+                  If marathon app has multiple service ports, this is required.
+                </div>
                                 <div style="font-size: small">
-                 - Else, the first task port is used.
-                </div><br>
+                  Else, the first task port is used.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -267,19 +274,19 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of the ip address group.
-                </div><br>
+                  Name of the ip address group.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>prefixes:</b>
+                <b>prefixes</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -289,14 +296,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Configure ip address prefix(es).
-                </div><br>
+                  Configure ip address prefix(es).
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ranges:</b>
+                <b>ranges</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -306,14 +313,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Configure ip address range(s).
-                </div><br>
+                  Configure ip address range(s).
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -323,14 +330,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -340,14 +347,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -357,8 +364,8 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Uuid of the ip address group.
-                </div><br>
+                  Uuid of the ip address group.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -369,37 +376,32 @@ Examples
 --------
 
 .. code-block:: yaml
-
-    
-  - name: Create an IP Address Group configuration
-    avi_ipaddrgroup:
-      controller: '{{ controller }}'
-      username: '{{ username }}'
-      password: '{{ password }}'
-      name: Client-Source-Block
-      prefixes:
-      - ip_addr:
-          addr: 192.168.138.18
-          type: V4
-        mask: 8
-      - ip_addr:
-          addr: 192.168.20.11
-          type: V4
-        mask: 12
-      - ip_addr:
-          addr: 192.168.20.12
-          type: V4
-        mask: 16
-
-
+        
+      - name: Create an IP Address Group configuration
+        vmware.nsx_alb.avi_ipaddrgroup:
+          controller: '{{ controller }}'
+          username: '{{ username }}'
+          password: '{{ password }}'
+          name: Client-Source-Block
+          prefixes:
+          - ip_addr:
+              addr: 192.168.138.18
+              type: V4
+            mask: 8
+          - ip_addr:
+              addr: 192.168.20.11
+              type: V4
+            mask: 12
+          - ip_addr:
+              addr: 192.168.20.12
+              type: V4
+            mask: 16
 
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

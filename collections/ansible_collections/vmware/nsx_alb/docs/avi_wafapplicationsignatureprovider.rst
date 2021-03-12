@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>available_applications:</b>
+                <b>available_applications</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -118,17 +125,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Available application names and the ruleset version, when the rules for an application changed the last time.
-                </div><br>
+                  Available application names and the ruleset version, when the rules for an application changed the last time.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>last_check_for_updates_error:</b>
+                <b>last_check_for_updates_error</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -138,20 +145,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The error message indicating why the last update check failed.
-                </div><br>
+                  The error message indicating why the last update check failed.
+                </div>
                                 <div style="font-size: small">
-                 - Field deprecated in 20.1.3.
-                </div><br>
+                  Field deprecated in 20.1.3.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>last_failed_check_for_updates:</b>
+                <b>last_failed_check_for_updates</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -161,20 +168,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The last time that we checked for updates but did not get a result because of an error.
-                </div><br>
+                  The last time that we checked for updates but did not get a result because of an error.
+                </div>
                                 <div style="font-size: small">
-                 - Field deprecated in 20.1.3.
-                </div><br>
+                  Field deprecated in 20.1.3.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>last_successful_check_for_updates:</b>
+                <b>last_successful_check_for_updates</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -184,20 +191,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The last time that we checked for updates sucessfully.
-                </div><br>
+                  The last time that we checked for updates sucessfully.
+                </div>
                                 <div style="font-size: small">
-                 - Field deprecated in 20.1.3.
-                </div><br>
+                  Field deprecated in 20.1.3.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -207,17 +214,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of application specific ruleset provider.
-                </div><br>
+                  Name of application specific ruleset provider.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ruleset_version:</b>
+                <b>ruleset_version</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -227,17 +234,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Version of signatures.
-                </div><br>
+                  Version of signatures.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>service_status:</b>
+                <b>service_status</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -247,17 +254,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - If this object is managed by the application signatures update  service, this field contain the status of this syncronization.
-                </div><br>
+                  If this object is managed by the application signatures update  service, this field contain the status of this syncronization.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.3.
-                </div><br>
+                  Field introduced in 20.1.3.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>signatures:</b>
+                <b>signatures</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -267,20 +274,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The waf rules.
-                </div><br>
+                  The waf rules.
+                </div>
                                 <div style="font-size: small">
-                 - Not visible in the api.
-                </div><br>
+                  Not visible in the api.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -290,17 +297,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -310,14 +317,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -327,8 +334,8 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -339,23 +346,18 @@ Examples
 --------
 
 .. code-block:: yaml
-
     - name: Example to create WafApplicationSignatureProvider object
-      avi_wafapplicationsignatureprovider:
-        controller: 10.10.25.42
+      vmware.nsx_alb.avi_wafapplicationsignatureprovider:
+        controller: 192.168.15.18
         username: admin
         password: something
         state: present
         name: sample_wafapplicationsignatureprovider
-
-
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

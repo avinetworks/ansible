@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>auto_disable_old_prod_pools:</b>
+                <b>auto_disable_old_prod_pools</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -118,17 +125,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - It will automatically disable old production pools once there is a new production candidate.
-                </div><br>
+                  It will automatically disable old production pools once there is a new production candidate.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>description:</b>
+                <b>description</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -138,14 +145,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - User defined description for the object.
-                </div><br>
+                  User defined description for the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>evaluation_duration:</b>
+                <b>evaluation_duration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -155,23 +162,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Duration of evaluation period for automatic deployment.
-                </div><br>
+                  Duration of evaluation period for automatic deployment.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 60-86400.
-                </div><br>
+                  Allowed values are 60-86400.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is sec.
-                </div><br>
+                  Unit is sec.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>labels:</b>
+                <b>labels</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -181,23 +188,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Key value pairs for granular object access control.
-                </div><br>
+                  Key value pairs for granular object access control.
+                </div>
                                 <div style="font-size: small">
-                 - Also allows for classification and tagging of similar objects.
-                </div><br>
+                  Also allows for classification and tagging of similar objects.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.2.
-                </div><br>
+                  Field introduced in 20.1.2.
+                </div>
                                 <div style="font-size: small">
-                 - Maximum of 4 items allowed.
-                </div><br>
+                  Maximum of 4 items allowed.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -205,19 +212,19 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The name of the pool group deployment policy.
-                </div><br>
+                  The name of the pool group deployment policy.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>rules:</b>
+                <b>rules</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -227,14 +234,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - List of pgdeploymentrule.
-                </div><br>
+                  List of pgdeploymentrule.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>scheme:</b>
+                <b>scheme</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -244,20 +251,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Deployment scheme.
-                </div><br>
+                  Deployment scheme.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - BLUE_GREEN, CANARY.
-                </div><br>
+                  Enum options - BLUE_GREEN, CANARY.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as BLUE_GREEN.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as BLUE_GREEN.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>target_test_traffic_ratio:</b>
+                <b>target_test_traffic_ratio</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -267,23 +274,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Target traffic ratio before pool is made production.
-                </div><br>
+                  Target traffic ratio before pool is made production.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 1-100.
-                </div><br>
+                  Allowed values are 1-100.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is ratio.
-                </div><br>
+                  Unit is ratio.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 100.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 100.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -293,14 +300,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>test_traffic_ratio_rampup:</b>
+                <b>test_traffic_ratio_rampup</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -310,23 +317,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Ratio of the traffic that is sent to the pool under test.
-                </div><br>
+                  Ratio of the traffic that is sent to the pool under test.
+                </div>
                                 <div style="font-size: small">
-                 - Test ratio of 100 means blue green.
-                </div><br>
+                  Test ratio of 100 means blue green.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 1-100.
-                </div><br>
+                  Allowed values are 1-100.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 100.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 100.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -336,14 +343,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -353,14 +360,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Uuid of the pool group deployment policy.
-                </div><br>
+                  Uuid of the pool group deployment policy.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>webhook_ref:</b>
+                <b>webhook_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -370,17 +377,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Webhook configured with url that avi controller will pass back information about pool group, old and new pool information and current deployment
-                </div><br>
+                  Webhook configured with url that avi controller will pass back information about pool group, old and new pool information and current deployment
+                </div>
                                 <div style="font-size: small">
-                 - rule results.
-                </div><br>
+                  rule results.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type webhook.
-                </div><br>
+                  It is a reference to an object of type webhook.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.1.1.
-                </div><br>
+                  Field introduced in 17.1.1.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -391,23 +398,18 @@ Examples
 --------
 
 .. code-block:: yaml
-
     - name: Example to create PoolGroupDeploymentPolicy object
-      avi_poolgroupdeploymentpolicy:
-        controller: 10.10.25.42
+      vmware.nsx_alb.avi_poolgroupdeploymentpolicy:
+        controller: 192.168.15.18
         username: admin
         password: something
         state: present
         name: sample_poolgroupdeploymentpolicy
-
-
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

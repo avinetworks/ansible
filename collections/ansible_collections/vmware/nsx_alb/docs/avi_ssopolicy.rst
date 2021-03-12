@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>authentication_policy:</b>
+                <b>authentication_policy</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -116,22 +123,22 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Authentication policy settings.
-                </div><br>
+                  Authentication policy settings.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.1.
-                </div><br>
+                  Field introduced in 18.2.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>authorization_policy:</b>
+                <b>authorization_policy</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -141,17 +148,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Authorization policy settings.
-                </div><br>
+                  Authorization policy settings.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.5.
-                </div><br>
+                  Field introduced in 18.2.5.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>labels:</b>
+                <b>labels</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -161,23 +168,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Key value pairs for granular object access control.
-                </div><br>
+                  Key value pairs for granular object access control.
+                </div>
                                 <div style="font-size: small">
-                 - Also allows for classification and tagging of similar objects.
-                </div><br>
+                  Also allows for classification and tagging of similar objects.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.2.
-                </div><br>
+                  Field introduced in 20.1.2.
+                </div>
                                 <div style="font-size: small">
-                 - Maximum of 4 items allowed.
-                </div><br>
+                  Maximum of 4 items allowed.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -185,22 +192,22 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of the sso policy.
-                </div><br>
+                  Name of the sso policy.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.3.
-                </div><br>
+                  Field introduced in 18.2.3.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -210,20 +217,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Uuid of the tenant.
-                </div><br>
+                  Uuid of the tenant.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.3.
-                </div><br>
+                  Field introduced in 18.2.3.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>type:</b>
+                <b>type</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -233,23 +240,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Sso policy type.
-                </div><br>
+                  Sso policy type.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT.
-                </div><br>
+                  Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.5.
-                </div><br>
+                  Field introduced in 18.2.5.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as SSO_TYPE_SAML.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as SSO_TYPE_SAML.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -259,14 +266,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -276,11 +283,11 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Uuid of the sso policy.
-                </div><br>
+                  Uuid of the sso policy.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.3.
-                </div><br>
+                  Field introduced in 18.2.3.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -291,23 +298,18 @@ Examples
 --------
 
 .. code-block:: yaml
-
     - name: Example to create SSOPolicy object
-      avi_ssopolicy:
-        controller: 10.10.25.42
+      vmware.nsx_alb.avi_ssopolicy:
+        controller: 192.168.15.18
         username: admin
         password: something
         state: present
         name: sample_ssopolicy
-
-
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

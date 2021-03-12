@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>delay_for_server_garbage_collection:</b>
+                <b>delay_for_server_garbage_collection</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -118,23 +125,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Delay in minutes after which a down server will be removed from pool.
-                </div><br>
+                  Delay in minutes after which a down server will be removed from pool.
+                </div>
                                 <div style="font-size: small">
-                 - Value 0 disables this functionality.
-                </div><br>
+                  Value 0 disables this functionality.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.3.
-                </div><br>
+                  Field introduced in 20.1.3.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>description:</b>
+                <b>description</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -144,14 +151,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - User defined description for the object.
-                </div><br>
+                  User defined description for the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>intelligent_autoscale:</b>
+                <b>intelligent_autoscale</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -161,17 +168,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Use avi intelligent autoscale algorithm where autoscale is performed by comparing load on the pool against estimated capacity of all the servers.
-                </div><br>
+                  Use avi intelligent autoscale algorithm where autoscale is performed by comparing load on the pool against estimated capacity of all the servers.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>intelligent_scalein_margin:</b>
+                <b>intelligent_scalein_margin</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -181,23 +188,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Maximum extra capacity as percentage of load used by the intelligent scheme.
-                </div><br>
+                  Maximum extra capacity as percentage of load used by the intelligent scheme.
+                </div>
                                 <div style="font-size: small">
-                 - Scalein is triggered when available capacity is more than this margin.
-                </div><br>
+                  Scalein is triggered when available capacity is more than this margin.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 1-99.
-                </div><br>
+                  Allowed values are 1-99.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 40.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 40.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>intelligent_scaleout_margin:</b>
+                <b>intelligent_scaleout_margin</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -207,23 +214,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Minimum extra capacity as percentage of load used by the intelligent scheme.
-                </div><br>
+                  Minimum extra capacity as percentage of load used by the intelligent scheme.
+                </div>
                                 <div style="font-size: small">
-                 - Scaleout is triggered when available capacity is less than this margin.
-                </div><br>
+                  Scaleout is triggered when available capacity is less than this margin.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 1-99.
-                </div><br>
+                  Allowed values are 1-99.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 20.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>labels:</b>
+                <b>labels</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -233,23 +240,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Key value pairs for granular object access control.
-                </div><br>
+                  Key value pairs for granular object access control.
+                </div>
                                 <div style="font-size: small">
-                 - Also allows for classification and tagging of similar objects.
-                </div><br>
+                  Also allows for classification and tagging of similar objects.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.3.
-                </div><br>
+                  Field introduced in 20.1.3.
+                </div>
                                 <div style="font-size: small">
-                 - Maximum of 4 items allowed.
-                </div><br>
+                  Maximum of 4 items allowed.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>max_scalein_adjustment_step:</b>
+                <b>max_scalein_adjustment_step</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -259,20 +266,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Maximum number of servers to scalein simultaneously.
-                </div><br>
+                  Maximum number of servers to scalein simultaneously.
+                </div>
                                 <div style="font-size: small">
-                 - The actual number of servers to scalein is chosen such that target number of servers is always more than or equal to the min_size.
-                </div><br>
+                  The actual number of servers to scalein is chosen such that target number of servers is always more than or equal to the min_size.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 1.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>max_scaleout_adjustment_step:</b>
+                <b>max_scaleout_adjustment_step</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -282,20 +289,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Maximum number of servers to scaleout simultaneously.
-                </div><br>
+                  Maximum number of servers to scaleout simultaneously.
+                </div>
                                 <div style="font-size: small">
-                 - The actual number of servers to scaleout is chosen such that target number of servers is always less than or equal to the max_size.
-                </div><br>
+                  The actual number of servers to scaleout is chosen such that target number of servers is always less than or equal to the max_size.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 1.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>max_size:</b>
+                <b>max_size</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -305,17 +312,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Maximum number of servers after scaleout.
-                </div><br>
+                  Maximum number of servers after scaleout.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 0-400.
-                </div><br>
+                  Allowed values are 0-400.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>min_size:</b>
+                <b>min_size</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -325,17 +332,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - No scale-in happens once number of operationally up servers reach min_servers.
-                </div><br>
+                  No scale-in happens once number of operationally up servers reach min_servers.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 0-400.
-                </div><br>
+                  Allowed values are 0-400.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -343,19 +350,19 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of the object.
-                </div><br>
+                  Name of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>scalein_alertconfig_refs:</b>
+                <b>scalein_alertconfig_refs</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -365,17 +372,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Trigger scalein when alerts due to any of these alert configurations are raised.
-                </div><br>
+                  Trigger scalein when alerts due to any of these alert configurations are raised.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type alertconfig.
-                </div><br>
+                  It is a reference to an object of type alertconfig.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>scalein_cooldown:</b>
+                <b>scalein_cooldown</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -385,20 +392,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Cooldown period during which no new scalein is triggered to allow previous scalein to successfully complete.
-                </div><br>
+                  Cooldown period during which no new scalein is triggered to allow previous scalein to successfully complete.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is sec.
-                </div><br>
+                  Unit is sec.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>scaleout_alertconfig_refs:</b>
+                <b>scaleout_alertconfig_refs</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -408,17 +415,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Trigger scaleout when alerts due to any of these alert configurations are raised.
-                </div><br>
+                  Trigger scaleout when alerts due to any of these alert configurations are raised.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type alertconfig.
-                </div><br>
+                  It is a reference to an object of type alertconfig.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>scaleout_cooldown:</b>
+                <b>scaleout_cooldown</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -428,20 +435,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Cooldown period during which no new scaleout is triggered to allow previous scaleout to successfully complete.
-                </div><br>
+                  Cooldown period during which no new scaleout is triggered to allow previous scaleout to successfully complete.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is sec.
-                </div><br>
+                  Unit is sec.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -451,14 +458,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -468,14 +475,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>use_predicted_load:</b>
+                <b>use_predicted_load</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -485,17 +492,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Use predicted load rather than current load.
-                </div><br>
+                  Use predicted load rather than current load.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -505,8 +512,8 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Unique object identifier of the object.
-                </div><br>
+                  Unique object identifier of the object.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -517,23 +524,18 @@ Examples
 --------
 
 .. code-block:: yaml
-
     - name: Example to create ServerAutoScalePolicy object
-      avi_serverautoscalepolicy:
-        controller: 10.10.25.42
+      vmware.nsx_alb.avi_serverautoscalepolicy:
+        controller: 192.168.15.18
         username: admin
         password: something
         state: present
         name: sample_serverautoscalepolicy
-
-
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

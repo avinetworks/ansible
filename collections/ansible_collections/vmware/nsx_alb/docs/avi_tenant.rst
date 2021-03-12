@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>config_settings:</b>
+                <b>config_settings</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -118,14 +125,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Tenantconfiguration settings for tenant.
-                </div><br>
+                  Tenantconfiguration settings for tenant.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>created_by:</b>
+                <b>created_by</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -135,14 +142,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Creator of this tenant.
-                </div><br>
+                  Creator of this tenant.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>description:</b>
+                <b>description</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -152,14 +159,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - User defined description for the object.
-                </div><br>
+                  User defined description for the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>local:</b>
+                <b>local</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -169,17 +176,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Boolean flag to set local.
-                </div><br>
+                  Boolean flag to set local.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -187,19 +194,19 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of the object.
-                </div><br>
+                  Name of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>suggested_object_labels:</b>
+                <b>suggested_object_labels</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -209,23 +216,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Suggestive pool of key value pairs for recommending assignment of labels to objects in the user interface.
-                </div><br>
+                  Suggestive pool of key value pairs for recommending assignment of labels to objects in the user interface.
+                </div>
                                 <div style="font-size: small">
-                 - Every entry is unique in both key and value.
-                </div><br>
+                  Every entry is unique in both key and value.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.2.
-                </div><br>
+                  Field introduced in 20.1.2.
+                </div>
                                 <div style="font-size: small">
-                 - Maximum of 256 items allowed.
-                </div><br>
+                  Maximum of 256 items allowed.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -235,14 +242,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -252,8 +259,8 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Unique object identifier of the object.
-                </div><br>
+                  Unique object identifier of the object.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -264,30 +271,25 @@ Examples
 --------
 
 .. code-block:: yaml
-
-    
-  - name: Create Tenant using Service Engines in provider mode
-    avi_tenant:
-      controller: '{{ controller }}'
-      password: '{{ password }}'
-      username: '{{ username }}'
-      config_settings:
-        se_in_provider_context: false
-        tenant_access_to_provider_se: true
-        tenant_vrf: false
-      description: VCenter, Open Stack, AWS Virtual services
-      local: true
-      name: Demo
-
-
+        
+      - name: Create Tenant using Service Engines in provider mode
+        vmware.nsx_alb.avi_tenant:
+          controller: '{{ controller }}'
+          password: '{{ password }}'
+          username: '{{ username }}'
+          config_settings:
+            se_in_provider_context: false
+            tenant_access_to_provider_se: true
+            tenant_vrf: false
+          description: VCenter, Open Stack, AWS Virtual services
+          local: true
+          name: Demo
 
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

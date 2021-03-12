@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>account_lock_timeout:</b>
+                <b>account_lock_timeout</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -118,23 +125,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Lock timeout period (in minutes).
-                </div><br>
+                  Lock timeout period (in minutes).
+                </div>
                                 <div style="font-size: small">
-                 - Default is 30 minutes.
-                </div><br>
+                  Default is 30 minutes.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is min.
-                </div><br>
+                  Unit is min.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 30.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 30.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>credentials_timeout_threshold:</b>
+                <b>credentials_timeout_threshold</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -144,23 +151,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The time period after which credentials expire.
-                </div><br>
+                  The time period after which credentials expire.
+                </div>
                                 <div style="font-size: small">
-                 - Default is 180 days.
-                </div><br>
+                  Default is 180 days.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is days.
-                </div><br>
+                  Unit is days.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 180.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 180.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>max_concurrent_sessions:</b>
+                <b>max_concurrent_sessions</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -170,20 +177,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Maximum number of concurrent sessions allowed.
-                </div><br>
+                  Maximum number of concurrent sessions allowed.
+                </div>
                                 <div style="font-size: small">
-                 - There are unlimited sessions by default.
-                </div><br>
+                  There are unlimited sessions by default.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>max_login_failure_count:</b>
+                <b>max_login_failure_count</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -193,26 +200,26 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Number of login attempts before lockout.
-                </div><br>
+                  Number of login attempts before lockout.
+                </div>
                                 <div style="font-size: small">
-                 - Default is 3 attempts.
-                </div><br>
+                  Default is 3 attempts.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 3-20.
-                </div><br>
+                  Allowed values are 3-20.
+                </div>
                                 <div style="font-size: small">
-                 - Special values are 0 - 'unlimited login attempts allowed.'.
-                </div><br>
+                  Special values are 0 - 'unlimited login attempts allowed.'.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 3.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 3.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>max_password_history_count:</b>
+                <b>max_password_history_count</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -222,20 +229,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Maximum number of passwords to be maintained in the password history.
-                </div><br>
+                  Maximum number of passwords to be maintained in the password history.
+                </div>
                                 <div style="font-size: small">
-                 - Default is 4 passwords.
-                </div><br>
+                  Default is 4 passwords.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 4.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 4.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -243,19 +250,19 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of the object.
-                </div><br>
+                  Name of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -265,14 +272,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -282,8 +289,8 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Unique object identifier of the object.
-                </div><br>
+                  Unique object identifier of the object.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -294,23 +301,18 @@ Examples
 --------
 
 .. code-block:: yaml
-
     - name: Example to create UserAccountProfile object
-      avi_useraccountprofile:
-        controller: 10.10.25.42
+      vmware.nsx_alb.avi_useraccountprofile:
+        controller: 192.168.15.18
         username: admin
         password: something
         state: present
         name: sample_useraccountprofile
-
-
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

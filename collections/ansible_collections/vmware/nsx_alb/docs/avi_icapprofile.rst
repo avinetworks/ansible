@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>allow_204:</b>
+                <b>allow_204</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -118,29 +125,29 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Allow icap server to send 204 response as described in rfc 3507 section 4.5.
-                </div><br>
+                  Allow icap server to send 204 response as described in rfc 3507 section 4.5.
+                </div>
                                 <div style="font-size: small">
-                 - Service engine will buffer the complete request if alllow_204 is enabled.
-                </div><br>
+                  Service engine will buffer the complete request if alllow_204 is enabled.
+                </div>
                                 <div style="font-size: small">
-                 - If disabled, preview_size request body will be buffered if enable_preview is set to true, and rest of the request body will be streamed to the
-                </div><br>
+                  If disabled, preview_size request body will be buffered if enable_preview is set to true, and rest of the request body will be streamed to the
+                </div>
                                 <div style="font-size: small">
-                 - icap server.
-                </div><br>
+                  icap server.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.3.
-                </div><br>
+                  Field introduced in 20.1.3.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>buffer_size:</b>
+                <b>buffer_size</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -150,32 +157,32 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The maximum buffer size for the http request body.
-                </div><br>
+                  The maximum buffer size for the http request body.
+                </div>
                                 <div style="font-size: small">
-                 - If the request body exceeds this size, the request will not be checked by the icap server.
-                </div><br>
+                  If the request body exceeds this size, the request will not be checked by the icap server.
+                </div>
                                 <div style="font-size: small">
-                 - In this case, the configured action will be executed and a significant log entry will be generated.
-                </div><br>
+                  In this case, the configured action will be executed and a significant log entry will be generated.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 1-51200.
-                </div><br>
+                  Allowed values are 1-51200.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is kb.
-                </div><br>
+                  Unit is kb.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 51200.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 51200.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>buffer_size_exceed_action:</b>
+                <b>buffer_size_exceed_action</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -185,29 +192,29 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Decide what should happen if the request body size exceeds the configured buffer size.
-                </div><br>
+                  Decide what should happen if the request body size exceeds the configured buffer size.
+                </div>
                                 <div style="font-size: small">
-                 - If this is set to fail open, the request will not be checked by the icap server.
-                </div><br>
+                  If this is set to fail open, the request will not be checked by the icap server.
+                </div>
                                 <div style="font-size: small">
-                 - If this is set to fail closed, the request will be rejected with 413 status code.
-                </div><br>
+                  If this is set to fail closed, the request will be rejected with 413 status code.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED.
-                </div><br>
+                  Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as ICAP_FAIL_OPEN.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as ICAP_FAIL_OPEN.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>cloud_ref:</b>
+                <b>cloud_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -217,23 +224,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The cloud where this object belongs to.
-                </div><br>
+                  The cloud where this object belongs to.
+                </div>
                                 <div style="font-size: small">
-                 - This must match the cloud referenced in the pool group below.
-                </div><br>
+                  This must match the cloud referenced in the pool group below.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type cloud.
-                </div><br>
+                  It is a reference to an object of type cloud.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>description:</b>
+                <b>description</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -243,17 +250,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - A description for this icap profile.
-                </div><br>
+                  A description for this icap profile.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>enable_preview:</b>
+                <b>enable_preview</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -263,20 +270,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Use the icap preview feature as described in rfc 3507 section 4.5.
-                </div><br>
+                  Use the icap preview feature as described in rfc 3507 section 4.5.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>fail_action:</b>
+                <b>fail_action</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -286,29 +293,29 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Decide what should happen if there is a problem with the icap server like communication timeout, protocol error, pool error, etc.
-                </div><br>
+                  Decide what should happen if there is a problem with the icap server like communication timeout, protocol error, pool error, etc.
+                </div>
                                 <div style="font-size: small">
-                 - If this is set to fail open, the request will continue, but will create a significant log entry.
-                </div><br>
+                  If this is set to fail open, the request will continue, but will create a significant log entry.
+                </div>
                                 <div style="font-size: small">
-                 - If this is set to fail closed, the request will be rejected with a 500 status code.
-                </div><br>
+                  If this is set to fail closed, the request will be rejected with a 500 status code.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED.
-                </div><br>
+                  Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as ICAP_FAIL_OPEN.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as ICAP_FAIL_OPEN.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -316,22 +323,22 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of the icap profile.
-                </div><br>
+                  Name of the icap profile.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>pool_group_ref:</b>
+                <b>pool_group_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -339,25 +346,25 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The pool group which is used to connect to icap servers.
-                </div><br>
+                  The pool group which is used to connect to icap servers.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type poolgroup.
-                </div><br>
+                  It is a reference to an object of type poolgroup.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>preview_size:</b>
+                <b>preview_size</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -367,35 +374,35 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The icap preview size as described in rfc 3507 section 4.5.
-                </div><br>
+                  The icap preview size as described in rfc 3507 section 4.5.
+                </div>
                                 <div style="font-size: small">
-                 - This should not exceed the size supported by the icap server.
-                </div><br>
+                  This should not exceed the size supported by the icap server.
+                </div>
                                 <div style="font-size: small">
-                 - If this is set to 0, only the http header will be sent to the icap server as a preview.
-                </div><br>
+                  If this is set to 0, only the http header will be sent to the icap server as a preview.
+                </div>
                                 <div style="font-size: small">
-                 - To disable preview completely, set the enable-preview option to false.
-                </div><br>
+                  To disable preview completely, set the enable-preview option to false.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 0-5000.
-                </div><br>
+                  Allowed values are 0-5000.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is bytes.
-                </div><br>
+                  Unit is bytes.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 5000.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 5000.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>response_timeout:</b>
+                <b>response_timeout</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -405,29 +412,29 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Maximum time, client's request will be paused for icap processing.
-                </div><br>
+                  Maximum time, client's request will be paused for icap processing.
+                </div>
                                 <div style="font-size: small">
-                 - If this timeout is exceeded, the request to the icap server will be aborted and the configured fail action is executed.
-                </div><br>
+                  If this timeout is exceeded, the request to the icap server will be aborted and the configured fail action is executed.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 50-3600000.
-                </div><br>
+                  Allowed values are 50-3600000.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is milliseconds.
-                </div><br>
+                  Unit is milliseconds.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 60000.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 60000.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>service_uri:</b>
+                <b>service_uri</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -435,25 +442,25 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The path and query component of the icap url.
-                </div><br>
+                  The path and query component of the icap url.
+                </div>
                                 <div style="font-size: small">
-                 - Host name and port will be taken from the pool.
-                </div><br>
+                  Host name and port will be taken from the pool.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>slow_response_warning_threshold:</b>
+                <b>slow_response_warning_threshold</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -463,26 +470,26 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - If the icap request takes longer than this value, this request will generate a significant log entry.
-                </div><br>
+                  If the icap request takes longer than this value, this request will generate a significant log entry.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 50-3600000.
-                </div><br>
+                  Allowed values are 50-3600000.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is milliseconds.
-                </div><br>
+                  Unit is milliseconds.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 10000.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -492,20 +499,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Tenant which this object belongs to.
-                </div><br>
+                  Tenant which this object belongs to.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -515,14 +522,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -532,17 +539,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Uuid of the icap profile.
-                </div><br>
+                  Uuid of the icap profile.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>vendor:</b>
+                <b>vendor</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -552,17 +559,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The vendor of the icap server.
-                </div><br>
+                  The vendor of the icap server.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT.
-                </div><br>
+                  Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as ICAP_VENDOR_OPSWAT.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as ICAP_VENDOR_OPSWAT.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -573,23 +580,18 @@ Examples
 --------
 
 .. code-block:: yaml
-
     - name: Example to create IcapProfile object
-      avi_icapprofile:
-        controller: 10.10.25.42
+      vmware.nsx_alb.avi_icapprofile:
+        controller: 192.168.15.18
         username: admin
         password: something
         state: present
         name: sample_icapprofile
-
-
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

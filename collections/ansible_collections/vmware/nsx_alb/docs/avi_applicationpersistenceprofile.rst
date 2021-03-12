@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>app_cookie_persistence_profile:</b>
+                <b>app_cookie_persistence_profile</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -118,14 +125,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Specifies the application cookie persistence profile parameters.
-                </div><br>
+                  Specifies the application cookie persistence profile parameters.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>description:</b>
+                <b>description</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -135,14 +142,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - User defined description for the object.
-                </div><br>
+                  User defined description for the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>hdr_persistence_profile:</b>
+                <b>hdr_persistence_profile</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -152,14 +159,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Specifies the custom http header persistence profile parameters.
-                </div><br>
+                  Specifies the custom http header persistence profile parameters.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>http_cookie_persistence_profile:</b>
+                <b>http_cookie_persistence_profile</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -169,14 +176,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Specifies the http cookie persistence profile parameters.
-                </div><br>
+                  Specifies the http cookie persistence profile parameters.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ip_persistence_profile:</b>
+                <b>ip_persistence_profile</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -186,14 +193,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Specifies the client ip persistence profile parameters.
-                </div><br>
+                  Specifies the client ip persistence profile parameters.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>is_federated:</b>
+                <b>is_federated</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -203,26 +210,26 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - This field describes the object's replication scope.
-                </div><br>
+                  This field describes the object's replication scope.
+                </div>
                                 <div style="font-size: small">
-                 - If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
-                </div><br>
+                  If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
+                </div>
                                 <div style="font-size: small">
-                 - If the field is set to true, then the object is replicated across the federation.
-                </div><br>
+                  If the field is set to true, then the object is replicated across the federation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.1.3.
-                </div><br>
+                  Field introduced in 17.1.3.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>labels:</b>
+                <b>labels</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -232,23 +239,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Key value pairs for granular object access control.
-                </div><br>
+                  Key value pairs for granular object access control.
+                </div>
                                 <div style="font-size: small">
-                 - Also allows for classification and tagging of similar objects.
-                </div><br>
+                  Also allows for classification and tagging of similar objects.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.2.
-                </div><br>
+                  Field introduced in 20.1.2.
+                </div>
                                 <div style="font-size: small">
-                 - Maximum of 4 items allowed.
-                </div><br>
+                  Maximum of 4 items allowed.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -256,19 +263,19 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - A user-friendly name for the persistence profile.
-                </div><br>
+                  A user-friendly name for the persistence profile.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>persistence_type:</b>
+                <b>persistence_type</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -276,34 +283,34 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Method used to persist clients to the same server for a duration of time or a session.
-                </div><br>
+                  Method used to persist clients to the same server for a duration of time or a session.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS,
-                </div><br>
+                  Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS,
+                </div>
                                 <div style="font-size: small">
-                 - PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE.
-                </div><br>
+                  PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic(allowed values- persistence_type_client_ip_address,persistence_type_http_cookie) edition, essentials(allowed values-
-                </div><br>
+                  Allowed in basic(allowed values- persistence_type_client_ip_address,persistence_type_http_cookie) edition, essentials(allowed values-
+                </div>
                                 <div style="font-size: small">
-                 - persistence_type_client_ip_address,persistence_type_http_cookie) edition, enterprise edition.
-                </div><br>
+                  persistence_type_client_ip_address,persistence_type_http_cookie) edition, enterprise edition.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as PERSISTENCE_TYPE_CLIENT_IP_ADDRESS.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as PERSISTENCE_TYPE_CLIENT_IP_ADDRESS.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>server_hm_down_recovery:</b>
+                <b>server_hm_down_recovery</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -313,26 +320,26 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Specifies behavior when a persistent server has been marked down by a health monitor.
-                </div><br>
+                  Specifies behavior when a persistent server has been marked down by a health monitor.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER.
-                </div><br>
+                  Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic(allowed values- hm_down_pick_new_server) edition, essentials(allowed values- hm_down_pick_new_server) edition, enterprise
-                </div><br>
+                  Allowed in basic(allowed values- hm_down_pick_new_server) edition, essentials(allowed values- hm_down_pick_new_server) edition, enterprise
+                </div>
                                 <div style="font-size: small">
-                 - edition.
-                </div><br>
+                  edition.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as HM_DOWN_PICK_NEW_SERVER.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as HM_DOWN_PICK_NEW_SERVER.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -342,14 +349,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -359,14 +366,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -376,8 +383,8 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Uuid of the persistence profile.
-                </div><br>
+                  Uuid of the persistence profile.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -388,38 +395,33 @@ Examples
 --------
 
 .. code-block:: yaml
-
-    
-  - name: Create an Application Persistence setting using http cookie.
-    avi_applicationpersistenceprofile:
-      controller: '{{ controller }}'
-      username: '{{ username }}'
-      password: '{{ password }}'
-      http_cookie_persistence_profile:
-        always_send_cookie: false
-        cookie_name: My-HTTP
-        key:
-        - aes_key: ShYGZdMks8j6Bpvm2sCvaXWzvXms2Z9ob+TTjRy46lQ=
-          name: c1276819-550c-4adf-912d-59efa5fd7269
-        - aes_key: OGsyVk84VCtyMENFOW0rMnRXVnNrb0RzdG5mT29oamJRb0dlbHZVSjR1az0=
-          name: a080de57-77c3-4580-a3ea-e7a6493c14fd
-        - aes_key: UVN0cU9HWmFUM2xOUzBVcmVXaHFXbnBLVUUxMU1VSktSVU5HWjJOWmVFMTBUMUV4UmxsNk4xQmFZejA9
-          name: 60478846-33c6-484d-868d-bbc324fce4a5
-        timeout: 15
-      name: My-HTTP-Cookie
-      persistence_type: PERSISTENCE_TYPE_HTTP_COOKIE
-      server_hm_down_recovery: HM_DOWN_PICK_NEW_SERVER
-      tenant_ref: /api/tenant?name=Demo
-
-
+        
+      - name: Create an Application Persistence setting using http cookie.
+        vmware.nsx_alb.avi_applicationpersistenceprofile:
+          controller: '{{ controller }}'
+          username: '{{ username }}'
+          password: '{{ password }}'
+          http_cookie_persistence_profile:
+            always_send_cookie: false
+            cookie_name: My-HTTP
+            key:
+            - aes_key: ShYGZdMks8j6Bpvm2sCvaXWzvXms2Z9ob+TTjRy46lQ=
+              name: c1276819-550c-4adf-912d-59efa5fd7269
+            - aes_key: OGsyVk84VCtyMENFOW0rMnRXVnNrb0RzdG5mT29oamJRb0dlbHZVSjR1az0=
+              name: a080de57-77c3-4580-a3ea-e7a6493c14fd
+            - aes_key: UVN0cU9HWmFUM2xOUzBVcmVXaHFXbnBLVUUxMU1VSktSVU5HWjJOWmVFMTBUMUV4UmxsNk4xQmFZejA9
+              name: 60478846-33c6-484d-868d-bbc324fce4a5
+            timeout: 15
+          name: My-HTTP-Cookie
+          persistence_type: PERSISTENCE_TYPE_HTTP_COOKIE
+          server_hm_down_recovery: HM_DOWN_PICK_NEW_SERVER
+          tenant_ref: /api/tenant?name=Demo
 
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

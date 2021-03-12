@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>checksum:</b>
+                <b>checksum</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -118,17 +125,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Sha1 checksum of the file.
-                </div><br>
+                  Sha1 checksum of the file.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>compressed:</b>
+                <b>compressed</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -138,20 +145,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - This field indicates whether the file is gzip-compressed.
-                </div><br>
+                  This field indicates whether the file is gzip-compressed.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>created:</b>
+                <b>created</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -161,17 +168,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Timestamp of creation for the file.
-                </div><br>
+                  Timestamp of creation for the file.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>description:</b>
+                <b>description</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -181,17 +188,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Description of the file.
-                </div><br>
+                  Description of the file.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>expires_at:</b>
+                <b>expires_at</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -201,20 +208,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Timestamp when the file will be no longer needed and can be removed by the system.
-                </div><br>
+                  Timestamp when the file will be no longer needed and can be removed by the system.
+                </div>
                                 <div style="font-size: small">
-                 - If this is set, a garbage collector process will try to remove the file after this time.
-                </div><br>
+                  If this is set, a garbage collector process will try to remove the file after this time.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>is_federated:</b>
+                <b>is_federated</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -224,26 +231,26 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - This field describes the object's replication scope.
-                </div><br>
+                  This field describes the object's replication scope.
+                </div>
                                 <div style="font-size: small">
-                 - If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
-                </div><br>
+                  If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
+                </div>
                                 <div style="font-size: small">
-                 - If the field is set to true, then the object is replicated across the federation.
-                </div><br>
+                  If the field is set to true, then the object is replicated across the federation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -251,22 +258,22 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of the file object.
-                </div><br>
+                  Name of the file object.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>path:</b>
+                <b>path</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -276,17 +283,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Path to the file.
-                </div><br>
+                  Path to the file.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>read_only:</b>
+                <b>read_only</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -296,17 +303,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Enforce read-only on the file.
-                </div><br>
+                  Enforce read-only on the file.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>restrict_download:</b>
+                <b>restrict_download</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -316,17 +323,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Flag to allow/restrict download of the file.
-                </div><br>
+                  Flag to allow/restrict download of the file.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>size:</b>
+                <b>size</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -336,17 +343,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Size of the file.
-                </div><br>
+                  Size of the file.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -356,20 +363,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Tenant that this object belongs to.
-                </div><br>
+                  Tenant that this object belongs to.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>type:</b>
+                <b>type</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -377,28 +384,28 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Type of the file.
-                </div><br>
+                  Type of the file.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE.
-                </div><br>
+                  Enum options - OTHER_FILE_TYPES, IP_REPUTATION, GEO_DB, TECH_SUPPORT, HSMPACKAGES, IPAMDNSSCRIPTS, CONTROLLER_IMAGE.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic(allowed values- other_file_types) edition, essentials(allowed values- other_file_types) edition, enterprise edition.
-                </div><br>
+                  Allowed in basic(allowed values- other_file_types) edition, essentials(allowed values- other_file_types) edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -408,14 +415,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -425,17 +432,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Uuid of the file.
-                </div><br>
+                  Uuid of the file.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>version:</b>
+                <b>version</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -445,11 +452,11 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Version of the file.
-                </div><br>
+                  Version of the file.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -460,23 +467,18 @@ Examples
 --------
 
 .. code-block:: yaml
-
     - name: Example to create FileObject object
-      avi_fileobject:
-        controller: 10.10.25.42
+      vmware.nsx_alb.avi_fileobject:
+        controller: 192.168.15.18
         username: admin
         password: something
         state: present
         name: sample_fileobject
-
-
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

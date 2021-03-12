@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>cloud_config_cksum:</b>
+                <b>cloud_config_cksum</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -118,17 +125,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Checksum of cloud configuration for network sec policy.
-                </div><br>
+                  Checksum of cloud configuration for network sec policy.
+                </div>
                                 <div style="font-size: small">
-                 - Internally set by cloud connector.
-                </div><br>
+                  Internally set by cloud connector.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>created_by:</b>
+                <b>created_by</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -138,14 +145,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Creator name.
-                </div><br>
+                  Creator name.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>description:</b>
+                <b>description</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -155,14 +162,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - User defined description for the object.
-                </div><br>
+                  User defined description for the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>geo_db_ref:</b>
+                <b>geo_db_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -172,20 +179,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Geo database.
-                </div><br>
+                  Geo database.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type geodb.
-                </div><br>
+                  It is a reference to an object of type geodb.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 21.1.1.
-                </div><br>
+                  Field introduced in 21.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ip_reputation_db_ref:</b>
+                <b>ip_reputation_db_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -195,23 +202,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Ip reputation database.
-                </div><br>
+                  Ip reputation database.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type ipreputationdb.
-                </div><br>
+                  It is a reference to an object of type ipreputationdb.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>labels:</b>
+                <b>labels</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -221,23 +228,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Key value pairs for granular object access control.
-                </div><br>
+                  Key value pairs for granular object access control.
+                </div>
                                 <div style="font-size: small">
-                 - Also allows for classification and tagging of similar objects.
-                </div><br>
+                  Also allows for classification and tagging of similar objects.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.2.
-                </div><br>
+                  Field introduced in 20.1.2.
+                </div>
                                 <div style="font-size: small">
-                 - Maximum of 4 items allowed.
-                </div><br>
+                  Maximum of 4 items allowed.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -247,14 +254,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of the object.
-                </div><br>
+                  Name of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>rules:</b>
+                <b>rules</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -264,14 +271,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - List of networksecurityrule.
-                </div><br>
+                  List of networksecurityrule.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -281,14 +288,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -298,14 +305,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -315,8 +322,8 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Unique object identifier of the object.
-                </div><br>
+                  Unique object identifier of the object.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -327,37 +334,32 @@ Examples
 --------
 
 .. code-block:: yaml
-
-    
-  - name: Create a network security policy to block clients represented by ip group known_attackers
-    avi_networksecuritypolicy:
-      controller: '{{ controller }}'
-      username: '{{ username }}'
-      password: '{{ password }}'
-      name: vs-gurutest-ns
-      rules:
-      - action: NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY
-        age: 0
-        enable: true
-        index: 1
-        log: false
-        match:
-          client_ip:
-            group_refs:
-            - Demo:known_attackers
-            match_criteria: IS_IN
-        name: Rule 1
-      tenant_ref: /api/tenant?name=Demo
-
-
+        
+      - name: Create a network security policy to block clients represented by ip group known_attackers
+        vmware.nsx_alb.avi_networksecuritypolicy:
+          controller: '{{ controller }}'
+          username: '{{ username }}'
+          password: '{{ password }}'
+          name: vs-gurutest-ns
+          rules:
+          - action: NETWORK_SECURITY_POLICY_ACTION_TYPE_DENY
+            age: 0
+            enable: true
+            index: 1
+            log: false
+            match:
+              client_ip:
+                group_refs:
+                - Demo:known_attackers
+                match_criteria: IS_IN
+            name: Rule 1
+          tenant_ref: /api/tenant?name=Demo
 
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

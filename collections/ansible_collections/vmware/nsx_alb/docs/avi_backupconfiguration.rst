@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>aws_access_key:</b>
+                <b>aws_access_key</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -118,20 +125,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Aws access key id.
-                </div><br>
+                  Aws access key id.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.3.
-                </div><br>
+                  Field introduced in 18.2.3.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>aws_bucket_id:</b>
+                <b>aws_bucket_id</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -141,20 +148,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Aws bucket.
-                </div><br>
+                  Aws bucket.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.3.
-                </div><br>
+                  Field introduced in 18.2.3.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>aws_secret_access:</b>
+                <b>aws_secret_access</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -164,20 +171,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Aws secret access key.
-                </div><br>
+                  Aws secret access key.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.3.
-                </div><br>
+                  Field introduced in 18.2.3.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>backup_file_prefix:</b>
+                <b>backup_file_prefix</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -187,17 +194,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Prefix of the exported configuration file.
-                </div><br>
+                  Prefix of the exported configuration file.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.1.1.
-                </div><br>
+                  Field introduced in 17.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>backup_passphrase:</b>
+                <b>backup_passphrase</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -207,14 +214,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Default passphrase for configuration export and periodic backup.
-                </div><br>
+                  Default passphrase for configuration export and periodic backup.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>maximum_backups_stored:</b>
+                <b>maximum_backups_stored</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -224,20 +231,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Rotate the backup files based on this count.
-                </div><br>
+                  Rotate the backup files based on this count.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 1-20.
-                </div><br>
+                  Allowed values are 1-20.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 4.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 4.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -245,19 +252,19 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of backup configuration.
-                </div><br>
+                  Name of backup configuration.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>remote_directory:</b>
+                <b>remote_directory</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -267,14 +274,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Directory at remote destination with write permission for ssh user.
-                </div><br>
+                  Directory at remote destination with write permission for ssh user.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>remote_hostname:</b>
+                <b>remote_hostname</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -284,14 +291,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Remote destination.
-                </div><br>
+                  Remote destination.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>save_local:</b>
+                <b>save_local</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -301,14 +308,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Local backup.
-                </div><br>
+                  Local backup.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ssh_user_ref:</b>
+                <b>ssh_user_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -318,17 +325,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Access credentials for remote destination.
-                </div><br>
+                  Access credentials for remote destination.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type cloudconnectoruser.
-                </div><br>
+                  It is a reference to an object of type cloudconnectoruser.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -338,14 +345,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>upload_to_remote_host:</b>
+                <b>upload_to_remote_host</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -355,14 +362,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Remote backup.
-                </div><br>
+                  Remote backup.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>upload_to_s3:</b>
+                <b>upload_to_s3</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -372,20 +379,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Cloud backup.
-                </div><br>
+                  Cloud backup.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.3.
-                </div><br>
+                  Field introduced in 18.2.3.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -395,14 +402,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -412,8 +419,8 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Unique object identifier of the object.
-                </div><br>
+                  Unique object identifier of the object.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -424,23 +431,18 @@ Examples
 --------
 
 .. code-block:: yaml
-
     - name: Example to create BackupConfiguration object
-      avi_backupconfiguration:
-        controller: 10.10.25.42
+      vmware.nsx_alb.avi_backupconfiguration:
+        controller: 192.168.15.18
         username: admin
         password: something
         state: present
         name: sample_backupconfiguration
-
-
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

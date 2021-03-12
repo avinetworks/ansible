@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>admin_auth_configuration:</b>
+                <b>admin_auth_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -118,14 +125,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Adminauthconfiguration settings for systemconfiguration.
-                </div><br>
+                  Adminauthconfiguration settings for systemconfiguration.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>common_criteria_mode:</b>
+                <b>common_criteria_mode</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -135,26 +142,26 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Enable common criteria compliance mode (disabled by default).
-                </div><br>
+                  Enable common criteria compliance mode (disabled by default).
+                </div>
                                 <div style="font-size: small">
-                 - Warn  toggling this field is disruptive and will result in reduced behavior with ssh and tls protocols.
-                </div><br>
+                  Warn  toggling this field is disruptive and will result in reduced behavior with ssh and tls protocols.
+                </div>
                                 <div style="font-size: small">
-                 - Expect possible warm start of control and data planes.
-                </div><br>
+                  Expect possible warm start of control and data planes.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.3.
-                </div><br>
+                  Field introduced in 20.1.3.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>default_license_tier:</b>
+                <b>default_license_tier</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -164,29 +171,29 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Specifies the default license tier which would be used by new clouds.
-                </div><br>
+                  Specifies the default license tier which would be used by new clouds.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
-                </div><br>
+                  Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.2.5.
-                </div><br>
+                  Field introduced in 17.2.5.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                 <div style="font-size: small">
-                 - Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise.
-                </div><br>
+                  Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as ENTERPRISE.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as ENTERPRISE.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>dns_configuration:</b>
+                <b>dns_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -196,14 +203,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Dnsconfiguration settings for systemconfiguration.
-                </div><br>
+                  Dnsconfiguration settings for systemconfiguration.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>dns_virtualservice_refs:</b>
+                <b>dns_virtualservice_refs</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -213,23 +220,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Dns virtualservices hosting fqdn records for applications across avi vantage.
-                </div><br>
+                  Dns virtualservices hosting fqdn records for applications across avi vantage.
+                </div>
                                 <div style="font-size: small">
-                 - If no virtualservices are provided, avi vantage will provide dns services for configured applications.
-                </div><br>
+                  If no virtualservices are provided, avi vantage will provide dns services for configured applications.
+                </div>
                                 <div style="font-size: small">
-                 - Switching back to avi vantage from dns virtualservices is not allowed.
-                </div><br>
+                  Switching back to avi vantage from dns virtualservices is not allowed.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type virtualservice.
-                </div><br>
+                  It is a reference to an object of type virtualservice.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>docker_mode:</b>
+                <b>docker_mode</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -239,17 +246,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Boolean flag to set docker_mode.
-                </div><br>
+                  Boolean flag to set docker_mode.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>email_configuration:</b>
+                <b>email_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -259,14 +266,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Emailconfiguration settings for systemconfiguration.
-                </div><br>
+                  Emailconfiguration settings for systemconfiguration.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>enable_cors:</b>
+                <b>enable_cors</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -276,23 +283,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Enable cors header.
-                </div><br>
+                  Enable cors header.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.3.
-                </div><br>
+                  Field introduced in 20.1.3.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>fips_mode:</b>
+                <b>fips_mode</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -302,20 +309,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Enable fips mode.
-                </div><br>
+                  Enable fips mode.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>global_tenant_config:</b>
+                <b>global_tenant_config</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -325,14 +332,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Tenantconfiguration settings for systemconfiguration.
-                </div><br>
+                  Tenantconfiguration settings for systemconfiguration.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>linux_configuration:</b>
+                <b>linux_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -342,14 +349,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Linuxconfiguration settings for systemconfiguration.
-                </div><br>
+                  Linuxconfiguration settings for systemconfiguration.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>mgmt_ip_access_control:</b>
+                <b>mgmt_ip_access_control</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -359,14 +366,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Configure ip access control for controller to restrict open access.
-                </div><br>
+                  Configure ip access control for controller to restrict open access.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ntp_configuration:</b>
+                <b>ntp_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -376,14 +383,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Ntpconfiguration settings for systemconfiguration.
-                </div><br>
+                  Ntpconfiguration settings for systemconfiguration.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>portal_configuration:</b>
+                <b>portal_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -393,14 +400,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Portalconfiguration settings for systemconfiguration.
-                </div><br>
+                  Portalconfiguration settings for systemconfiguration.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>proxy_configuration:</b>
+                <b>proxy_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -410,14 +417,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Proxyconfiguration settings for systemconfiguration.
-                </div><br>
+                  Proxyconfiguration settings for systemconfiguration.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>secure_channel_configuration:</b>
+                <b>secure_channel_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -427,17 +434,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Configure secure channel properties.
-                </div><br>
+                  Configure secure channel properties.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.1.4, 18.2.1.
-                </div><br>
+                  Field introduced in 18.1.4, 18.2.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>snmp_configuration:</b>
+                <b>snmp_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -447,14 +454,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Snmpconfiguration settings for systemconfiguration.
-                </div><br>
+                  Snmpconfiguration settings for systemconfiguration.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ssh_ciphers:</b>
+                <b>ssh_ciphers</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -464,17 +471,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Allowed ciphers list for ssh to the management interface on the controller and service engines.
-                </div><br>
+                  Allowed ciphers list for ssh to the management interface on the controller and service engines.
+                </div>
                                 <div style="font-size: small">
-                 - If this is not specified, all the default ciphers are allowed.
-                </div><br>
+                  If this is not specified, all the default ciphers are allowed.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ssh_hmacs:</b>
+                <b>ssh_hmacs</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -484,17 +491,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Allowed hmac list for ssh to the management interface on the controller and service engines.
-                </div><br>
+                  Allowed hmac list for ssh to the management interface on the controller and service engines.
+                </div>
                                 <div style="font-size: small">
-                 - If this is not specified, all the default hmacs are allowed.
-                </div><br>
+                  If this is not specified, all the default hmacs are allowed.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -504,14 +511,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -521,14 +528,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Unique object identifier of the object.
-                </div><br>
+                  Unique object identifier of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>welcome_workflow_complete:</b>
+                <b>welcome_workflow_complete</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -538,14 +545,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - This flag is set once the initial controller setup workflow is complete.
-                </div><br>
+                  This flag is set once the initial controller setup workflow is complete.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.3.
-                </div><br>
+                  Field introduced in 18.2.3.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -556,23 +563,18 @@ Examples
 --------
 
 .. code-block:: yaml
-
     - name: Example to create SystemConfiguration object
-      avi_systemconfiguration:
-        controller: 10.10.25.42
+      vmware.nsx_alb.avi_systemconfiguration:
+        controller: 192.168.15.18
         username: admin
         password: something
         state: present
         name: sample_systemconfiguration
-
-
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

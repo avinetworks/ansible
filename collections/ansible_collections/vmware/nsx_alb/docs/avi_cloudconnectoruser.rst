@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>azure_serviceprincipal:</b>
+                <b>azure_serviceprincipal</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -118,17 +125,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Field introduced in 17.2.1.
-                </div><br>
+                  Field introduced in 17.2.1.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>azure_userpass:</b>
+                <b>azure_userpass</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -138,17 +145,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Field introduced in 17.2.1.
-                </div><br>
+                  Field introduced in 17.2.1.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>gcp_credentials:</b>
+                <b>gcp_credentials</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -158,20 +165,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Credentials for google cloud platform.
-                </div><br>
+                  Credentials for google cloud platform.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.1.
-                </div><br>
+                  Field introduced in 18.2.1.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -179,19 +186,19 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of the object.
-                </div><br>
+                  Name of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>nsxt_credentials:</b>
+                <b>nsxt_credentials</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -201,20 +208,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Credentials to talk to nsx-t manager.
-                </div><br>
+                  Credentials to talk to nsx-t manager.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>obj_password:</b>
+                <b>obj_password</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -224,14 +231,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Password of cloudconnectoruser.
-                </div><br>
+                  Password of cloudconnectoruser.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>oci_credentials:</b>
+                <b>oci_credentials</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -241,20 +248,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Credentials for oracle cloud infrastructure.
-                </div><br>
+                  Credentials for oracle cloud infrastructure.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.1,18.1.3.
-                </div><br>
+                  Field introduced in 18.2.1,18.1.3.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>private_key:</b>
+                <b>private_key</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -264,14 +271,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Private_key of cloudconnectoruser.
-                </div><br>
+                  Private_key of cloudconnectoruser.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>public_key:</b>
+                <b>public_key</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -281,14 +288,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Public_key of cloudconnectoruser.
-                </div><br>
+                  Public_key of cloudconnectoruser.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -298,14 +305,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tencent_credentials:</b>
+                <b>tencent_credentials</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -315,20 +322,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Credentials for tencent cloud.
-                </div><br>
+                  Credentials for tencent cloud.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.3.
-                </div><br>
+                  Field introduced in 18.2.3.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -338,14 +345,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -355,14 +362,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Unique object identifier of the object.
-                </div><br>
+                  Unique object identifier of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>vcenter_credentials:</b>
+                <b>vcenter_credentials</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -372,11 +379,11 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Credentials to talk to vcenter.
-                </div><br>
+                  Credentials to talk to vcenter.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -387,29 +394,24 @@ Examples
 --------
 
 .. code-block:: yaml
-
-    
-  - name: Create a Cloud connector user that is used for integration into cloud platforms
-    avi_cloudconnectoruser:
-      controller: '{{ controller }}'
-      name: root
-      password: '{{ password }}'
-      private_key: |
-        -----BEGIN RSA PRIVATE KEY-----
-        -----END RSA PRIVATE KEY-----'
-      public_key: 'ssh-rsa ...'
-      tenant_ref: /api/tenant?name=admin
-      username: '{{ username }}'
-
-
+        
+      - name: Create a Cloud connector user that is used for integration into cloud platforms
+        vmware.nsx_alb.avi_cloudconnectoruser:
+          controller: '{{ controller }}'
+          name: root
+          password: '{{ password }}'
+          private_key: |
+            -----BEGIN RSA PRIVATE KEY-----
+            -----END RSA PRIVATE KEY-----'
+          public_key: 'ssh-rsa ...'
+          tenant_ref: /api/tenant?name=admin
+          username: '{{ username }}'
 
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

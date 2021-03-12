@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>allow_list:</b>
+                <b>allow_list</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -118,17 +125,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Allow the user to skip botmanagement for selected requests.
-                </div><br>
+                  Allow the user to skip botmanagement for selected requests.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 21.1.1.
-                </div><br>
+                  Field introduced in 21.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>bot_mapping_uuids:</b>
+                <b>bot_mapping_uuids</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -138,17 +145,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - System- and user-defined rules for classification.
-                </div><br>
+                  System- and user-defined rules for classification.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 21.1.1.
-                </div><br>
+                  Field introduced in 21.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>consolidator_ref:</b>
+                <b>consolidator_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -158,20 +165,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The installation provides an updated ruleset for consolidating the results of different decider phases.
-                </div><br>
+                  The installation provides an updated ruleset for consolidating the results of different decider phases.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type botconfigconsolidator.
-                </div><br>
+                  It is a reference to an object of type botconfigconsolidator.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 21.1.1.
-                </div><br>
+                  Field introduced in 21.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>description:</b>
+                <b>description</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -181,17 +188,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Human-readable description of this bot detection policy.
-                </div><br>
+                  Human-readable description of this bot detection policy.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 21.1.1.
-                </div><br>
+                  Field introduced in 21.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ip_location_detector:</b>
+                <b>ip_location_detector</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -199,22 +206,22 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The ip location configuration used in this policy.
-                </div><br>
+                  The ip location configuration used in this policy.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 21.1.1.
-                </div><br>
+                  Field introduced in 21.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ip_reputation_detector:</b>
+                <b>ip_reputation_detector</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -222,22 +229,22 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The ip reputation configuration used in this policy.
-                </div><br>
+                  The ip reputation configuration used in this policy.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 21.1.1.
-                </div><br>
+                  Field introduced in 21.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -245,22 +252,22 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The name of this bot detection policy.
-                </div><br>
+                  The name of this bot detection policy.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 21.1.1.
-                </div><br>
+                  Field introduced in 21.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -270,20 +277,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The unique identifier of the tenant to which this policy belongs.
-                </div><br>
+                  The unique identifier of the tenant to which this policy belongs.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 21.1.1.
-                </div><br>
+                  Field introduced in 21.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -293,14 +300,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>user_agent_detector:</b>
+                <b>user_agent_detector</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -308,22 +315,22 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The user-agent configuration used in this policy.
-                </div><br>
+                  The user-agent configuration used in this policy.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 21.1.1.
-                </div><br>
+                  Field introduced in 21.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -333,11 +340,11 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - A unique identifier to this bot detection policy.
-                </div><br>
+                  A unique identifier to this bot detection policy.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 21.1.1.
-                </div><br>
+                  Field introduced in 21.1.1.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -348,23 +355,18 @@ Examples
 --------
 
 .. code-block:: yaml
-
     - name: Example to create BotDetectionPolicy object
-      avi_botdetectionpolicy:
-        controller: 10.10.25.42
+      vmware.nsx_alb.avi_botdetectionpolicy:
+        controller: 192.168.15.18
         username: admin
         password: something
         state: present
         name: sample_botdetectionpolicy
-
-
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

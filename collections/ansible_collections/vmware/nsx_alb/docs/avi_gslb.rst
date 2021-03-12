@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>async_interval:</b>
+                <b>async_interval</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -118,29 +125,29 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Frequency with which messages are propagated to vs mgr.
-                </div><br>
+                  Frequency with which messages are propagated to vs mgr.
+                </div>
                                 <div style="font-size: small">
-                 - Value of 0 disables async behavior and rpc are sent inline.
-                </div><br>
+                  Value of 0 disables async behavior and rpc are sent inline.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 0-5.
-                </div><br>
+                  Allowed values are 0-5.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.3.
-                </div><br>
+                  Field introduced in 18.2.3.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is sec.
-                </div><br>
+                  Unit is sec.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>clear_on_max_retries:</b>
+                <b>clear_on_max_retries</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -150,23 +157,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Max retries after which the remote site is treated as a fresh start.
-                </div><br>
+                  Max retries after which the remote site is treated as a fresh start.
+                </div>
                                 <div style="font-size: small">
-                 - In fresh start all the configs are downloaded.
-                </div><br>
+                  In fresh start all the configs are downloaded.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 1-1024.
-                </div><br>
+                  Allowed values are 1-1024.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 20.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>client_ip_addr_group:</b>
+                <b>client_ip_addr_group</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -176,17 +183,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Group to specify if the client ip addresses are public or private.
-                </div><br>
+                  Group to specify if the client ip addresses are public or private.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.1.2.
-                </div><br>
+                  Field introduced in 17.1.2.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>description:</b>
+                <b>description</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -196,14 +203,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - User defined description for the object.
-                </div><br>
+                  User defined description for the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>dns_configs:</b>
+                <b>dns_configs</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -213,17 +220,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Sub domain configuration for the gslb.
-                </div><br>
+                  Sub domain configuration for the gslb.
+                </div>
                                 <div style="font-size: small">
-                 - Gslb service's fqdn must be a match one of these subdomains.
-                </div><br>
+                  Gslb service's fqdn must be a match one of these subdomains.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>error_resync_interval:</b>
+                <b>error_resync_interval</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -233,32 +240,32 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Frequency with which errored messages are resynced to follower sites.
-                </div><br>
+                  Frequency with which errored messages are resynced to follower sites.
+                </div>
                                 <div style="font-size: small">
-                 - Value of 0 disables resync behavior.
-                </div><br>
+                  Value of 0 disables resync behavior.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 60-3600.
-                </div><br>
+                  Allowed values are 60-3600.
+                </div>
                                 <div style="font-size: small">
-                 - Special values are 0 - 'disable'.
-                </div><br>
+                  Special values are 0 - 'disable'.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.3.
-                </div><br>
+                  Field introduced in 18.2.3.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is sec.
-                </div><br>
+                  Unit is sec.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>is_federated:</b>
+                <b>is_federated</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -268,20 +275,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - This field indicates that this object is replicated across gslb federation.
-                </div><br>
+                  This field indicates that this object is replicated across gslb federation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.1.3.
-                </div><br>
+                  Field introduced in 17.1.3.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>leader_cluster_uuid:</b>
+                <b>leader_cluster_uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -289,22 +296,22 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Mark this site as leader of gslb configuration.
-                </div><br>
+                  Mark this site as leader of gslb configuration.
+                </div>
                                 <div style="font-size: small">
-                 - This site is the one among the avi sites.
-                </div><br>
+                  This site is the one among the avi sites.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>maintenance_mode:</b>
+                <b>maintenance_mode</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -314,32 +321,32 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - This field disables the configuration operations on the leader for all federated objects.
-                </div><br>
+                  This field disables the configuration operations on the leader for all federated objects.
+                </div>
                                 <div style="font-size: small">
-                 - Cud operations on gslb, gslbservice, gslbgeodbprofile and other federated objects will be rejected.
-                </div><br>
+                  Cud operations on gslb, gslbservice, gslbgeodbprofile and other federated objects will be rejected.
+                </div>
                                 <div style="font-size: small">
-                 - The rest-api disabling helps in upgrade scenarios where we don't want configuration sync operations to the gslb member when the member is being
-                </div><br>
+                  The rest-api disabling helps in upgrade scenarios where we don't want configuration sync operations to the gslb member when the member is being
+                </div>
                                 <div style="font-size: small">
-                 - upgraded.
-                </div><br>
+                  upgraded.
+                </div>
                                 <div style="font-size: small">
-                 - This configuration programmatically blocks the leader from accepting new gslb configuration when member sites are undergoing upgrade.
-                </div><br>
+                  This configuration programmatically blocks the leader from accepting new gslb configuration when member sites are undergoing upgrade.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.2.1.
-                </div><br>
+                  Field introduced in 17.2.1.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -347,19 +354,19 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name for the gslb object.
-                </div><br>
+                  Name for the gslb object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>replication_policy:</b>
+                <b>replication_policy</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -369,17 +376,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Policy for replicating configuration to the active follower sites.
-                </div><br>
+                  Policy for replicating configuration to the active follower sites.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>send_interval:</b>
+                <b>send_interval</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -389,23 +396,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Frequency with which group members communicate.
-                </div><br>
+                  Frequency with which group members communicate.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 1-3600.
-                </div><br>
+                  Allowed values are 1-3600.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is sec.
-                </div><br>
+                  Unit is sec.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 15.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 15.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>send_interval_prior_to_maintenance_mode:</b>
+                <b>send_interval_prior_to_maintenance_mode</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -415,29 +422,29 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The user can specify a send-interval while entering maintenance mode.
-                </div><br>
+                  The user can specify a send-interval while entering maintenance mode.
+                </div>
                                 <div style="font-size: small">
-                 - The validity of this 'maintenance send-interval' is only during maintenance mode.
-                </div><br>
+                  The validity of this 'maintenance send-interval' is only during maintenance mode.
+                </div>
                                 <div style="font-size: small">
-                 - When the user leaves maintenance mode, the original send-interval is reinstated.
-                </div><br>
+                  When the user leaves maintenance mode, the original send-interval is reinstated.
+                </div>
                                 <div style="font-size: small">
-                 - This internal variable is used to store the original send-interval.
-                </div><br>
+                  This internal variable is used to store the original send-interval.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.3.
-                </div><br>
+                  Field introduced in 18.2.3.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is sec.
-                </div><br>
+                  Unit is sec.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>sites:</b>
+                <b>sites</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -445,22 +452,22 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Select avi site member belonging to this gslb.
-                </div><br>
+                  Select avi site member belonging to this gslb.
+                </div>
                                 <div style="font-size: small">
-                 - Minimum of 1 items required.
-                </div><br>
+                  Minimum of 1 items required.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -470,14 +477,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_scoped:</b>
+                <b>tenant_scoped</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -487,20 +494,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - This field indicates tenant visibility for gs pool member selection across the gslb federated objects.
-                </div><br>
+                  This field indicates tenant visibility for gs pool member selection across the gslb federated objects.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.12,20.1.4.
-                </div><br>
+                  Field introduced in 18.2.12,20.1.4.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>third_party_sites:</b>
+                <b>third_party_sites</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -510,17 +517,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Third party site member belonging to this gslb.
-                </div><br>
+                  Third party site member belonging to this gslb.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.1.1.
-                </div><br>
+                  Field introduced in 17.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -530,14 +537,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -547,14 +554,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Uuid of the gslb object.
-                </div><br>
+                  Uuid of the gslb object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>view_id:</b>
+                <b>view_id</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -564,14 +571,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The view-id is used in change-leader mode to differentiate partitioned groups while they have the same gslb namespace.
-                </div><br>
+                  The view-id is used in change-leader mode to differentiate partitioned groups while they have the same gslb namespace.
+                </div>
                                 <div style="font-size: small">
-                 - Each partitioned group will be able to operate independently by using the view-id.
-                </div><br>
+                  Each partitioned group will be able to operate independently by using the view-id.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -582,130 +589,125 @@ Examples
 --------
 
 .. code-block:: yaml
+        
+    - name: Example to create Gslb object
+      vmware.nsx_alb.avi_gslb:
+        name: "test-gslb"
+        avi_credentials:
+          username: '{{ username }}'
+          password: '{{ password }}'
+          controller: '{{ controller }}'
+        sites:
+          - name: "test-site1"
+            username: "gslb_username"
+            password: "gslb_password"
+            ip_addresses:
+              - type: "V4"
+                addr: "192.168.138.18"
+            enabled: True
+            member_type: "GSLB_ACTIVE_MEMBER"
+            port: 443
+            cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
+          - name: "test-site2"
+            username: "gslb_username"
+            password: "gslb_password"
+            ip_addresses:
+              - type: "V4"
+                addr: "192.168.138.19"
+            enabled: True
+            member_type: "GSLB_ACTIVE_MEMBER"
+            port: 443
+            cluster_uuid: "cluster-0c37ae8d-ab62-410c-ad3e-06fa831950b1"
+        dns_configs:
+          - domain_name: "test1.com"
+          - domain_name: "test2.com"
+        leader_cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
 
-    
-- name: Example to create Gslb object
-  avi_gslb:
-    name: "test-gslb"
-    avi_credentials:
-      username: '{{ username }}'
-      password: '{{ password }}'
-      controller: '{{ controller }}'
-    sites:
-      - name: "test-site1"
-        username: "gslb_username"
-        password: "gslb_password"
-        ip_addresses:
-          - type: "V4"
-            addr: "192.168.138.18"
-        enabled: True
-        member_type: "GSLB_ACTIVE_MEMBER"
-        port: 443
-        cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
-      - name: "test-site2"
-        username: "gslb_username"
-        password: "gslb_password"
-        ip_addresses:
-          - type: "V4"
-            addr: "192.168.138.19"
-        enabled: True
-        member_type: "GSLB_ACTIVE_MEMBER"
-        port: 443
-        cluster_uuid: "cluster-0c37ae8d-ab62-410c-ad3e-06fa831950b1"
-    dns_configs:
-      - domain_name: "test1.com"
-      - domain_name: "test2.com"
-    leader_cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
+    - name: Update Gslb site's configurations (Patch Add Operation)
+      vmware.nsx_alb.avi_gslb:
+        avi_credentials:
+          username: '{{ username }}'
+          password: '{{ password }}'
+          controller: '{{ controller }}'
+        avi_api_update_method: patch
+        avi_api_patch_op: add
+        leader_cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
+        name: "test-gslb"
+        dns_configs:
+          - domain_name: "temp1.com"
+          - domain_name: "temp2.com"
+        sites:
+          - name: "test-site1"
+            username: "gslb_username"
+            password: "gslb_password"
+            ip_addresses:
+              - type: "V4"
+                addr: "192.168.138.20"
+            enabled: True
+            member_type: "GSLB_ACTIVE_MEMBER"
+            port: 283
+            cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
 
-- name: Update Gslb site's configurations (Patch Add Operation)
-  avi_gslb:
-    avi_credentials:
-      username: '{{ username }}'
-      password: '{{ password }}'
-      controller: '{{ controller }}'
-    avi_api_update_method: patch
-    avi_api_patch_op: add
-    leader_cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
-    name: "test-gslb"
-    dns_configs:
-      - domain_name: "temp1.com"
-      - domain_name: "temp2.com"
-    sites:
-      - name: "test-site1"
-        username: "gslb_username"
-        password: "gslb_password"
-        ip_addresses:
-          - type: "V4"
-            addr: "192.168.138.20"
-        enabled: True
-        member_type: "GSLB_ACTIVE_MEMBER"
-        port: 283
-        cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
+    - name: Update Gslb site's configurations (Patch Replace Operation)
+      vmware.nsx_alb.avi_gslb:
+        avi_credentials:
+          username: "{{ username }}"
+          password: "{{ password }}"
+          controller: "{{ controller }}"
+        # On basis of cluster leader uuid dns_configs is set for that perticular leader cluster
+        leader_cluster_uuid: "cluster-84aa795f-8f09-42bb-97a4-5103f4a53da9"
+        name: "test-gslb"
+        avi_api_update_method: patch
+        avi_api_patch_op: replace
+        dns_configs:
+          - domain_name: "test3.com"
+          - domain_name: "temp3.com"
+        sites:
+          - name: "test-site1"
+            username: "gslb_username"
+            password: "gslb_password"
+            ip_addresses:
+              - type: "V4"
+                addr: "192.168.138.21"
+            enabled: True
+            member_type: "GSLB_ACTIVE_MEMBER"
+            port: 283
+            cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
 
-- name: Update Gslb site's configurations (Patch Replace Operation)
-  avi_gslb:
-    avi_credentials:
-      username: "{{ username }}"
-      password: "{{ password }}"
-      controller: "{{ controller }}"
-    # On basis of cluster leader uuid dns_configs is set for that perticular leader cluster
-    leader_cluster_uuid: "cluster-84aa795f-8f09-42bb-97a4-5103f4a53da9"
-    name: "test-gslb"
-    avi_api_update_method: patch
-    avi_api_patch_op: replace
-    dns_configs:
-      - domain_name: "test3.com"
-      - domain_name: "temp3.com"
-    sites:
-      - name: "test-site1"
-        username: "gslb_username"
-        password: "gslb_password"
-        ip_addresses:
-          - type: "V4"
-            addr: "192.168.138.21"
-        enabled: True
-        member_type: "GSLB_ACTIVE_MEMBER"
-        port: 283
-        cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
+    - name: Delete Gslb site's den_vses configurations (Patch Delete(dns_vses) Operation)
+      vmware.nsx_alb.avi_gslb:
+        avi_credentials:
+          username: "{{ username }}"
+          password: "{{ password }}"
+          controller: "{{ controller }}"
+        # On basis of cluster leader uuid dns_configs is set for that perticular leader cluster
+        leader_cluster_uuid: "cluster-84aa795f-8f09-42bb-97a4-5103f4a53da9"
+        name: "test-gslb"
+        avi_api_update_method: patch
+        avi_api_patch_op: delete
+        dns_configs:
+        sites:
+          - ip_addresses: "192.168.138.22"
+          - ip_addresses: "192.168.138.23"
 
-- name: Delete Gslb site's den_vses configurations (Patch Delete(dns_vses) Operation)
-  avi_gslb:
-    avi_credentials:
-      username: "{{ username }}"
-      password: "{{ password }}"
-      controller: "{{ controller }}"
-    # On basis of cluster leader uuid dns_configs is set for that perticular leader cluster
-    leader_cluster_uuid: "cluster-84aa795f-8f09-42bb-97a4-5103f4a53da9"
-    name: "test-gslb"
-    avi_api_update_method: patch
-    avi_api_patch_op: delete
-    dns_configs:
-    sites:
-      - ip_addresses: "192.168.138.22"
-      - ip_addresses: "192.168.138.23"
-
-- name: Delete Gslb complete site's configurations (Patch Delete(site) Operation)
-  avi_gslb:
-    avi_credentials: "{{ avi_credentials }}"
-    api_version: 18.2.8
-    avi_api_update_method: patch
-    avi_api_patch_op: delete
-    patch_level: '/site'
-    name: gslb.lab2.local
-    leader_cluster_uuid: "cluster-84aa795f-8f09-42bb-97a4-5103f4a53da9"
-    dns_configs:
-    sites:
-      - ip_addresses: 192.168.138.24
-
-
+    - name: Delete Gslb complete site's configurations (Patch Delete(site) Operation)
+      vmware.nsx_alb.avi_gslb:
+        avi_credentials: "{{ avi_credentials }}"
+        api_version: 18.2.8
+        avi_api_update_method: patch
+        avi_api_patch_op: delete
+        patch_level: '/site'
+        name: gslb.lab2.local
+        leader_cluster_uuid: "cluster-84aa795f-8f09-42bb-97a4-5103f4a53da9"
+        dns_configs:
+        sites:
+          - ip_addresses: 192.168.138.24
 
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

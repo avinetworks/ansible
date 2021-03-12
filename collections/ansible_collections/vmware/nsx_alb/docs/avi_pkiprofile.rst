@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ca_certs:</b>
+                <b>ca_certs</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -118,14 +125,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - List of certificate authorities (root and intermediate) trusted that is used for certificate validation.
-                </div><br>
+                  List of certificate authorities (root and intermediate) trusted that is used for certificate validation.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>created_by:</b>
+                <b>created_by</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -135,14 +142,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Creator name.
-                </div><br>
+                  Creator name.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>crl_check:</b>
+                <b>crl_check</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -152,17 +159,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - When enabled, avi will verify via crl checks that certificates in the trust chain have not been revoked.
-                </div><br>
+                  When enabled, avi will verify via crl checks that certificates in the trust chain have not been revoked.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>crls:</b>
+                <b>crls</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -172,14 +179,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Certificate revocation lists.
-                </div><br>
+                  Certificate revocation lists.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ignore_peer_chain:</b>
+                <b>ignore_peer_chain</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -189,26 +196,26 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - When enabled, avi will not trust intermediate and root certs presented by a client.
-                </div><br>
+                  When enabled, avi will not trust intermediate and root certs presented by a client.
+                </div>
                                 <div style="font-size: small">
-                 - Instead, only the chain certs configured in the certificate authority section will be used to verify trust of the client's cert.
-                </div><br>
+                  Instead, only the chain certs configured in the certificate authority section will be used to verify trust of the client's cert.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
-                </div><br>
+                  Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                </div>
                                 <div style="font-size: small">
-                 - Special default for basic edition is true, essentials edition is true, enterprise is false.
-                </div><br>
+                  Special default for basic edition is true, essentials edition is true, enterprise is false.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>is_federated:</b>
+                <b>is_federated</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -218,26 +225,26 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - This field describes the object's replication scope.
-                </div><br>
+                  This field describes the object's replication scope.
+                </div>
                                 <div style="font-size: small">
-                 - If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
-                </div><br>
+                  If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
+                </div>
                                 <div style="font-size: small">
-                 - If the field is set to true, then the object is replicated across the federation.
-                </div><br>
+                  If the field is set to true, then the object is replicated across the federation.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.1.3.
-                </div><br>
+                  Field introduced in 17.1.3.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>labels:</b>
+                <b>labels</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -247,23 +254,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Key value pairs for granular object access control.
-                </div><br>
+                  Key value pairs for granular object access control.
+                </div>
                                 <div style="font-size: small">
-                 - Also allows for classification and tagging of similar objects.
-                </div><br>
+                  Also allows for classification and tagging of similar objects.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.2.
-                </div><br>
+                  Field introduced in 20.1.2.
+                </div>
                                 <div style="font-size: small">
-                 - Maximum of 4 items allowed.
-                </div><br>
+                  Maximum of 4 items allowed.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -271,19 +278,19 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of the pki profile.
-                </div><br>
+                  Name of the pki profile.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -293,14 +300,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -310,14 +317,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -327,14 +334,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Unique object identifier of the object.
-                </div><br>
+                  Unique object identifier of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>validate_only_leaf_crl:</b>
+                <b>validate_only_leaf_crl</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -344,17 +351,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - When enabled, avi will only validate the revocation status of the leaf certificate using crl.
-                </div><br>
+                  When enabled, avi will only validate the revocation status of the leaf certificate using crl.
+                </div>
                                 <div style="font-size: small">
-                 - To enable validation for the entire chain, disable this option and provide all the relevant crls.
-                </div><br>
+                  To enable validation for the entire chain, disable this option and provide all the relevant crls.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
-                </div><br>
+                  Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -365,23 +372,18 @@ Examples
 --------
 
 .. code-block:: yaml
-
     - name: Example to create PKIProfile object
-      avi_pkiprofile:
-        controller: 10.10.25.42
+      vmware.nsx_alb.avi_pkiprofile:
+        controller: 192.168.15.18
         username: admin
         password: something
         state: present
         name: sample_pkiprofile
-
-
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 

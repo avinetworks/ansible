@@ -37,7 +37,7 @@ Parameters
         <tr>
             <th colspan="2">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
-            <th> width="100%">Comments</th>
+            <th width="100%">Comments</th>
         </tr>
         <tr>
             <td colspan="2">
@@ -50,15 +50,16 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: present
-                    choices: ["absent", "present"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li>absent</li>
+                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - The state that should be applied on the entity.
+                    The state that should be applied on the entity.
                 </div>
-                <br>
             </td>
         </tr>
         <tr>
@@ -72,16 +73,18 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    default: put
-                    choices: ["put", "patch"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
+                        <li>patch</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Default method for object update is HTTP PUT.
-                </div><br>
+                    Default method for object update is HTTP PUT.
+                </div>
                 <div style="font-size: small">
-                    - Setting to patch will override that behavior to use HTTP PATCH.
+                    Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -96,19 +99,23 @@ Parameters
             </td>
             <td>
                 <div style="font-size: small">
-                    choices: ["add", "replace", "delete"]
+                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
+                        <li>replace</li>
+                        <li>delete</li>
+                    </ul>
                 </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    - Patch operation to use when using avi_api_update_method as patch.
+                    Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>apic_configuration:</b>
+                <b>apic_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -118,14 +125,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Apicconfiguration settings for cloud.
-                </div><br>
+                  Apicconfiguration settings for cloud.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>apic_mode:</b>
+                <b>apic_mode</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -135,17 +142,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-                </div><br>
+                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>autoscale_polling_interval:</b>
+                <b>autoscale_polling_interval</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -155,29 +162,29 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Cloudconnector polling interval in seconds for external autoscale groups, minimum 60 seconds.
-                </div><br>
+                  Cloudconnector polling interval in seconds for external autoscale groups, minimum 60 seconds.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed values are 60-3600.
-                </div><br>
+                  Allowed values are 60-3600.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.2.
-                </div><br>
+                  Field introduced in 18.2.2.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is seconds.
-                </div><br>
+                  Unit is seconds.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic(allowed values- 60) edition, essentials(allowed values- 60) edition, enterprise edition.
-                </div><br>
+                  Allowed in basic(allowed values- 60) edition, essentials(allowed values- 60) edition, enterprise edition.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>aws_configuration:</b>
+                <b>aws_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -187,14 +194,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Awsconfiguration settings for cloud.
-                </div><br>
+                  Awsconfiguration settings for cloud.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>azure_configuration:</b>
+                <b>azure_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -204,17 +211,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Field introduced in 17.2.1.
-                </div><br>
+                  Field introduced in 17.2.1.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>cloudstack_configuration:</b>
+                <b>cloudstack_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -224,14 +231,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Cloudstackconfiguration settings for cloud.
-                </div><br>
+                  Cloudstackconfiguration settings for cloud.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>custom_tags:</b>
+                <b>custom_tags</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
@@ -241,17 +248,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Custom tags for all avi created resources in the cloud infrastructure.
-                </div><br>
+                  Custom tags for all avi created resources in the cloud infrastructure.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.1.5.
-                </div><br>
+                  Field introduced in 17.1.5.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>dhcp_enabled:</b>
+                <b>dhcp_enabled</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -261,17 +268,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Select the ip address management scheme.
-                </div><br>
+                  Select the ip address management scheme.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>dns_provider_ref:</b>
+                <b>dns_provider_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -281,17 +288,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Dns profile for the cloud.
-                </div><br>
+                  Dns profile for the cloud.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type ipamdnsproviderprofile.
-                </div><br>
+                  It is a reference to an object of type ipamdnsproviderprofile.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>dns_resolution_on_se:</b>
+                <b>dns_resolution_on_se</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -301,29 +308,29 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - By default, pool member fqdns are resolved on the controller.
-                </div><br>
+                  By default, pool member fqdns are resolved on the controller.
+                </div>
                                 <div style="font-size: small">
-                 - When this is set, pool member fqdns are instead resolved on service engines in this cloud.
-                </div><br>
+                  When this is set, pool member fqdns are instead resolved on service engines in this cloud.
+                </div>
                                 <div style="font-size: small">
-                 - This is useful in scenarios where pool member fqdns can only be resolved from service engines and not from the controller.
-                </div><br>
+                  This is useful in scenarios where pool member fqdns can only be resolved from service engines and not from the controller.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.6.
-                </div><br>
+                  Field introduced in 18.2.6.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
-                </div><br>
+                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>docker_configuration:</b>
+                <b>docker_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -333,14 +340,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Dockerconfiguration settings for cloud.
-                </div><br>
+                  Dockerconfiguration settings for cloud.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>east_west_dns_provider_ref:</b>
+                <b>east_west_dns_provider_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -350,17 +357,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Dns profile for east-west services.
-                </div><br>
+                  Dns profile for east-west services.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type ipamdnsproviderprofile.
-                </div><br>
+                  It is a reference to an object of type ipamdnsproviderprofile.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>east_west_ipam_provider_ref:</b>
+                <b>east_west_ipam_provider_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -370,26 +377,26 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Ipam profile for east-west services.
-                </div><br>
+                  Ipam profile for east-west services.
+                </div>
                                 <div style="font-size: small">
-                 - Warning - please use virtual subnets in this ipam profile that do not conflict with the underlay networks or any overlay networks in the cluster.
-                </div><br>
+                  Warning - please use virtual subnets in this ipam profile that do not conflict with the underlay networks or any overlay networks in the cluster.
+                </div>
                                 <div style="font-size: small">
-                 - For example in aws and gcp, 169.254.0.0/16 is used for storing instance metadata.
-                </div><br>
+                  For example in aws and gcp, 169.254.0.0/16 is used for storing instance metadata.
+                </div>
                                 <div style="font-size: small">
-                 - Hence, it should not be used in this profile.
-                </div><br>
+                  Hence, it should not be used in this profile.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type ipamdnsproviderprofile.
-                </div><br>
+                  It is a reference to an object of type ipamdnsproviderprofile.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>enable_vip_on_all_interfaces:</b>
+                <b>enable_vip_on_all_interfaces</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -399,20 +406,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Enable vip on all data interfaces for the cloud.
-                </div><br>
+                  Enable vip on all data interfaces for the cloud.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.9, 20.1.1.
-                </div><br>
+                  Field introduced in 18.2.9, 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>enable_vip_static_routes:</b>
+                <b>enable_vip_static_routes</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -422,17 +429,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Use static routes for vip side network resolution during virtualservice placement.
-                </div><br>
+                  Use static routes for vip side network resolution during virtualservice placement.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>gcp_configuration:</b>
+                <b>gcp_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -442,20 +449,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Google cloud platform configuration.
-                </div><br>
+                  Google cloud platform configuration.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.1.
-                </div><br>
+                  Field introduced in 18.2.1.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic edition, essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in basic edition, essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ip6_autocfg_enabled:</b>
+                <b>ip6_autocfg_enabled</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -465,20 +472,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Enable ipv6 auto configuration.
-                </div><br>
+                  Enable ipv6 auto configuration.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.1.1.
-                </div><br>
+                  Field introduced in 18.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>ipam_provider_ref:</b>
+                <b>ipam_provider_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -488,17 +495,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Ipam profile for the cloud.
-                </div><br>
+                  Ipam profile for the cloud.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type ipamdnsproviderprofile.
-                </div><br>
+                  It is a reference to an object of type ipamdnsproviderprofile.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>license_tier:</b>
+                <b>license_tier</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -508,23 +515,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Specifies the default license tier which would be used by new se groups.
-                </div><br>
+                  Specifies the default license tier which would be used by new se groups.
+                </div>
                                 <div style="font-size: small">
-                 - This field by default inherits the value from system configuration.
-                </div><br>
+                  This field by default inherits the value from system configuration.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
-                </div><br>
+                  Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.2.5.
-                </div><br>
+                  Field introduced in 17.2.5.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>license_type:</b>
+                <b>license_type</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -534,20 +541,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - If no license type is specified then default license enforcement for the cloud type is chosen.
-                </div><br>
+                  If no license type is specified then default license enforcement for the cloud type is chosen.
+                </div>
                                 <div style="font-size: small">
-                 - The default mappings are container cloud is max ses, openstack and vmware is cores and linux it is sockets.
-                </div><br>
+                  The default mappings are container cloud is max ses, openstack and vmware is cores and linux it is sockets.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH.
-                </div><br>
+                  Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>linuxserver_configuration:</b>
+                <b>linuxserver_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -557,14 +564,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Linuxserverconfiguration settings for cloud.
-                </div><br>
+                  Linuxserverconfiguration settings for cloud.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>mesos_configuration:</b>
+                <b>mesos_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -574,14 +581,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Field deprecated in 18.2.2.
-                </div><br>
+                  Field deprecated in 18.2.2.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>mtu:</b>
+                <b>mtu</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">int</span>
@@ -591,20 +598,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Mtu setting for the cloud.
-                </div><br>
+                  Mtu setting for the cloud.
+                </div>
                                 <div style="font-size: small">
-                 - Unit is bytes.
-                </div><br>
+                  Unit is bytes.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as 1500.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as 1500.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>name:</b>
+                <b>name</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -612,19 +619,19 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Name of the object.
-                </div><br>
+                  Name of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>nsx_configuration:</b>
+                <b>nsx_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -634,17 +641,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Configuration parameters for nsx manager.
-                </div><br>
+                  Configuration parameters for nsx manager.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.1.1.
-                </div><br>
+                  Field introduced in 17.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>nsxt_configuration:</b>
+                <b>nsxt_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -654,20 +661,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Nsx-t cloud platform configuration.
-                </div><br>
+                  Nsx-t cloud platform configuration.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 20.1.1.
-                </div><br>
+                  Field introduced in 20.1.1.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in essentials edition, enterprise edition.
-                </div><br>
+                  Allowed in essentials edition, enterprise edition.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>obj_name_prefix:</b>
+                <b>obj_name_prefix</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -677,17 +684,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Default prefix for all automatically created objects in this cloud.
-                </div><br>
+                  Default prefix for all automatically created objects in this cloud.
+                </div>
                                 <div style="font-size: small">
-                 - This prefix can be overridden by the se-group template.
-                </div><br>
+                  This prefix can be overridden by the se-group template.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>openstack_configuration:</b>
+                <b>openstack_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -697,14 +704,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Openstackconfiguration settings for cloud.
-                </div><br>
+                  Openstackconfiguration settings for cloud.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>oshiftk8s_configuration:</b>
+                <b>oshiftk8s_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -714,14 +721,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Field deprecated in 20.1.1.
-                </div><br>
+                  Field deprecated in 20.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>prefer_static_routes:</b>
+                <b>prefer_static_routes</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -731,17 +738,17 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Prefer static routes over interface routes during virtualservice placement.
-                </div><br>
+                  Prefer static routes over interface routes during virtualservice placement.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as False.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>proxy_configuration:</b>
+                <b>proxy_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -751,14 +758,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Proxyconfiguration settings for cloud.
-                </div><br>
+                  Proxyconfiguration settings for cloud.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>rancher_configuration:</b>
+                <b>rancher_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -768,14 +775,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Rancherconfiguration settings for cloud.
-                </div><br>
+                  Rancherconfiguration settings for cloud.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>se_group_template_ref:</b>
+                <b>se_group_template_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -785,20 +792,20 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - The service engine group to use as template.
-                </div><br>
+                  The service engine group to use as template.
+                </div>
                                 <div style="font-size: small">
-                 - It is a reference to an object of type serviceenginegroup.
-                </div><br>
+                  It is a reference to an object of type serviceenginegroup.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 18.2.5.
-                </div><br>
+                  Field introduced in 18.2.5.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>state_based_dns_registration:</b>
+                <b>state_based_dns_registration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">bool</span>
@@ -808,23 +815,23 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Dns records for vips are added/deleted based on the operational state of the vips.
-                </div><br>
+                  Dns records for vips are added/deleted based on the operational state of the vips.
+                </div>
                                 <div style="font-size: small">
-                 - Field introduced in 17.1.12.
-                </div><br>
+                  Field introduced in 17.1.12.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
-                </div><br>
+                  Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as True.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tenant_ref:</b>
+                <b>tenant_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -834,14 +841,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - It is a reference to an object of type tenant.
-                </div><br>
+                  It is a reference to an object of type tenant.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>url:</b>
+                <b>url</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -851,14 +858,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Avi controller URL of the object.
-                </div><br>
+                  Avi controller URL of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>uuid:</b>
+                <b>uuid</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -868,14 +875,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Unique object identifier of the object.
-                </div><br>
+                  Unique object identifier of the object.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>vca_configuration:</b>
+                <b>vca_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -885,14 +892,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Vcloudairconfiguration settings for cloud.
-                </div><br>
+                  Vcloudairconfiguration settings for cloud.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>vcenter_configuration:</b>
+                <b>vcenter_configuration</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">dict</span>
@@ -902,14 +909,14 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Vcenterconfiguration settings for cloud.
-                </div><br>
+                  Vcenterconfiguration settings for cloud.
+                </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>vtype:</b>
+                <b>vtype</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">str</span>
@@ -917,28 +924,28 @@ Parameters
             </td>
             <td>
                                 <div style="font-size: small">
-                required: true
+                <b>required: true</b>
                 </div>
                             </td>
             <td>
                                                 <div style="font-size: small">
-                 - Cloud type.
-                </div><br>
+                  Cloud type.
+                </div>
                                 <div style="font-size: small">
-                 - Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
-                </div><br>
+                  Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
+                </div>
                                 <div style="font-size: small">
-                 - CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
-                </div><br>
+                  CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+                </div>
                                 <div style="font-size: small">
-                 - Allowed in basic(allowed values- cloud_none,cloud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise
-                </div><br>
+                  Allowed in basic(allowed values- cloud_none,cloud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise
+                </div>
                                 <div style="font-size: small">
-                 - edition.
-                </div><br>
+                  edition.
+                </div>
                                 <div style="font-size: small">
-                 - Default value when not specified in API or module is interpreted by Avi Controller as CLOUD_NONE.
-                </div><br>
+                  Default value when not specified in API or module is interpreted by Avi Controller as CLOUD_NONE.
+                </div>
                                             </td>
         </tr>
             </table>
@@ -949,39 +956,34 @@ Examples
 --------
 
 .. code-block:: yaml
-
-    
-  - name: Create a VMWare cloud with write access mode
-    avi_cloud:
-      username: '{{ username }}'
-      controller: '{{ controller }}'
-      password: '{{ password }}'
-      apic_mode: false
-      dhcp_enabled: true
-      enable_vip_static_routes: false
-      license_type: LIC_CORES
-      mtu: 1500
-      name: VCenter Cloud
-      prefer_static_routes: false
-      tenant_ref: /api/tenant?name=admin
-      vcenter_configuration:
-        datacenter_ref: /api/vimgrdcruntime/datacenter-2-10.10.20.100
-        management_network: /api/vimgrnwruntime/dvportgroup-103-10.10.20.100
-        password: password
-        privilege: WRITE_ACCESS
-        username: user
-        vcenter_url: 192.168.15.18
-      vtype: CLOUD_VCENTER
-
-
+        
+      - name: Create a VMWare cloud with write access mode
+        vmware.nsx_alb.avi_cloud:
+          username: '{{ username }}'
+          controller: '{{ controller }}'
+          password: '{{ password }}'
+          apic_mode: false
+          dhcp_enabled: true
+          enable_vip_static_routes: false
+          license_type: LIC_CORES
+          mtu: 1500
+          name: VCenter Cloud
+          prefer_static_routes: false
+          tenant_ref: /api/tenant?name=admin
+          vcenter_configuration:
+            datacenter_ref: /api/vimgrdcruntime/datacenter-2-10.10.20.100
+            management_network: /api/vimgrnwruntime/dvportgroup-103-10.10.20.100
+            password: password
+            privilege: WRITE_ACCESS
+            username: user
+            vcenter_url: 192.168.15.18
+          vtype: CLOUD_VCENTER
 
 Status
 ------
 
-
 Authors
 ~~~~~~~
-
 - Amol Shinde (samol@vmware.com)
 
 
