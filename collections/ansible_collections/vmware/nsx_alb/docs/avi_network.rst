@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure Network object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure Network object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,10 +99,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key/value network attributes.
+                  - Key/value network attributes.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -145,7 +119,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type cloud.
+                  - It is a reference to an object of type cloud.
                 </div>
                                             </td>
         </tr>
@@ -162,7 +136,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  List of subnet.
+                  - List of subnet.
                 </div>
                                             </td>
         </tr>
@@ -179,10 +153,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Select the ip address management scheme for this network.
+                  - Select the ip address management scheme for this network.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -199,10 +173,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  When selected, excludes all discovered subnets in this network from consideration for virtual service placement.
+                  - When selected, excludes all discovered subnets in this network from consideration for virtual service placement.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -219,13 +193,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable ipv6 auto configuration.
+                  - Enable ipv6 auto configuration.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.1.1.
+                  - Field introduced in 18.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -242,10 +216,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key/value labels which can be used for object access policy permission scoping.
+                  - Key/value labels which can be used for object access policy permission scoping.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.7, 20.1.1.
+                  - Field introduced in 18.2.7, 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -265,7 +239,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the object.
+                  - Name of the object.
                 </div>
                                             </td>
         </tr>
@@ -282,10 +256,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Boolean flag to set synced_from_se.
+                  - Boolean flag to set synced_from_se.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -302,7 +276,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -319,7 +293,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -336,7 +310,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unique object identifier of the object.
+                  - Unique object identifier of the object.
                 </div>
                                             </td>
         </tr>
@@ -353,10 +327,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Boolean flag to set vcenter_dvs.
+                  - Boolean flag to set vcenter_dvs.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -373,7 +347,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type vimgrnwruntime.
+                  - It is a reference to an object of type vimgrnwruntime.
                 </div>
                                             </td>
         </tr>
@@ -390,7 +364,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type vrfcontext.
+                  - It is a reference to an object of type vrfcontext.
                 </div>
                                             </td>
         </tr>
@@ -409,11 +383,12 @@ Examples
         password: something
         state: present
         name: sample_network
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

@@ -105,7 +105,7 @@ extends_documentation_fragment:
 
 EXAMPLES = '''
   - name: user creation
-    avi_user:
+    vmware.nsx_alb.avi_user:
       controller: ""
       username: ""
       password: ""
@@ -123,7 +123,7 @@ EXAMPLES = '''
       default_tenant_ref: "/api/tenant?name=admin"
 
   - name: user creation
-    avi_user:
+    vmware.nsx_alb.avi_user:
       controller: "192.0.2.10"
       username: ""
       password: ""
@@ -150,21 +150,9 @@ obj:
 
 
 from ansible.module_utils.basic import AnsibleModule
-
-
 try:
-    from avi.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, ansible_return)
-    from avi.sdk.utils.ansible_utils import avi_ansible_api
-    HAS_AVI = True
-except ImportError:
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
         avi_common_argument_spec, ansible_return, HAS_AVI)
-try:
-    from avi.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, ansible_return)
-    from avi.sdk.utils.ansible_utils import avi_ansible_api
-    HAS_AVI = True
 except ImportError:
     HAS_AVI = False
 

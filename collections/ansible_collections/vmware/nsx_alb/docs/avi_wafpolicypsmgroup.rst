@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure WafPolicyPSMGroup object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure WafPolicyPSMGroup object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,10 +99,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Free-text comment about this group.
+                  - Free-text comment about this group.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                             </td>
         </tr>
@@ -145,13 +119,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable or disable this waf rule group.
+                  - Enable or disable this waf rule group.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -168,19 +142,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  If a rule in this group matches the match_value pattern, this action will be executed.
+                  - If a rule in this group matches the match_value pattern, this action will be executed.
                 </div>
                                 <div style="font-size: small">
-                  Allowed actions are waf_action_no_op and waf_action_allow_parameter.
+                  - Allowed actions are waf_action_no_op and waf_action_allow_parameter.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
+                  - Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as WAF_ACTION_ALLOW_PARAMETER.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as WAF_ACTION_ALLOW_PARAMETER.
                 </div>
                                             </td>
         </tr>
@@ -197,13 +171,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This field indicates that this group is used for learning.
+                  - This field indicates that this group is used for learning.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -220,16 +194,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key value pairs for granular object access control.
+                  - Key value pairs for granular object access control.
                 </div>
                                 <div style="font-size: small">
-                  Also allows for classification and tagging of similar objects.
+                  - Also allows for classification and tagging of similar objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -246,16 +220,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Positive security model locations.
+                  - Positive security model locations.
                 </div>
                                 <div style="font-size: small">
-                  These are used to partition the application name space.
+                  - These are used to partition the application name space.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 16384 items allowed.
+                  - Maximum of 16384 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -272,19 +246,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  If a rule in this group does not match the match_value pattern, this action will be executed.
+                  - If a rule in this group does not match the match_value pattern, this action will be executed.
                 </div>
                                 <div style="font-size: small">
-                  Allowed actions are waf_action_no_op and waf_action_block.
+                  - Allowed actions are waf_action_no_op and waf_action_block.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
+                  - Enum options - WAF_ACTION_NO_OP, WAF_ACTION_BLOCK, WAF_ACTION_ALLOW_PARAMETER.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as WAF_ACTION_NO_OP.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as WAF_ACTION_NO_OP.
                 </div>
                                             </td>
         </tr>
@@ -304,10 +278,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  User defined name of the group.
+                  - User defined name of the group.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                             </td>
         </tr>
@@ -324,13 +298,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Tenant that this object belongs to.
+                  - Tenant that this object belongs to.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                             </td>
         </tr>
@@ -347,7 +321,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -364,10 +338,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of this object.
+                  - Uuid of this object.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                             </td>
         </tr>
@@ -386,11 +360,12 @@ Examples
         password: something
         state: present
         name: sample_wafpolicypsmgroup
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

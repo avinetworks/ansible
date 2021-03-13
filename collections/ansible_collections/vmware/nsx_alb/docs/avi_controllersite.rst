@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure ControllerSite object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure ControllerSite object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -128,10 +102,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ip address or a dns resolvable, fully qualified domain name of the site controller cluster.
+                  - Ip address or a dns resolvable, fully qualified domain name of the site controller cluster.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.5.
+                  - Field introduced in 18.2.5.
                 </div>
                                             </td>
         </tr>
@@ -151,10 +125,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name for the site controller cluster.
+                  - Name for the site controller cluster.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.5.
+                  - Field introduced in 18.2.5.
                 </div>
                                             </td>
         </tr>
@@ -171,16 +145,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The controller site cluster's rest api port number.
+                  - The controller site cluster's rest api port number.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-65535.
+                  - Allowed values are 1-65535.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.5.
+                  - Field introduced in 18.2.5.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 443.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 443.
                 </div>
                                             </td>
         </tr>
@@ -197,13 +171,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Reference for the tenant.
+                  - Reference for the tenant.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.5.
+                  - Field introduced in 18.2.5.
                 </div>
                                             </td>
         </tr>
@@ -220,7 +194,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -237,10 +211,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Reference for the site controller cluster.
+                  - Reference for the site controller cluster.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.5.
+                  - Field introduced in 18.2.5.
                 </div>
                                             </td>
         </tr>
@@ -259,11 +233,12 @@ Examples
         password: something
         state: present
         name: sample_controllersite
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

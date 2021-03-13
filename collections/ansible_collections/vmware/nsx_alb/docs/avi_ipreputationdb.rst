@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure IPReputationDB object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure IPReputationDB object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,16 +99,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ip reputation db base file.
+                  - Ip reputation db base file.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type fileobject.
+                  - It is a reference to an object of type fileobject.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 1 items allowed.
+                  - Maximum of 1 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -151,10 +125,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Description.
+                  - Description.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -171,13 +145,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ip reputation db incremental update files.
+                  - Ip reputation db incremental update files.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type fileobject.
+                  - It is a reference to an object of type fileobject.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -194,16 +168,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key value pairs for granular object access control.
+                  - Key value pairs for granular object access control.
                 </div>
                                 <div style="font-size: small">
-                  Also allows for classification and tagging of similar objects.
+                  - Also allows for classification and tagging of similar objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -223,10 +197,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ip reputation db name.
+                  - Ip reputation db name.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -243,10 +217,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  If this object is managed by the ip reputation service, this field contain the status of this syncronization.
+                  - If this object is managed by the ip reputation service, this field contain the status of this syncronization.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -263,13 +237,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Tenant that this object belongs to.
+                  - Tenant that this object belongs to.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -286,7 +260,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -303,10 +277,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of this object.
+                  - Uuid of this object.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -326,13 +300,13 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Organization providing ip reputation data.
+                  - Organization providing ip reputation data.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - IP_REPUTATION_VENDOR_WEBROOT.
+                  - Enum options - IP_REPUTATION_VENDOR_WEBROOT.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -349,13 +323,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A version number for this database object.
+                  - A version number for this database object.
                 </div>
                                 <div style="font-size: small">
-                  This is informal for the consumer of this api only, a tool which manages this object can store version information here.
+                  - This is informal for the consumer of this api only, a tool which manages this object can store version information here.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -374,11 +348,12 @@ Examples
         password: something
         state: present
         name: sample_ipreputationdb
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

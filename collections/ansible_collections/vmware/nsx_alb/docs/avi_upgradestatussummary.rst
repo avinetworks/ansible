@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure UpgradeStatusSummary object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure UpgradeStatusSummary object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,13 +99,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Check if the patch rollback is possible on this node.
+                  - Check if the patch rollback is possible on this node.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -148,13 +122,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Check if the rollback is possible on this node.
+                  - Check if the rollback is possible on this node.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -171,10 +145,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  End time of upgrade operations.
+                  - End time of upgrade operations.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -191,13 +165,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Image uuid for identifying the current base image.
+                  - Image uuid for identifying the current base image.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type image.
+                  - It is a reference to an object of type image.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -214,10 +188,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the system such as cluster name, se group name and se name.
+                  - Name of the system such as cluster name, se group name and se name.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -234,13 +208,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Type of the system such as controller_cluster, se_group or se.
+                  - Type of the system such as controller_cluster, se_group or se.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
+                  - Enum options - NODE_CONTROLLER_CLUSTER, NODE_SE_GROUP, NODE_SE_TYPE.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -257,13 +231,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Cloud that this object belongs to.
+                  - Cloud that this object belongs to.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type cloud.
+                  - It is a reference to an object of type cloud.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -280,10 +254,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Current status of the upgrade operations.
+                  - Current status of the upgrade operations.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -300,13 +274,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Image uuid for identifying the current patch.
+                  - Image uuid for identifying the current patch.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type image.
+                  - It is a reference to an object of type image.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -323,10 +297,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Start time of upgrade operations.
+                  - Start time of upgrade operations.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -343,10 +317,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Upgrade tasks completed.
+                  - Upgrade tasks completed.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -363,13 +337,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Tenant that this object belongs to.
+                  - Tenant that this object belongs to.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -386,10 +360,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Total upgrade tasks.
+                  - Total upgrade tasks.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -406,13 +380,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Upgrade operations requested.
+                  - Upgrade operations requested.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
+                  - Enum options - UPGRADE, PATCH, ROLLBACK, ROLLBACKPATCH, SEGROUP_RESUME.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -429,7 +403,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -446,10 +420,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid identifier for the system such as cluster, se group and se.
+                  - Uuid identifier for the system such as cluster, se group and se.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -466,10 +440,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Current base image applied to this node.
+                  - Current base image applied to this node.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -488,11 +462,12 @@ Examples
         password: something
         state: present
         name: sample_upgradestatussummary
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure Cloud object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure Cloud object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,7 +99,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Apicconfiguration settings for cloud.
+                  - Apicconfiguration settings for cloud.
                 </div>
                                             </td>
         </tr>
@@ -142,10 +116,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -162,22 +136,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Cloudconnector polling interval in seconds for external autoscale groups, minimum 60 seconds.
+                  - Cloudconnector polling interval in seconds for external autoscale groups, minimum 60 seconds.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 60-3600.
+                  - Allowed values are 60-3600.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.2.
+                  - Field introduced in 18.2.2.
                 </div>
                                 <div style="font-size: small">
-                  Unit is seconds.
+                  - Unit is seconds.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 60) edition, essentials(allowed values- 60) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 60) edition, essentials(allowed values- 60) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 60.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 60.
                 </div>
                                             </td>
         </tr>
@@ -194,7 +168,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Awsconfiguration settings for cloud.
+                  - Awsconfiguration settings for cloud.
                 </div>
                                             </td>
         </tr>
@@ -211,10 +185,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Field introduced in 17.2.1.
+                  - Field introduced in 17.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -231,7 +205,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Cloudstackconfiguration settings for cloud.
+                  - Cloudstackconfiguration settings for cloud.
                 </div>
                                             </td>
         </tr>
@@ -248,10 +222,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Custom tags for all avi created resources in the cloud infrastructure.
+                  - Custom tags for all avi created resources in the cloud infrastructure.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.5.
+                  - Field introduced in 17.1.5.
                 </div>
                                             </td>
         </tr>
@@ -268,10 +242,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Select the ip address management scheme.
+                  - Select the ip address management scheme.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -288,10 +262,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Dns profile for the cloud.
+                  - Dns profile for the cloud.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type ipamdnsproviderprofile.
+                  - It is a reference to an object of type ipamdnsproviderprofile.
                 </div>
                                             </td>
         </tr>
@@ -308,22 +282,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  By default, pool member fqdns are resolved on the controller.
+                  - By default, pool member fqdns are resolved on the controller.
                 </div>
                                 <div style="font-size: small">
-                  When this is set, pool member fqdns are instead resolved on service engines in this cloud.
+                  - When this is set, pool member fqdns are instead resolved on service engines in this cloud.
                 </div>
                                 <div style="font-size: small">
-                  This is useful in scenarios where pool member fqdns can only be resolved from service engines and not from the controller.
+                  - This is useful in scenarios where pool member fqdns can only be resolved from service engines and not from the controller.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -340,7 +314,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Dockerconfiguration settings for cloud.
+                  - Dockerconfiguration settings for cloud.
                 </div>
                                             </td>
         </tr>
@@ -357,10 +331,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Dns profile for east-west services.
+                  - Dns profile for east-west services.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type ipamdnsproviderprofile.
+                  - It is a reference to an object of type ipamdnsproviderprofile.
                 </div>
                                             </td>
         </tr>
@@ -377,19 +351,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ipam profile for east-west services.
+                  - Ipam profile for east-west services.
                 </div>
                                 <div style="font-size: small">
-                  Warning - please use virtual subnets in this ipam profile that do not conflict with the underlay networks or any overlay networks in the cluster.
+                  - Warning - please use virtual subnets in this ipam profile that do not conflict with the underlay networks or any overlay networks in the cluster.
                 </div>
                                 <div style="font-size: small">
-                  For example in aws and gcp, 169.254.0.0/16 is used for storing instance metadata.
+                  - For example in aws and gcp, 169.254.0.0/16 is used for storing instance metadata.
                 </div>
                                 <div style="font-size: small">
-                  Hence, it should not be used in this profile.
+                  - Hence, it should not be used in this profile.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type ipamdnsproviderprofile.
+                  - It is a reference to an object of type ipamdnsproviderprofile.
                 </div>
                                             </td>
         </tr>
@@ -406,13 +380,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable vip on all data interfaces for the cloud.
+                  - Enable vip on all data interfaces for the cloud.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.9, 20.1.1.
+                  - Field introduced in 18.2.9, 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -429,10 +403,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Use static routes for vip side network resolution during virtualservice placement.
+                  - Use static routes for vip side network resolution during virtualservice placement.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -449,13 +423,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Google cloud platform configuration.
+                  - Google cloud platform configuration.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.1.
+                  - Field introduced in 18.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -472,13 +446,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable ipv6 auto configuration.
+                  - Enable ipv6 auto configuration.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.1.1.
+                  - Field introduced in 18.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -495,10 +469,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ipam profile for the cloud.
+                  - Ipam profile for the cloud.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type ipamdnsproviderprofile.
+                  - It is a reference to an object of type ipamdnsproviderprofile.
                 </div>
                                             </td>
         </tr>
@@ -515,16 +489,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specifies the default license tier which would be used by new se groups.
+                  - Specifies the default license tier which would be used by new se groups.
                 </div>
                                 <div style="font-size: small">
-                  This field by default inherits the value from system configuration.
+                  - This field by default inherits the value from system configuration.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
+                  - Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.5.
+                  - Field introduced in 17.2.5.
                 </div>
                                             </td>
         </tr>
@@ -541,13 +515,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  If no license type is specified then default license enforcement for the cloud type is chosen.
+                  - If no license type is specified then default license enforcement for the cloud type is chosen.
                 </div>
                                 <div style="font-size: small">
-                  The default mappings are container cloud is max ses, openstack and vmware is cores and linux it is sockets.
+                  - The default mappings are container cloud is max ses, openstack and vmware is cores and linux it is sockets.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH.
+                  - Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH.
                 </div>
                                             </td>
         </tr>
@@ -564,7 +538,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Linuxserverconfiguration settings for cloud.
+                  - Linuxserverconfiguration settings for cloud.
                 </div>
                                             </td>
         </tr>
@@ -581,7 +555,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Field deprecated in 18.2.2.
+                  - Field deprecated in 18.2.2.
                 </div>
                                             </td>
         </tr>
@@ -598,13 +572,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Mtu setting for the cloud.
+                  - Mtu setting for the cloud.
                 </div>
                                 <div style="font-size: small">
-                  Unit is bytes.
+                  - Unit is bytes.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1500.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1500.
                 </div>
                                             </td>
         </tr>
@@ -624,7 +598,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the object.
+                  - Name of the object.
                 </div>
                                             </td>
         </tr>
@@ -641,10 +615,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Configuration parameters for nsx manager.
+                  - Configuration parameters for nsx manager.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -661,13 +635,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Nsx-t cloud platform configuration.
+                  - Nsx-t cloud platform configuration.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in essentials edition, enterprise edition.
+                  - Allowed in essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -684,10 +658,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Default prefix for all automatically created objects in this cloud.
+                  - Default prefix for all automatically created objects in this cloud.
                 </div>
                                 <div style="font-size: small">
-                  This prefix can be overridden by the se-group template.
+                  - This prefix can be overridden by the se-group template.
                 </div>
                                             </td>
         </tr>
@@ -704,7 +678,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Openstackconfiguration settings for cloud.
+                  - Openstackconfiguration settings for cloud.
                 </div>
                                             </td>
         </tr>
@@ -721,7 +695,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Field deprecated in 20.1.1.
+                  - Field deprecated in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -738,10 +712,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Prefer static routes over interface routes during virtualservice placement.
+                  - Prefer static routes over interface routes during virtualservice placement.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -758,7 +732,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Proxyconfiguration settings for cloud.
+                  - Proxyconfiguration settings for cloud.
                 </div>
                                             </td>
         </tr>
@@ -775,7 +749,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Rancherconfiguration settings for cloud.
+                  - Rancherconfiguration settings for cloud.
                 </div>
                                             </td>
         </tr>
@@ -792,13 +766,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The service engine group to use as template.
+                  - The service engine group to use as template.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type serviceenginegroup.
+                  - It is a reference to an object of type serviceenginegroup.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.5.
+                  - Field introduced in 18.2.5.
                 </div>
                                             </td>
         </tr>
@@ -815,16 +789,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Dns records for vips are added/deleted based on the operational state of the vips.
+                  - Dns records for vips are added/deleted based on the operational state of the vips.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.12.
+                  - Field introduced in 17.1.12.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                  - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -841,7 +815,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -858,7 +832,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -875,7 +849,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unique object identifier of the object.
+                  - Unique object identifier of the object.
                 </div>
                                             </td>
         </tr>
@@ -892,7 +866,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Vcloudairconfiguration settings for cloud.
+                  - Vcloudairconfiguration settings for cloud.
                 </div>
                                             </td>
         </tr>
@@ -909,7 +883,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Vcenterconfiguration settings for cloud.
+                  - Vcenterconfiguration settings for cloud.
                 </div>
                                             </td>
         </tr>
@@ -929,22 +903,22 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Cloud type.
+                  - Cloud type.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
+                  - Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
                 </div>
                                 <div style="font-size: small">
-                  CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+                  - CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- cloud_none,cloud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise
+                  - Allowed in basic(allowed values- cloud_none,cloud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise
                 </div>
                                 <div style="font-size: small">
-                  edition.
+                  - edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as CLOUD_NONE.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as CLOUD_NONE.
                 </div>
                                             </td>
         </tr>
@@ -979,11 +953,12 @@ Examples
             vcenter_url: 192.168.15.18
           vtype: CLOUD_VCENTER
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

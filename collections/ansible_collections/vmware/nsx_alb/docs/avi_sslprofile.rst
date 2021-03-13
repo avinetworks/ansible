@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure SSLProfile object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure SSLProfile object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,10 +99,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ciphers suites represented as defined by https //www.openssl.org/docs/apps/ciphers.html.
+                  - Ciphers suites represented as defined by https //www.openssl.org/docs/apps/ciphers.html.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as AES:3DES:RC4.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as AES:3DES:RC4.
                 </div>
                                             </td>
         </tr>
@@ -148,10 +122,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Set of versions accepted by the server.
+                  - Set of versions accepted by the server.
                 </div>
                                 <div style="font-size: small">
-                  Minimum of 1 items required.
+                  - Minimum of 1 items required.
                 </div>
                                             </td>
         </tr>
@@ -168,37 +142,37 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enum options - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                  - Enum options - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
                 </div>
                                 <div style="font-size: small">
-                  TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384,
+                  - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384,
                 </div>
                                 <div style="font-size: small">
-                  TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_256_GCM_SHA384,
+                  - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_256_GCM_SHA384,
                 </div>
                                 <div style="font-size: small">
-                  TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,
+                  - TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,
                 </div>
                                 <div style="font-size: small">
-                  TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA,
+                  - TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA,
                 </div>
                                 <div style="font-size: small">
-                  TLS_RSA_WITH_3DES_EDE_CBC_SHA, TLS_AES_256_GCM_SHA384...
+                  - TLS_RSA_WITH_3DES_EDE_CBC_SHA, TLS_AES_256_GCM_SHA384...
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values-
+                  - Allowed in basic(allowed values-
                 </div>
                                 <div style="font-size: small">
-                  tls_ecdhe_ecdsa_with_aes_128_gcm_sha256,tls_ecdhe_ecdsa_with_aes_256_gcm_sha384,tls_ecdhe_rsa_with_aes_128_gcm_sha256,tls_ecdhe_rsa_with_aes_256_gcm_sha384,tls_ecdhe_ecdsa_with_aes_128_cbc_sha256,tls_ecdhe_ecdsa_with_aes_256_cbc_sha384,tls_ecdhe_rsa_with_aes_128_cbc_sha256,tls_ecdhe_rsa_with_aes_256_cbc_sha384,tls_rsa_with_aes_128_gcm_sha256,tls_rsa_with_aes_256_gcm_sha384,tls_rsa_with_aes_128_cbc_sha256,tls_rsa_with_aes_256_cbc_sha256,tls_ecdhe_ecdsa_with_aes_128_cbc_sha,tls_ecdhe_ecdsa_with_aes_256_cbc_sha,tls_ecdhe_rsa_with_aes_128_cbc_sha,tls_ecdhe_rsa_with_aes_256_cbc_sha,tls_rsa_with_aes_128_cbc_sha,tls_rsa_with_aes_256_cbc_sha,tls_rsa_with_3des_ede_cbc_sha)
+                  - tls_ecdhe_ecdsa_with_aes_128_gcm_sha256,tls_ecdhe_ecdsa_with_aes_256_gcm_sha384,tls_ecdhe_rsa_with_aes_128_gcm_sha256,tls_ecdhe_rsa_with_aes_256_gcm_sha384,tls_ecdhe_ecdsa_with_aes_128_cbc_sha256,tls_ecdhe_ecdsa_with_aes_256_cbc_sha384,tls_ecdhe_rsa_with_aes_128_cbc_sha256,tls_ecdhe_rsa_with_aes_256_cbc_sha384,tls_rsa_with_aes_128_gcm_sha256,tls_rsa_with_aes_256_gcm_sha384,tls_rsa_with_aes_128_cbc_sha256,tls_rsa_with_aes_256_cbc_sha256,tls_ecdhe_ecdsa_with_aes_128_cbc_sha,tls_ecdhe_ecdsa_with_aes_256_cbc_sha,tls_ecdhe_rsa_with_aes_128_cbc_sha,tls_ecdhe_rsa_with_aes_256_cbc_sha,tls_rsa_with_aes_128_cbc_sha,tls_rsa_with_aes_256_cbc_sha,tls_rsa_with_3des_ede_cbc_sha)
                 </div>
                                 <div style="font-size: small">
-                  edition, essentials(allowed values-
+                  - edition, essentials(allowed values-
                 </div>
                                 <div style="font-size: small">
-                  tls_ecdhe_ecdsa_with_aes_128_gcm_sha256,tls_ecdhe_ecdsa_with_aes_256_gcm_sha384,tls_ecdhe_rsa_with_aes_128_gcm_sha256,tls_ecdhe_rsa_with_aes_256_gcm_sha384,tls_ecdhe_ecdsa_with_aes_128_cbc_sha256,tls_ecdhe_ecdsa_with_aes_256_cbc_sha384,tls_ecdhe_rsa_with_aes_128_cbc_sha256,tls_ecdhe_rsa_with_aes_256_cbc_sha384,tls_rsa_with_aes_128_gcm_sha256,tls_rsa_with_aes_256_gcm_sha384,tls_rsa_with_aes_128_cbc_sha256,tls_rsa_with_aes_256_cbc_sha256,tls_ecdhe_ecdsa_with_aes_128_cbc_sha,tls_ecdhe_ecdsa_with_aes_256_cbc_sha,tls_ecdhe_rsa_with_aes_128_cbc_sha,tls_ecdhe_rsa_with_aes_256_cbc_sha,tls_rsa_with_aes_128_cbc_sha,tls_rsa_with_aes_256_cbc_sha,tls_rsa_with_3des_ede_cbc_sha)
+                  - tls_ecdhe_ecdsa_with_aes_128_gcm_sha256,tls_ecdhe_ecdsa_with_aes_256_gcm_sha384,tls_ecdhe_rsa_with_aes_128_gcm_sha256,tls_ecdhe_rsa_with_aes_256_gcm_sha384,tls_ecdhe_ecdsa_with_aes_128_cbc_sha256,tls_ecdhe_ecdsa_with_aes_256_cbc_sha384,tls_ecdhe_rsa_with_aes_128_cbc_sha256,tls_ecdhe_rsa_with_aes_256_cbc_sha384,tls_rsa_with_aes_128_gcm_sha256,tls_rsa_with_aes_256_gcm_sha384,tls_rsa_with_aes_128_cbc_sha256,tls_rsa_with_aes_256_cbc_sha256,tls_ecdhe_ecdsa_with_aes_128_cbc_sha,tls_ecdhe_ecdsa_with_aes_256_cbc_sha,tls_ecdhe_rsa_with_aes_128_cbc_sha,tls_ecdhe_rsa_with_aes_256_cbc_sha,tls_rsa_with_aes_128_cbc_sha,tls_rsa_with_aes_256_cbc_sha,tls_rsa_with_3des_ede_cbc_sha)
                 </div>
                                 <div style="font-size: small">
-                  edition, enterprise edition.
+                  - edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -215,25 +189,25 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Tls 1.3 ciphers suites represented as defined by u(https //www.openssl.org/docs/manmaster/man1/ciphers.html).
+                  - Tls 1.3 ciphers suites represented as defined by u(https //www.openssl.org/docs/manmaster/man1/ciphers.html).
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Special default for basic edition is tls_aes_256_gcm_sha384-tls_aes_128_gcm_sha256, essentials edition is
+                  - Special default for basic edition is tls_aes_256_gcm_sha384-tls_aes_128_gcm_sha256, essentials edition is
                 </div>
                                 <div style="font-size: small">
-                  tls_aes_256_gcm_sha384-tls_aes_128_gcm_sha256, enterprise is tls_aes_256_gcm_sha384-tls_chacha20_poly1305_sha256-tls_aes_128_gcm_sha256.
+                  - tls_aes_256_gcm_sha384-tls_aes_128_gcm_sha256, enterprise is tls_aes_256_gcm_sha384-tls_chacha20_poly1305_sha256-tls_aes_128_gcm_sha256.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as
+                  - Default value when not specified in API or module is interpreted by Avi Controller as
                 </div>
                                 <div style="font-size: small">
-                  TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256.
+                  - TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256.
                 </div>
                                             </td>
         </tr>
@@ -250,7 +224,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  User defined description for the object.
+                  - User defined description for the object.
                 </div>
                                             </td>
         </tr>
@@ -267,10 +241,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Dh parameters used in ssl.
+                  - Dh parameters used in ssl.
                 </div>
                                 <div style="font-size: small">
-                  At this time, it is not configurable and is set to 2048 bits.
+                  - At this time, it is not configurable and is set to 2048 bits.
                 </div>
                                             </td>
         </tr>
@@ -287,16 +261,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Elliptic curve cryptography namedcurves (tls supported groups)represented as defined by rfc 8422-section 5.1.1 andhttps
+                  - Elliptic curve cryptography namedcurves (tls supported groups)represented as defined by rfc 8422-section 5.1.1 andhttps
                 </div>
                                 <div style="font-size: small">
-                  //www.openssl.org/docs/man1.1.0/man3/ssl_ctx_set1_curves.html.
+                  - //www.openssl.org/docs/man1.1.0/man3/ssl_ctx_set1_curves.html.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 21.1.1.
+                  - Field introduced in 21.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as auto.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as auto.
                 </div>
                                             </td>
         </tr>
@@ -313,16 +287,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable early data processing for tls1.3 connections.
+                  - Enable early data processing for tls1.3 connections.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -339,10 +313,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable ssl session re-use.
+                  - Enable ssl session re-use.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -359,16 +333,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key value pairs for granular object access control.
+                  - Key value pairs for granular object access control.
                 </div>
                                 <div style="font-size: small">
-                  Also allows for classification and tagging of similar objects.
+                  - Also allows for classification and tagging of similar objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -388,7 +362,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the object.
+                  - Name of the object.
                 </div>
                                             </td>
         </tr>
@@ -405,10 +379,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Prefer the ssl cipher ordering presented by the client during the ssl handshake over the one specified in the ssl profile.
+                  - Prefer the ssl cipher ordering presented by the client during the ssl handshake over the one specified in the ssl profile.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -425,10 +399,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Send 'close notify' alert message for a clean shutdown of the ssl connection.
+                  - Send 'close notify' alert message for a clean shutdown of the ssl connection.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -445,16 +419,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Signature algorithms represented as defined by rfc5246-section 7.4.1.4.1 andhttps
+                  - Signature algorithms represented as defined by rfc5246-section 7.4.1.4.1 andhttps
                 </div>
                                 <div style="font-size: small">
-                  //www.openssl.org/docs/man1.1.0/man3/ssl_ctx_set1_client_sigalgs_list.html.
+                  - //www.openssl.org/docs/man1.1.0/man3/ssl_ctx_set1_client_sigalgs_list.html.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 21.1.1.
+                  - Field introduced in 21.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as ECDSA+SHA256:RSA+SHA256.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as ECDSA+SHA256:RSA+SHA256.
                 </div>
                                             </td>
         </tr>
@@ -471,7 +445,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Sslrating settings for sslprofile.
+                  - Sslrating settings for sslprofile.
                 </div>
                                             </td>
         </tr>
@@ -488,13 +462,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The amount of time in seconds before an ssl session expires.
+                  - The amount of time in seconds before an ssl session expires.
                 </div>
                                 <div style="font-size: small">
-                  Unit is sec.
+                  - Unit is sec.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 86400.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 86400.
                 </div>
                                             </td>
         </tr>
@@ -511,7 +485,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  List of tag.
+                  - List of tag.
                 </div>
                                             </td>
         </tr>
@@ -528,7 +502,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -545,16 +519,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ssl profile type.
+                  - Ssl profile type.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - SSL_PROFILE_TYPE_APPLICATION, SSL_PROFILE_TYPE_SYSTEM.
+                  - Enum options - SSL_PROFILE_TYPE_APPLICATION, SSL_PROFILE_TYPE_SYSTEM.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.8.
+                  - Field introduced in 17.2.8.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as SSL_PROFILE_TYPE_APPLICATION.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as SSL_PROFILE_TYPE_APPLICATION.
                 </div>
                                             </td>
         </tr>
@@ -571,7 +545,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -588,7 +562,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unique object identifier of the object.
+                  - Unique object identifier of the object.
                 </div>
                                             </td>
         </tr>
@@ -644,11 +618,12 @@ Examples
             security_score: '100.0'
           tenant_ref: /api/tenant?name=Demo
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

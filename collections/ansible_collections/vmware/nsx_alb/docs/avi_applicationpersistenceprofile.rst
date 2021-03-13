@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure ApplicationPersistenceProfile object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure ApplicationPersistenceProfile object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,7 +99,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specifies the application cookie persistence profile parameters.
+                  - Specifies the application cookie persistence profile parameters.
                 </div>
                                             </td>
         </tr>
@@ -142,7 +116,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  User defined description for the object.
+                  - User defined description for the object.
                 </div>
                                             </td>
         </tr>
@@ -159,7 +133,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specifies the custom http header persistence profile parameters.
+                  - Specifies the custom http header persistence profile parameters.
                 </div>
                                             </td>
         </tr>
@@ -176,7 +150,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specifies the http cookie persistence profile parameters.
+                  - Specifies the http cookie persistence profile parameters.
                 </div>
                                             </td>
         </tr>
@@ -193,7 +167,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specifies the client ip persistence profile parameters.
+                  - Specifies the client ip persistence profile parameters.
                 </div>
                                             </td>
         </tr>
@@ -210,19 +184,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This field describes the object's replication scope.
+                  - This field describes the object's replication scope.
                 </div>
                                 <div style="font-size: small">
-                  If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
+                  - If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
                 </div>
                                 <div style="font-size: small">
-                  If the field is set to true, then the object is replicated across the federation.
+                  - If the field is set to true, then the object is replicated across the federation.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.3.
+                  - Field introduced in 17.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -239,16 +213,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key value pairs for granular object access control.
+                  - Key value pairs for granular object access control.
                 </div>
                                 <div style="font-size: small">
-                  Also allows for classification and tagging of similar objects.
+                  - Also allows for classification and tagging of similar objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -268,7 +242,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A user-friendly name for the persistence profile.
+                  - A user-friendly name for the persistence profile.
                 </div>
                                             </td>
         </tr>
@@ -288,22 +262,22 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Method used to persist clients to the same server for a duration of time or a session.
+                  - Method used to persist clients to the same server for a duration of time or a session.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS,
+                  - Enum options - PERSISTENCE_TYPE_CLIENT_IP_ADDRESS, PERSISTENCE_TYPE_HTTP_COOKIE, PERSISTENCE_TYPE_TLS, PERSISTENCE_TYPE_CLIENT_IPV6_ADDRESS,
                 </div>
                                 <div style="font-size: small">
-                  PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE.
+                  - PERSISTENCE_TYPE_CUSTOM_HTTP_HEADER, PERSISTENCE_TYPE_APP_COOKIE, PERSISTENCE_TYPE_GSLB_SITE.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- persistence_type_client_ip_address,persistence_type_http_cookie) edition, essentials(allowed values-
+                  - Allowed in basic(allowed values- persistence_type_client_ip_address,persistence_type_http_cookie) edition, essentials(allowed values-
                 </div>
                                 <div style="font-size: small">
-                  persistence_type_client_ip_address,persistence_type_http_cookie) edition, enterprise edition.
+                  - persistence_type_client_ip_address,persistence_type_http_cookie) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as PERSISTENCE_TYPE_CLIENT_IP_ADDRESS.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as PERSISTENCE_TYPE_CLIENT_IP_ADDRESS.
                 </div>
                                             </td>
         </tr>
@@ -320,19 +294,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specifies behavior when a persistent server has been marked down by a health monitor.
+                  - Specifies behavior when a persistent server has been marked down by a health monitor.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER.
+                  - Enum options - HM_DOWN_PICK_NEW_SERVER, HM_DOWN_ABORT_CONNECTION, HM_DOWN_CONTINUE_PERSISTENT_SERVER.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- hm_down_pick_new_server) edition, essentials(allowed values- hm_down_pick_new_server) edition, enterprise
+                  - Allowed in basic(allowed values- hm_down_pick_new_server) edition, essentials(allowed values- hm_down_pick_new_server) edition, enterprise
                 </div>
                                 <div style="font-size: small">
-                  edition.
+                  - edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as HM_DOWN_PICK_NEW_SERVER.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as HM_DOWN_PICK_NEW_SERVER.
                 </div>
                                             </td>
         </tr>
@@ -349,7 +323,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -366,7 +340,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -383,7 +357,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the persistence profile.
+                  - Uuid of the persistence profile.
                 </div>
                                             </td>
         </tr>
@@ -417,11 +391,12 @@ Examples
           server_hm_down_recovery: HM_DOWN_PICK_NEW_SERVER
           tenant_ref: /api/tenant?name=Demo
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

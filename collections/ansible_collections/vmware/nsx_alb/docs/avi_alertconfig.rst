@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure AlertConfig object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure AlertConfig object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,10 +99,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The alert config will trigger the selected alert action, which can send notifications and execute a controlscript.
+                  - The alert config will trigger the selected alert action, which can send notifications and execute a controlscript.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type actiongroupconfig.
+                  - It is a reference to an object of type actiongroupconfig.
                 </div>
                                             </td>
         </tr>
@@ -148,7 +122,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  List of filters matching on events or client logs used for triggering alerts.
+                  - List of filters matching on events or client logs used for triggering alerts.
                 </div>
                                             </td>
         </tr>
@@ -165,7 +139,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This alert config applies to auto scale alerts.
+                  - This alert config applies to auto scale alerts.
                 </div>
                                             </td>
         </tr>
@@ -185,16 +159,16 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Determines whether an alert is raised immediately when event occurs (realtime) or after specified number of events occurs within rolling time
+                  - Determines whether an alert is raised immediately when event occurs (realtime) or after specified number of events occurs within rolling time
                 </div>
                                 <div style="font-size: small">
-                  window.
+                  - window.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - REALTIME, ROLLINGWINDOW, WATERMARK.
+                  - Enum options - REALTIME, ROLLINGWINDOW, WATERMARK.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as REALTIME.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as REALTIME.
                 </div>
                                             </td>
         </tr>
@@ -211,7 +185,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A custom description field.
+                  - A custom description field.
                 </div>
                                             </td>
         </tr>
@@ -228,10 +202,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable or disable this alert config from generating new alerts.
+                  - Enable or disable this alert config from generating new alerts.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -248,19 +222,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  An alert is expired and deleted after the expiry time has elapsed.
+                  - An alert is expired and deleted after the expiry time has elapsed.
                 </div>
                                 <div style="font-size: small">
-                  The original event triggering the alert remains in the event's log.
+                  - The original event triggering the alert remains in the event's log.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-31536000.
+                  - Allowed values are 1-31536000.
                 </div>
                                 <div style="font-size: small">
-                  Unit is sec.
+                  - Unit is sec.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 86400.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 86400.
                 </div>
                                             </td>
         </tr>
@@ -280,7 +254,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the alert configuration.
+                  - Name of the alert configuration.
                 </div>
                                             </td>
         </tr>
@@ -297,7 +271,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the resource for which alert was raised.
+                  - Uuid of the resource for which alert was raised.
                 </div>
                                             </td>
         </tr>
@@ -314,19 +288,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The object type to which the alert config is associated with.
+                  - The object type to which the alert config is associated with.
                 </div>
                                 <div style="font-size: small">
-                  Valid object types are - virtual service, pool, service engine.
+                  - Valid object types are - virtual service, pool, service engine.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP,
+                  - Enum options - VIRTUALSERVICE, POOL, HEALTHMONITOR, NETWORKPROFILE, APPLICATIONPROFILE, HTTPPOLICYSET, DNSPOLICY, SECURITYPOLICY, IPADDRGROUP,
                 </div>
                                 <div style="font-size: small">
-                  STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT,
+                  - STRINGGROUP, SSLPROFILE, SSLKEYANDCERTIFICATE, NETWORKSECURITYPOLICY, APPLICATIONPERSISTENCEPROFILE, ANALYTICSPROFILE, VSDATASCRIPTSET, TENANT,
                 </div>
                                 <div style="font-size: small">
-                  PKIPROFILE, AUTHPROFILE, CLOUD...
+                  - PKIPROFILE, AUTHPROFILE, CLOUD...
                 </div>
                                             </td>
         </tr>
@@ -343,7 +317,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Recommendation of alertconfig.
+                  - Recommendation of alertconfig.
                 </div>
                                             </td>
         </tr>
@@ -360,16 +334,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Only if the number of events is reached or exceeded within the time window will an alert be generated.
+                  - Only if the number of events is reached or exceeded within the time window will an alert be generated.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-31536000.
+                  - Allowed values are 1-31536000.
                 </div>
                                 <div style="font-size: small">
-                  Unit is sec.
+                  - Unit is sec.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 300.
                 </div>
                                             </td>
         </tr>
@@ -389,10 +363,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Signifies system events or the type of client logsused in this alert configuration.
+                  - Signifies system events or the type of client logsused in this alert configuration.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS.
+                  - Enum options - CONN_LOGS, APP_LOGS, EVENT_LOGS, METRICS.
                 </div>
                                             </td>
         </tr>
@@ -409,7 +383,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Summary of reason why alert is generated.
+                  - Summary of reason why alert is generated.
                 </div>
                                             </td>
         </tr>
@@ -426,7 +400,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -443,13 +417,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  An alert is created only when the number of events meets or exceeds this number within the chosen time frame.
+                  - An alert is created only when the number of events meets or exceeds this number within the chosen time frame.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-65536.
+                  - Allowed values are 1-65536.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1.
                 </div>
                                             </td>
         </tr>
@@ -466,16 +440,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Alerts are suppressed (throttled) for this duration of time since the last alert was raised for this alert config.
+                  - Alerts are suppressed (throttled) for this duration of time since the last alert was raised for this alert config.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-31536000.
+                  - Allowed values are 0-31536000.
                 </div>
                                 <div style="font-size: small">
-                  Unit is sec.
+                  - Unit is sec.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 600.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 600.
                 </div>
                                             </td>
         </tr>
@@ -492,7 +466,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -509,7 +483,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unique object identifier of the object.
+                  - Unique object identifier of the object.
                 </div>
                                             </td>
         </tr>
@@ -528,11 +502,12 @@ Examples
         password: something
         state: present
         name: sample_alertconfig
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

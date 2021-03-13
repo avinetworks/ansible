@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure DynamicDnsRecord object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure DynamicDnsRecord object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,22 +99,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specifies the algorithm to pick the ip address(es) to be returned,when multiple entries are configured.
+                  - Specifies the algorithm to pick the ip address(es) to be returned,when multiple entries are configured.
                 </div>
                                 <div style="font-size: small">
-                  This does not apply if num_records_in_response is 0.
+                  - This does not apply if num_records_in_response is 0.
                 </div>
                                 <div style="font-size: small">
-                  Default is round-robin.
+                  - Default is round-robin.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH.
+                  - Enum options - DNS_RECORD_RESPONSE_ROUND_ROBIN, DNS_RECORD_RESPONSE_CONSISTENT_HASH.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as DNS_RECORD_RESPONSE_ROUND_ROBIN.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as DNS_RECORD_RESPONSE_ROUND_ROBIN.
                 </div>
                                             </td>
         </tr>
@@ -157,10 +131,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Canonical name in cname record.
+                  - Canonical name in cname record.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -177,16 +151,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Configured fqdns are delegated domains (i.e.
+                  - Configured fqdns are delegated domains (i.e.
                 </div>
                                 <div style="font-size: small">
-                  They represent a zone cut).
+                  - They represent a zone cut).
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -203,10 +177,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Details of dns record.
+                  - Details of dns record.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -223,10 +197,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the dns vs.
+                  - Uuid of the dns vs.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -243,10 +217,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Fully qualified domain name.
+                  - Fully qualified domain name.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -263,13 +237,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ipv6 address in aaaa record.
+                  - Ipv6 address in aaaa record.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -286,13 +260,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ip address in a record.
+                  - Ip address in a record.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -309,10 +283,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Internal metadata for the dns record.
+                  - Internal metadata for the dns record.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -329,13 +303,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Mx record.
+                  - Mx record.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -352,10 +326,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Dynamicdnsrecord name, needed for a top level uuid protobuf, for display in shell.
+                  - Dynamicdnsrecord name, needed for a top level uuid protobuf, for display in shell.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -372,13 +346,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name server information in ns record.
+                  - Name server information in ns record.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 13 items allowed.
+                  - Maximum of 13 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -395,22 +369,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specifies the number of records returned by the dns service.enter 0 to return all records.
+                  - Specifies the number of records returned by the dns service.enter 0 to return all records.
                 </div>
                                 <div style="font-size: small">
-                  Default is 0.
+                  - Default is 0.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-20.
+                  - Allowed values are 0-20.
                 </div>
                                 <div style="font-size: small">
-                  Special values are 0- 'return all records'.
+                  - Special values are 0- 'return all records'.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.
                 </div>
                                             </td>
         </tr>
@@ -427,13 +401,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Service locator info in srv record.
+                  - Service locator info in srv record.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -450,13 +424,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Tenant_uuid from dns vs's tenant_uuid.
+                  - Tenant_uuid from dns vs's tenant_uuid.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -473,10 +447,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Time to live for this dns record.
+                  - Time to live for this dns record.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -493,13 +467,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Text record.
+                  - Text record.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -516,19 +490,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Dns record type.
+                  - Dns record type.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
+                  - Enum options - DNS_RECORD_OTHER, DNS_RECORD_A, DNS_RECORD_NS, DNS_RECORD_CNAME, DNS_RECORD_SOA, DNS_RECORD_PTR, DNS_RECORD_HINFO, DNS_RECORD_MX,
                 </div>
                                 <div style="font-size: small">
-                  DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
+                  - DNS_RECORD_TXT, DNS_RECORD_RP, DNS_RECORD_DNSKEY, DNS_RECORD_AAAA, DNS_RECORD_SRV, DNS_RECORD_OPT, DNS_RECORD_RRSIG, DNS_RECORD_AXFR,
                 </div>
                                 <div style="font-size: small">
-                  DNS_RECORD_ANY.
+                  - DNS_RECORD_ANY.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -545,7 +519,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -562,10 +536,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the dns record.
+                  - Uuid of the dns record.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -582,19 +556,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable wild-card match of fqdn  if an exact match is not found in the dns table, the longest match is chosen by wild-carding the fqdn in the dns
+                  - Enable wild-card match of fqdn  if an exact match is not found in the dns table, the longest match is chosen by wild-carding the fqdn in the dns
                 </div>
                                 <div style="font-size: small">
-                  request.
+                  - request.
                 </div>
                                 <div style="font-size: small">
-                  Default is false.
+                  - Default is false.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -613,11 +587,12 @@ Examples
         password: something
         state: present
         name: sample_dynamicdnsrecord
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

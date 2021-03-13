@@ -67,7 +67,7 @@ extends_documentation_fragment:
 EXAMPLES = '''
 
   - name: Download se image from controller
-    avi_api_fileservice:
+    vmware.nsx_alb.avi_api_fileservice:
       controller: ""
       username: ""
       password: ""
@@ -77,7 +77,7 @@ EXAMPLES = '''
       api_version: 17.2.8
 
   - name: Upload HSM package to controller
-    avi_api_fileservice:
+    vmware.nsx_alb.avi_api_fileservice:
       controller: ""
       username: ""
       password: ""
@@ -108,26 +108,13 @@ except ImportError:
     HAS_LIB = False
 
 try:
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_obj_cmp, cleanup_absent_fields, avi_common_argument_spec,
-        ansible_return)
-    HAS_AVI = True
-except ImportError:
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
         avi_common_argument_spec, ansible_return, avi_obj_cmp,
         cleanup_absent_fields, HAS_AVI)
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)
-try:
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_obj_cmp, cleanup_absent_fields, avi_common_argument_spec,
-        ansible_return)
-    HAS_AVI = True
 except ImportError:
     HAS_AVI = False
-
 
 
 def main():

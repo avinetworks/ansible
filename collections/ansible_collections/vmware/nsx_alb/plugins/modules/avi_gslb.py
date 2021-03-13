@@ -180,7 +180,7 @@ extends_documentation_fragment:
 
 EXAMPLES = """
 - name: Example to create Gslb object
-  avi_gslb:
+  vmware.nsx_alb.avi_gslb:
     name: "test-gslb"
     avi_credentials:
       username: '{{ username }}'
@@ -213,7 +213,7 @@ EXAMPLES = """
     leader_cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
 
 - name: Update Gslb site's configurations (Patch Add Operation)
-  avi_gslb:
+  vmware.nsx_alb.avi_gslb:
     avi_credentials:
       username: '{{ username }}'
       password: '{{ password }}'
@@ -238,7 +238,7 @@ EXAMPLES = """
         cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
 
 - name: Update Gslb site's configurations (Patch Replace Operation)
-  avi_gslb:
+  vmware.nsx_alb.avi_gslb:
     avi_credentials:
       username: "{{ username }}"
       password: "{{ password }}"
@@ -264,7 +264,7 @@ EXAMPLES = """
         cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
 
 - name: Delete Gslb site's den_vses configurations (Patch Delete(dns_vses) Operation)
-  avi_gslb:
+  vmware.nsx_alb.avi_gslb:
     avi_credentials:
       username: "{{ username }}"
       password: "{{ password }}"
@@ -280,7 +280,7 @@ EXAMPLES = """
       - ip_addresses: "192.168.138.23"
 
 - name: Delete Gslb complete site's configurations (Patch Delete(site) Operation)
-  avi_gslb:
+  vmware.nsx_alb.avi_gslb:
     avi_credentials: "{{ avi_credentials }}"
     api_version: 18.2.8
     avi_api_update_method: patch
@@ -302,15 +302,11 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from avi.sdk.utils.ansible_utils import avi_common_argument_spec
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_ansible_api, avi_common_argument_spec)
-    HAS_AVI = True
-except ImportError:
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
         avi_common_argument_spec, avi_ansible_api, HAS_AVI)
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import ApiSession, AviCredentials
+except ImportError:
+    HAS_AVI = False
 
 
 def patch_add_gslb(module, gslb_obj):
@@ -456,8 +452,7 @@ def main():
                 }
             )
 
-    return avi_ansible_api(module, 'gslb',
-                           set())
+    return avi_ansible_api(module, 'gslb', set())
 
 
 if __name__ == "__main__":

@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure UserAccountProfile object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure UserAccountProfile object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,16 +99,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Lock timeout period (in minutes).
+                  - Lock timeout period (in minutes).
                 </div>
                                 <div style="font-size: small">
-                  Default is 30 minutes.
+                  - Default is 30 minutes.
                 </div>
                                 <div style="font-size: small">
-                  Unit is min.
+                  - Unit is min.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 30.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 30.
                 </div>
                                             </td>
         </tr>
@@ -151,16 +125,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The time period after which credentials expire.
+                  - The time period after which credentials expire.
                 </div>
                                 <div style="font-size: small">
-                  Default is 180 days.
+                  - Default is 180 days.
                 </div>
                                 <div style="font-size: small">
-                  Unit is days.
+                  - Unit is days.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 180.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 180.
                 </div>
                                             </td>
         </tr>
@@ -177,13 +151,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Maximum number of concurrent sessions allowed.
+                  - Maximum number of concurrent sessions allowed.
                 </div>
                                 <div style="font-size: small">
-                  There are unlimited sessions by default.
+                  - There are unlimited sessions by default.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.
                 </div>
                                             </td>
         </tr>
@@ -200,19 +174,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Number of login attempts before lockout.
+                  - Number of login attempts before lockout.
                 </div>
                                 <div style="font-size: small">
-                  Default is 3 attempts.
+                  - Default is 3 attempts.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 3-20.
+                  - Allowed values are 3-20.
                 </div>
                                 <div style="font-size: small">
-                  Special values are 0 - 'unlimited login attempts allowed.'.
+                  - Special values are 0 - 'unlimited login attempts allowed.'.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 3.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 3.
                 </div>
                                             </td>
         </tr>
@@ -229,13 +203,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Maximum number of passwords to be maintained in the password history.
+                  - Maximum number of passwords to be maintained in the password history.
                 </div>
                                 <div style="font-size: small">
-                  Default is 4 passwords.
+                  - Default is 4 passwords.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 4.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 4.
                 </div>
                                             </td>
         </tr>
@@ -255,7 +229,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the object.
+                  - Name of the object.
                 </div>
                                             </td>
         </tr>
@@ -272,7 +246,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -289,7 +263,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unique object identifier of the object.
+                  - Unique object identifier of the object.
                 </div>
                                             </td>
         </tr>
@@ -308,11 +282,12 @@ Examples
         password: something
         state: present
         name: sample_useraccountprofile
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

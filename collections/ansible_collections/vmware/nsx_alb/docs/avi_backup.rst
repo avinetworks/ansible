@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure Backup object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure Backup object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,10 +99,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Backupconfiguration information.
+                  - Backupconfiguration information.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type backupconfiguration.
+                  - It is a reference to an object of type backupconfiguration.
                 </div>
                                             </td>
         </tr>
@@ -148,7 +122,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The file name of backup.
+                  - The file name of backup.
                 </div>
                                             </td>
         </tr>
@@ -165,7 +139,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Url to download the backup file.
+                  - Url to download the backup file.
                 </div>
                                             </td>
         </tr>
@@ -182,7 +156,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Url to download the backup file.
+                  - Url to download the backup file.
                 </div>
                                             </td>
         </tr>
@@ -199,10 +173,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Scheduler information.
+                  - Scheduler information.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type scheduler.
+                  - It is a reference to an object of type scheduler.
                 </div>
                                             </td>
         </tr>
@@ -219,7 +193,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -236,7 +210,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unix timestamp of when the backup file is created.
+                  - Unix timestamp of when the backup file is created.
                 </div>
                                             </td>
         </tr>
@@ -253,7 +227,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -270,7 +244,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unique object identifier of the object.
+                  - Unique object identifier of the object.
                 </div>
                                             </td>
         </tr>
@@ -289,11 +263,12 @@ Examples
         password: something
         state: present
         name: sample_backup
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure ServiceEngine object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure ServiceEngine object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,7 +99,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Availability_zone of serviceengine.
+                  - Availability_zone of serviceengine.
                 </div>
                                             </td>
         </tr>
@@ -142,7 +116,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type cloud.
+                  - It is a reference to an object of type cloud.
                 </div>
                                             </td>
         </tr>
@@ -159,10 +133,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Boolean flag to set container_mode.
+                  - Boolean flag to set container_mode.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -179,10 +153,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enum options - CONTAINER_TYPE_BRIDGE, CONTAINER_TYPE_HOST, CONTAINER_TYPE_HOST_DPDK.
+                  - Enum options - CONTAINER_TYPE_BRIDGE, CONTAINER_TYPE_HOST, CONTAINER_TYPE_HOST_DPDK.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as CONTAINER_TYPE_HOST.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as CONTAINER_TYPE_HOST.
                 </div>
                                             </td>
         </tr>
@@ -199,10 +173,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Boolean flag to set controller_created.
+                  - Boolean flag to set controller_created.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -219,7 +193,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Controller_ip of serviceengine.
+                  - Controller_ip of serviceengine.
                 </div>
                                             </td>
         </tr>
@@ -236,7 +210,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  List of vnic.
+                  - List of vnic.
                 </div>
                                             </td>
         </tr>
@@ -253,13 +227,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Inorder to disable se set this field appropriately.
+                  - Inorder to disable se set this field appropriately.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - SE_STATE_ENABLED, SE_STATE_DISABLED_FOR_PLACEMENT, SE_STATE_DISABLED, SE_STATE_DISABLED_FORCE.
+                  - Enum options - SE_STATE_ENABLED, SE_STATE_DISABLED_FOR_PLACEMENT, SE_STATE_DISABLED, SE_STATE_DISABLED_FORCE.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as SE_STATE_ENABLED.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as SE_STATE_ENABLED.
                 </div>
                                             </td>
         </tr>
@@ -276,7 +250,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Flavor of serviceengine.
+                  - Flavor of serviceengine.
                 </div>
                                             </td>
         </tr>
@@ -293,7 +267,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type vimgrhostruntime.
+                  - It is a reference to an object of type vimgrhostruntime.
                 </div>
                                             </td>
         </tr>
@@ -310,7 +284,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
+                  - Enum options - DEFAULT, VMWARE_ESX, KVM, VMWARE_VSAN, XEN.
                 </div>
                                             </td>
         </tr>
@@ -327,7 +301,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Vnic settings for serviceengine.
+                  - Vnic settings for serviceengine.
                 </div>
                                             </td>
         </tr>
@@ -344,10 +318,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the object.
+                  - Name of the object.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as VM name unknown.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as VM name unknown.
                 </div>
                                             </td>
         </tr>
@@ -364,7 +338,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Seresources settings for serviceengine.
+                  - Seresources settings for serviceengine.
                 </div>
                                             </td>
         </tr>
@@ -381,7 +355,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type serviceenginegroup.
+                  - It is a reference to an object of type serviceenginegroup.
                 </div>
                                             </td>
         </tr>
@@ -398,7 +372,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -415,7 +389,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -432,7 +406,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unique object identifier of the object.
+                  - Unique object identifier of the object.
                 </div>
                                             </td>
         </tr>
@@ -451,11 +425,12 @@ Examples
         password: something
         state: present
         name: sample_serviceengine
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

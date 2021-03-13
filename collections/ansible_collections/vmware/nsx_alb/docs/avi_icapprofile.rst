@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure IcapProfile object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure IcapProfile object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,22 +99,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Allow icap server to send 204 response as described in rfc 3507 section 4.5.
+                  - Allow icap server to send 204 response as described in rfc 3507 section 4.5.
                 </div>
                                 <div style="font-size: small">
-                  Service engine will buffer the complete request if alllow_204 is enabled.
+                  - Service engine will buffer the complete request if alllow_204 is enabled.
                 </div>
                                 <div style="font-size: small">
-                  If disabled, preview_size request body will be buffered if enable_preview is set to true, and rest of the request body will be streamed to the
+                  - If disabled, preview_size request body will be buffered if enable_preview is set to true, and rest of the request body will be streamed to the
                 </div>
                                 <div style="font-size: small">
-                  icap server.
+                  - icap server.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -157,25 +131,25 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The maximum buffer size for the http request body.
+                  - The maximum buffer size for the http request body.
                 </div>
                                 <div style="font-size: small">
-                  If the request body exceeds this size, the request will not be checked by the icap server.
+                  - If the request body exceeds this size, the request will not be checked by the icap server.
                 </div>
                                 <div style="font-size: small">
-                  In this case, the configured action will be executed and a significant log entry will be generated.
+                  - In this case, the configured action will be executed and a significant log entry will be generated.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-51200.
+                  - Allowed values are 1-51200.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Unit is kb.
+                  - Unit is kb.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 51200.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 51200.
                 </div>
                                             </td>
         </tr>
@@ -192,22 +166,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Decide what should happen if the request body size exceeds the configured buffer size.
+                  - Decide what should happen if the request body size exceeds the configured buffer size.
                 </div>
                                 <div style="font-size: small">
-                  If this is set to fail open, the request will not be checked by the icap server.
+                  - If this is set to fail open, the request will not be checked by the icap server.
                 </div>
                                 <div style="font-size: small">
-                  If this is set to fail closed, the request will be rejected with 413 status code.
+                  - If this is set to fail closed, the request will be rejected with 413 status code.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED.
+                  - Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as ICAP_FAIL_OPEN.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as ICAP_FAIL_OPEN.
                 </div>
                                             </td>
         </tr>
@@ -224,16 +198,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The cloud where this object belongs to.
+                  - The cloud where this object belongs to.
                 </div>
                                 <div style="font-size: small">
-                  This must match the cloud referenced in the pool group below.
+                  - This must match the cloud referenced in the pool group below.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type cloud.
+                  - It is a reference to an object of type cloud.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -250,10 +224,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A description for this icap profile.
+                  - A description for this icap profile.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -270,13 +244,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Use the icap preview feature as described in rfc 3507 section 4.5.
+                  - Use the icap preview feature as described in rfc 3507 section 4.5.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -293,22 +267,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Decide what should happen if there is a problem with the icap server like communication timeout, protocol error, pool error, etc.
+                  - Decide what should happen if there is a problem with the icap server like communication timeout, protocol error, pool error, etc.
                 </div>
                                 <div style="font-size: small">
-                  If this is set to fail open, the request will continue, but will create a significant log entry.
+                  - If this is set to fail open, the request will continue, but will create a significant log entry.
                 </div>
                                 <div style="font-size: small">
-                  If this is set to fail closed, the request will be rejected with a 500 status code.
+                  - If this is set to fail closed, the request will be rejected with a 500 status code.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED.
+                  - Enum options - ICAP_FAIL_OPEN, ICAP_FAIL_CLOSED.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as ICAP_FAIL_OPEN.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as ICAP_FAIL_OPEN.
                 </div>
                                             </td>
         </tr>
@@ -328,10 +302,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the icap profile.
+                  - Name of the icap profile.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -351,13 +325,13 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The pool group which is used to connect to icap servers.
+                  - The pool group which is used to connect to icap servers.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type poolgroup.
+                  - It is a reference to an object of type poolgroup.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -374,28 +348,28 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The icap preview size as described in rfc 3507 section 4.5.
+                  - The icap preview size as described in rfc 3507 section 4.5.
                 </div>
                                 <div style="font-size: small">
-                  This should not exceed the size supported by the icap server.
+                  - This should not exceed the size supported by the icap server.
                 </div>
                                 <div style="font-size: small">
-                  If this is set to 0, only the http header will be sent to the icap server as a preview.
+                  - If this is set to 0, only the http header will be sent to the icap server as a preview.
                 </div>
                                 <div style="font-size: small">
-                  To disable preview completely, set the enable-preview option to false.
+                  - To disable preview completely, set the enable-preview option to false.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5000.
+                  - Allowed values are 0-5000.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Unit is bytes.
+                  - Unit is bytes.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 5000.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 5000.
                 </div>
                                             </td>
         </tr>
@@ -412,22 +386,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Maximum time, client's request will be paused for icap processing.
+                  - Maximum time, client's request will be paused for icap processing.
                 </div>
                                 <div style="font-size: small">
-                  If this timeout is exceeded, the request to the icap server will be aborted and the configured fail action is executed.
+                  - If this timeout is exceeded, the request to the icap server will be aborted and the configured fail action is executed.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 50-3600000.
+                  - Allowed values are 50-3600000.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Unit is milliseconds.
+                  - Unit is milliseconds.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 60000.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 60000.
                 </div>
                                             </td>
         </tr>
@@ -447,13 +421,13 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The path and query component of the icap url.
+                  - The path and query component of the icap url.
                 </div>
                                 <div style="font-size: small">
-                  Host name and port will be taken from the pool.
+                  - Host name and port will be taken from the pool.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -470,19 +444,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  If the icap request takes longer than this value, this request will generate a significant log entry.
+                  - If the icap request takes longer than this value, this request will generate a significant log entry.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 50-3600000.
+                  - Allowed values are 50-3600000.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Unit is milliseconds.
+                  - Unit is milliseconds.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 10000.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 10000.
                 </div>
                                             </td>
         </tr>
@@ -499,13 +473,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Tenant which this object belongs to.
+                  - Tenant which this object belongs to.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -522,7 +496,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -539,10 +513,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the icap profile.
+                  - Uuid of the icap profile.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -559,16 +533,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The vendor of the icap server.
+                  - The vendor of the icap server.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT.
+                  - Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as ICAP_VENDOR_OPSWAT.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as ICAP_VENDOR_OPSWAT.
                 </div>
                                             </td>
         </tr>
@@ -587,11 +561,12 @@ Examples
         password: something
         state: present
         name: sample_icapprofile
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

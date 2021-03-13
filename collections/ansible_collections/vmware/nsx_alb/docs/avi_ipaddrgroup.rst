@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure IpAddrGroup object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure IpAddrGroup object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,7 +99,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Configure ip address(es).
+                  - Configure ip address(es).
                 </div>
                                             </td>
         </tr>
@@ -142,7 +116,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Populate ip addresses from members of this cisco apic epg.
+                  - Populate ip addresses from members of this cisco apic epg.
                 </div>
                                             </td>
         </tr>
@@ -159,7 +133,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Populate the ip address ranges from the geo database for this country.
+                  - Populate the ip address ranges from the geo database for this country.
                 </div>
                                             </td>
         </tr>
@@ -176,7 +150,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  User defined description for the object.
+                  - User defined description for the object.
                 </div>
                                             </td>
         </tr>
@@ -193,7 +167,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Configure (ip address, port) tuple(s).
+                  - Configure (ip address, port) tuple(s).
                 </div>
                                             </td>
         </tr>
@@ -210,16 +184,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key value pairs for granular object access control.
+                  - Key value pairs for granular object access control.
                 </div>
                                 <div style="font-size: small">
-                  Also allows for classification and tagging of similar objects.
+                  - Also allows for classification and tagging of similar objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -236,7 +210,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Populate ip addresses from tasks of this marathon app.
+                  - Populate ip addresses from tasks of this marathon app.
                 </div>
                                             </td>
         </tr>
@@ -253,13 +227,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Task port associated with marathon service port.
+                  - Task port associated with marathon service port.
                 </div>
                                 <div style="font-size: small">
-                  If marathon app has multiple service ports, this is required.
+                  - If marathon app has multiple service ports, this is required.
                 </div>
                                 <div style="font-size: small">
-                  Else, the first task port is used.
+                  - Else, the first task port is used.
                 </div>
                                             </td>
         </tr>
@@ -279,7 +253,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the ip address group.
+                  - Name of the ip address group.
                 </div>
                                             </td>
         </tr>
@@ -296,7 +270,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Configure ip address prefix(es).
+                  - Configure ip address prefix(es).
                 </div>
                                             </td>
         </tr>
@@ -313,7 +287,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Configure ip address range(s).
+                  - Configure ip address range(s).
                 </div>
                                             </td>
         </tr>
@@ -330,7 +304,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -347,7 +321,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -364,7 +338,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the ip address group.
+                  - Uuid of the ip address group.
                 </div>
                                             </td>
         </tr>
@@ -397,11 +371,12 @@ Examples
               type: V4
             mask: 16
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

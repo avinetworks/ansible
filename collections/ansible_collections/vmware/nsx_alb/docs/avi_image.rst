@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure Image object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure Image object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,10 +99,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This field describes the cloud info specific to the base image.
+                  - This field describes the cloud info specific to the base image.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -145,10 +119,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Controller package details.
+                  - Controller package details.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -165,10 +139,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Mandatory controller patch name that is applied along with this base image.
+                  - Mandatory controller patch name that is applied along with this base image.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.10, 20.1.1.
+                  - Field introduced in 18.2.10, 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -185,10 +159,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It references the controller-patch associated with the uber image.
+                  - It references the controller-patch associated with the uber image.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.8, 20.1.1.
+                  - Field introduced in 18.2.8, 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -205,10 +179,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This field describes the api migration related information.
+                  - This field describes the api migration related information.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -228,10 +202,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the image.
+                  - Name of the image.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -248,10 +222,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Se package details.
+                  - Se package details.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -268,10 +242,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Mandatory serviceengine patch name that is applied along with this base image.
+                  - Mandatory serviceengine patch name that is applied along with this base image.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.10, 20.1.1.
+                  - Field introduced in 18.2.10, 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -288,10 +262,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It references the service engine patch associated with the uber image.
+                  - It references the service engine patch associated with the uber image.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.8, 20.1.1.
+                  - Field introduced in 18.2.8, 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -308,19 +282,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Status to check if the image is present.
+                  - Status to check if the image is present.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
+                  - Enum options - SYSERR_SUCCESS, SYSERR_FAILURE, SYSERR_OUT_OF_MEMORY, SYSERR_NO_ENT, SYSERR_INVAL, SYSERR_ACCESS, SYSERR_FAULT, SYSERR_IO,
                 </div>
                                 <div style="font-size: small">
-                  SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
+                  - SYSERR_TIMEOUT, SYSERR_NOT_SUPPORTED, SYSERR_NOT_READY, SYSERR_UPGRADE_IN_PROGRESS, SYSERR_WARM_START_IN_PROGRESS, SYSERR_TRY_AGAIN,
                 </div>
                                 <div style="font-size: small">
-                  SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
+                  - SYSERR_NOT_UPGRADING, SYSERR_PENDING, SYSERR_EVENT_GEN_FAILURE, SYSERR_CONFIG_PARAM_MISSING, SYSERR_RANGE, SYSERR_BAD_REQUEST...
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -337,13 +311,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Tenant that this object belongs to.
+                  - Tenant that this object belongs to.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -360,13 +334,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Type of the image patch/system.
+                  - Type of the image patch/system.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - IMAGE_TYPE_PATCH, IMAGE_TYPE_SYSTEM, IMAGE_TYPE_MUST_CHECK.
+                  - Enum options - IMAGE_TYPE_PATCH, IMAGE_TYPE_SYSTEM, IMAGE_TYPE_MUST_CHECK.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -383,13 +357,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Status to check if the image is an uber bundle.
+                  - Status to check if the image is an uber bundle.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.8, 20.1.1.
+                  - Field introduced in 18.2.8, 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -406,7 +380,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -423,10 +397,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the image.
+                  - Uuid of the image.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -445,11 +419,12 @@ Examples
         password: something
         state: present
         name: sample_image
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

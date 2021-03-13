@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure IpamDnsProviderProfile object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure IpamDnsProviderProfile object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,16 +99,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  If this flag is set, only allocate ip from networks in the virtual service vrf.
+                  - If this flag is set, only allocate ip from networks in the virtual service vrf.
                 </div>
                                 <div style="font-size: small">
-                  Applicable for avi vantage ipam only.
+                  - Applicable for avi vantage ipam only.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.4.
+                  - Field introduced in 17.2.4.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -151,7 +125,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Provider details if type is aws.
+                  - Provider details if type is aws.
                 </div>
                                             </td>
         </tr>
@@ -168,10 +142,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Provider details if type is microsoft azure.
+                  - Provider details if type is microsoft azure.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.1.
+                  - Field introduced in 17.2.1.
                 </div>
                                             </td>
         </tr>
@@ -188,10 +162,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Provider details if type is custom.
+                  - Provider details if type is custom.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -208,7 +182,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Provider details if type is google cloud.
+                  - Provider details if type is google cloud.
                 </div>
                                             </td>
         </tr>
@@ -225,7 +199,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Provider details if type is infoblox.
+                  - Provider details if type is infoblox.
                 </div>
                                             </td>
         </tr>
@@ -242,7 +216,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Provider details if type is avi.
+                  - Provider details if type is avi.
                 </div>
                                             </td>
         </tr>
@@ -259,16 +233,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key value pairs for granular object access control.
+                  - Key value pairs for granular object access control.
                 </div>
                                 <div style="font-size: small">
-                  Also allows for classification and tagging of similar objects.
+                  - Also allows for classification and tagging of similar objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -288,7 +262,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name for the ipam/dns provider profile.
+                  - Name for the ipam/dns provider profile.
                 </div>
                                             </td>
         </tr>
@@ -305,10 +279,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Provider details for oracle cloud.
+                  - Provider details for oracle cloud.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.1,18.1.3.
+                  - Field introduced in 18.2.1,18.1.3.
                 </div>
                                             </td>
         </tr>
@@ -325,7 +299,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Provider details if type is openstack.
+                  - Provider details if type is openstack.
                 </div>
                                             </td>
         </tr>
@@ -342,7 +316,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -359,7 +333,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -376,10 +350,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Provider details for tencent cloud.
+                  - Provider details for tencent cloud.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                             </td>
         </tr>
@@ -399,19 +373,19 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Provider type for the ipam/dns provider profile.
+                  - Provider type for the ipam/dns provider profile.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - IPAMDNS_TYPE_INFOBLOX, IPAMDNS_TYPE_AWS, IPAMDNS_TYPE_OPENSTACK, IPAMDNS_TYPE_GCP, IPAMDNS_TYPE_INFOBLOX_DNS, IPAMDNS_TYPE_CUSTOM,
+                  - Enum options - IPAMDNS_TYPE_INFOBLOX, IPAMDNS_TYPE_AWS, IPAMDNS_TYPE_OPENSTACK, IPAMDNS_TYPE_GCP, IPAMDNS_TYPE_INFOBLOX_DNS, IPAMDNS_TYPE_CUSTOM,
                 </div>
                                 <div style="font-size: small">
-                  IPAMDNS_TYPE_CUSTOM_DNS, IPAMDNS_TYPE_AZURE, IPAMDNS_TYPE_OCI, IPAMDNS_TYPE_TENCENT, IPAMDNS_TYPE_INTERNAL, IPAMDNS_TYPE_INTERNAL_DNS,
+                  - IPAMDNS_TYPE_CUSTOM_DNS, IPAMDNS_TYPE_AZURE, IPAMDNS_TYPE_OCI, IPAMDNS_TYPE_TENCENT, IPAMDNS_TYPE_INTERNAL, IPAMDNS_TYPE_INTERNAL_DNS,
                 </div>
                                 <div style="font-size: small">
-                  IPAMDNS_TYPE_AWS_DNS, IPAMDNS_TYPE_AZURE_DNS.
+                  - IPAMDNS_TYPE_AWS_DNS, IPAMDNS_TYPE_AZURE_DNS.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- ipamdns_type_internal) edition, essentials(allowed values- ipamdns_type_internal) edition, enterprise edition.
+                  - Allowed in basic(allowed values- ipamdns_type_internal) edition, essentials(allowed values- ipamdns_type_internal) edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -428,7 +402,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -445,7 +419,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the ipam/dns provider profile.
+                  - Uuid of the ipam/dns provider profile.
                 </div>
                                             </td>
         </tr>
@@ -478,11 +452,12 @@ Examples
           tenant_ref: /api/tenant?name=Demo
           type: IPAMDNS_TYPE_INTERNAL
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

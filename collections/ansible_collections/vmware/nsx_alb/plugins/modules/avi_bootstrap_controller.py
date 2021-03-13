@@ -59,7 +59,7 @@ extends_documentation_fragment:
 
 EXAMPLES = '''
   - name: Initialize user password
-    avi_bootstrap_controller:
+    vmware.nsx_alb.avi_bootstrap_controller:
       avi_credentials:
         controller: "controller_ip"
         port: "443"

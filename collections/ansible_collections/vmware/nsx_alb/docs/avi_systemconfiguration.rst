@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure SystemConfiguration object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure SystemConfiguration object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,7 +99,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Adminauthconfiguration settings for systemconfiguration.
+                  - Adminauthconfiguration settings for systemconfiguration.
                 </div>
                                             </td>
         </tr>
@@ -142,19 +116,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable common criteria compliance mode (disabled by default).
+                  - Enable common criteria compliance mode (disabled by default).
                 </div>
                                 <div style="font-size: small">
-                  Warn  toggling this field is disruptive and will result in reduced behavior with ssh and tls protocols.
+                  - Warn  toggling this field is disruptive and will result in reduced behavior with ssh and tls protocols.
                 </div>
                                 <div style="font-size: small">
-                  Expect possible warm start of control and data planes.
+                  - Expect possible warm start of control and data planes.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -171,22 +145,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specifies the default license tier which would be used by new clouds.
+                  - Specifies the default license tier which would be used by new clouds.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
+                  - Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.5.
+                  - Field introduced in 17.2.5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise.
+                  - Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as ENTERPRISE.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as ENTERPRISE.
                 </div>
                                             </td>
         </tr>
@@ -203,7 +177,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Dnsconfiguration settings for systemconfiguration.
+                  - Dnsconfiguration settings for systemconfiguration.
                 </div>
                                             </td>
         </tr>
@@ -220,16 +194,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Dns virtualservices hosting fqdn records for applications across avi vantage.
+                  - Dns virtualservices hosting fqdn records for applications across avi vantage.
                 </div>
                                 <div style="font-size: small">
-                  If no virtualservices are provided, avi vantage will provide dns services for configured applications.
+                  - If no virtualservices are provided, avi vantage will provide dns services for configured applications.
                 </div>
                                 <div style="font-size: small">
-                  Switching back to avi vantage from dns virtualservices is not allowed.
+                  - Switching back to avi vantage from dns virtualservices is not allowed.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type virtualservice.
+                  - It is a reference to an object of type virtualservice.
                 </div>
                                             </td>
         </tr>
@@ -246,10 +220,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Boolean flag to set docker_mode.
+                  - Boolean flag to set docker_mode.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -266,7 +240,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Emailconfiguration settings for systemconfiguration.
+                  - Emailconfiguration settings for systemconfiguration.
                 </div>
                                             </td>
         </tr>
@@ -283,16 +257,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable cors header.
+                  - Enable cors header.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -309,13 +283,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable fips mode.
+                  - Enable fips mode.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -332,7 +306,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Tenantconfiguration settings for systemconfiguration.
+                  - Tenantconfiguration settings for systemconfiguration.
                 </div>
                                             </td>
         </tr>
@@ -349,7 +323,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Linuxconfiguration settings for systemconfiguration.
+                  - Linuxconfiguration settings for systemconfiguration.
                 </div>
                                             </td>
         </tr>
@@ -366,7 +340,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Configure ip access control for controller to restrict open access.
+                  - Configure ip access control for controller to restrict open access.
                 </div>
                                             </td>
         </tr>
@@ -383,7 +357,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ntpconfiguration settings for systemconfiguration.
+                  - Ntpconfiguration settings for systemconfiguration.
                 </div>
                                             </td>
         </tr>
@@ -400,7 +374,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Portalconfiguration settings for systemconfiguration.
+                  - Portalconfiguration settings for systemconfiguration.
                 </div>
                                             </td>
         </tr>
@@ -417,7 +391,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Proxyconfiguration settings for systemconfiguration.
+                  - Proxyconfiguration settings for systemconfiguration.
                 </div>
                                             </td>
         </tr>
@@ -434,10 +408,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Configure secure channel properties.
+                  - Configure secure channel properties.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.1.4, 18.2.1.
+                  - Field introduced in 18.1.4, 18.2.1.
                 </div>
                                             </td>
         </tr>
@@ -454,7 +428,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Snmpconfiguration settings for systemconfiguration.
+                  - Snmpconfiguration settings for systemconfiguration.
                 </div>
                                             </td>
         </tr>
@@ -471,10 +445,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Allowed ciphers list for ssh to the management interface on the controller and service engines.
+                  - Allowed ciphers list for ssh to the management interface on the controller and service engines.
                 </div>
                                 <div style="font-size: small">
-                  If this is not specified, all the default ciphers are allowed.
+                  - If this is not specified, all the default ciphers are allowed.
                 </div>
                                             </td>
         </tr>
@@ -491,10 +465,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Allowed hmac list for ssh to the management interface on the controller and service engines.
+                  - Allowed hmac list for ssh to the management interface on the controller and service engines.
                 </div>
                                 <div style="font-size: small">
-                  If this is not specified, all the default hmacs are allowed.
+                  - If this is not specified, all the default hmacs are allowed.
                 </div>
                                             </td>
         </tr>
@@ -511,7 +485,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -528,7 +502,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unique object identifier of the object.
+                  - Unique object identifier of the object.
                 </div>
                                             </td>
         </tr>
@@ -545,13 +519,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This flag is set once the initial controller setup workflow is complete.
+                  - This flag is set once the initial controller setup workflow is complete.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -570,11 +544,12 @@ Examples
         password: something
         state: present
         name: sample_systemconfiguration
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

@@ -58,7 +58,7 @@ extends_documentation_fragment:
 
 EXAMPLES = '''
   - name: Get Pool Information using avi_api_session
-    avi_api_session:
+    vmware.nsx_alb.avi_api_session:
       controller: "{{ controller }}"
       username: "{{ username }}"
       password: "{{ password }}"
@@ -69,7 +69,7 @@ EXAMPLES = '''
       api_version: 16.4
     register: pool_results
   - name: Patch Pool with list of servers
-    avi_api_session:
+    vmware.nsx_alb.avi_api_session:
       controller: "{{ controller }}"
       username: "{{ username }}"
       password: "{{ password }}"
@@ -87,7 +87,7 @@ EXAMPLES = '''
                 type: V4
     register: updated_pool
   - name: Fetch Pool metrics bandwidth and connections rate
-    avi_api_session:
+    vmware.nsx_alb.avi_api_session:
       controller: "{{ controller }}"
       username: "{{ username }}"
       password: "{{ password }}"
@@ -101,7 +101,7 @@ EXAMPLES = '''
         limit: 10
     register: pool_metrics
   - name: Wait for Controller upgrade to finish
-    avi_api_session:
+    vmware.nsx_alb.avi_api_session:
       controller: "{{ controller }}"
       username: "{{ username }}"
       password: "{{ password }}"
@@ -130,22 +130,11 @@ from ansible.module_utils.basic import AnsibleModule
 from copy import deepcopy
 
 try:
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_obj_cmp, cleanup_absent_fields, avi_common_argument_spec,
-        ansible_return)
-    HAS_AVI = True
-except ImportError:
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
         avi_common_argument_spec, ansible_return, avi_obj_cmp,
         cleanup_absent_fields, HAS_AVI)
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)
-try:
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_obj_cmp, cleanup_absent_fields, avi_common_argument_spec,
-        ansible_return)
     HAS_AVI = True
 except ImportError:
     HAS_AVI = False

@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure GslbService object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure GslbService object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,13 +99,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The federated application persistence associated with gslbservice site persistence functionality.
+                  - The federated application persistence associated with gslbservice site persistence functionality.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type applicationpersistenceprofile.
+                  - It is a reference to an object of type applicationpersistenceprofile.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.1.
+                  - Field introduced in 17.2.1.
                 </div>
                                             </td>
         </tr>
@@ -148,16 +122,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Gs member's overall health status is derived based on a combination of controller and datapath health-status inputs.
+                  - Gs member's overall health status is derived based on a combination of controller and datapath health-status inputs.
                 </div>
                                 <div style="font-size: small">
-                  Note that the datapath status is determined by the association of health monitor profiles.
+                  - Note that the datapath status is determined by the association of health monitor profiles.
                 </div>
                                 <div style="font-size: small">
-                  Only the controller provided status is determined through this configuration.
+                  - Only the controller provided status is determined through this configuration.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -174,10 +148,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Creator name.
+                  - Creator name.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.2.
+                  - Field introduced in 17.1.2.
                 </div>
                                             </td>
         </tr>
@@ -194,7 +168,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  User defined description for the object.
+                  - User defined description for the object.
                 </div>
                                             </td>
         </tr>
@@ -214,10 +188,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Fully qualified domain name of the gslb service.
+                  - Fully qualified domain name of the gslb service.
                 </div>
                                 <div style="font-size: small">
-                  Minimum of 1 items required.
+                  - Minimum of 1 items required.
                 </div>
                                             </td>
         </tr>
@@ -234,7 +208,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Response to the client query when the gslb service is down.
+                  - Response to the client query when the gslb service is down.
                 </div>
                                             </td>
         </tr>
@@ -251,16 +225,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable or disable the gslb service.
+                  - Enable or disable the gslb service.
                 </div>
                                 <div style="font-size: small">
-                  If the gslb service is enabled, then the vips are sent in the dns responses based on reachability and configured algorithm.
+                  - If the gslb service is enabled, then the vips are sent in the dns responses based on reachability and configured algorithm.
                 </div>
                                 <div style="font-size: small">
-                  If the gslb service is disabled, then the vips are no longer available in the dns response.
+                  - If the gslb service is disabled, then the vips are no longer available in the dns response.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -280,10 +254,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Select list of pools belonging to this gslb service.
+                  - Select list of pools belonging to this gslb service.
                 </div>
                                 <div style="font-size: small">
-                  Minimum of 1 items required.
+                  - Minimum of 1 items required.
                 </div>
                                             </td>
         </tr>
@@ -300,16 +274,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Verify vs health by applying one or more health monitors.
+                  - Verify vs health by applying one or more health monitors.
                 </div>
                                 <div style="font-size: small">
-                  Active monitors generate synthetic traffic from dns service engine and to mark a vs up or down based on the response.
+                  - Active monitors generate synthetic traffic from dns service engine and to mark a vs up or down based on the response.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type healthmonitor.
+                  - It is a reference to an object of type healthmonitor.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 6 items allowed.
+                  - Maximum of 6 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -326,19 +300,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Health monitor probe can be executed for all the members or it can be executed only for third-party members.
+                  - Health monitor probe can be executed for all the members or it can be executed only for third-party members.
                 </div>
                                 <div style="font-size: small">
-                  This operational mode is useful to reduce the number of health monitor probes in case of a hybrid scenario.
+                  - This operational mode is useful to reduce the number of health monitor probes in case of a hybrid scenario.
                 </div>
                                 <div style="font-size: small">
-                  In such a case, avi members can have controller derived status while non-avi members can be probed by via health monitor probes in dataplane.
+                  - In such a case, avi members can have controller derived status while non-avi members can be probed by via health monitor probes in dataplane.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS, GSLB_SERVICE_HEALTH_MONITOR_ONLY_NON_AVI_MEMBERS.
+                  - Enum options - GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS, GSLB_SERVICE_HEALTH_MONITOR_ONLY_NON_AVI_MEMBERS.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as GSLB_SERVICE_HEALTH_MONITOR_ALL_MEMBERS.
                 </div>
                                             </td>
         </tr>
@@ -355,10 +329,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This field is an internal field and is used in se.
+                  - This field is an internal field and is used in se.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.2.
+                  - Field introduced in 18.2.2.
                 </div>
                                             </td>
         </tr>
@@ -375,13 +349,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This field indicates that this object is replicated across gslb federation.
+                  - This field indicates that this object is replicated across gslb federation.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.3.
+                  - Field introduced in 17.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -398,16 +372,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key value pairs for granular object access control.
+                  - Key value pairs for granular object access control.
                 </div>
                                 <div style="font-size: small">
-                  Also allows for classification and tagging of similar objects.
+                  - Also allows for classification and tagging of similar objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -424,19 +398,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The minimum number of members to distribute traffic to.
+                  - The minimum number of members to distribute traffic to.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-65535.
+                  - Allowed values are 1-65535.
                 </div>
                                 <div style="font-size: small">
-                  Special values are 0 - 'disable'.
+                  - Special values are 0 - 'disable'.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.4.
+                  - Field introduced in 17.2.4.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.
                 </div>
                                             </td>
         </tr>
@@ -456,7 +430,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name for the gslb service.
+                  - Name for the gslb service.
                 </div>
                                             </td>
         </tr>
@@ -473,16 +447,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Number of ip addresses of this gslb service to be returned by the dns service.
+                  - Number of ip addresses of this gslb service to be returned by the dns service.
                 </div>
                                 <div style="font-size: small">
-                  Enter 0 to return all ip addresses.
+                  - Enter 0 to return all ip addresses.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-20.
+                  - Allowed values are 1-20.
                 </div>
                                 <div style="font-size: small">
-                  Special values are 0- 'return all ip addresses'.
+                  - Special values are 0- 'return all ip addresses'.
                 </div>
                                             </td>
         </tr>
@@ -499,16 +473,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The load balancing algorithm will pick a gslb pool within the gslb service list of available pools.
+                  - The load balancing algorithm will pick a gslb pool within the gslb service list of available pools.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - GSLB_SERVICE_ALGORITHM_PRIORITY, GSLB_SERVICE_ALGORITHM_GEO.
+                  - Enum options - GSLB_SERVICE_ALGORITHM_PRIORITY, GSLB_SERVICE_ALGORITHM_GEO.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.3.
+                  - Field introduced in 17.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as GSLB_SERVICE_ALGORITHM_PRIORITY.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as GSLB_SERVICE_ALGORITHM_PRIORITY.
                 </div>
                                             </td>
         </tr>
@@ -525,13 +499,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This field indicates that for a cname query, respond with resolved cnames in the additional section with a records.
+                  - This field indicates that for a cname query, respond with resolved cnames in the additional section with a records.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.5.
+                  - Field introduced in 18.2.5.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -548,13 +522,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable site-persistence for the gslbservice.
+                  - Enable site-persistence for the gslbservice.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.1.
+                  - Field introduced in 17.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -571,7 +545,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -588,13 +562,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ttl value (in seconds) for records served for this gslb service by the dns service.
+                  - Ttl value (in seconds) for records served for this gslb service by the dns service.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-86400.
+                  - Allowed values are 0-86400.
                 </div>
                                 <div style="font-size: small">
-                  Unit is sec.
+                  - Unit is sec.
                 </div>
                                             </td>
         </tr>
@@ -611,7 +585,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -628,16 +602,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Use the client ip subnet from the edns option as source ipaddress for client geo-location and consistent hash algorithm.
+                  - Use the client ip subnet from the edns option as source ipaddress for client geo-location and consistent hash algorithm.
                 </div>
                                 <div style="font-size: small">
-                  Default is true.
+                  - Default is true.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -654,7 +628,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the gslb service.
+                  - Uuid of the gslb service.
                 </div>
                                             </td>
         </tr>
@@ -671,19 +645,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable wild-card match of fqdn  if an exact match is not found in the dns table, the longest match is chosen by wild-carding the fqdn in the dns
+                  - Enable wild-card match of fqdn  if an exact match is not found in the dns table, the longest match is chosen by wild-carding the fqdn in the dns
                 </div>
                                 <div style="font-size: small">
-                  request.
+                  - request.
                 </div>
                                 <div style="font-size: small">
-                  Default is false.
+                  - Default is false.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -702,11 +676,12 @@ Examples
         password: something
         state: present
         name: sample_gslbservice
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

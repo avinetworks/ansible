@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure HTTPPolicySet object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure HTTPPolicySet object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,10 +99,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Checksum of cloud configuration for pool.
+                  - Checksum of cloud configuration for pool.
                 </div>
                                 <div style="font-size: small">
-                  Internally set by cloud connector.
+                  - Internally set by cloud connector.
                 </div>
                                             </td>
         </tr>
@@ -145,7 +119,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Creator name.
+                  - Creator name.
                 </div>
                                             </td>
         </tr>
@@ -162,7 +136,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  User defined description for the object.
+                  - User defined description for the object.
                 </div>
                                             </td>
         </tr>
@@ -179,13 +153,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Geo database.
+                  - Geo database.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type geodb.
+                  - It is a reference to an object of type geodb.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 21.1.1.
+                  - Field introduced in 21.1.1.
                 </div>
                                             </td>
         </tr>
@@ -202,7 +176,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Http request policy for the virtual service.
+                  - Http request policy for the virtual service.
                 </div>
                                             </td>
         </tr>
@@ -219,7 +193,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Http response policy for the virtual service.
+                  - Http response policy for the virtual service.
                 </div>
                                             </td>
         </tr>
@@ -236,7 +210,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Http security policy for the virtual service.
+                  - Http security policy for the virtual service.
                 </div>
                                             </td>
         </tr>
@@ -253,13 +227,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ip reputation database.
+                  - Ip reputation database.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type ipreputationdb.
+                  - It is a reference to an object of type ipreputationdb.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -276,10 +250,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Boolean flag to set is_internal_policy.
+                  - Boolean flag to set is_internal_policy.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -296,16 +270,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key value pairs for granular object access control.
+                  - Key value pairs for granular object access control.
                 </div>
                                 <div style="font-size: small">
-                  Also allows for classification and tagging of similar objects.
+                  - Also allows for classification and tagging of similar objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -325,7 +299,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the http policy set.
+                  - Name of the http policy set.
                 </div>
                                             </td>
         </tr>
@@ -342,7 +316,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -359,7 +333,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -376,7 +350,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the http policy set.
+                  - Uuid of the http policy set.
                 </div>
                                             </td>
         </tr>
@@ -393,7 +367,7 @@ Examples
       vmware.nsx_alb.avi_httppolicyset:
         controller: 192.168.138.18
         username: admin
-        password: AviNetworks123!
+        password: password
         name: test-HTTP-Policy-Set
         tenant_ref: /api/tenant?name=admin
         http_request_policy:
@@ -426,11 +400,12 @@ Examples
               pool_ref: "/api/pool?name=testpool2"
         is_internal_policy: false
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

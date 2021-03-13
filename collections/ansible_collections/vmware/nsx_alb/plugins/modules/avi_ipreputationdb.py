@@ -114,8 +114,8 @@ extends_documentation_fragment:
 
 EXAMPLES = """
 - name: Example to create IPReputationDB object
-  avi_ipreputationdb:
-    controller: 10.10.25.42
+  vmware.nsx_alb.avi_ipreputationdb:
+    controller: 192.168.15.18
     username: admin
     password: something
     state: present
@@ -131,13 +131,10 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from avi.sdk.utils.ansible_utils import avi_common_argument_spec
-    from avi.sdk.utils.ansible_utils import (
-        avi_ansible_api, avi_common_argument_spec)
-    HAS_AVI = True
-except ImportError:
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
         avi_common_argument_spec, avi_ansible_api, HAS_AVI)
+except ImportError:
+    HAS_AVI = False
 
 
 def main():
@@ -165,8 +162,7 @@ def main():
         return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
                                     'For more details visit https://github.com/avinetworks/sdk.')
 
-    return avi_ansible_api(module, 'ipreputationdb',
-                           set())
+    return avi_ansible_api(module, 'ipreputationdb', set())
 
 
 if __name__ == "__main__":

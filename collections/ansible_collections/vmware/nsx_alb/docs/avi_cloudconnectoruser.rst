@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure CloudConnectorUser object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure CloudConnectorUser object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,10 +99,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Field introduced in 17.2.1.
+                  - Field introduced in 17.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -145,10 +119,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Field introduced in 17.2.1.
+                  - Field introduced in 17.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -165,13 +139,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Credentials for google cloud platform.
+                  - Credentials for google cloud platform.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.1.
+                  - Field introduced in 18.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -191,7 +165,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the object.
+                  - Name of the object.
                 </div>
                                             </td>
         </tr>
@@ -208,13 +182,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Credentials to talk to nsx-t manager.
+                  - Credentials to talk to nsx-t manager.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in essentials edition, enterprise edition.
+                  - Allowed in essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -231,7 +205,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Password of cloudconnectoruser.
+                  - Password of cloudconnectoruser.
                 </div>
                                             </td>
         </tr>
@@ -248,13 +222,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Credentials for oracle cloud infrastructure.
+                  - Credentials for oracle cloud infrastructure.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.1,18.1.3.
+                  - Field introduced in 18.2.1,18.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -271,7 +245,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Private_key of cloudconnectoruser.
+                  - Private_key of cloudconnectoruser.
                 </div>
                                             </td>
         </tr>
@@ -288,7 +262,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Public_key of cloudconnectoruser.
+                  - Public_key of cloudconnectoruser.
                 </div>
                                             </td>
         </tr>
@@ -305,7 +279,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -322,13 +296,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Credentials for tencent cloud.
+                  - Credentials for tencent cloud.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -345,7 +319,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -362,7 +336,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unique object identifier of the object.
+                  - Unique object identifier of the object.
                 </div>
                                             </td>
         </tr>
@@ -379,10 +353,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Credentials to talk to vcenter.
+                  - Credentials to talk to vcenter.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -407,11 +381,12 @@ Examples
           tenant_ref: /api/tenant?name=admin
           username: '{{ username }}'
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

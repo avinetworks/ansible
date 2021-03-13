@@ -66,7 +66,7 @@ extends_documentation_fragment:
 
 EXAMPLES = '''
   - name: Get SAML Session
-    avi_saml_api_session:
+    vmware.nsx_alb.avi_saml_api_session:
       idp_class: "{{ avi_credentials.idp_class }}"
       username: "{{ avi_credentials.username }}"
       password: "{{ avi_credentials.password }}"
@@ -76,7 +76,7 @@ EXAMPLES = '''
   - set_fact:
       saml_api_context: "{{ saml_api_session.ansible_facts.avi_api_context }}"
   - name: Create Pool
-    avi_pool:
+    vmware.nsx_alb.avi_pool:
       api_context: "{{ saml_api_context | default(omit) }}"
       avi_credentials: "{{ avi_credentials }}"
       state: "{{ state | default(present) }}"
@@ -93,7 +93,7 @@ EXAMPLES = '''
           addr: 10.90.64.13
           type: 'V4'
   - name: Create Virtual Service
-    avi_virtualservice:
+    vmware.nsx_alb.avi_virtualservice:
       api_context: "{{ saml_api_context | default(omit) }}"
       avi_credentials: "{{ avi_credentials }}"
       state: "{{ state | default(present) }}"

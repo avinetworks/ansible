@@ -48,7 +48,7 @@ extends_documentation_fragment:
 
 EXAMPLES = '''
   - name: Upload se patch image to controller
-    avi_api_image:
+    vmware.nsx_alb.avi_api_image:
       controller: ""
       username: ""
       password: ""

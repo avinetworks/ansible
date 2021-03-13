@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure AnalyticsProfile object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure AnalyticsProfile object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,25 +99,25 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  If a client receives an http response in less than the satisfactory latency threshold, the request is considered satisfied.
+                  - If a client receives an http response in less than the satisfactory latency threshold, the request is considered satisfied.
                 </div>
                                 <div style="font-size: small">
-                  It is considered tolerated if it is not satisfied and less than tolerated latency factor multiplied by the satisfactory latency threshold.
+                  - It is considered tolerated if it is not satisfied and less than tolerated latency factor multiplied by the satisfactory latency threshold.
                 </div>
                                 <div style="font-size: small">
-                  Greater than this number and the client's request is considered frustrated.
+                  - Greater than this number and the client's request is considered frustrated.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-30000.
+                  - Allowed values are 1-30000.
                 </div>
                                 <div style="font-size: small">
-                  Unit is milliseconds.
+                  - Unit is milliseconds.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 500) edition, essentials(allowed values- 500) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 500) edition, essentials(allowed values- 500) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 500.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 500.
                 </div>
                                             </td>
         </tr>
@@ -160,19 +134,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Client tolerated response latency factor.
+                  - Client tolerated response latency factor.
                 </div>
                                 <div style="font-size: small">
-                  Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated.
+                  - Client must receive a response within this factor times the satisfactory threshold (apdex_response_threshold) to be considered tolerated.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-1000.
+                  - Allowed values are 1-1000.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
                 </div>
                                             </td>
         </tr>
@@ -189,19 +163,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Satisfactory client to avi round trip time(rtt).
+                  - Satisfactory client to avi round trip time(rtt).
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-2000.
+                  - Allowed values are 1-2000.
                 </div>
                                 <div style="font-size: small">
-                  Unit is milliseconds.
+                  - Unit is milliseconds.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 250) edition, essentials(allowed values- 250) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 250) edition, essentials(allowed values- 250) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 250.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 250.
                 </div>
                                             </td>
         </tr>
@@ -218,19 +192,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Tolerated client to avi round trip time(rtt) factor.
+                  - Tolerated client to avi round trip time(rtt) factor.
                 </div>
                                 <div style="font-size: small">
-                  It is a multiple of apdex_rtt_tolerated_factor.
+                  - It is a multiple of apdex_rtt_tolerated_factor.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-1000.
+                  - Allowed values are 1-1000.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
                 </div>
                                             </td>
         </tr>
@@ -247,28 +221,28 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  If a client is able to load a page in less than the satisfactory latency threshold, the pageload is considered satisfied.
+                  - If a client is able to load a page in less than the satisfactory latency threshold, the pageload is considered satisfied.
                 </div>
                                 <div style="font-size: small">
-                  It is considered tolerated if it is greater than satisfied but less than the tolerated latency multiplied by satisifed latency.
+                  - It is considered tolerated if it is greater than satisfied but less than the tolerated latency multiplied by satisifed latency.
                 </div>
                                 <div style="font-size: small">
-                  Greater than this number and the client's request is considered frustrated.
+                  - Greater than this number and the client's request is considered frustrated.
                 </div>
                                 <div style="font-size: small">
-                  A pageload includes the time for dns lookup, download of all http objects, and page render time.
+                  - A pageload includes the time for dns lookup, download of all http objects, and page render time.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-30000.
+                  - Allowed values are 1-30000.
                 </div>
                                 <div style="font-size: small">
-                  Unit is milliseconds.
+                  - Unit is milliseconds.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 5000) edition, essentials(allowed values- 5000) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 5000) edition, essentials(allowed values- 5000) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 5000.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 5000.
                 </div>
                                             </td>
         </tr>
@@ -285,16 +259,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Virtual service threshold factor for tolerated page load time (plt) as multiple of apdex_rum_threshold.
+                  - Virtual service threshold factor for tolerated page load time (plt) as multiple of apdex_rum_threshold.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-1000.
+                  - Allowed values are 1-1000.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
                 </div>
                                             </td>
         </tr>
@@ -311,25 +285,25 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A server http response is considered satisfied if latency is less than the satisfactory latency threshold.
+                  - A server http response is considered satisfied if latency is less than the satisfactory latency threshold.
                 </div>
                                 <div style="font-size: small">
-                  The response is considered tolerated when it is greater than satisfied but less than the tolerated latency factor * s_latency.
+                  - The response is considered tolerated when it is greater than satisfied but less than the tolerated latency factor * s_latency.
                 </div>
                                 <div style="font-size: small">
-                  Greater than this number and the server response is considered frustrated.
+                  - Greater than this number and the server response is considered frustrated.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-30000.
+                  - Allowed values are 1-30000.
                 </div>
                                 <div style="font-size: small">
-                  Unit is milliseconds.
+                  - Unit is milliseconds.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 400) edition, essentials(allowed values- 400) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 400) edition, essentials(allowed values- 400) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 400.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 400.
                 </div>
                                             </td>
         </tr>
@@ -346,19 +320,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Server tolerated response latency factor.
+                  - Server tolerated response latency factor.
                 </div>
                                 <div style="font-size: small">
-                  Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated.
+                  - Servermust response within this factor times the satisfactory threshold (apdex_server_response_threshold) to be considered tolerated.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-1000.
+                  - Allowed values are 1-1000.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
                 </div>
                                             </td>
         </tr>
@@ -375,19 +349,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Satisfactory client to avi round trip time(rtt).
+                  - Satisfactory client to avi round trip time(rtt).
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-2000.
+                  - Allowed values are 1-2000.
                 </div>
                                 <div style="font-size: small">
-                  Unit is milliseconds.
+                  - Unit is milliseconds.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 125) edition, essentials(allowed values- 125) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 125) edition, essentials(allowed values- 125) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 125.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 125.
                 </div>
                                             </td>
         </tr>
@@ -404,19 +378,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Tolerated client to avi round trip time(rtt) factor.
+                  - Tolerated client to avi round trip time(rtt) factor.
                 </div>
                                 <div style="font-size: small">
-                  It is a multiple of apdex_rtt_tolerated_factor.
+                  - It is a multiple of apdex_rtt_tolerated_factor.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-1000.
+                  - Allowed values are 1-1000.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 4) edition, essentials(allowed values- 4) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
                 </div>
                                             </td>
         </tr>
@@ -433,7 +407,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Configure which logs are sent to the avi controller from ses and how they are processed.
+                  - Configure which logs are sent to the avi controller from ses and how they are processed.
                 </div>
                                             </td>
         </tr>
@@ -450,13 +424,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Configure to stream logs to an external server.
+                  - Configure to stream logs to an external server.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -473,19 +447,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A connection between client and avi is considered lossy when more than this percentage of out of order packets are received.
+                  - A connection between client and avi is considered lossy when more than this percentage of out of order packets are received.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-100.
+                  - Allowed values are 1-100.
                 </div>
                                 <div style="font-size: small">
-                  Unit is percent.
+                  - Unit is percent.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 50.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 50.
                 </div>
                                             </td>
         </tr>
@@ -502,19 +476,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted due to timeout.
+                  - A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted due to timeout.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-100.
+                  - Allowed values are 1-100.
                 </div>
                                 <div style="font-size: small">
-                  Unit is percent.
+                  - Unit is percent.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 20.
                 </div>
                                             </td>
         </tr>
@@ -531,19 +505,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted.
+                  - A connection between client and avi is considered lossy when more than this percentage of packets are retransmitted.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-100.
+                  - Allowed values are 1-100.
                 </div>
                                 <div style="font-size: small">
-                  Unit is percent.
+                  - Unit is percent.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 50.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 50.
                 </div>
                                             </td>
         </tr>
@@ -560,19 +534,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A client connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
+                  - A client connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-100.
+                  - Allowed values are 0-100.
                 </div>
                                 <div style="font-size: small">
-                  Unit is percent.
+                  - Unit is percent.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 2.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 2.
                 </div>
                                             </td>
         </tr>
@@ -589,19 +563,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A connection between avi and server is considered lossy when more than this percentage of out of order packets are received.
+                  - A connection between avi and server is considered lossy when more than this percentage of out of order packets are received.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-100.
+                  - Allowed values are 1-100.
                 </div>
                                 <div style="font-size: small">
-                  Unit is percent.
+                  - Unit is percent.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 50.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 50.
                 </div>
                                             </td>
         </tr>
@@ -618,19 +592,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout.
+                  - A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted due to timeout.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-100.
+                  - Allowed values are 1-100.
                 </div>
                                 <div style="font-size: small">
-                  Unit is percent.
+                  - Unit is percent.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 20.
                 </div>
                                             </td>
         </tr>
@@ -647,19 +621,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted.
+                  - A connection between avi and server is considered lossy when more than this percentage of packets are retransmitted.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-100.
+                  - Allowed values are 1-100.
                 </div>
                                 <div style="font-size: small">
-                  Unit is percent.
+                  - Unit is percent.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 50) edition, essentials(allowed values- 50) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 50.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 50.
                 </div>
                                             </td>
         </tr>
@@ -676,19 +650,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A server connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
+                  - A server connection is considered lossy when percentage of times a packet could not be trasmitted due to tcp zero window is above this threshold.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-100.
+                  - Allowed values are 0-100.
                 </div>
                                 <div style="font-size: small">
-                  Unit is percent.
+                  - Unit is percent.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 2.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 2.
                 </div>
                                             </td>
         </tr>
@@ -705,7 +679,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  User defined description for the object.
+                  - User defined description for the object.
                 </div>
                                             </td>
         </tr>
@@ -722,16 +696,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
+                  - Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
                 </div>
                                 <div style="font-size: small">
-                  In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
+                  - In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 20.1.3.
+                  - Field deprecated in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.1.1.
+                  - Field introduced in 18.1.1.
                 </div>
                                             </td>
         </tr>
@@ -748,10 +722,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Disable node (service engine) level analytics forvs metrics.
+                  - Disable node (service engine) level analytics forvs metrics.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 20.1.3.
+                  - Field deprecated in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -768,16 +742,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Disable analytics on backend servers.
+                  - Disable analytics on backend servers.
                 </div>
                                 <div style="font-size: small">
-                  This may be desired in container environment when there are large number of ephemeral servers.
+                  - This may be desired in container environment when there are large number of ephemeral servers.
                 </div>
                                 <div style="font-size: small">
-                  Additionally, no healthscore of servers is computed when server analytics is disabled.
+                  - Additionally, no healthscore of servers is computed when server analytics is disabled.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 20.1.3.
+                  - Field deprecated in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -794,16 +768,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Disable virtualservice (frontend) analytics.
+                  - Disable virtualservice (frontend) analytics.
                 </div>
                                 <div style="font-size: small">
-                  This flag disables metrics and healthscore for virtualservice.
+                  - This flag disables metrics and healthscore for virtualservice.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 20.1.3.
+                  - Field deprecated in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.1.
+                  - Field introduced in 18.2.1.
                 </div>
                                             </td>
         </tr>
@@ -820,13 +794,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable adaptive configuration for optimizing resource usage.
+                  - Enable adaptive configuration for optimizing resource usage.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -843,25 +817,25 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enables advanced analytics features like anomaly detection.
+                  - Enables advanced analytics features like anomaly detection.
                 </div>
                                 <div style="font-size: small">
-                  If set to false, anomaly computation (and associated rules/events) for vs, pool and server metrics will be deactivated.
+                  - If set to false, anomaly computation (and associated rules/events) for vs, pool and server metrics will be deactivated.
                 </div>
                                 <div style="font-size: small">
-                  However, setting it to false reduces cpu and memory requirements for analytics subsystem.
+                  - However, setting it to false reduces cpu and memory requirements for analytics subsystem.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.13, 18.1.5, 18.2.1.
+                  - Field introduced in 17.2.13, 18.1.5, 18.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Special default for basic edition is false, essentials edition is false, enterprise is true.
+                  - Special default for basic edition is false, essentials edition is false, enterprise is true.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -878,16 +852,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
+                  - Virtual service (vs) metrics are processed only when there is live data traffic on the vs.
                 </div>
                                 <div style="font-size: small">
-                  In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
+                  - In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -904,13 +878,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable node (service engine) level analytics forvs metrics.
+                  - Enable node (service engine) level analytics forvs metrics.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -927,19 +901,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enables analytics on backend servers.
+                  - Enables analytics on backend servers.
                 </div>
                                 <div style="font-size: small">
-                  This may be desired in container environment when there are large number of ephemeral servers.
+                  - This may be desired in container environment when there are large number of ephemeral servers.
                 </div>
                                 <div style="font-size: small">
-                  Additionally, no healthscore of servers is computed when server analytics is enabled.
+                  - Additionally, no healthscore of servers is computed when server analytics is enabled.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -956,16 +930,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable virtualservice (frontend) analytics.
+                  - Enable virtualservice (frontend) analytics.
                 </div>
                                 <div style="font-size: small">
-                  This flag enables metrics and healthscore for virtualservice.
+                  - This flag enables metrics and healthscore for virtualservice.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -982,13 +956,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude client closed connection before an http request could be completed from being classified as an error.
+                  - Exclude client closed connection before an http request could be completed from being classified as an error.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1005,16 +979,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude dns policy drops from the list of errors.
+                  - Exclude dns policy drops from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.2.
+                  - Field introduced in 17.2.2.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1031,13 +1005,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude queries to gslb services that are operationally down from the list of errors.
+                  - Exclude queries to gslb services that are operationally down from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1054,10 +1028,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  List of http status codes to be excluded from being classified as an error.
+                  - List of http status codes to be excluded from being classified as an error.
                 </div>
                                 <div style="font-size: small">
-                  Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a dos attack.
+                  - Error connections or responses impacts health score, are included as significant logs, and may be classified as part of a dos attack.
                 </div>
                                             </td>
         </tr>
@@ -1074,13 +1048,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude dns queries to domains outside the domains configured in the dns application profile from the list of errors.
+                  - Exclude dns queries to domains outside the domains configured in the dns application profile from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1097,13 +1071,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude invalid dns queries from the list of errors.
+                  - Exclude invalid dns queries from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1120,16 +1094,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude the issuer-revoked ocsp responses from the list of errors.
+                  - Exclude the issuer-revoked ocsp responses from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                  - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -1146,13 +1120,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude queries to domains that did not have configured services/records from the list of errors.
+                  - Exclude queries to domains that did not have configured services/records from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1169,13 +1143,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude queries to gslb services that have no available members from the list of errors.
+                  - Exclude queries to gslb services that have no available members from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1192,13 +1166,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude persistence server changed while load balancing' from the list of errors.
+                  - Exclude persistence server changed while load balancing' from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1215,16 +1189,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude the revoked ocsp certificate status responses from the list of errors.
+                  - Exclude the revoked ocsp certificate status responses from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                  - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -1241,13 +1215,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude server dns error response from the list of errors.
+                  - Exclude server dns error response from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1264,16 +1238,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude server tcp reset from errors.
+                  - Exclude server tcp reset from errors.
                 </div>
                                 <div style="font-size: small">
-                  It is common for applications like ms exchange.
+                  - It is common for applications like ms exchange.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1290,13 +1264,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  List of sip status codes to be excluded from being classified as an error.
+                  - List of sip status codes to be excluded from being classified as an error.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.13, 18.1.5, 18.2.1.
+                  - Field introduced in 17.2.13, 18.1.5, 18.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -1313,16 +1287,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude the stale ocsp certificate status responses from the list of errors.
+                  - Exclude the stale ocsp certificate status responses from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                  - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -1339,13 +1313,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude 'server unanswered syns' from the list of errors.
+                  - Exclude 'server unanswered syns' from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1362,13 +1336,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude tcp resets by client from the list of potential errors.
+                  - Exclude tcp resets by client from the list of potential errors.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1385,16 +1359,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude the unavailable ocsp responses from the list of errors.
+                  - Exclude the unavailable ocsp responses from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                  - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -1411,13 +1385,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Exclude unsupported dns queries from the list of errors.
+                  - Exclude unsupported dns queries from the list of errors.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1434,25 +1408,25 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Skips health score computation of pool servers when number of servers in a pool is more than this setting.
+                  - Skips health score computation of pool servers when number of servers in a pool is more than this setting.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5000.
+                  - Allowed values are 0-5000.
                 </div>
                                 <div style="font-size: small">
-                  Special values are 0- 'server health score is deactivated'.
+                  - Special values are 0- 'server health score is deactivated'.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.13, 18.1.4.
+                  - Field introduced in 17.2.13, 18.1.4.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Special default for basic edition is 0, essentials edition is 0, enterprise is 20.
+                  - Special default for basic edition is 0, essentials edition is 0, enterprise is 20.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 20.
                 </div>
                                             </td>
         </tr>
@@ -1469,13 +1443,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Time window (in secs) within which only unique health change events should occur.
+                  - Time window (in secs) within which only unique health change events should occur.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 1209600) edition, essentials(allowed values- 1209600) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 1209600) edition, essentials(allowed values- 1209600) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1209600.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1209600.
                 </div>
                                             </td>
         </tr>
@@ -1492,16 +1466,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Maximum penalty that may be deducted from health score for anomalies.
+                  - Maximum penalty that may be deducted from health score for anomalies.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-100.
+                  - Allowed values are 0-100.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 10.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 10.
                 </div>
                                             </td>
         </tr>
@@ -1518,16 +1492,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Maximum penalty that may be deducted from health score for high resource utilization.
+                  - Maximum penalty that may be deducted from health score for high resource utilization.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-100.
+                  - Allowed values are 0-100.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 25) edition, essentials(allowed values- 25) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 25) edition, essentials(allowed values- 25) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 25.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 25.
                 </div>
                                             </td>
         </tr>
@@ -1544,16 +1518,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Maximum penalty that may be deducted from health score based on security assessment.
+                  - Maximum penalty that may be deducted from health score based on security assessment.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-100.
+                  - Allowed values are 0-100.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 100) edition, essentials(allowed values- 100) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 100.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 100.
                 </div>
                                             </td>
         </tr>
@@ -1570,13 +1544,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Dos connection rate below which the dos security assessment will not kick in.
+                  - Dos connection rate below which the dos security assessment will not kick in.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 1000) edition, essentials(allowed values- 1000) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1000.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1000.
                 </div>
                                             </td>
         </tr>
@@ -1593,19 +1567,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Adds free performance score credits to health score.
+                  - Adds free performance score credits to health score.
                 </div>
                                 <div style="font-size: small">
-                  It can be used for compensating health score for known slow applications.
+                  - It can be used for compensating health score for known slow applications.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-100.
+                  - Allowed values are 0-100.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.
                 </div>
                                             </td>
         </tr>
@@ -1622,13 +1596,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
+                  - Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 10.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 10.0.
                 </div>
                                             </td>
         </tr>
@@ -1645,13 +1619,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
+                  - Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network quality metrics are not computed.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 10) edition, essentials(allowed values- 10) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 10.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 10.0.
                 </div>
                                             </td>
         </tr>
@@ -1668,16 +1642,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when the certificate has expired.
+                  - Score assigned when the certificate has expired.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
                 </div>
                                             </td>
         </tr>
@@ -1694,16 +1668,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when the certificate expires in more than 30 days.
+                  - Score assigned when the certificate expires in more than 30 days.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
                 </div>
                                             </td>
         </tr>
@@ -1720,16 +1694,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when the certificate expires in less than or equal to 7 days.
+                  - Score assigned when the certificate expires in less than or equal to 7 days.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 2.0) edition, essentials(allowed values- 2.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 2.0) edition, essentials(allowed values- 2.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 2.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 2.0.
                 </div>
                                             </td>
         </tr>
@@ -1746,16 +1720,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when the certificate expires in less than or equal to 30 days.
+                  - Score assigned when the certificate expires in less than or equal to 30 days.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 4.0) edition, essentials(allowed values- 4.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 4.0) edition, essentials(allowed values- 4.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 4.0.
                 </div>
                                             </td>
         </tr>
@@ -1772,16 +1746,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Penalty for allowing certificates with invalid chain.
+                  - Penalty for allowing certificates with invalid chain.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
                 </div>
                                             </td>
         </tr>
@@ -1798,16 +1772,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when the minimum cipher strength is 0 bits.
+                  - Score assigned when the minimum cipher strength is 0 bits.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
                 </div>
                                             </td>
         </tr>
@@ -1824,16 +1798,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when the minimum cipher strength is greater than equal to 128 bits.
+                  - Score assigned when the minimum cipher strength is greater than equal to 128 bits.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
                 </div>
                                             </td>
         </tr>
@@ -1850,16 +1824,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when the minimum cipher strength is less than 128 bits.
+                  - Score assigned when the minimum cipher strength is less than 128 bits.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 3.5.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 3.5.
                 </div>
                                             </td>
         </tr>
@@ -1876,16 +1850,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when no algorithm is used for encryption.
+                  - Score assigned when no algorithm is used for encryption.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
                 </div>
                                             </td>
         </tr>
@@ -1902,16 +1876,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when rc4 algorithm is used for encryption.
+                  - Score assigned when rc4 algorithm is used for encryption.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 2.5) edition, essentials(allowed values- 2.5) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 2.5) edition, essentials(allowed values- 2.5) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 2.5.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 2.5.
                 </div>
                                             </td>
         </tr>
@@ -1928,16 +1902,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Penalty for not enabling hsts.
+                  - Penalty for not enabling hsts.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
                 </div>
                                             </td>
         </tr>
@@ -1954,16 +1928,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Penalty for allowing non-pfs handshakes.
+                  - Penalty for allowing non-pfs handshakes.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
                 </div>
                                             </td>
         </tr>
@@ -1980,19 +1954,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when ocsp certificate status is set to revoked or issuer revoked.
+                  - Score assigned when ocsp certificate status is set to revoked or issuer revoked.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0.0-5.0.
+                  - Allowed values are 0.0-5.0.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 0.0) edition, essentials(allowed values- 0.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.0.
                 </div>
                                             </td>
         </tr>
@@ -2009,16 +1983,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Deprecated.
+                  - Deprecated.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
                 </div>
                                             </td>
         </tr>
@@ -2035,16 +2009,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when supporting ssl3.0 encryption protocol.
+                  - Score assigned when supporting ssl3.0 encryption protocol.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 3.5) edition, essentials(allowed values- 3.5) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 3.5.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 3.5.
                 </div>
                                             </td>
         </tr>
@@ -2061,16 +2035,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when supporting tls1.0 encryption protocol.
+                  - Score assigned when supporting tls1.0 encryption protocol.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
                 </div>
                                             </td>
         </tr>
@@ -2087,16 +2061,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when supporting tls1.1 encryption protocol.
+                  - Score assigned when supporting tls1.1 encryption protocol.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
                 </div>
                                             </td>
         </tr>
@@ -2113,16 +2087,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when supporting tls1.2 encryption protocol.
+                  - Score assigned when supporting tls1.2 encryption protocol.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
                 </div>
                                             </td>
         </tr>
@@ -2139,19 +2113,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Score assigned when supporting tls1.3 encryption protocol.
+                  - Score assigned when supporting tls1.3 encryption protocol.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 5.0) edition, essentials(allowed values- 5.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 5.0.
                 </div>
                                             </td>
         </tr>
@@ -2168,16 +2142,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Penalty for allowing weak signature algorithm(s).
+                  - Penalty for allowing weak signature algorithm(s).
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 1.0) edition, essentials(allowed values- 1.0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1.0.
                 </div>
                                             </td>
         </tr>
@@ -2194,16 +2168,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key value pairs for granular object access control.
+                  - Key value pairs for granular object access control.
                 </div>
                                 <div style="font-size: small">
-                  Also allows for classification and tagging of similar objects.
+                  - Also allows for classification and tagging of similar objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -2223,7 +2197,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The name of the analytics profile.
+                  - The name of the analytics profile.
                 </div>
                                             </td>
         </tr>
@@ -2240,19 +2214,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This flag sets the time duration of no live data traffic after which virtual service metrics processing is suspended.
+                  - This flag sets the time duration of no live data traffic after which virtual service metrics processing is suspended.
                 </div>
                                 <div style="font-size: small">
-                  It is applicable only when enable_ondemand_metrics is set to false.
+                  - It is applicable only when enable_ondemand_metrics is set to false.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.1.1.
+                  - Field introduced in 18.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Unit is seconds.
+                  - Unit is seconds.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1800.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1800.
                 </div>
                                             </td>
         </tr>
@@ -2269,7 +2243,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  List of http status code ranges to be excluded from being classified as an error.
+                  - List of http status code ranges to be excluded from being classified as an error.
                 </div>
                                             </td>
         </tr>
@@ -2286,10 +2260,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Block of http response codes to be excluded from being classified as an error.
+                  - Block of http response codes to be excluded from being classified as an error.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX.
+                  - Enum options - AP_HTTP_RSP_4XX, AP_HTTP_RSP_5XX.
                 </div>
                                             </td>
         </tr>
@@ -2306,13 +2280,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Rules applied to the http application log for filtering sensitive information.
+                  - Rules applied to the http application log for filtering sensitive information.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.10, 18.1.2.
+                  - Field introduced in 17.2.10, 18.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -2329,22 +2303,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Maximum number of sip messages added in logs for a sip transaction.
+                  - Maximum number of sip messages added in logs for a sip transaction.
                 </div>
                                 <div style="font-size: small">
-                  By default, this value is 20.
+                  - By default, this value is 20.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-1000.
+                  - Allowed values are 1-1000.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.13, 18.1.5, 18.2.1.
+                  - Field introduced in 17.2.13, 18.1.5, 18.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 20.
                 </div>
                                             </td>
         </tr>
@@ -2361,7 +2335,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -2378,7 +2352,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -2395,7 +2369,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the analytics profile.
+                  - Uuid of the analytics profile.
                 </div>
                                             </td>
         </tr>
@@ -2467,11 +2441,12 @@ Examples
           name: jason-analytics-profile
           tenant_ref: /api/tenant?name=Demo
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

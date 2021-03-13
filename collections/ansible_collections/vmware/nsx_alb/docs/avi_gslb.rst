@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure Gslb object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure Gslb object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,22 +99,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Frequency with which messages are propagated to vs mgr.
+                  - Frequency with which messages are propagated to vs mgr.
                 </div>
                                 <div style="font-size: small">
-                  Value of 0 disables async behavior and rpc are sent inline.
+                  - Value of 0 disables async behavior and rpc are sent inline.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-5.
+                  - Allowed values are 0-5.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Unit is sec.
+                  - Unit is sec.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.
                 </div>
                                             </td>
         </tr>
@@ -157,16 +131,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Max retries after which the remote site is treated as a fresh start.
+                  - Max retries after which the remote site is treated as a fresh start.
                 </div>
                                 <div style="font-size: small">
-                  In fresh start all the configs are downloaded.
+                  - In fresh start all the configs are downloaded.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-1024.
+                  - Allowed values are 1-1024.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 20.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 20.
                 </div>
                                             </td>
         </tr>
@@ -183,10 +157,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Group to specify if the client ip addresses are public or private.
+                  - Group to specify if the client ip addresses are public or private.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.2.
+                  - Field introduced in 17.1.2.
                 </div>
                                             </td>
         </tr>
@@ -203,7 +177,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  User defined description for the object.
+                  - User defined description for the object.
                 </div>
                                             </td>
         </tr>
@@ -220,10 +194,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Sub domain configuration for the gslb.
+                  - Sub domain configuration for the gslb.
                 </div>
                                 <div style="font-size: small">
-                  Gslb service's fqdn must be a match one of these subdomains.
+                  - Gslb service's fqdn must be a match one of these subdomains.
                 </div>
                                             </td>
         </tr>
@@ -240,25 +214,25 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Frequency with which errored messages are resynced to follower sites.
+                  - Frequency with which errored messages are resynced to follower sites.
                 </div>
                                 <div style="font-size: small">
-                  Value of 0 disables resync behavior.
+                  - Value of 0 disables resync behavior.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 60-3600.
+                  - Allowed values are 60-3600.
                 </div>
                                 <div style="font-size: small">
-                  Special values are 0 - 'disable'.
+                  - Special values are 0 - 'disable'.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Unit is sec.
+                  - Unit is sec.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 300.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 300.
                 </div>
                                             </td>
         </tr>
@@ -275,13 +249,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This field indicates that this object is replicated across gslb federation.
+                  - This field indicates that this object is replicated across gslb federation.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.3.
+                  - Field introduced in 17.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -301,10 +275,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Mark this site as leader of gslb configuration.
+                  - Mark this site as leader of gslb configuration.
                 </div>
                                 <div style="font-size: small">
-                  This site is the one among the avi sites.
+                  - This site is the one among the avi sites.
                 </div>
                                             </td>
         </tr>
@@ -321,25 +295,25 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This field disables the configuration operations on the leader for all federated objects.
+                  - This field disables the configuration operations on the leader for all federated objects.
                 </div>
                                 <div style="font-size: small">
-                  Cud operations on gslb, gslbservice, gslbgeodbprofile and other federated objects will be rejected.
+                  - Cud operations on gslb, gslbservice, gslbgeodbprofile and other federated objects will be rejected.
                 </div>
                                 <div style="font-size: small">
-                  The rest-api disabling helps in upgrade scenarios where we don't want configuration sync operations to the gslb member when the member is being
+                  - The rest-api disabling helps in upgrade scenarios where we don't want configuration sync operations to the gslb member when the member is being
                 </div>
                                 <div style="font-size: small">
-                  upgraded.
+                  - upgraded.
                 </div>
                                 <div style="font-size: small">
-                  This configuration programmatically blocks the leader from accepting new gslb configuration when member sites are undergoing upgrade.
+                  - This configuration programmatically blocks the leader from accepting new gslb configuration when member sites are undergoing upgrade.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.1.
+                  - Field introduced in 17.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -359,7 +333,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name for the gslb object.
+                  - Name for the gslb object.
                 </div>
                                             </td>
         </tr>
@@ -376,10 +350,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Policy for replicating configuration to the active follower sites.
+                  - Policy for replicating configuration to the active follower sites.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -396,16 +370,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Frequency with which group members communicate.
+                  - Frequency with which group members communicate.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-3600.
+                  - Allowed values are 1-3600.
                 </div>
                                 <div style="font-size: small">
-                  Unit is sec.
+                  - Unit is sec.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 15.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 15.
                 </div>
                                             </td>
         </tr>
@@ -422,22 +396,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The user can specify a send-interval while entering maintenance mode.
+                  - The user can specify a send-interval while entering maintenance mode.
                 </div>
                                 <div style="font-size: small">
-                  The validity of this 'maintenance send-interval' is only during maintenance mode.
+                  - The validity of this 'maintenance send-interval' is only during maintenance mode.
                 </div>
                                 <div style="font-size: small">
-                  When the user leaves maintenance mode, the original send-interval is reinstated.
+                  - When the user leaves maintenance mode, the original send-interval is reinstated.
                 </div>
                                 <div style="font-size: small">
-                  This internal variable is used to store the original send-interval.
+                  - This internal variable is used to store the original send-interval.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Unit is sec.
+                  - Unit is sec.
                 </div>
                                             </td>
         </tr>
@@ -457,10 +431,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Select avi site member belonging to this gslb.
+                  - Select avi site member belonging to this gslb.
                 </div>
                                 <div style="font-size: small">
-                  Minimum of 1 items required.
+                  - Minimum of 1 items required.
                 </div>
                                             </td>
         </tr>
@@ -477,7 +451,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -494,13 +468,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This field indicates tenant visibility for gs pool member selection across the gslb federated objects.
+                  - This field indicates tenant visibility for gs pool member selection across the gslb federated objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.12,20.1.4.
+                  - Field introduced in 18.2.12,20.1.4.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -517,10 +491,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Third party site member belonging to this gslb.
+                  - Third party site member belonging to this gslb.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -537,7 +511,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -554,7 +528,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the gslb object.
+                  - Uuid of the gslb object.
                 </div>
                                             </td>
         </tr>
@@ -571,13 +545,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The view-id is used in change-leader mode to differentiate partitioned groups while they have the same gslb namespace.
+                  - The view-id is used in change-leader mode to differentiate partitioned groups while they have the same gslb namespace.
                 </div>
                                 <div style="font-size: small">
-                  Each partitioned group will be able to operate independently by using the view-id.
+                  - Each partitioned group will be able to operate independently by using the view-id.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.
                 </div>
                                             </td>
         </tr>
@@ -703,11 +677,12 @@ Examples
         sites:
           - ip_addresses: 192.168.138.24
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

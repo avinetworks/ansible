@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure VsVip object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure VsVip object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,10 +99,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type cloud.
+                  - It is a reference to an object of type cloud.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -145,16 +119,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
+                  - Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 1000 items allowed.
+                  - Maximum of 1000 items allowed.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -171,16 +145,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Force placement on all service engines in the service engine group (container clouds only).
+                  - Force placement on all service engines in the service engine group (container clouds only).
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -197,13 +171,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Determines the set of ipam networks to use for this vsvip.
+                  - Determines the set of ipam networks to use for this vsvip.
                 </div>
                                 <div style="font-size: small">
-                  Selector type must be selector_ipam and only one label is supported.
+                  - Selector type must be selector_ipam and only one label is supported.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -220,16 +194,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key value pairs for granular object access control.
+                  - Key value pairs for granular object access control.
                 </div>
                                 <div style="font-size: small">
-                  Also allows for classification and tagging of similar objects.
+                  - Also allows for classification and tagging of similar objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -249,10 +223,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name for the vsvip object.
+                  - Name for the vsvip object.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -269,10 +243,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -289,10 +263,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This sets the placement scope of virtualservice to given tier1 logical router in nsx-t.
+                  - This sets the placement scope of virtualservice to given tier1 logical router in nsx-t.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -309,7 +283,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -326,19 +300,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is
+                  - This overrides the cloud level default and needs to match the se group value in which it will be used if the se group use_standard_alb value is
                 </div>
                                 <div style="font-size: small">
-                  set.
+                  - set.
                 </div>
                                 <div style="font-size: small">
-                  This is only used when fip is used for vs on azure cloud.
+                  - This is only used when fip is used for vs on azure cloud.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -355,10 +329,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the vsvip object.
+                  - Uuid of the vsvip object.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -375,10 +349,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  List of virtual service ips and other shareable entities.
+                  - List of virtual service ips and other shareable entities.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -395,16 +369,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Virtual routing context that the virtual service is bound to.
+                  - Virtual routing context that the virtual service is bound to.
                 </div>
                                 <div style="font-size: small">
-                  This is used to provide the isolation of the set of networks the application is attached to.
+                  - This is used to provide the isolation of the set of networks the application is attached to.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type vrfcontext.
+                  - It is a reference to an object of type vrfcontext.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -421,13 +395,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Checksum of cloud configuration for vsvip.
+                  - Checksum of cloud configuration for vsvip.
                 </div>
                                 <div style="font-size: small">
-                  Internally set by cloud connector.
+                  - Internally set by cloud connector.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.9, 18.1.2.
+                  - Field introduced in 17.2.9, 18.1.2.
                 </div>
                                             </td>
         </tr>
@@ -460,11 +434,12 @@ Examples
             type: V4
             addr: 192.168.138.18
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

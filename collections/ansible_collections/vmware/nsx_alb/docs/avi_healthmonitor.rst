@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure HealthMonitor object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure HealthMonitor object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,22 +99,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  By default, multiple instances of the same healthmonitor to the same server are suppressed intelligently.
+                  - By default, multiple instances of the same healthmonitor to the same server are suppressed intelligently.
                 </div>
                                 <div style="font-size: small">
-                  In rare cases, the monitor may have specific constructs that go beyond the server keys (ip, port, etc.) during which such suppression is not
+                  - In rare cases, the monitor may have specific constructs that go beyond the server keys (ip, port, etc.) during which such suppression is not
                 </div>
                                 <div style="font-size: small">
-                  desired.
+                  - desired.
                 </div>
                                 <div style="font-size: small">
-                  Use this knob to allow duplicates.
+                  - Use this knob to allow duplicates.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.8.
+                  - Field introduced in 18.2.8.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                  - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -157,13 +131,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Authentication information for username/password.
+                  - Authentication information for username/password.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -180,7 +154,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  User defined description for the object.
+                  - User defined description for the object.
                 </div>
                                             </td>
         </tr>
@@ -197,19 +171,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  During addition of a server or healthmonitors or during bootup, avi performs sequential health checks rather than waiting for send-interval to
+                  - During addition of a server or healthmonitors or during bootup, avi performs sequential health checks rather than waiting for send-interval to
                 </div>
                                 <div style="font-size: small">
-                  kick in, to mark the server up as soon as possible.
+                  - kick in, to mark the server up as soon as possible.
                 </div>
                                 <div style="font-size: small">
-                  This knob may be used to turn this feature off.
+                  - This knob may be used to turn this feature off.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.7.
+                  - Field introduced in 18.2.7.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -226,7 +200,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Healthmonitordns settings for healthmonitor.
+                  - Healthmonitordns settings for healthmonitor.
                 </div>
                                             </td>
         </tr>
@@ -243,7 +217,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Healthmonitorexternal settings for healthmonitor.
+                  - Healthmonitorexternal settings for healthmonitor.
                 </div>
                                             </td>
         </tr>
@@ -260,13 +234,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Number of continuous failed health checks before the server is marked down.
+                  - Number of continuous failed health checks before the server is marked down.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-50.
+                  - Allowed values are 1-50.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 2.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 2.
                 </div>
                                             </td>
         </tr>
@@ -283,7 +257,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Healthmonitorhttp settings for healthmonitor.
+                  - Healthmonitorhttp settings for healthmonitor.
                 </div>
                                             </td>
         </tr>
@@ -300,7 +274,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Healthmonitorhttp settings for healthmonitor.
+                  - Healthmonitorhttp settings for healthmonitor.
                 </div>
                                             </td>
         </tr>
@@ -317,10 +291,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Health monitor for imap.
+                  - Health monitor for imap.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 21.1.1.
+                  - Field introduced in 21.1.1.
                 </div>
                                             </td>
         </tr>
@@ -337,10 +311,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Health monitor for imaps.
+                  - Health monitor for imaps.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 21.1.1.
+                  - Field introduced in 21.1.1.
                 </div>
                                             </td>
         </tr>
@@ -357,22 +331,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This field describes the object's replication scope.
+                  - This field describes the object's replication scope.
                 </div>
                                 <div style="font-size: small">
-                  If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
+                  - If the field is set to false, then the object is visible within the controller-cluster and its associated service-engines.
                 </div>
                                 <div style="font-size: small">
-                  If the field is set to true, then the object is replicated across the federation.
+                  - If the field is set to true, then the object is replicated across the federation.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.3.
+                  - Field introduced in 17.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -389,16 +363,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Use this port instead of the port defined for the server in the pool.
+                  - Use this port instead of the port defined for the server in the pool.
                 </div>
                                 <div style="font-size: small">
-                  If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the pool.
+                  - If the monitor succeeds to this port, the load balanced traffic will still be sent to the port of the server defined within the pool.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-65535.
+                  - Allowed values are 1-65535.
                 </div>
                                 <div style="font-size: small">
-                  Special values are 0 - 'use server port'.
+                  - Special values are 0 - 'use server port'.
                 </div>
                                             </td>
         </tr>
@@ -418,7 +392,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A user friendly name for this health monitor.
+                  - A user friendly name for this health monitor.
                 </div>
                                             </td>
         </tr>
@@ -435,10 +409,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Health monitor for pop3.
+                  - Health monitor for pop3.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 21.1.1.
+                  - Field introduced in 21.1.1.
                 </div>
                                             </td>
         </tr>
@@ -455,10 +429,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Health monitor for pop3s.
+                  - Health monitor for pop3s.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 21.1.1.
+                  - Field introduced in 21.1.1.
                 </div>
                                             </td>
         </tr>
@@ -475,13 +449,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Health monitor for radius.
+                  - Health monitor for radius.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -498,22 +472,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A valid response from the server is expected within the receive timeout window.
+                  - A valid response from the server is expected within the receive timeout window.
                 </div>
                                 <div style="font-size: small">
-                  This timeout must be less than the send interval.
+                  - This timeout must be less than the send interval.
                 </div>
                                 <div style="font-size: small">
-                  If server status is regularly flapping up and down, consider increasing this value.
+                  - If server status is regularly flapping up and down, consider increasing this value.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-2400.
+                  - Allowed values are 1-2400.
                 </div>
                                 <div style="font-size: small">
-                  Unit is sec.
+                  - Unit is sec.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 4.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 4.
                 </div>
                                             </td>
         </tr>
@@ -530,16 +504,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Frequency, in seconds, that monitors are sent to a server.
+                  - Frequency, in seconds, that monitors are sent to a server.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-3600.
+                  - Allowed values are 1-3600.
                 </div>
                                 <div style="font-size: small">
-                  Unit is sec.
+                  - Unit is sec.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 10.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 10.
                 </div>
                                             </td>
         </tr>
@@ -556,13 +530,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Health monitor for sip.
+                  - Health monitor for sip.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.8, 18.1.3, 18.2.1.
+                  - Field introduced in 17.2.8, 18.1.3, 18.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -579,10 +553,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Health monitor for smtp.
+                  - Health monitor for smtp.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 21.1.1.
+                  - Field introduced in 21.1.1.
                 </div>
                                             </td>
         </tr>
@@ -599,10 +573,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Health monitor for smtps.
+                  - Health monitor for smtps.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 21.1.1.
+                  - Field introduced in 21.1.1.
                 </div>
                                             </td>
         </tr>
@@ -619,13 +593,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Number of continuous successful health checks before server is marked up.
+                  - Number of continuous successful health checks before server is marked up.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-50.
+                  - Allowed values are 1-50.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 2.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 2.
                 </div>
                                             </td>
         </tr>
@@ -642,7 +616,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Healthmonitortcp settings for healthmonitor.
+                  - Healthmonitortcp settings for healthmonitor.
                 </div>
                                             </td>
         </tr>
@@ -659,7 +633,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -679,22 +653,22 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Type of the health monitor.
+                  - Type of the health monitor.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP,
+                  - Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, HEALTH_MONITOR_HTTP, HEALTH_MONITOR_HTTPS, HEALTH_MONITOR_EXTERNAL, HEALTH_MONITOR_UDP,
                 </div>
                                 <div style="font-size: small">
-                  HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS,
+                  - HEALTH_MONITOR_DNS, HEALTH_MONITOR_GSLB, HEALTH_MONITOR_SIP, HEALTH_MONITOR_RADIUS, HEALTH_MONITOR_SMTP, HEALTH_MONITOR_SMTPS,
                 </div>
                                 <div style="font-size: small">
-                  HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS.
+                  - HEALTH_MONITOR_POP3, HEALTH_MONITOR_POP3S, HEALTH_MONITOR_IMAP, HEALTH_MONITOR_IMAPS.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp,health_monitor_http,health_monitor_https) edition,
+                  - Allowed in basic(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp,health_monitor_http,health_monitor_https) edition,
                 </div>
                                 <div style="font-size: small">
-                  essentials(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp) edition, enterprise edition.
+                  - essentials(allowed values- health_monitor_ping,health_monitor_tcp,health_monitor_udp) edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -711,7 +685,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Healthmonitorudp settings for healthmonitor.
+                  - Healthmonitorudp settings for healthmonitor.
                 </div>
                                             </td>
         </tr>
@@ -728,7 +702,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -745,7 +719,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the health monitor.
+                  - Uuid of the health monitor.
                 </div>
                                             </td>
         </tr>
@@ -762,7 +736,7 @@ Examples
       vmware.nsx_alb.avi_healthmonitor:
         controller: 192.168.138.18
         username: admin
-        password: AviNetworks123!
+        password: password
         https_monitor:
           http_request: HEAD / HTTP/1.0
           http_response_code:
@@ -775,11 +749,12 @@ Examples
         type: HEALTH_MONITOR_HTTPS
         name: MyWebsite-HTTPS
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

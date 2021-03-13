@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure ALBServicesConfig object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure ALBServicesConfig object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -128,13 +102,13 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Default values to be used for application signature sync.
+                  - Default values to be used for application signature sync.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.4.
+                  - Field introduced in 20.1.4.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -151,10 +125,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Information about the default contact for this controller cluster.
+                  - Information about the default contact for this controller cluster.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -174,10 +148,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Information about the portal features opted in for controller.
+                  - Information about the portal features opted in for controller.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -197,10 +171,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Default values to be used for ip reputation sync.
+                  - Default values to be used for ip reputation sync.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -217,22 +191,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Mode helps log collection and upload.
+                  - Mode helps log collection and upload.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - SALESFORCE, SYSTEST, MYVMWARE.
+                  - Enum options - SALESFORCE, SYSTEST, MYVMWARE.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- salesforce,myvmware,systest) edition, essentials(allowed values- salesforce,myvmware,systest) edition,
+                  - Allowed in basic(allowed values- salesforce,myvmware,systest) edition, essentials(allowed values- salesforce,myvmware,systest) edition,
                 </div>
                                 <div style="font-size: small">
-                  enterprise edition.
+                  - enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as MYVMWARE.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as MYVMWARE.
                 </div>
                                             </td>
         </tr>
@@ -249,16 +223,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Time interval in minutes.
+                  - Time interval in minutes.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 5-60.
+                  - Allowed values are 5-60.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 10.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 10.
                 </div>
                                             </td>
         </tr>
@@ -278,10 +252,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The fqdn or ip address of the customer portal.
+                  - The fqdn or ip address of the customer portal.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -301,10 +275,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Default values to be used during proactive case creation and techsupport attachment.
+                  - Default values to be used during proactive case creation and techsupport attachment.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -321,10 +295,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Split proxy configuration to connect external pulse services.
+                  - Split proxy configuration to connect external pulse services.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -341,7 +315,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -358,13 +332,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  By default, use system proxy configuration.if true, use split proxy configuration.
+                  - By default, use system proxy configuration.if true, use split proxy configuration.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -381,13 +355,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Secure the controller to pulse communication over tls.
+                  - Secure the controller to pulse communication over tls.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -404,7 +378,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -423,11 +397,12 @@ Examples
         password: something
         state: present
         name: sample_albservicesconfig
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

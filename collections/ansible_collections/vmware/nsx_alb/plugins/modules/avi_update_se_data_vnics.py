@@ -40,7 +40,7 @@ extends_documentation_fragment:
 
 EXAMPLES = '''
   - name: Update data vnics and vlan interfaces
-    avi_update_se_data_vnics:
+    vmware.nsx_alb.avi_update_se_data_vnics:
       avi_credentials:
         controller: "{{ controller }}"
         username: "{{ username }}"
@@ -99,25 +99,12 @@ obj:
 '''
 
 from ansible.module_utils.basic import AnsibleModule
-
 try:
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        cleanup_absent_fields, avi_common_argument_spec,
-        ansible_return)
-    HAS_AVI = True
-except ImportError:
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
         avi_common_argument_spec, ansible_return, avi_obj_cmp,
         cleanup_absent_fields, HAS_AVI)
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)
-try:
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, avi_ansible_api,
-        ansible_return)
-    HAS_AVI = True
 except ImportError:
     HAS_AVI = False
 

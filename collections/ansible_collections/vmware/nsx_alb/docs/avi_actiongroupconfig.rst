@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure ActionGroupConfig object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure ActionGroupConfig object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,10 +99,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Reference of the action script configuration to be used.
+                  - Reference of the action script configuration to be used.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type alertscriptconfig.
+                  - It is a reference to an object of type alertscriptconfig.
                 </div>
                                             </td>
         </tr>
@@ -145,13 +119,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Trigger notification to autoscale manager.
+                  - Trigger notification to autoscale manager.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -168,7 +142,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  User defined description for the object.
+                  - User defined description for the object.
                 </div>
                                             </td>
         </tr>
@@ -185,10 +159,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Select the email notification configuration to use when sending alerts via email.
+                  - Select the email notification configuration to use when sending alerts via email.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type alertemailconfig.
+                  - It is a reference to an object of type alertemailconfig.
                 </div>
                                             </td>
         </tr>
@@ -208,13 +182,13 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Generate alert only to external destinations.
+                  - Generate alert only to external destinations.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -234,13 +208,13 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  When an alert is generated, mark its priority via the alert level.
+                  - When an alert is generated, mark its priority via the alert level.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.
+                  - Enum options - ALERT_LOW, ALERT_MEDIUM, ALERT_HIGH.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as ALERT_LOW.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as ALERT_LOW.
                 </div>
                                             </td>
         </tr>
@@ -260,7 +234,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of the object.
+                  - Name of the object.
                 </div>
                                             </td>
         </tr>
@@ -277,10 +251,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Select the snmp trap notification to use when sending alerts via snmp trap.
+                  - Select the snmp trap notification to use when sending alerts via snmp trap.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type snmptrapprofile.
+                  - It is a reference to an object of type snmptrapprofile.
                 </div>
                                             </td>
         </tr>
@@ -297,10 +271,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Select the syslog notification configuration to use when sending alerts via syslog.
+                  - Select the syslog notification configuration to use when sending alerts via syslog.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type alertsyslogconfig.
+                  - It is a reference to an object of type alertsyslogconfig.
                 </div>
                                             </td>
         </tr>
@@ -317,7 +291,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -334,7 +308,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -351,7 +325,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unique object identifier of the object.
+                  - Unique object identifier of the object.
                 </div>
                                             </td>
         </tr>
@@ -370,11 +344,12 @@ Examples
         password: something
         state: present
         name: sample_actiongroupconfig
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

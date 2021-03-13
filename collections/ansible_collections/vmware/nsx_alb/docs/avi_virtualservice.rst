@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure VirtualService object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure VirtualService object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,28 +99,28 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This configuration only applies if the virtualservice is in legacy active standby ha mode and load distribution among active standby is enabled.
+                  - This configuration only applies if the virtualservice is in legacy active standby ha mode and load distribution among active standby is enabled.
                 </div>
                                 <div style="font-size: small">
-                  This field is used to tag the virtualservice so that virtualservices with the same tag will share the same active serviceengine.
+                  - This field is used to tag the virtualservice so that virtualservices with the same tag will share the same active serviceengine.
                 </div>
                                 <div style="font-size: small">
-                  Virtualservices with different tags will have different active serviceengines.
+                  - Virtualservices with different tags will have different active serviceengines.
                 </div>
                                 <div style="font-size: small">
-                  If one of the serviceengine's in the serviceenginegroup fails, all virtualservices will end up using the same active serviceengine.
+                  - If one of the serviceengine's in the serviceenginegroup fails, all virtualservices will end up using the same active serviceengine.
                 </div>
                                 <div style="font-size: small">
-                  Redistribution of the virtualservices can be either manual or automated when the failed serviceengine recovers.
+                  - Redistribution of the virtualservices can be either manual or automated when the failed serviceengine recovers.
                 </div>
                                 <div style="font-size: small">
-                  Redistribution is based on the auto redistribute property of the serviceenginegroup.
+                  - Redistribution is based on the auto redistribute property of the serviceenginegroup.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - ACTIVE_STANDBY_SE_1, ACTIVE_STANDBY_SE_2.
+                  - Enum options - ACTIVE_STANDBY_SE_1, ACTIVE_STANDBY_SE_2.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as ACTIVE_STANDBY_SE_1.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as ACTIVE_STANDBY_SE_1.
                 </div>
                                             </td>
         </tr>
@@ -163,22 +137,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Keep advertising virtual service via bgp even if it is marked down by health monitor.
+                  - Keep advertising virtual service via bgp even if it is marked down by health monitor.
                 </div>
                                 <div style="font-size: small">
-                  This setting takes effect for future virtual service flaps.
+                  - This setting takes effect for future virtual service flaps.
                 </div>
                                 <div style="font-size: small">
-                  To advertise current vses that are down, please disable and re-enable the virtual service.
+                  - To advertise current vses that are down, please disable and re-enable the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -195,19 +169,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Process request even if invalid client certificate is presented.
+                  - Process request even if invalid client certificate is presented.
                 </div>
                                 <div style="font-size: small">
-                  Datascript apis need to be used for processing of such requests.
+                  - Datascript apis need to be used for processing of such requests.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -224,7 +198,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Determines analytics settings for the application.
+                  - Determines analytics settings for the application.
                 </div>
                                             </td>
         </tr>
@@ -241,10 +215,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specifies settings related to analytics.
+                  - Specifies settings related to analytics.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type analyticsprofile.
+                  - It is a reference to an object of type analyticsprofile.
                 </div>
                                             </td>
         </tr>
@@ -261,19 +235,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The name of the contract/graph associated with the virtual service.
+                  - The name of the contract/graph associated with the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Should be in the <contract name> <graph name> format.
+                  - Should be in the <contract name> <graph name> format.
                 </div>
                                 <div style="font-size: small">
-                  This is applicable only for service integration mode with cisco apic controller.
+                  - This is applicable only for service integration mode with cisco apic controller.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.12,18.1.2.
+                  - Field introduced in 17.2.12,18.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -290,13 +264,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable application layer specific features for the virtual service.
+                  - Enable application layer specific features for the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type applicationprofile.
+                  - It is a reference to an object of type applicationprofile.
                 </div>
                                 <div style="font-size: small">
-                  Special default for essentials edition is system-l4-application.
+                  - Special default for essentials edition is system-l4-application.
                 </div>
                                             </td>
         </tr>
@@ -313,10 +287,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Auto-allocate floating/elastic ip from the cloud infrastructure.
+                  - Auto-allocate floating/elastic ip from the cloud infrastructure.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -333,10 +307,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Auto-allocate vip from the provided subnet.
+                  - Auto-allocate vip from the provided subnet.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -353,10 +327,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Availability-zone to place the virtual service.
+                  - Availability-zone to place the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -373,10 +347,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  (internal-use) fip allocated by avi in the cloud infrastructure.
+                  - (internal-use) fip allocated by avi in the cloud infrastructure.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -393,10 +367,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  (internal-use) vip allocated by avi in the cloud infrastructure.
+                  - (internal-use) vip allocated by avi in the cloud infrastructure.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -413,16 +387,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  (internal-use)applicable for azure only.
+                  - (internal-use)applicable for azure only.
                 </div>
                                 <div style="font-size: small">
-                  Azure availability set to which this vs is associated.
+                  - Azure availability set to which this vs is associated.
                 </div>
                                 <div style="font-size: small">
-                  Internally set by the cloud connector.
+                  - Internally set by the cloud connector.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.12, 18.1.2.
+                  - Field introduced in 17.2.12, 18.1.2.
                 </div>
                                             </td>
         </tr>
@@ -439,13 +413,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Bot detection policy for the virtual service.
+                  - Bot detection policy for the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type botdetectionpolicy.
+                  - It is a reference to an object of type botdetectionpolicy.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 21.1.1.
+                  - Field introduced in 21.1.1.
                 </div>
                                             </td>
         </tr>
@@ -462,25 +436,25 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  (this is a beta feature).
+                  - (this is a beta feature).
                 </div>
                                 <div style="font-size: small">
-                  Sync key-value cache to the new ses when vs is scaled out.
+                  - Sync key-value cache to the new ses when vs is scaled out.
                 </div>
                                 <div style="font-size: small">
-                  For ex  ssl sessions are stored using vs's key-value cache.
+                  - For ex  ssl sessions are stored using vs's key-value cache.
                 </div>
                                 <div style="font-size: small">
-                  When the vs is scaled out, the ssl session information is synced to the new se, allowing existing ssl sessions to be reused on the new se.
+                  - When the vs is scaled out, the ssl session information is synced to the new se, allowing existing ssl sessions to be reused on the new se.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.7, 18.1.1.
+                  - Field introduced in 17.2.7, 18.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -497,7 +471,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Http authentication configuration for protected resources.
+                  - Http authentication configuration for protected resources.
                 </div>
                                             </td>
         </tr>
@@ -514,16 +488,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Close client connection on vs config update.
+                  - Close client connection on vs config update.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.4.
+                  - Field introduced in 17.2.4.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -540,10 +514,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Checksum of cloud configuration for vs.
+                  - Checksum of cloud configuration for vs.
                 </div>
                                 <div style="font-size: small">
-                  Internally set by cloud connector.
+                  - Internally set by cloud connector.
                 </div>
                                             </td>
         </tr>
@@ -560,7 +534,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type cloud.
+                  - It is a reference to an object of type cloud.
                 </div>
                                             </td>
         </tr>
@@ -577,19 +551,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
+                  - Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, CLOUD_APIC, CLOUD_MESOS, CLOUD_LINUXSERVER, CLOUD_DOCKER_UCP,
                 </div>
                                 <div style="font-size: small">
-                  CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
+                  - CLOUD_RANCHER, CLOUD_OSHIFT_K8S, CLOUD_AZURE, CLOUD_GCP, CLOUD_NSXT.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- cloud_none,cloud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise
+                  - Allowed in basic(allowed values- cloud_none,cloud_nsxt) edition, essentials(allowed values- cloud_none,cloud_vcenter) edition, enterprise
                 </div>
                                 <div style="font-size: small">
-                  edition.
+                  - edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as CLOUD_NONE.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as CLOUD_NONE.
                 </div>
                                             </td>
         </tr>
@@ -606,7 +580,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Rate limit the incoming connections to this virtual service.
+                  - Rate limit the incoming connections to this virtual service.
                 </div>
                                             </td>
         </tr>
@@ -623,7 +597,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Profile used to match and rewrite strings in request and/or response body.
+                  - Profile used to match and rewrite strings in request and/or response body.
                 </div>
                                             </td>
         </tr>
@@ -640,7 +614,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Creator name.
+                  - Creator name.
                 </div>
                                             </td>
         </tr>
@@ -657,16 +631,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Select the algorithm for qos fairness.
+                  - Select the algorithm for qos fairness.
                 </div>
                                 <div style="font-size: small">
-                  This determines how multiple virtual services sharing the same service engines will prioritize traffic over a congested network.
+                  - This determines how multiple virtual services sharing the same service engines will prioritize traffic over a congested network.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -683,7 +657,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  User defined description for the object.
+                  - User defined description for the object.
                 </div>
                                             </td>
         </tr>
@@ -700,16 +674,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  (internal-use) discovered networks providing reachability for client facing virtual service ip.
+                  - (internal-use) discovered networks providing reachability for client facing virtual service ip.
                 </div>
                                 <div style="font-size: small">
-                  This field is deprecated.
+                  - This field is deprecated.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type network.
+                  - It is a reference to an object of type network.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -726,13 +700,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  (internal-use) discovered networks providing reachability for client facing virtual service ip.
+                  - (internal-use) discovered networks providing reachability for client facing virtual service ip.
                 </div>
                                 <div style="font-size: small">
-                  This field is used internally by avi, not editable by the user.
+                  - This field is used internally by avi, not editable by the user.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -749,13 +723,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  (internal-use) discovered subnets providing reachability for client facing virtual service ip.
+                  - (internal-use) discovered subnets providing reachability for client facing virtual service ip.
                 </div>
                                 <div style="font-size: small">
-                  This field is deprecated.
+                  - This field is deprecated.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -772,13 +746,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
+                  - Service discovery specific data including fully qualified domain name, type and time-to-live of the dns record.
                 </div>
                                 <div style="font-size: small">
-                  Note that only one of fqdn and dns_info setting is allowed.
+                  - Note that only one of fqdn and dns_info setting is allowed.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 1000 items allowed.
+                  - Maximum of 1000 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -795,13 +769,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Dns policies applied on the dns traffic of the virtual service.
+                  - Dns policies applied on the dns traffic of the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -818,13 +792,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Force placement on all se's in service group (mesos mode only).
+                  - Force placement on all se's in service group (mesos mode only).
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -841,16 +815,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Response traffic to clients will be sent back to the source mac address of the connection, rather than statically sent to a default gateway.
+                  - Response traffic to clients will be sent back to the source mac address of the connection, rather than statically sent to a default gateway.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Special default for basic edition is false, essentials edition is false, enterprise is true.
+                  - Special default for basic edition is false, essentials edition is false, enterprise is true.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -867,7 +841,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable route health injection using the bgp config in the vrf context.
+                  - Enable route health injection using the bgp config in the vrf context.
                 </div>
                                             </td>
         </tr>
@@ -884,7 +858,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable route health injection for source nat'ted floating ip address using the bgp config in the vrf context.
+                  - Enable route health injection for source nat'ted floating ip address using the bgp config in the vrf context.
                 </div>
                                             </td>
         </tr>
@@ -901,10 +875,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable or disable the virtual service.
+                  - Enable or disable the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -921,16 +895,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Error page profile to be used for this virtualservice.this profile is used to send the custom error page to the client generated by the proxy.
+                  - Error page profile to be used for this virtualservice.this profile is used to send the custom error page to the client generated by the proxy.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type errorpageprofile.
+                  - It is a reference to an object of type errorpageprofile.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.4.
+                  - Field introduced in 17.2.4.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -947,10 +921,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Floating ip to associate with this virtual service.
+                  - Floating ip to associate with this virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -967,16 +941,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  If auto_allocate_floating_ip is true and more than one floating-ip subnets exist, then the subnet for the floating ip address allocation.
+                  - If auto_allocate_floating_ip is true and more than one floating-ip subnets exist, then the subnet for the floating ip address allocation.
                 </div>
                                 <div style="font-size: small">
-                  This field is applicable only if the virtualservice belongs to an openstack or aws cloud.
+                  - This field is applicable only if the virtualservice belongs to an openstack or aws cloud.
                 </div>
                                 <div style="font-size: small">
-                  In openstack or aws cloud it is required when auto_allocate_floating_ip is selected.
+                  - In openstack or aws cloud it is required when auto_allocate_floating_ip is selected.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -993,16 +967,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Criteria for flow distribution among ses.
+                  - Criteria for flow distribution among ses.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - LOAD_AWARE, CONSISTENT_HASH_SOURCE_IP_ADDRESS, CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT.
+                  - Enum options - LOAD_AWARE, CONSISTENT_HASH_SOURCE_IP_ADDRESS, CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- load_aware) edition, essentials(allowed values- load_aware) edition, enterprise edition.
+                  - Allowed in basic(allowed values- load_aware) edition, essentials(allowed values- load_aware) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as LOAD_AWARE.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as LOAD_AWARE.
                 </div>
                                             </td>
         </tr>
@@ -1019,13 +993,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Criteria for flow labelling.
+                  - Criteria for flow labelling.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - NO_LABEL, APPLICATION_LABEL, SERVICE_LABEL.
+                  - Enum options - NO_LABEL, APPLICATION_LABEL, SERVICE_LABEL.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as NO_LABEL.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as NO_LABEL.
                 </div>
                                             </td>
         </tr>
@@ -1042,10 +1016,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Dns resolvable, fully qualified domain name of the virtualservice.
+                  - Dns resolvable, fully qualified domain name of the virtualservice.
                 </div>
                                 <div style="font-size: small">
-                  Only one of 'fqdn' and 'dns_info' configuration is allowed.
+                  - Only one of 'fqdn' and 'dns_info' configuration is allowed.
                 </div>
                                             </td>
         </tr>
@@ -1062,10 +1036,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Translate the host name sent to the servers to this value.
+                  - Translate the host name sent to the servers to this value.
                 </div>
                                 <div style="font-size: small">
-                  Translate the host name sent from servers back to the value used by the client.
+                  - Translate the host name sent from servers back to the value used by the client.
                 </div>
                                             </td>
         </tr>
@@ -1082,7 +1056,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Http policies applied on the data traffic of the virtual service.
+                  - Http policies applied on the data traffic of the virtual service.
                 </div>
                                             </td>
         </tr>
@@ -1099,19 +1073,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The config settings for the icap server when checking the http request.
+                  - The config settings for the icap server when checking the http request.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type icapprofile.
+                  - It is a reference to an object of type icapprofile.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 1 items allowed.
+                  - Maximum of 1 items allowed.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -1128,10 +1102,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ignore pool servers network reachability constraints for virtual service placement.
+                  - Ignore pool servers network reachability constraints for virtual service placement.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1148,10 +1122,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ip address of the virtual service.
+                  - Ip address of the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -1168,10 +1142,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Subnet and/or network for allocating virtualservice ip by ipam provider module.
+                  - Subnet and/or network for allocating virtualservice ip by ipam provider module.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -1188,10 +1162,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Application-specific config for jwt validation.
+                  - Application-specific config for jwt validation.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -1208,10 +1182,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  L4 policies applied to the data traffic of the virtual service.
+                  - L4 policies applied to the data traffic of the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.7.
+                  - Field introduced in 17.2.7.
                 </div>
                                             </td>
         </tr>
@@ -1228,16 +1202,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key value pairs for granular object access control.
+                  - Key value pairs for granular object access control.
                 </div>
                                 <div style="font-size: small">
-                  Also allows for classification and tagging of similar objects.
+                  - Also allows for classification and tagging of similar objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -1254,10 +1228,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Limit potential dos attackers who exceed max_cps_per_client significantly to a fraction of max_cps_per_client for a while.
+                  - Limit potential dos attackers who exceed max_cps_per_client significantly to a fraction of max_cps_per_client for a while.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1274,16 +1248,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Maximum connections per second per client ip.
+                  - Maximum connections per second per client ip.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 10-1000.
+                  - Allowed values are 10-1000.
                 </div>
                                 <div style="font-size: small">
-                  Special values are 0- 'unlimited'.
+                  - Special values are 0- 'unlimited'.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.
                 </div>
                                             </td>
         </tr>
@@ -1300,10 +1274,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Microservice representing the virtual service.
+                  - Microservice representing the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type microservice.
+                  - It is a reference to an object of type microservice.
                 </div>
                                             </td>
         </tr>
@@ -1320,10 +1294,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Minimum number of up pools to mark vs up.
+                  - Minimum number of up pools to mark vs up.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.1, 17.2.12.
+                  - Field introduced in 18.2.1, 17.2.12.
                 </div>
                                             </td>
         </tr>
@@ -1343,7 +1317,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name for the virtual service.
+                  - Name for the virtual service.
                 </div>
                                             </td>
         </tr>
@@ -1360,13 +1334,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Determines network settings such as protocol, tcp or udp, and related options for the protocol.
+                  - Determines network settings such as protocol, tcp or udp, and related options for the protocol.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type networkprofile.
+                  - It is a reference to an object of type networkprofile.
                 </div>
                                 <div style="font-size: small">
-                  Special default for essentials edition is system-tcp-fast-path.
+                  - Special default for essentials edition is system-tcp-fast-path.
                 </div>
                                             </td>
         </tr>
@@ -1383,13 +1357,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Manually override the network on which the virtual service is placed.
+                  - Manually override the network on which the virtual service is placed.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type network.
+                  - It is a reference to an object of type network.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -1406,10 +1380,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Network security policies for the virtual service.
+                  - Network security policies for the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type networksecuritypolicy.
+                  - It is a reference to an object of type networksecuritypolicy.
                 </div>
                                             </td>
         </tr>
@@ -1426,10 +1400,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A list of nsx groups representing the clients which can access the virtual ip of the virtual service.
+                  - A list of nsx groups representing the clients which can access the virtual ip of the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -1446,7 +1420,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Optional settings that determine performance limits like max connections or bandwdith etc.
+                  - Optional settings that determine performance limits like max connections or bandwdith etc.
                 </div>
                                             </td>
         </tr>
@@ -1463,10 +1437,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The pool group is an object that contains pools.
+                  - The pool group is an object that contains pools.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type poolgroup.
+                  - It is a reference to an object of type poolgroup.
                 </div>
                                             </td>
         </tr>
@@ -1483,10 +1457,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The pool is an object that contains destination servers and related attributes such as load-balancing and persistence.
+                  - The pool is an object that contains destination servers and related attributes such as load-balancing and persistence.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type pool.
+                  - It is a reference to an object of type pool.
                 </div>
                                             </td>
         </tr>
@@ -1503,10 +1477,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  (internal-use) network port assigned to the virtual service ip address.
+                  - (internal-use) network port assigned to the virtual service ip address.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -1523,10 +1497,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Remove listening port if virtualservice is down.
+                  - Remove listening port if virtualservice is down.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1543,7 +1517,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Rate limit the incoming requests to this virtual service.
+                  - Rate limit the incoming requests to this virtual service.
                 </div>
                                             </td>
         </tr>
@@ -1560,13 +1534,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Application-specific saml config.
+                  - Application-specific saml config.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -1583,13 +1557,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Disable re-distribution of flows across service engines for a virtual service.
+                  - Disable re-distribution of flows across service engines for a virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Enable if the network itself performs flow hashing with ecmp in environments such as gcp.
+                  - Enable if the network itself performs flow hashing with ecmp in environments such as gcp.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1606,13 +1580,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The service engine group to use for this virtual service.
+                  - The service engine group to use for this virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Moving to a new se group is disruptive to existing connections for this vs.
+                  - Moving to a new se group is disruptive to existing connections for this vs.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type serviceenginegroup.
+                  - It is a reference to an object of type serviceenginegroup.
                 </div>
                                             </td>
         </tr>
@@ -1629,19 +1603,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Security policy applied on the traffic of the virtual service.
+                  - Security policy applied on the traffic of the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  This policy is used to perform security actions such as distributed denial of service (ddos) attack mitigation, etc.
+                  - This policy is used to perform security actions such as distributed denial of service (ddos) attack mitigation, etc.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type securitypolicy.
+                  - It is a reference to an object of type securitypolicy.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.1.
+                  - Field introduced in 18.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -1658,13 +1632,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Determines the network settings profile for the server side of tcp proxied connections.
+                  - Determines the network settings profile for the server side of tcp proxied connections.
                 </div>
                                 <div style="font-size: small">
-                  Leave blank to use the same settings as the client to vs side of the connection.
+                  - Leave blank to use the same settings as the client to vs side of the connection.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type networkprofile.
+                  - It is a reference to an object of type networkprofile.
                 </div>
                                             </td>
         </tr>
@@ -1681,13 +1655,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Metadata pertaining to the service provided by this virtual service.
+                  - Metadata pertaining to the service provided by this virtual service.
                 </div>
                                 <div style="font-size: small">
-                  In openshift/kubernetes environments, egress pod info is stored.
+                  - In openshift/kubernetes environments, egress pod info is stored.
                 </div>
                                 <div style="font-size: small">
-                  Any user input to this field will be overwritten by avi vantage.
+                  - Any user input to this field will be overwritten by avi vantage.
                 </div>
                                             </td>
         </tr>
@@ -1704,7 +1678,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Select pool based on destination port.
+                  - Select pool based on destination port.
                 </div>
                                             </td>
         </tr>
@@ -1721,10 +1695,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  List of services defined for this virtual service.
+                  - List of services defined for this virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 2048 items allowed.
+                  - Maximum of 2048 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -1741,7 +1715,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Sideband configuration to be used for this virtualservice.it can be used for sending traffic to sideband vips for external inspection etc.
+                  - Sideband configuration to be used for this virtualservice.it can be used for sending traffic to sideband vips for external inspection etc.
                 </div>
                                             </td>
         </tr>
@@ -1758,10 +1732,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Nat'ted floating source ip address(es) for upstream connection to servers.
+                  - Nat'ted floating source ip address(es) for upstream connection to servers.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 32 items allowed.
+                  - Maximum of 32 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -1778,19 +1752,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Gslb pools used to manage site-persistence functionality.
+                  - Gslb pools used to manage site-persistence functionality.
                 </div>
                                 <div style="font-size: small">
-                  Each site-persistence pool contains the virtualservices in all the other sites, that is auto-generated by the gslb manager.
+                  - Each site-persistence pool contains the virtualservices in all the other sites, that is auto-generated by the gslb manager.
                 </div>
                                 <div style="font-size: small">
-                  This is a read-only field for the user.
+                  - This is a read-only field for the user.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type pool.
+                  - It is a reference to an object of type pool.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.2.
+                  - Field introduced in 17.2.2.
                 </div>
                                             </td>
         </tr>
@@ -1807,10 +1781,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Select or create one or two certificates, ec and/or rsa, that will be presented to ssl/tls terminated connections.
+                  - Select or create one or two certificates, ec and/or rsa, that will be presented to ssl/tls terminated connections.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type sslkeyandcertificate.
+                  - It is a reference to an object of type sslkeyandcertificate.
                 </div>
                                             </td>
         </tr>
@@ -1827,10 +1801,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Determines the set of ssl versions and ciphers to accept for ssl/tls terminated connections.
+                  - Determines the set of ssl versions and ciphers to accept for ssl/tls terminated connections.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type sslprofile.
+                  - It is a reference to an object of type sslprofile.
                 </div>
                                             </td>
         </tr>
@@ -1847,13 +1821,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Select ssl profile based on client ip address match.
+                  - Select ssl profile based on client ip address match.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -1870,13 +1844,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Expected number of ssl session cache entries (may be exceeded).
+                  - Expected number of ssl session cache entries (may be exceeded).
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1024-16383.
+                  - Allowed values are 1024-16383.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1024.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1024.
                 </div>
                                             </td>
         </tr>
@@ -1893,16 +1867,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Client authentication and authorization policy for the virtualservice.
+                  - Client authentication and authorization policy for the virtualservice.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 18.2.3.
+                  - Field deprecated in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.1.
+                  - Field introduced in 18.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -1919,16 +1893,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The sso policy attached to the virtualservice.
+                  - The sso policy attached to the virtualservice.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type ssopolicy.
+                  - It is a reference to an object of type ssopolicy.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -1945,13 +1919,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  List of static dns records applied to this virtual service.
+                  - List of static dns records applied to this virtual service.
                 </div>
                                 <div style="font-size: small">
-                  These are static entries and no health monitoring is performed against the ip addresses.
+                  - These are static entries and no health monitoring is performed against the ip addresses.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 1000 items allowed.
+                  - Maximum of 1000 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -1968,10 +1942,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Subnet providing reachability for client facing virtual service ip.
+                  - Subnet providing reachability for client facing virtual service ip.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -1988,13 +1962,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It represents subnet for the virtual service ip address allocation when auto_allocate_ip is true.it is only applicable in openstack or aws cloud.
+                  - It represents subnet for the virtual service ip address allocation when auto_allocate_ip is true.it is only applicable in openstack or aws cloud.
                 </div>
                                 <div style="font-size: small">
-                  This field is required if auto_allocate_ip is true.
+                  - This field is required if auto_allocate_ip is true.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 17.1.1.
+                  - Field deprecated in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -2011,7 +1985,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -2028,13 +2002,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Used for testing se datastore upgrade 2.0 functionality.
+                  - Used for testing se datastore upgrade 2.0 functionality.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type testsedatastorelevel1.
+                  - It is a reference to an object of type testsedatastorelevel1.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.6.
+                  - Field introduced in 18.2.6.
                 </div>
                                             </td>
         </tr>
@@ -2051,13 +2025,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Topology policies applied on the dns traffic of the virtual service based ongslb topology algorithm.
+                  - Topology policies applied on the dns traffic of the virtual service based ongslb topology algorithm.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -2074,16 +2048,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Server network or list of servers for cloning traffic.
+                  - Server network or list of servers for cloning traffic.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type trafficcloneprofile.
+                  - It is a reference to an object of type trafficcloneprofile.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -2100,16 +2074,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Knob to enable the virtual service traffic on its assigned service engines.
+                  - Knob to enable the virtual service traffic on its assigned service engines.
                 </div>
                                 <div style="font-size: small">
-                  This setting is effective only when the enabled flag is set to true.
+                  - This setting is effective only when the enabled flag is set to true.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.8.
+                  - Field introduced in 17.2.8.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -2126,19 +2100,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specify if this is a normal virtual service, or if it is the parent or child of an sni-enabled virtual hosted virtual service.
+                  - Specify if this is a normal virtual service, or if it is the parent or child of an sni-enabled virtual hosted virtual service.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - VS_TYPE_NORMAL, VS_TYPE_VH_PARENT, VS_TYPE_VH_CHILD.
+                  - Enum options - VS_TYPE_NORMAL, VS_TYPE_VH_PARENT, VS_TYPE_VH_CHILD.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- vs_type_normal,vs_type_vh_parent) edition, essentials(allowed values- vs_type_normal) edition, enterprise
+                  - Allowed in basic(allowed values- vs_type_normal,vs_type_vh_parent) edition, essentials(allowed values- vs_type_normal) edition, enterprise
                 </div>
                                 <div style="font-size: small">
-                  edition.
+                  - edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as VS_TYPE_NORMAL.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as VS_TYPE_NORMAL.
                 </div>
                                             </td>
         </tr>
@@ -2155,7 +2129,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -2172,13 +2146,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Use bridge ip as vip on each host in mesos deployments.
+                  - Use bridge ip as vip on each host in mesos deployments.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -2195,22 +2169,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Use the virtual ip as the snat ip for health monitoring and sending traffic to the backend servers instead of the service engine interface ip.
+                  - Use the virtual ip as the snat ip for health monitoring and sending traffic to the backend servers instead of the service engine interface ip.
                 </div>
                                 <div style="font-size: small">
-                  The caveat of enabling this option is that the virtualservice cannot be configued in an active-active ha mode.
+                  - The caveat of enabling this option is that the virtualservice cannot be configued in an active-active ha mode.
                 </div>
                                 <div style="font-size: small">
-                  Dns based multi vip solution has to be used for ha & non-disruptive upgrade purposes.
+                  - Dns based multi vip solution has to be used for ha & non-disruptive upgrade purposes.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.9,17.2.3.
+                  - Field introduced in 17.1.9,17.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -2227,7 +2201,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the virtualservice.
+                  - Uuid of the virtualservice.
                 </div>
                                             </td>
         </tr>
@@ -2244,10 +2218,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The exact name requested from the client's sni-enabled tls hello domain name field.
+                  - The exact name requested from the client's sni-enabled tls hello domain name field.
                 </div>
                                 <div style="font-size: small">
-                  If this is a match, the parent vs will forward the connection to this child vs.
+                  - If this is a match, the parent vs will forward the connection to this child vs.
                 </div>
                                             </td>
         </tr>
@@ -2264,10 +2238,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Host and path match criteria to select this child vs.
+                  - Host and path match criteria to select this child vs.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                             </td>
         </tr>
@@ -2284,7 +2258,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specifies the virtual service acting as virtual hosting (sni) parent.
+                  - Specifies the virtual service acting as virtual hosting (sni) parent.
                 </div>
                                             </td>
         </tr>
@@ -2301,22 +2275,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specify if the virtual hosting vs is of type sni or enhanced.
+                  - Specify if the virtual hosting vs is of type sni or enhanced.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - VS_TYPE_VH_SNI, VS_TYPE_VH_ENHANCED.
+                  - Enum options - VS_TYPE_VH_SNI, VS_TYPE_VH_ENHANCED.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.3.
+                  - Field introduced in 20.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- vs_type_vh_enhanced) edition, enterprise edition.
+                  - Allowed in basic(allowed values- vs_type_vh_enhanced) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Special default for basic edition is vs_type_vh_enhanced, enterprise is vs_type_vh_sni.
+                  - Special default for basic edition is vs_type_vh_enhanced, enterprise is vs_type_vh_sni.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as VS_TYPE_VH_SNI.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as VS_TYPE_VH_SNI.
                 </div>
                                             </td>
         </tr>
@@ -2333,13 +2307,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  List of virtual service ips.
+                  - List of virtual service ips.
                 </div>
                                 <div style="font-size: small">
-                  While creating a 'shared vs',please use vsvip_ref to point to the shared entities.
+                  - While creating a 'shared vs',please use vsvip_ref to point to the shared entities.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -2356,13 +2330,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Virtual routing context that the virtual service is bound to.
+                  - Virtual routing context that the virtual service is bound to.
                 </div>
                                 <div style="font-size: small">
-                  This is used to provide the isolation of the set of networks the application is attached to.
+                  - This is used to provide the isolation of the set of networks the application is attached to.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type vrfcontext.
+                  - It is a reference to an object of type vrfcontext.
                 </div>
                                             </td>
         </tr>
@@ -2379,7 +2353,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Datascripts applied on the data traffic of the virtual service.
+                  - Datascripts applied on the data traffic of the virtual service.
                 </div>
                                             </td>
         </tr>
@@ -2396,13 +2370,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Checksum of cloud configuration for vsvip.
+                  - Checksum of cloud configuration for vsvip.
                 </div>
                                 <div style="font-size: small">
-                  Internally set by cloud connector.
+                  - Internally set by cloud connector.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.9, 18.1.2.
+                  - Field introduced in 17.2.9, 18.1.2.
                 </div>
                                             </td>
         </tr>
@@ -2419,13 +2393,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Mostly used during the creation of shared vs, this field refers to entities that can be shared across virtual services.
+                  - Mostly used during the creation of shared vs, this field refers to entities that can be shared across virtual services.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type vsvip.
+                  - It is a reference to an object of type vsvip.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -2442,16 +2416,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Waf policy for the virtual service.
+                  - Waf policy for the virtual service.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type wafpolicy.
+                  - It is a reference to an object of type wafpolicy.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.1.
+                  - Field introduced in 17.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -2468,19 +2442,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The quality of service weight to assign to traffic transmitted from this virtual service.
+                  - The quality of service weight to assign to traffic transmitted from this virtual service.
                 </div>
                                 <div style="font-size: small">
-                  A higher weight will prioritize traffic versus other virtual services sharing the same service engines.
+                  - A higher weight will prioritize traffic versus other virtual services sharing the same service engines.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-128.
+                  - Allowed values are 1-128.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 1) edition, essentials(allowed values- 1) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 1) edition, essentials(allowed values- 1) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1.
                 </div>
                                             </td>
         </tr>
@@ -2497,7 +2471,7 @@ Examples
       vmware.nsx_alb.avi_virtualservice:
         controller: 192.168.138.18
         username: admin
-        password: AviNetworks123!
+        password: password
         name: newtestvs
         state: present
         performance_limits:
@@ -2513,11 +2487,12 @@ Examples
             - '/api/sslkeyandcertificate?name=System-Default-Cert'
         pool_ref: '/api/pool?name=testpool2'
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

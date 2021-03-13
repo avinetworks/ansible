@@ -53,7 +53,7 @@ extends_documentation_fragment:
 
 EXAMPLES = '''
   - name: Patch GSLB Service to add a new member and group
-    avi_gslbservice_patch_member:
+    vmware.nsx_alb.avi_gslbservice_patch_member:
       controller: "{{ controller }}"
       username: "{{ username }}"
       password: "{{ password }}"
@@ -70,7 +70,7 @@ EXAMPLES = '''
                 type: V4
               ratio: 3
   - name: Patch GSLB Service to delete an existing member
-    avi_gslbservice_patch_member:
+    vmware.nsx_alb.avi_gslbservice_patch_member:
       controller: "{{ controller }}"
       username: "{{ username }}"
       password: "{{ password }}"
@@ -87,7 +87,7 @@ EXAMPLES = '''
                 type: V4
               ratio: 3
   - name: Update priority of GSLB Service Pool
-    avi_gslbservice_patch_member:
+    vmware.nsx_alb.avi_gslbservice_patch_member:
       controller: ""
       username: ""
       password: ""
@@ -114,23 +114,11 @@ from ansible.module_utils.basic import AnsibleModule
 from copy import deepcopy
 
 try:
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_obj_cmp, cleanup_absent_fields, avi_common_argument_spec,
-        ansible_return, AviCheckModeResponse)
-    HAS_AVI = True
-    HAS_AVI = True
-except ImportError:
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
         avi_common_argument_spec, ansible_return, avi_obj_cmp,
         cleanup_absent_fields, HAS_AVI)
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)
-try:
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_obj_cmp, cleanup_absent_fields, avi_common_argument_spec,
-        ansible_return, AviCheckModeResponse)
     HAS_AVI = True
 except ImportError:
     HAS_AVI = False

@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure Scheduler object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure Scheduler object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,10 +99,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Backup configuration to be executed by this scheduler.
+                  - Backup configuration to be executed by this scheduler.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type backupconfiguration.
+                  - It is a reference to an object of type backupconfiguration.
                 </div>
                                             </td>
         </tr>
@@ -145,10 +119,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Boolean flag to set enabled.
+                  - Boolean flag to set enabled.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -165,7 +139,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Scheduler end date and time.
+                  - Scheduler end date and time.
                 </div>
                                             </td>
         </tr>
@@ -182,10 +156,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Frequency at which custom scheduler will run.
+                  - Frequency at which custom scheduler will run.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-60.
+                  - Allowed values are 0-60.
                 </div>
                                             </td>
         </tr>
@@ -202,13 +176,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unit at which custom scheduler will run.
+                  - Unit at which custom scheduler will run.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - SCHEDULER_FREQUENCY_UNIT_MIN, SCHEDULER_FREQUENCY_UNIT_HOUR, SCHEDULER_FREQUENCY_UNIT_DAY, SCHEDULER_FREQUENCY_UNIT_WEEK,
+                  - Enum options - SCHEDULER_FREQUENCY_UNIT_MIN, SCHEDULER_FREQUENCY_UNIT_HOUR, SCHEDULER_FREQUENCY_UNIT_DAY, SCHEDULER_FREQUENCY_UNIT_WEEK,
                 </div>
                                 <div style="font-size: small">
-                  SCHEDULER_FREQUENCY_UNIT_MONTH.
+                  - SCHEDULER_FREQUENCY_UNIT_MONTH.
                 </div>
                                             </td>
         </tr>
@@ -228,7 +202,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of scheduler.
+                  - Name of scheduler.
                 </div>
                                             </td>
         </tr>
@@ -245,10 +219,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Scheduler run mode.
+                  - Scheduler run mode.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - RUN_MODE_PERIODIC, RUN_MODE_AT, RUN_MODE_NOW.
+                  - Enum options - RUN_MODE_PERIODIC, RUN_MODE_AT, RUN_MODE_NOW.
                 </div>
                                             </td>
         </tr>
@@ -265,10 +239,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Control script to be executed by this scheduler.
+                  - Control script to be executed by this scheduler.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type alertscriptconfig.
+                  - It is a reference to an object of type alertscriptconfig.
                 </div>
                                             </td>
         </tr>
@@ -285,13 +259,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Define scheduler action.
+                  - Define scheduler action.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - SCHEDULER_ACTION_RUN_A_SCRIPT, SCHEDULER_ACTION_BACKUP.
+                  - Enum options - SCHEDULER_ACTION_RUN_A_SCRIPT, SCHEDULER_ACTION_BACKUP.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as SCHEDULER_ACTION_BACKUP.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as SCHEDULER_ACTION_BACKUP.
                 </div>
                                             </td>
         </tr>
@@ -308,7 +282,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Scheduler start date and time.
+                  - Scheduler start date and time.
                 </div>
                                             </td>
         </tr>
@@ -325,7 +299,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -342,7 +316,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -359,7 +333,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Unique object identifier of the object.
+                  - Unique object identifier of the object.
                 </div>
                                             </td>
         </tr>
@@ -378,11 +352,12 @@ Examples
         password: something
         state: present
         name: sample_scheduler
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 

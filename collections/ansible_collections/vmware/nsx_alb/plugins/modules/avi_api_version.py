@@ -34,7 +34,7 @@ extends_documentation_fragment:
 
 EXAMPLES = '''
   - name: Get AVI API version
-    avi_api_version:
+    vmware.nsx_alb.avi_api_version:
       controller: ""
       username: ""
       password: ""
@@ -53,21 +53,11 @@ obj:
 from ansible.module_utils.basic import AnsibleModule
 
 try:
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_obj_cmp, cleanup_absent_fields, avi_common_argument_spec,
-        ansible_return)
-    HAS_AVI = True
-except ImportError:
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
         avi_common_argument_spec, ansible_return, avi_obj_cmp,
         cleanup_absent_fields, HAS_AVI)
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)
-try:
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, ansible_return)
     HAS_AVI = True
 except ImportError:
     HAS_AVI = False

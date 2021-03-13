@@ -17,15 +17,8 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure Pool object
-- more examples at U(https://github.com/avinetworks/devops)
-
-
-Requirements
-------------
-The below requirements are needed on the host that executes this module.
-
-- avisdk
+- This module is used to configure Pool object.
+- More examples at (https://github.com/avinetworks/devops).
 
 
 Parameters
@@ -49,16 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li>absent</li>
-                        <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    The state that should be applied on the entity.
+                    - The state that should be applied on the entity.
                 </div>
             </td>
         </tr>
@@ -72,19 +59,13 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
-                        <li>patch</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Default method for object update is HTTP PUT.
+                    - Default method for object update is HTTP PUT.
                 </div>
                 <div style="font-size: small">
-                    Setting to patch will override that behavior to use HTTP PATCH.
+                    - Setting to patch will override that behavior to use HTTP PATCH.
                 </div>
             </td>
         </tr>
@@ -98,17 +79,10 @@ Parameters
                 </div>
             </td>
             <td>
-                <div style="font-size: small">
-                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                        <li><div style="color: blue"><b>add</b>&nbsp;&larr;</div></li>
-                        <li>replace</li>
-                        <li>delete</li>
-                    </ul>
-                </div>
             </td>
             <td>
                 <div style="font-size: small">
-                    Patch operation to use when using avi_api_update_method as patch.
+                    - Patch operation to use when using avi_api_update_method as patch.
                 </div>
             </td>
         </tr>
@@ -125,10 +99,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Name of container cloud application that constitutes a pool in a a-b pool configuration, if different from vs app.
+                  - Name of container cloud application that constitutes a pool in a a-b pool configuration, if different from vs app.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 18.1.2.
+                  - Field deprecated in 18.1.2.
                 </div>
                                             </td>
         </tr>
@@ -145,10 +119,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A/b pool configuration.
+                  - A/b pool configuration.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 18.1.2.
+                  - Field deprecated in 18.1.2.
                 </div>
                                             </td>
         </tr>
@@ -165,13 +139,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Priority of this pool in a a-b pool pair.
+                  - Priority of this pool in a a-b pool pair.
                 </div>
                                 <div style="font-size: small">
-                  Internally used.
+                  - Internally used.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 18.1.2.
+                  - Field deprecated in 18.1.2.
                 </div>
                                             </td>
         </tr>
@@ -188,10 +162,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Determines analytics settings for the pool.
+                  - Determines analytics settings for the pool.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.1.5, 18.2.1.
+                  - Field introduced in 18.1.5, 18.2.1.
                 </div>
                                             </td>
         </tr>
@@ -208,13 +182,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Specifies settings related to analytics.
+                  - Specifies settings related to analytics.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type analyticsprofile.
+                  - It is a reference to an object of type analyticsprofile.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.1.4,18.2.1.
+                  - Field introduced in 18.1.4,18.2.1.
                 </div>
                                             </td>
         </tr>
@@ -231,7 +205,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Synchronize cisco apic epg members with pool servers.
+                  - Synchronize cisco apic epg members with pool servers.
                 </div>
                                             </td>
         </tr>
@@ -248,10 +222,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Persistence will ensure the same user sticks to the same server for a desired duration of time.
+                  - Persistence will ensure the same user sticks to the same server for a desired duration of time.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type applicationpersistenceprofile.
+                  - It is a reference to an object of type applicationpersistenceprofile.
                 </div>
                                             </td>
         </tr>
@@ -268,10 +242,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  If configured then avi will trigger orchestration of pool server creation and deletion.
+                  - If configured then avi will trigger orchestration of pool server creation and deletion.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type autoscalelaunchconfig.
+                  - It is a reference to an object of type autoscalelaunchconfig.
                 </div>
                                             </td>
         </tr>
@@ -288,7 +262,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Network ids for the launch configuration.
+                  - Network ids for the launch configuration.
                 </div>
                                             </td>
         </tr>
@@ -305,10 +279,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Reference to server autoscale policy.
+                  - Reference to server autoscale policy.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type serverautoscalepolicy.
+                  - It is a reference to an object of type serverautoscalepolicy.
                 </div>
                                             </td>
         </tr>
@@ -325,13 +299,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Inline estimation of capacity of servers.
+                  - Inline estimation of capacity of servers.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -348,22 +322,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The maximum time-to-first-byte of a server.
+                  - The maximum time-to-first-byte of a server.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-5000.
+                  - Allowed values are 1-5000.
                 </div>
                                 <div style="font-size: small">
-                  Special values are 0 - 'automatic'.
+                  - Special values are 0 - 'automatic'.
                 </div>
                                 <div style="font-size: small">
-                  Unit is milliseconds.
+                  - Unit is milliseconds.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.
                 </div>
                                             </td>
         </tr>
@@ -380,10 +354,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Checksum of cloud configuration for pool.
+                  - Checksum of cloud configuration for pool.
                 </div>
                                 <div style="font-size: small">
-                  Internally set by cloud connector.
+                  - Internally set by cloud connector.
                 </div>
                                             </td>
         </tr>
@@ -400,7 +374,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type cloud.
+                  - It is a reference to an object of type cloud.
                 </div>
                                             </td>
         </tr>
@@ -417,10 +391,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Connnection pool properties.
+                  - Connnection pool properties.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.1.
+                  - Field introduced in 18.2.1.
                 </div>
                                             </td>
         </tr>
@@ -437,28 +411,28 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Duration for which new connections will be gradually ramped up to a server recently brought online.
+                  - Duration for which new connections will be gradually ramped up to a server recently brought online.
                 </div>
                                 <div style="font-size: small">
-                  Useful for lb algorithms that are least connection based.
+                  - Useful for lb algorithms that are least connection based.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-300.
+                  - Allowed values are 1-300.
                 </div>
                                 <div style="font-size: small">
-                  Special values are 0 - 'immediate'.
+                  - Special values are 0 - 'immediate'.
                 </div>
                                 <div style="font-size: small">
-                  Unit is min.
+                  - Unit is min.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Special default for basic edition is 0, essentials edition is 0, enterprise is 10.
+                  - Special default for basic edition is 0, essentials edition is 0, enterprise is 10.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 10.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 10.
                 </div>
                                             </td>
         </tr>
@@ -475,7 +449,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Creator name.
+                  - Creator name.
                 </div>
                                             </td>
         </tr>
@@ -492,16 +466,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Traffic sent to servers will use this destination server port unless overridden by the server's specific port attribute.
+                  - Traffic sent to servers will use this destination server port unless overridden by the server's specific port attribute.
                 </div>
                                 <div style="font-size: small">
-                  The ssl checkbox enables avi to server encryption.
+                  - The ssl checkbox enables avi to server encryption.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-65535.
+                  - Allowed values are 1-65535.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 80.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 80.
                 </div>
                                             </td>
         </tr>
@@ -518,25 +492,25 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Indicates whether existing ips are disabled(false) or deleted(true) on dns hostname refreshdetail -- on a dns refresh, some ips set on pool may
+                  - Indicates whether existing ips are disabled(false) or deleted(true) on dns hostname refreshdetail -- on a dns refresh, some ips set on pool may
                 </div>
                                 <div style="font-size: small">
-                  no longer be returned by the resolver.
+                  - no longer be returned by the resolver.
                 </div>
                                 <div style="font-size: small">
-                  These ips are deleted from the pool when this knob is set to true.
+                  - These ips are deleted from the pool when this knob is set to true.
                 </div>
                                 <div style="font-size: small">
-                  They are disabled, if the knob is set to false.
+                  - They are disabled, if the knob is set to false.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.3.
+                  - Field introduced in 18.2.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
+                  - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -553,7 +527,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A description of the pool.
+                  - A description of the pool.
                 </div>
                                             </td>
         </tr>
@@ -570,10 +544,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates.
+                  - Comma separated list of domain names which will be used to verify the common names or subject alternative names presented by server certificates.
                 </div>
                                 <div style="font-size: small">
-                  It is performed only when common name check host_check_enabled is enabled.
+                  - It is performed only when common name check host_check_enabled is enabled.
                 </div>
                                             </td>
         </tr>
@@ -590,7 +564,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Inherited config from virtualservice.
+                  - Inherited config from virtualservice.
                 </div>
                                             </td>
         </tr>
@@ -607,16 +581,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable http/2 for traffic from virtualservice to all backend servers in this pool.
+                  - Enable http/2 for traffic from virtualservice to all backend servers in this pool.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -633,13 +607,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable or disable the pool.
+                  - Enable or disable the pool.
                 </div>
                                 <div style="font-size: small">
-                  Disabling will terminate all open connections and pause health monitors.
+                  - Disabling will terminate all open connections and pause health monitors.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -656,13 +630,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Names of external auto-scale groups for pool servers.
+                  - Names of external auto-scale groups for pool servers.
                 </div>
                                 <div style="font-size: small">
-                  Currently available only for aws and azure.
+                  - Currently available only for aws and azure.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.2.
+                  - Field introduced in 17.1.2.
                 </div>
                                             </td>
         </tr>
@@ -679,10 +653,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable an action - close connection, http redirect or local http response - when a pool failure happens.
+                  - Enable an action - close connection, http redirect or local http response - when a pool failure happens.
                 </div>
                                 <div style="font-size: small">
-                  By default, a connection will be closed, in case the pool experiences a failure.
+                  - By default, a connection will be closed, in case the pool experiences a failure.
                 </div>
                                             </td>
         </tr>
@@ -699,16 +673,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Periodicity of feedback for fewest tasks server selection algorithm.
+                  - Periodicity of feedback for fewest tasks server selection algorithm.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-300.
+                  - Allowed values are 1-300.
                 </div>
                                 <div style="font-size: small">
-                  Unit is sec.
+                  - Unit is sec.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 10.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 10.
                 </div>
                                             </td>
         </tr>
@@ -725,22 +699,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Used to gracefully disable a server.
+                  - Used to gracefully disable a server.
                 </div>
                                 <div style="font-size: small">
-                  Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled.
+                  - Virtual service waits for the specified time before terminating the existing connections  to the servers that are disabled.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-7200.
+                  - Allowed values are 1-7200.
                 </div>
                                 <div style="font-size: small">
-                  Special values are 0 - 'immediate', -1 - 'infinite'.
+                  - Special values are 0 - 'immediate', -1 - 'infinite'.
                 </div>
                                 <div style="font-size: small">
-                  Unit is min.
+                  - Unit is min.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 1.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 1.
                 </div>
                                             </td>
         </tr>
@@ -757,13 +731,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Indicates if the pool is a site-persistence pool.
+                  - Indicates if the pool is a site-persistence pool.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.1.
+                  - Field introduced in 17.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -780,22 +754,22 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Verify server health by applying one or more health monitors.
+                  - Verify server health by applying one or more health monitors.
                 </div>
                                 <div style="font-size: small">
-                  Active monitors generate synthetic traffic from each service engine and mark a server up or down based on the response.
+                  - Active monitors generate synthetic traffic from each service engine and mark a server up or down based on the response.
                 </div>
                                 <div style="font-size: small">
-                  The passive monitor listens only to client to server communication.
+                  - The passive monitor listens only to client to server communication.
                 </div>
                                 <div style="font-size: small">
-                  It raises or lowers the ratio of traffic destined to a server based on successful responses.
+                  - It raises or lowers the ratio of traffic destined to a server based on successful responses.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type healthmonitor.
+                  - It is a reference to an object of type healthmonitor.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 50 items allowed.
+                  - Maximum of 50 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -812,13 +786,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable common name check for server certificate.
+                  - Enable common name check for server certificate.
                 </div>
                                 <div style="font-size: small">
-                  If enabled and no explicit domain name is specified, avi will use the incoming host header to do the match.
+                  - If enabled and no explicit domain name is specified, avi will use the incoming host header to do the match.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -835,16 +809,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Ignore the server port in building the load balancing state.applicable only for consistent hash load balancing algorithm or disable port
+                  - Ignore the server port in building the load balancing state.applicable only for consistent hash load balancing algorithm or disable port
                 </div>
                                 <div style="font-size: small">
-                  translation (use_service_port) use cases.
+                  - translation (use_service_port) use cases.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -861,13 +835,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The passive monitor will monitor client to server connections and requests and adjust traffic load to servers based on successful responses.
+                  - The passive monitor will monitor client to server connections and requests and adjust traffic load to servers based on successful responses.
                 </div>
                                 <div style="font-size: small">
-                  This may alter the expected behavior of the lb method, such as round robin.
+                  - This may alter the expected behavior of the lb method, such as round robin.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -884,10 +858,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Use list of servers from ip address group.
+                  - Use list of servers from ip address group.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type ipaddrgroup.
+                  - It is a reference to an object of type ipaddrgroup.
                 </div>
                                             </td>
         </tr>
@@ -904,16 +878,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Key value pairs for granular object access control.
+                  - Key value pairs for granular object access control.
                 </div>
                                 <div style="font-size: small">
-                  Also allows for classification and tagging of similar objects.
+                  - Also allows for classification and tagging of similar objects.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.2.
+                  - Field introduced in 20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 4 items allowed.
+                  - Maximum of 4 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -930,28 +904,28 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The load balancing algorithm will pick a server within the pool's list of available servers.
+                  - The load balancing algorithm will pick a server within the pool's list of available servers.
                 </div>
                                 <div style="font-size: small">
-                  Values lb_algorithm_nearest_server and lb_algorithm_topology are only allowed for gslb pool.
+                  - Values lb_algorithm_nearest_server and lb_algorithm_topology are only allowed for gslb pool.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
+                  - Enum options - LB_ALGORITHM_LEAST_CONNECTIONS, LB_ALGORITHM_ROUND_ROBIN, LB_ALGORITHM_FASTEST_RESPONSE, LB_ALGORITHM_CONSISTENT_HASH,
                 </div>
                                 <div style="font-size: small">
-                  LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
+                  - LB_ALGORITHM_LEAST_LOAD, LB_ALGORITHM_FEWEST_SERVERS, LB_ALGORITHM_RANDOM, LB_ALGORITHM_FEWEST_TASKS, LB_ALGORITHM_NEAREST_SERVER,
                 </div>
                                 <div style="font-size: small">
-                  LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
+                  - LB_ALGORITHM_CORE_AFFINITY, LB_ALGORITHM_TOPOLOGY.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- lb_algorithm_least_connections,lb_algorithm_round_robin,lb_algorithm_consistent_hash) edition,
+                  - Allowed in basic(allowed values- lb_algorithm_least_connections,lb_algorithm_round_robin,lb_algorithm_consistent_hash) edition,
                 </div>
                                 <div style="font-size: small">
-                  essentials(allowed values- lb_algorithm_least_connections,lb_algorithm_round_robin,lb_algorithm_consistent_hash) edition, enterprise edition.
+                  - essentials(allowed values- lb_algorithm_least_connections,lb_algorithm_round_robin,lb_algorithm_consistent_hash) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_LEAST_CONNECTIONS.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_LEAST_CONNECTIONS.
                 </div>
                                             </td>
         </tr>
@@ -968,7 +942,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Http header name to be used for the hash key.
+                  - Http header name to be used for the hash key.
                 </div>
                                             </td>
         </tr>
@@ -985,19 +959,19 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Degree of non-affinity for core affinity based server selection.
+                  - Degree of non-affinity for core affinity based server selection.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 1-65535.
+                  - Allowed values are 1-65535.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.3.
+                  - Field introduced in 17.1.3.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 2.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 2.
                 </div>
                                             </td>
         </tr>
@@ -1014,25 +988,25 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Criteria used as a key for determining the hash between the client and  server.
+                  - Criteria used as a key for determining the hash between the client and  server.
                 </div>
                                 <div style="font-size: small">
-                  Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT,
+                  - Enum options - LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS, LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS_AND_PORT,
                 </div>
                                 <div style="font-size: small">
-                  LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING,
+                  - LB_ALGORITHM_CONSISTENT_HASH_URI, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_HEADER, LB_ALGORITHM_CONSISTENT_HASH_CUSTOM_STRING,
                 </div>
                                 <div style="font-size: small">
-                  LB_ALGORITHM_CONSISTENT_HASH_CALLID.
+                  - LB_ALGORITHM_CONSISTENT_HASH_CALLID.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- lb_algorithm_consistent_hash_source_ip_address) edition, essentials(allowed values-
+                  - Allowed in basic(allowed values- lb_algorithm_consistent_hash_source_ip_address) edition, essentials(allowed values-
                 </div>
                                 <div style="font-size: small">
-                  lb_algorithm_consistent_hash_source_ip_address) edition, enterprise edition.
+                  - lb_algorithm_consistent_hash_source_ip_address) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as LB_ALGORITHM_CONSISTENT_HASH_SOURCE_IP_ADDRESS.
                 </div>
                                             </td>
         </tr>
@@ -1049,16 +1023,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Allow server lookup by name.
+                  - Allow server lookup by name.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.11,17.2.4.
+                  - Field introduced in 17.1.11,17.2.4.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1075,16 +1049,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The maximum number of concurrent connections allowed to each server within the pool.
+                  - The maximum number of concurrent connections allowed to each server within the pool.
                 </div>
                                 <div style="font-size: small">
-                  Note  applied value will be no less than the number of service engines that the pool is placed on.
+                  - Note  applied value will be no less than the number of service engines that the pool is placed on.
                 </div>
                                 <div style="font-size: small">
-                  If set to 0, no limit is applied.
+                  - If set to 0, no limit is applied.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.
                 </div>
                                             </td>
         </tr>
@@ -1101,7 +1075,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Rate limit connections to each server.
+                  - Rate limit connections to each server.
                 </div>
                                             </td>
         </tr>
@@ -1118,13 +1092,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Minimum number of health monitors in up state to mark server up.
+                  - Minimum number of health monitors in up state to mark server up.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.1, 17.2.12.
+                  - Field introduced in 18.2.1, 17.2.12.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic edition, essentials edition, enterprise edition.
+                  - Allowed in basic edition, essentials edition, enterprise edition.
                 </div>
                                             </td>
         </tr>
@@ -1141,10 +1115,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Minimum number of servers in up state for marking the pool up.
+                  - Minimum number of servers in up state for marking the pool up.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.1, 17.2.12.
+                  - Field introduced in 18.2.1, 17.2.12.
                 </div>
                                             </td>
         </tr>
@@ -1164,7 +1138,7 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The name of the pool.
+                  - The name of the pool.
                 </div>
                                             </td>
         </tr>
@@ -1181,13 +1155,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  (internal-use) networks designated as containing servers for this pool.
+                  - (internal-use) networks designated as containing servers for this pool.
                 </div>
                                 <div style="font-size: small">
-                  The servers may be further narrowed down by a filter.
+                  - The servers may be further narrowed down by a filter.
                 </div>
                                 <div style="font-size: small">
-                  This field is used internally by avi, not editable by the user.
+                  - This field is used internally by avi, not editable by the user.
                 </div>
                                             </td>
         </tr>
@@ -1204,10 +1178,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  A list of nsx groups where the servers for the pool are created.
+                  - A list of nsx groups where the servers for the pool are created.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.1.1.
+                  - Field introduced in 17.1.1.
                 </div>
                                             </td>
         </tr>
@@ -1224,10 +1198,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi will validate the ssl certificate present by a server against the selected pki profile.
+                  - Avi will validate the ssl certificate present by a server against the selected pki profile.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type pkiprofile.
+                  - It is a reference to an object of type pkiprofile.
                 </div>
                                             </td>
         </tr>
@@ -1244,13 +1218,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Manually select the networks and subnets used to provide reachability to the pool's servers.
+                  - Manually select the networks and subnets used to provide reachability to the pool's servers.
                 </div>
                                 <div style="font-size: small">
-                  Specify the subnet using the following syntax  10-1-1-0/24.
+                  - Specify the subnet using the following syntax  10-1-1-0/24.
                 </div>
                                 <div style="font-size: small">
-                  Use static routes in vrf configuration when pool servers are not directly connected but routable from the service engine.
+                  - Use static routes in vrf configuration when pool servers are not directly connected but routable from the service engine.
                 </div>
                                             </td>
         </tr>
@@ -1267,10 +1241,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Header name for custom header persistence.
+                  - Header name for custom header persistence.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 18.1.2.
+                  - Field deprecated in 18.1.2.
                 </div>
                                             </td>
         </tr>
@@ -1287,13 +1261,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Minimum number of requests to be queued when pool is full.
+                  - Minimum number of requests to be queued when pool is full.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- 128) edition, essentials(allowed values- 128) edition, enterprise edition.
+                  - Allowed in basic(allowed values- 128) edition, essentials(allowed values- 128) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 128.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 128.
                 </div>
                                             </td>
         </tr>
@@ -1310,13 +1284,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable request queue when pool is full.
+                  - Enable request queue when pool is full.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1333,13 +1307,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This field is used as a flag to create a job for jobmanager.
+                  - This field is used as a flag to create a job for jobmanager.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.2.10,20.1.2.
+                  - Field introduced in 18.2.10,20.1.2.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1356,13 +1330,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Rewrite incoming host header to server name of the server to which the request is proxied.
+                  - Rewrite incoming host header to server name of the server to which the request is proxied.
                 </div>
                                 <div style="font-size: small">
-                  Enabling this feature rewrites host header for requests to all servers in the pool.
+                  - Enabling this feature rewrites host header for requests to all servers in the pool.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1379,10 +1353,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  If sni server name is specified, rewrite incoming host header to the sni server name.
+                  - If sni server name is specified, rewrite incoming host header to the sni server name.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1399,16 +1373,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable to do routing when this pool is selected to send traffic.
+                  - Enable to do routing when this pool is selected to send traffic.
                 </div>
                                 <div style="font-size: small">
-                  No servers present in routing pool.
+                  - No servers present in routing pool.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1425,13 +1399,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Server autoscale.
+                  - Server autoscale.
                 </div>
                                 <div style="font-size: small">
-                  Not used anymore.
+                  - Not used anymore.
                 </div>
                                 <div style="font-size: small">
-                  Field deprecated in 18.1.2.
+                  - Field deprecated in 18.1.2.
                 </div>
                                             </td>
         </tr>
@@ -1448,7 +1422,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Field deprecated in 18.2.1.
+                  - Field deprecated in 18.2.1.
                 </div>
                                             </td>
         </tr>
@@ -1465,10 +1439,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Fully qualified dns hostname which will be used in the tls sni extension in server connections if sni is enabled.
+                  - Fully qualified dns hostname which will be used in the tls sni extension in server connections if sni is enabled.
                 </div>
                                 <div style="font-size: small">
-                  If no value is specified, avi will use the incoming host header instead.
+                  - If no value is specified, avi will use the incoming host header instead.
                 </div>
                                             </td>
         </tr>
@@ -1485,7 +1459,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Server reselect configuration for http requests.
+                  - Server reselect configuration for http requests.
                 </div>
                                             </td>
         </tr>
@@ -1502,25 +1476,25 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes
+                  - Server timeout value specifies the time within which a server connection needs to be established and a request-response exchange completes
                 </div>
                                 <div style="font-size: small">
-                  between avi and the server.
+                  - between avi and the server.
                 </div>
                                 <div style="font-size: small">
-                  Value of 0 results in using default timeout of 60 minutes.
+                  - Value of 0 results in using default timeout of 60 minutes.
                 </div>
                                 <div style="font-size: small">
-                  Allowed values are 0-3600000.
+                  - Allowed values are 0-3600000.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 18.1.5,18.2.1.
+                  - Field introduced in 18.1.5,18.2.1.
                 </div>
                                 <div style="font-size: small">
-                  Unit is milliseconds.
+                  - Unit is milliseconds.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as 0.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.
                 </div>
                                             </td>
         </tr>
@@ -1537,13 +1511,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  The pool directs load balanced traffic to this list of destination servers.
+                  - The pool directs load balanced traffic to this list of destination servers.
                 </div>
                                 <div style="font-size: small">
-                  The servers can be configured by ip address, name, network or via ip address group.
+                  - The servers can be configured by ip address, name, network or via ip address group.
                 </div>
                                 <div style="font-size: small">
-                  Maximum of 5000 items allowed.
+                  - Maximum of 5000 items allowed.
                 </div>
                                             </td>
         </tr>
@@ -1560,16 +1534,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Metadata pertaining to the service provided by this pool.
+                  - Metadata pertaining to the service provided by this pool.
                 </div>
                                 <div style="font-size: small">
-                  In openshift/kubernetes environments, app metadata info is stored.
+                  - In openshift/kubernetes environments, app metadata info is stored.
                 </div>
                                 <div style="font-size: small">
-                  Any user input to this field will be overwritten by avi vantage.
+                  - Any user input to this field will be overwritten by avi vantage.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 17.2.14,18.1.5,18.2.1.
+                  - Field introduced in 17.2.14,18.1.5,18.2.1.
                 </div>
                                             </td>
         </tr>
@@ -1586,13 +1560,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Enable tls sni for server connections.
+                  - Enable tls sni for server connections.
                 </div>
                                 <div style="font-size: small">
-                  If disabled, avi will not send the sni extension as part of the handshake.
+                  - If disabled, avi will not send the sni extension as part of the handshake.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as True.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as True.
                 </div>
                                             </td>
         </tr>
@@ -1609,10 +1583,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Service engines will present a client ssl certificate to the server.
+                  - Service engines will present a client ssl certificate to the server.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type sslkeyandcertificate.
+                  - It is a reference to an object of type sslkeyandcertificate.
                 </div>
                                             </td>
         </tr>
@@ -1629,13 +1603,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  When enabled, avi re-encrypts traffic to the backend servers.
+                  - When enabled, avi re-encrypts traffic to the backend servers.
                 </div>
                                 <div style="font-size: small">
-                  The specific ssl profile defines which ciphers and ssl versions will be supported.
+                  - The specific ssl profile defines which ciphers and ssl versions will be supported.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type sslprofile.
+                  - It is a reference to an object of type sslprofile.
                 </div>
                                             </td>
         </tr>
@@ -1652,7 +1626,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  It is a reference to an object of type tenant.
+                  - It is a reference to an object of type tenant.
                 </div>
                                             </td>
         </tr>
@@ -1669,10 +1643,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  This tier1_lr field should be set same as virtualservice associated for nsx-t.
+                  - This tier1_lr field should be set same as virtualservice associated for nsx-t.
                 </div>
                                 <div style="font-size: small">
-                  Field introduced in 20.1.1.
+                  - Field introduced in 20.1.1.
                 </div>
                                             </td>
         </tr>
@@ -1689,7 +1663,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Avi controller URL of the object.
+                  - Avi controller URL of the object.
                 </div>
                                             </td>
         </tr>
@@ -1706,16 +1680,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Do not translate the client's destination port when sending the connection to the server.
+                  - Do not translate the client's destination port when sending the connection to the server.
                 </div>
                                 <div style="font-size: small">
-                  The pool or servers specified service port will still be used for health monitoring.
+                  - The pool or servers specified service port will still be used for health monitoring.
                 </div>
                                 <div style="font-size: small">
-                  Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
                 </div>
                                 <div style="font-size: small">
-                  Default value when not specified in API or module is interpreted by Avi Controller as False.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
@@ -1732,7 +1706,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Uuid of the pool.
+                  - Uuid of the pool.
                 </div>
                                             </td>
         </tr>
@@ -1749,16 +1723,16 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  Virtual routing context that the pool is bound to.
+                  - Virtual routing context that the pool is bound to.
                 </div>
                                 <div style="font-size: small">
-                  This is used to provide the isolation of the set of networks the pool is attached to.
+                  - This is used to provide the isolation of the set of networks the pool is attached to.
                 </div>
                                 <div style="font-size: small">
-                  The pool inherits the virtual routing conext of the virtual service, and this field is used only internally, and is set by pb-transform.
+                  - The pool inherits the virtual routing conext of the virtual service, and this field is used only internally, and is set by pb-transform.
                 </div>
                                 <div style="font-size: small">
-                  It is a reference to an object of type vrfcontext.
+                  - It is a reference to an object of type vrfcontext.
                 </div>
                                             </td>
         </tr>
@@ -1803,11 +1777,12 @@ Examples
       when:
         - state | default("present") == "present"
 
-Status
-------
+
 
 Authors
 ~~~~~~~
+- Gaurav Rastogi (grastogi@vmware.com)
+- Sandeep Bandi (sbandi@vmware.com)
 - Amol Shinde (samol@vmware.com)
 
 
