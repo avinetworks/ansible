@@ -42,6 +42,10 @@ Parameters
                 </div>
             </td>
             <td>
+                <ul style="margin: 0; padding: 0">
+                    <li>absent</li>
+                    <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
+                </ul>
             </td>
             <td>
                 <div style="font-size: small">
@@ -60,14 +64,10 @@ Parameters
             </td>
             <td>
                 <ul style="margin: 0; padding: 0">
-                    <li>absent</li>
-                    <li><div style="color: blue"><b>present</b>&nbsp;&larr;</div></li>
-                </ul>
-            </td>
-            <ul style="margin: 0; padding: 0">
                     <li><div style="color: blue"><b>put</b>&nbsp;&larr;</div></li>
                     <li>patch</li>
                 </ul>
+            </td>
             <td>
                 <div style="font-size: small">
                     - Default method for object update is HTTP PUT.
