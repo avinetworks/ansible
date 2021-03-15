@@ -25,7 +25,6 @@ description:
     - This module is used to configure ControllerProperties object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.4"
 options:
     state:
         description:
@@ -79,7 +78,6 @@ options:
             - Field introduced in 18.1.4, 18.2.1.
             - Unit is milliseconds.
             - Default value when not specified in API or module is interpreted by Avi Controller as 10000.
-        version_added: "2.9"
         type: int
     appviewx_compat_mode:
         description:
@@ -120,7 +118,6 @@ options:
             - Use ansible for se creation in baremetal.
             - Field introduced in 17.2.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.5"
         type: bool
     cleanup_expired_authtoken_timeout_period:
         description:
@@ -128,7 +125,6 @@ options:
             - Field introduced in 18.1.1.
             - Unit is min.
             - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-        version_added: "2.9"
         type: int
     cleanup_sessions_timeout_period:
         description:
@@ -136,14 +132,12 @@ options:
             - Field introduced in 18.1.1.
             - Unit is min.
             - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-        version_added: "2.9"
         type: int
     cloud_reconcile:
         description:
             - Enable/disable periodic reconcile for all the clouds.
             - Field introduced in 17.2.14,18.1.5,18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.9"
         type: bool
     cluster_ip_gratuitous_arp_period:
         description:
@@ -157,7 +151,6 @@ options:
             - Field introduced in 18.1.1.
             - Unit is min.
             - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-        version_added: "2.9"
         type: int
     controller_resource_info_collection_period:
         description:
@@ -210,14 +203,12 @@ options:
             - This setting enables the controller leader to shard api requests to the followers (if any).
             - Field introduced in 18.1.5, 18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.9"
         type: bool
     enable_memory_balancer:
         description:
             - Enable/disable memory balancer.
             - Field introduced in 17.2.8.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.6"
         type: bool
     fatal_error_lease_time:
         description:
@@ -260,7 +251,6 @@ options:
             - Maximum number of consecutive attach ip failures that halts vs placement.
             - Field introduced in 17.2.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as 3.
-        version_added: "2.5"
         type: int
     max_seq_vnic_failures:
         description:
@@ -308,7 +298,6 @@ options:
         description:
             - Token used for uploading tech-support to portal.
             - Field introduced in 16.4.6,17.1.2.
-        version_added: "2.4"
         type: str
     process_locked_useraccounts_timeout_period:
         description:
@@ -316,7 +305,6 @@ options:
             - Field introduced in 18.1.1.
             - Unit is min.
             - Default value when not specified in API or module is interpreted by Avi Controller as 1.
-        version_added: "2.9"
         type: int
     process_pki_profile_timeout_period:
         description:
@@ -324,7 +312,6 @@ options:
             - Field introduced in 18.1.1.
             - Unit is min.
             - Default value when not specified in API or module is interpreted by Avi Controller as 1440.
-        version_added: "2.9"
         type: int
     query_host_fail:
         description:
@@ -343,7 +330,6 @@ options:
         description:
             - Version of the safenet package installed on the controller.
             - Field introduced in 16.5.2,17.2.3.
-        version_added: "2.5"
         type: str
     se_create_timeout:
         description:
@@ -363,7 +349,6 @@ options:
             - Enum options - MARKETPLACE, IMAGE.
             - Field introduced in 18.1.4, 18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as IMAGE.
-        version_added: "2.9"
         type: str
     se_offline_del:
         description:
@@ -430,7 +415,6 @@ options:
             - Ssl certificates in the admin tenant can be used in non-admin tenants.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     ssl_certificate_expiry_warning_days:
         description:
@@ -512,7 +496,6 @@ options:
             - Field introduced in 18.2.2.
             - Unit is sec.
             - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-        version_added: "2.9"
         type: int
     vs_se_attach_ip_fail:
         description:
@@ -520,7 +503,6 @@ options:
             - Field introduced in 17.2.2.
             - Unit is sec.
             - Default value when not specified in API or module is interpreted by Avi Controller as 600.
-        version_added: "2.5"
         type: int
     vs_se_bootup_fail:
         description:
@@ -558,7 +540,6 @@ options:
             - Field introduced in 18.1.4, 18.2.1.
             - Unit is sec.
             - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-        version_added: "2.9"
         type: int
 extends_documentation_fragment:
     - vmware.nsx_alb.avi

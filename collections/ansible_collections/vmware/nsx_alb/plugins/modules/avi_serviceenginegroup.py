@@ -25,7 +25,6 @@ description:
     - This module is used to configure ServiceEngineGroup object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.4"
 options:
     state:
         description:
@@ -51,7 +50,6 @@ options:
             - Accelerated networking enables single root i/o virtualization (sr-iov) to a se vm.
             - This improves networking performance.
             - Field introduced in 17.2.14,18.1.5,18.2.1.
-        version_added: "2.9"
         type: bool
     active_standby:
         description:
@@ -65,7 +63,6 @@ options:
             - Field deprecated in 18.1.2.
             - Field introduced in 18.1.1.
             - Unit is percent.
-        version_added: "2.9"
         type: int
     advertise_backend_networks:
         description:
@@ -88,7 +85,6 @@ options:
         description:
             - Allow ses to be created using burst license.
             - Field introduced in 17.2.5.
-        version_added: "2.5"
         type: bool
     app_cache_percent:
         description:
@@ -101,7 +97,6 @@ options:
             - Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
             - Special default for basic edition is 0, essentials edition is 0, enterprise is 10.
             - Default value when not specified in API or module is interpreted by Avi Controller as 10.
-        version_added: "2.9"
         type: int
     app_cache_threshold:
         description:
@@ -120,7 +115,6 @@ options:
             - Field introduced in 18.2.3.
             - Unit is percent.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.9"
         type: int
     archive_shm_limit:
         description:
@@ -134,14 +128,12 @@ options:
             - Ssl handshakes will be handled by dedicated ssl threads.requires se reboot.
             - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.4"
         type: bool
     async_ssl_threads:
         description:
             - Number of async ssl threads per se_dp.requires se reboot.
             - Allowed values are 1-16.
             - Default value when not specified in API or module is interpreted by Avi Controller as 1.
-        version_added: "2.4"
         type: int
     auto_rebalance:
         description:
@@ -154,14 +146,12 @@ options:
         description:
             - Capacities of se for auto rebalance for each criteria.
             - Field introduced in 17.2.4.
-        version_added: "2.5"
         type: list
     auto_rebalance_criteria:
         description:
             - Set of criteria for se auto rebalance.
             - Enum options - SE_AUTO_REBALANCE_CPU, SE_AUTO_REBALANCE_PPS, SE_AUTO_REBALANCE_MBPS, SE_AUTO_REBALANCE_OPEN_CONNS, SE_AUTO_REBALANCE_CPS.
             - Field introduced in 17.2.3.
-        version_added: "2.5"
         type: list
     auto_rebalance_interval:
         description:
@@ -189,7 +179,6 @@ options:
             - Field introduced in 17.2.14,18.1.5,18.2.1.
             - Unit is sec.
             - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-        version_added: "2.9"
         type: int
     buffer_se:
         description:
@@ -211,7 +200,6 @@ options:
             - Enable config debugs on all cores of se.
             - Field introduced in 17.2.13,18.1.5,18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     connection_memory_percentage:
         description:
@@ -264,7 +252,6 @@ options:
             - Subnet used to spin up the data nic for service engines, used only for azure cloud.
             - Overrides the cloud level setting for service engine subnet.
             - Field introduced in 18.2.3.
-        version_added: "2.9"
         type: str
     datascript_timeout:
         description:
@@ -272,7 +259,6 @@ options:
             - Allowed values are 0-100000000.
             - Field introduced in 18.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as 1000000.
-        version_added: "2.9"
         type: int
     dedicated_dispatcher_core:
         description:
@@ -292,14 +278,12 @@ options:
             - This option is supported for aws and openstack cloud types.
             - Field introduced in 17.2.13,18.1.4,18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     disable_csum_offloads:
         description:
             - Stop using tcp/udp and ip checksum offload features of nics.
             - Field introduced in 17.1.14, 17.2.5, 18.1.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
         type: bool
     disable_flow_probes:
         description:
@@ -313,14 +297,12 @@ options:
             - Gro is on by default on nics that do not support lro (large receive offload) or do not gain performance boost from lro.
             - Field introduced in 17.2.5, 18.1.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.5"
         type: bool
     disable_se_memory_check:
         description:
             - If set, disable the config memory check done in service engine.
             - Field introduced in 18.1.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     disable_tso:
         description:
@@ -328,7 +310,6 @@ options:
             - Tso is on by default on nics that support it.
             - Field introduced in 17.2.5, 18.1.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
         type: bool
     disk_per_se:
         description:
@@ -350,14 +331,12 @@ options:
             - Field introduced in 17.2.8.
             - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     distribute_vnics:
         description:
             - Distributes vnic ownership among cores so multiple cores handle dispatcher duties.requires se reboot.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     dp_aggressive_deq_interval_msec:
         description:
@@ -422,7 +401,6 @@ options:
             - Enable gratarp for vip_ip.
             - Field introduced in 18.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     enable_hsm_priming:
         description:
@@ -431,7 +409,6 @@ options:
             - If enabled, key handles on the hsm will be synced to se before processing client connections.
             - Field introduced in 17.2.7, 18.1.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.6"
         type: bool
     enable_multi_lb:
         description:
@@ -439,7 +416,6 @@ options:
             - If set, additional azure lbs will be automatically created if resources in existing lb are exhausted.
             - Field introduced in 17.2.10, 18.1.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     enable_pcap_tx_ring:
         description:
@@ -448,7 +424,6 @@ options:
             - Deprecated from 18.2.8, instead use pcap_tx_mode.
             - Requires se reboot.
             - Field introduced in 18.2.5.
-        version_added: "2.9"
         type: bool
     enable_routing:
         description:
@@ -471,13 +446,11 @@ options:
         description:
             - End local ephemeral port number for outbound connections.
             - Field introduced in 17.2.13, 18.1.5, 18.2.1.
-        version_added: "2.9"
         type: int
     ephemeral_portrange_start:
         description:
             - Start local ephemeral port number for outbound connections.
             - Field introduced in 17.2.13, 18.1.5, 18.2.1.
-        version_added: "2.9"
         type: int
     extra_config_multiplier:
         description:
@@ -512,14 +485,12 @@ options:
             - Maximum number of flow table entries that have not completed tcp three-way handshake yet.
             - Field introduced in 17.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.5"
         type: int
     free_list_size:
         description:
             - Number of entries in the free list.
             - Field introduced in 17.2.10, 18.1.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as 1024.
-        version_added: "2.9"
         type: int
     gcp_config:
         description:
@@ -533,7 +504,6 @@ options:
             - Field introduced in 18.2.3.
             - Unit is min.
             - Default value when not specified in API or module is interpreted by Avi Controller as 10.
-        version_added: "2.9"
         type: int
     ha_mode:
         description:
@@ -563,7 +533,6 @@ options:
             - Field introduced in 18.1.2.
             - Unit is mb.
             - Default value when not specified in API or module is interpreted by Avi Controller as 8.
-        version_added: "2.9"
         type: int
     hm_on_standby:
         description:
@@ -594,7 +563,6 @@ options:
             - Disabled by default.
             - Field introduced in 17.2.4.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
         type: bool
     hypervisor:
         description:
@@ -607,7 +575,6 @@ options:
             - Field introduced in 17.1.6,17.2.2.
             - Unit is milliseconds.
             - Default value when not specified in API or module is interpreted by Avi Controller as 5000.
-        version_added: "2.5"
         type: int
     ingress_access_data:
         description:
@@ -615,7 +582,6 @@ options:
             - Enum options - SG_INGRESS_ACCESS_NONE, SG_INGRESS_ACCESS_ALL, SG_INGRESS_ACCESS_VPC.
             - Field introduced in 17.1.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as SG_INGRESS_ACCESS_ALL.
-        version_added: "2.5"
         type: str
     ingress_access_mgmt:
         description:
@@ -623,7 +589,6 @@ options:
             - Enum options - SG_INGRESS_ACCESS_NONE, SG_INGRESS_ACCESS_ALL, SG_INGRESS_ACCESS_VPC.
             - Field introduced in 17.1.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as SG_INGRESS_ACCESS_ALL.
-        version_added: "2.5"
         type: str
     instance_flavor:
         description:
@@ -656,14 +621,12 @@ options:
             - This field by default inherits the value from cloud.
             - Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
             - Field introduced in 17.2.5.
-        version_added: "2.5"
         type: str
     license_type:
         description:
             - If no license type is specified then default license enforcement for the cloud type is chosen.
             - Enum options - LIC_BACKEND_SERVERS, LIC_SOCKETS, LIC_CORES, LIC_HOSTS, LIC_SE_BANDWIDTH, LIC_METERED_SE_BANDWIDTH.
             - Field introduced in 17.2.5.
-        version_added: "2.5"
         type: str
     log_disksz:
         description:
@@ -700,7 +663,6 @@ options:
             - Field introduced in 18.1.5.
             - Unit is mb.
             - Default value when not specified in API or module is interpreted by Avi Controller as 64.
-        version_added: "2.9"
         type: int
     max_num_se_dps:
         description:
@@ -717,7 +679,6 @@ options:
             - Maximum number of public ips per azure lb.
             - Field introduced in 17.2.12, 18.1.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as 30.
-        version_added: "2.9"
         type: int
     max_queues_per_vnic:
         description:
@@ -732,7 +693,6 @@ options:
             - Maximum number of rules per azure lb.
             - Field introduced in 17.2.12, 18.1.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as 150.
-        version_added: "2.9"
         type: int
     max_scaleout_per_vs:
         description:
@@ -764,7 +724,6 @@ options:
             - Field introduced in 18.1.2.
             - Unit is percent.
             - Default value when not specified in API or module is interpreted by Avi Controller as 15.
-        version_added: "2.9"
         type: int
     memory_per_se:
         description:
@@ -801,7 +760,6 @@ options:
             - Allowed values are 0-1000.
             - Field introduced in 17.2.13,18.1.3,18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as 1.
-        version_added: "2.9"
         type: int
     minimum_connection_memory:
         description:
@@ -810,7 +768,6 @@ options:
             - Field introduced in 18.1.2.
             - Unit is percent.
             - Default value when not specified in API or module is interpreted by Avi Controller as 20.
-        version_added: "2.9"
         type: int
     minimum_required_config_memory:
         description:
@@ -819,7 +776,6 @@ options:
             - Field deprecated in 18.1.2.
             - Field introduced in 18.1.1.
             - Unit is percent.
-        version_added: "2.9"
         type: int
     n_log_streaming_threads:
         description:
@@ -827,7 +783,6 @@ options:
             - Allowed values are 1-100.
             - Field introduced in 17.2.12, 18.1.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as 1.
-        version_added: "2.9"
         type: int
     name:
         description:
@@ -841,7 +796,6 @@ options:
             - Field deprecated in 18.2.5.
             - Field introduced in 18.2.5.
             - Unit is seconds.
-        version_added: "2.9"
         type: int
     nat_flow_tcp_established_timeout:
         description:
@@ -850,7 +804,6 @@ options:
             - Field deprecated in 18.2.5.
             - Field introduced in 18.2.5.
             - Unit is seconds.
-        version_added: "2.9"
         type: int
     nat_flow_tcp_half_closed_timeout:
         description:
@@ -859,7 +812,6 @@ options:
             - Field deprecated in 18.2.5.
             - Field introduced in 18.2.5.
             - Unit is seconds.
-        version_added: "2.9"
         type: int
     nat_flow_tcp_handshake_timeout:
         description:
@@ -868,7 +820,6 @@ options:
             - Field deprecated in 18.2.5.
             - Field introduced in 18.2.5.
             - Unit is seconds.
-        version_added: "2.9"
         type: int
     nat_flow_udp_noresponse_timeout:
         description:
@@ -877,7 +828,6 @@ options:
             - Field deprecated in 18.2.5.
             - Field introduced in 18.2.5.
             - Unit is seconds.
-        version_added: "2.9"
         type: int
     nat_flow_udp_response_timeout:
         description:
@@ -886,7 +836,6 @@ options:
             - Field deprecated in 18.2.5.
             - Field introduced in 18.2.5.
             - Unit is seconds.
-        version_added: "2.9"
         type: int
     netlink_poller_threads:
         description:
@@ -929,7 +878,6 @@ options:
             - Allowed values are 0,1,2,4,8,16.
             - Field introduced in 17.2.12, 18.1.3, 18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.9"
         type: int
     num_flow_cores_sum_changes_to_ignore:
         description:
@@ -1021,13 +969,11 @@ options:
             - Reboot the vm or host on kernel panic.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.9"
         type: bool
     reboot_on_stop:
         description:
             - Reboot the system if the se is stopped.
             - Field deprecated in 18.2.5.
-        version_added: "2.9"
         type: bool
     resync_time_interval:
         description:
@@ -1043,7 +989,6 @@ options:
             - Enum options - SE_BANDWIDTH_UNLIMITED, SE_BANDWIDTH_25M, SE_BANDWIDTH_200M, SE_BANDWIDTH_1000M, SE_BANDWIDTH_10000M.
             - Field introduced in 17.2.5.
             - Allowed in basic(allowed values- se_bandwidth_unlimited) edition, essentials(allowed values- se_bandwidth_unlimited) edition, enterprise edition.
-        version_added: "2.5"
         type: str
     se_delayed_flow_delete:
         description:
@@ -1086,35 +1031,30 @@ options:
             - Time (in seconds) service engine waits for after generating a vnic transmit queue stall event before resetting thenic.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.9"
         type: int
     se_dp_vnic_queue_stall_threshold:
         description:
             - Number of consecutive transmit failures to look for before generating a vnic transmit queue stall event.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as 2000.
-        version_added: "2.9"
         type: int
     se_dp_vnic_queue_stall_timeout:
         description:
             - Time (in milliseconds) to wait for network/nic recovery on detecting a transmit queue stall after which service engine resets the nic.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as 10000.
-        version_added: "2.9"
         type: int
     se_dp_vnic_restart_on_queue_stall_count:
         description:
             - Number of consecutive transmit queue stall events in se_dp_vnic_stall_se_restart_window to look for before restarting se.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as 3.
-        version_added: "2.9"
         type: int
     se_dp_vnic_stall_se_restart_window:
         description:
             - Window of time (in seconds) during which se_dp_vnic_restart_on_queue_stall_count number of consecutive stalls results in a se restart.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as 3600.
-        version_added: "2.9"
         type: int
     se_dpdk_pmd:
         description:
@@ -1123,7 +1063,6 @@ options:
             - Allowed values are 0-2.
             - Field introduced in 18.1.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.9"
         type: int
     se_flow_probe_retries:
         description:
@@ -1131,7 +1070,6 @@ options:
             - Allowed values are 0-5.
             - Field introduced in 18.1.4, 18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as 2.
-        version_added: "2.9"
         type: int
     se_flow_probe_retry_timer:
         description:
@@ -1140,7 +1078,6 @@ options:
             - Field introduced in 18.2.5.
             - Unit is milliseconds.
             - Default value when not specified in API or module is interpreted by Avi Controller as 40.
-        version_added: "2.9"
         type: int
     se_flow_probe_timer:
         description:
@@ -1149,7 +1086,6 @@ options:
             - Field deprecated in 18.2.5.
             - Field introduced in 18.1.4, 18.2.1.
             - Unit is milliseconds.
-        version_added: "2.9"
         type: int
     se_group_analytics_policy:
         description:
@@ -1178,7 +1114,6 @@ options:
             - Udp port for se_dp ipc in docker bridge mode.
             - Field deprecated in 20.1.1.
             - Field introduced in 17.1.2.
-        version_added: "2.4"
         type: int
     se_kni_burst_factor:
         description:
@@ -1204,7 +1139,6 @@ options:
             - Requires se reboot.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.9"
         type: bool
     se_mp_ring_retry_count:
         description:
@@ -1232,7 +1166,6 @@ options:
             - Lookahead mode attempts to ensure that application and kernel's view of the receive rings are consistent.
             - Field introduced in 18.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     se_pcap_pkt_count:
         description:
@@ -1240,7 +1173,6 @@ options:
             - The optimum value will be chosen based on se-memory, cloud type and number of interfaces.requires se reboot.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.9"
         type: int
     se_pcap_pkt_sz:
         description:
@@ -1248,7 +1180,6 @@ options:
             - Requires se reboot.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as 69632.
-        version_added: "2.9"
         type: int
     se_pcap_qdisc_bypass:
         description:
@@ -1268,7 +1199,6 @@ options:
             - Field introduced in 17.2.13, 18.1.3, 18.2.1.
             - Unit is sec.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.9"
         type: int
     se_pcap_reinit_threshold:
         description:
@@ -1278,21 +1208,18 @@ options:
             - Field introduced in 17.2.13, 18.1.3, 18.2.1.
             - Unit is metric_count.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.9"
         type: int
     se_probe_port:
         description:
             - Tcp port on se where echo service will be run.
             - Field introduced in 17.2.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as 7.
-        version_added: "2.5"
         type: int
     se_remote_punt_udp_port:
         description:
             - Udp port for punted packets in docker bridge mode.
             - Field deprecated in 20.1.1.
             - Field introduced in 17.1.2.
-        version_added: "2.4"
         type: int
     se_rl_prop:
         description:
@@ -1306,7 +1233,6 @@ options:
             - Ip routing needs to be enabled in service engine group for se routing to be effective.
             - Field deprecated in 18.2.5.
             - Field introduced in 18.2.3.
-        version_added: "2.9"
         type: bool
     se_rum_sampling_nav_interval:
         description:
@@ -1339,7 +1265,6 @@ options:
             - Sideband traffic will be handled by a dedicated core.requires se reboot.
             - Field introduced in 16.5.2, 17.1.9, 17.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
         type: bool
     se_sb_threads:
         description:
@@ -1347,7 +1272,6 @@ options:
             - Allowed values are 1-128.
             - Field introduced in 16.5.2, 17.1.9, 17.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as 1.
-        version_added: "2.5"
         type: int
     se_thread_multiplier:
         description:
@@ -1360,7 +1284,6 @@ options:
         description:
             - Traceroute port range.
             - Field introduced in 17.2.8.
-        version_added: "2.9"
         type: dict
     se_tunnel_mode:
         description:
@@ -1385,7 +1308,6 @@ options:
             - Requires se reboot.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as 64.
-        version_added: "2.9"
         type: int
     se_txq_threshold:
         description:
@@ -1403,7 +1325,6 @@ options:
             - Allowed values are 0-1.
             - Field introduced in 17.1.2.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.4"
         type: int
     se_use_dpdk:
         description:
@@ -1412,7 +1333,6 @@ options:
             - Allowed values are 0-2.
             - Field introduced in 18.1.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.9"
         type: int
     se_vnic_tx_sw_queue_flush_frequency:
         description:
@@ -1452,7 +1372,6 @@ options:
             - Field introduced in 18.1.2.
             - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     send_se_ready_timeout:
         description:
@@ -1468,7 +1387,6 @@ options:
             - Required for vs group placement.
             - Field introduced in 18.1.1.
             - Maximum of 128 items allowed.
-        version_added: "2.9"
         type: list
     service_ip_subnets:
         description:
@@ -1484,7 +1402,6 @@ options:
             - Field introduced in 18.1.2.
             - Unit is mb.
             - Default value when not specified in API or module is interpreted by Avi Controller as 4.
-        version_added: "2.9"
         type: int
     significant_log_throttle:
         description:
@@ -1501,7 +1418,6 @@ options:
             - from sni parent's allowed ssl protocol(s).
             - Field introduced in 17.2.12, 18.1.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.9"
         type: bool
     tenant_ref:
         description:
@@ -1549,7 +1465,6 @@ options:
             - By default cloud level flag is set.
             - If not set, it inherits/uses the use_standard_alb flag from the cloud.
             - Field introduced in 18.2.3.
-        version_added: "2.9"
         type: bool
     uuid:
         description:
@@ -1597,7 +1512,6 @@ options:
         description:
             - When vip_asg is set, vip configuration will be managed by avi.user will be able to configure vip_asg or vips individually at the time of create.
             - Field introduced in 17.2.12, 18.1.2.
-        version_added: "2.9"
         type: dict
     vnic_dhcp_ip_check_interval:
         description:
@@ -1675,7 +1589,6 @@ options:
             - Field introduced in 18.1.5,18.2.1.
             - Unit is sec.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.9"
         type: int
     vs_se_scaleout_ready_timeout:
         description:
@@ -1684,7 +1597,6 @@ options:
             - Field introduced in 18.1.5,18.2.1.
             - Unit is sec.
             - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-        version_added: "2.9"
         type: int
     vs_switchover_timeout:
         description:
@@ -1692,20 +1604,17 @@ options:
             - Field introduced in 17.2.13,18.1.4,18.2.1.
             - Unit is sec.
             - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-        version_added: "2.9"
         type: int
     vss_placement:
         description:
             - Parameters to place virtual services on only a subset of the cores of an se.
             - Field introduced in 17.2.5.
-        version_added: "2.5"
         type: dict
     vss_placement_enabled:
         description:
             - If set, virtual services will be placed on only a subset of the cores of an se.
             - Field introduced in 18.1.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     waf_learning_interval:
         description:
@@ -1714,7 +1623,6 @@ options:
             - Field deprecated in 18.2.3.
             - Field introduced in 18.1.2.
             - Unit is min.
-        version_added: "2.9"
         type: int
     waf_learning_memory:
         description:
@@ -1723,14 +1631,12 @@ options:
             - Field deprecated in 18.2.3.
             - Field introduced in 18.1.2.
             - Unit is mb.
-        version_added: "2.9"
         type: int
     waf_mempool:
         description:
             - Enable memory pool for waf.requires se reboot.
             - Field introduced in 17.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.5"
         type: bool
     waf_mempool_size:
         description:
@@ -1738,7 +1644,6 @@ options:
             - Field introduced in 17.2.3.
             - Unit is kb.
             - Default value when not specified in API or module is interpreted by Avi Controller as 64.
-        version_added: "2.5"
         type: int
 extends_documentation_fragment:
     - vmware.nsx_alb.avi

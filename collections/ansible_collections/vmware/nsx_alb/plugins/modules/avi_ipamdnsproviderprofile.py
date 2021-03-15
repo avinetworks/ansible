@@ -24,7 +24,6 @@ description:
     - This module is used to configure IpamDnsProviderProfile object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.4"
 options:
     state:
         description:
@@ -50,7 +49,6 @@ options:
             - Applicable for avi vantage ipam only.
             - Field introduced in 17.2.4.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
         type: bool
     aws_profile:
         description:
@@ -60,7 +58,6 @@ options:
         description:
             - Provider details if type is microsoft azure.
             - Field introduced in 17.2.1.
-        version_added: "2.5"
         type: dict
     custom_profile:
         description:
@@ -95,7 +92,6 @@ options:
         description:
             - Provider details for oracle cloud.
             - Field introduced in 18.2.1,18.1.3.
-        version_added: "2.9"
         type: dict
     openstack_profile:
         description:
@@ -113,7 +109,6 @@ options:
         description:
             - Provider details for tencent cloud.
             - Field introduced in 18.2.3.
-        version_added: "2.9"
         type: dict
     type:
         description:

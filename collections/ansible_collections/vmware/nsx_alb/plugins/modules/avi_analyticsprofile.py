@@ -25,7 +25,6 @@ description:
     - This module is used to configure AnalyticsProfile object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.3"
 options:
     state:
         description:
@@ -140,7 +139,6 @@ options:
             - Configure to stream logs to an external server.
             - Field introduced in 17.1.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.4"
         type: dict
     conn_lossy_ooo_threshold:
         description:
@@ -251,7 +249,6 @@ options:
             - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
             - Special default for basic edition is false, essentials edition is false, enterprise is true.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.9"
         type: bool
     enable_ondemand_metrics:
         description:
@@ -259,7 +256,6 @@ options:
             - In case, vs is idle for a period of time as specified by ondemand_metrics_idle_timeout then metrics processing is suspended for that vs.
             - Field introduced in 20.1.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.9"
         type: bool
     enable_se_analytics:
         description:
@@ -281,7 +277,6 @@ options:
             - This flag enables metrics and healthscore for virtualservice.
             - Field introduced in 20.1.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.9"
         type: bool
     exclude_client_close_before_request_as_error:
         description:
@@ -295,7 +290,6 @@ options:
             - Field introduced in 17.2.2.
             - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
         type: bool
     exclude_gs_down_as_error:
         description:
@@ -370,7 +364,6 @@ options:
             - List of sip status codes to be excluded from being classified as an error.
             - Field introduced in 17.2.13, 18.1.5, 18.2.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: list
     exclude_stale_ocsp_responses_as_error:
         description:
@@ -413,7 +406,6 @@ options:
             - Allowed in basic(allowed values- 0) edition, essentials(allowed values- 0) edition, enterprise edition.
             - Special default for basic edition is 0, essentials edition is 0, enterprise is 20.
             - Default value when not specified in API or module is interpreted by Avi Controller as 20.
-        version_added: "2.9"
         type: int
     hs_event_throttle_window:
         description:
@@ -629,7 +621,6 @@ options:
             - Field introduced in 18.1.1.
             - Unit is seconds.
             - Default value when not specified in API or module is interpreted by Avi Controller as 1800.
-        version_added: "2.9"
         type: int
     ranges:
         description:
@@ -645,7 +636,6 @@ options:
             - Rules applied to the http application log for filtering sensitive information.
             - Field introduced in 17.2.10, 18.1.2.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: dict
     sip_log_depth:
         description:
@@ -655,7 +645,6 @@ options:
             - Field introduced in 17.2.13, 18.1.5, 18.2.1.
             - Allowed in basic(allowed values- 20) edition, essentials(allowed values- 20) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 20.
-        version_added: "2.9"
         type: int
     tenant_ref:
         description:

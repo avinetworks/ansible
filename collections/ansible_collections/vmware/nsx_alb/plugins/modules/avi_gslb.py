@@ -25,7 +25,6 @@ description:
     - This module is used to configure Gslb object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.4"
 options:
     state:
         description:
@@ -45,6 +44,12 @@ options:
             - Patch operation to use when using avi_api_update_method as patch.
         choices: ["add", "replace", "delete"]
         type: str
+    patch_level:
+        description:
+            - Patch level to use when using patch.
+        choices: ["/site/dns_vses", "/site"]
+        default: "/site/dns_vses"
+        type: str
     async_interval:
         description:
             - Frequency with which messages are propagated to vs mgr.
@@ -53,7 +58,6 @@ options:
             - Field introduced in 18.2.3.
             - Unit is sec.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.9"
         type: int
     clear_on_max_retries:
         description:
@@ -66,7 +70,6 @@ options:
         description:
             - Group to specify if the client ip addresses are public or private.
             - Field introduced in 17.1.2.
-        version_added: "2.4"
         type: dict
     description:
         description:
@@ -86,14 +89,12 @@ options:
             - Field introduced in 18.2.3.
             - Unit is sec.
             - Default value when not specified in API or module is interpreted by Avi Controller as 300.
-        version_added: "2.9"
         type: int
     is_federated:
         description:
             - This field indicates that this object is replicated across gslb federation.
             - Field introduced in 17.1.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.4"
         type: bool
     leader_cluster_uuid:
         description:
@@ -110,7 +111,6 @@ options:
             - This configuration programmatically blocks the leader from accepting new gslb configuration when member sites are undergoing upgrade.
             - Field introduced in 17.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
         type: bool
     name:
         description:
@@ -137,7 +137,6 @@ options:
             - This internal variable is used to store the original send-interval.
             - Field introduced in 18.2.3.
             - Unit is sec.
-        version_added: "2.9"
         type: int
     sites:
         description:

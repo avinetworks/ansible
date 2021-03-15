@@ -25,7 +25,6 @@ description:
     - This module is used to configure Cloud object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.4"
 options:
     state:
         description:
@@ -62,7 +61,6 @@ options:
             - Unit is seconds.
             - Allowed in basic(allowed values- 60) edition, essentials(allowed values- 60) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 60.
-        version_added: "2.9"
         type: int
     aws_configuration:
         description:
@@ -72,7 +70,6 @@ options:
         description:
             - Field introduced in 17.2.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.5"
         type: dict
     cloudstack_configuration:
         description:
@@ -82,7 +79,6 @@ options:
         description:
             - Custom tags for all avi created resources in the cloud infrastructure.
             - Field introduced in 17.1.5.
-        version_added: "2.5"
         type: list
     dhcp_enabled:
         description:
@@ -136,14 +132,12 @@ options:
             - Google cloud platform configuration.
             - Field introduced in 18.2.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: dict
     ip6_autocfg_enabled:
         description:
             - Enable ipv6 auto configuration.
             - Field introduced in 18.1.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     ipam_provider_ref:
         description:
@@ -156,7 +150,6 @@ options:
             - This field by default inherits the value from system configuration.
             - Enum options - ENTERPRISE_16, ENTERPRISE, ENTERPRISE_18, BASIC, ESSENTIALS.
             - Field introduced in 17.2.5.
-        version_added: "2.5"
         type: str
     license_type:
         description:
@@ -225,7 +218,6 @@ options:
             - The service engine group to use as template.
             - It is a reference to an object of type serviceenginegroup.
             - Field introduced in 18.2.5.
-        version_added: "2.9"
         type: str
     state_based_dns_registration:
         description:
@@ -233,7 +225,6 @@ options:
             - Field introduced in 17.1.12.
             - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.5"
         type: bool
     tenant_ref:
         description:

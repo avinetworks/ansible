@@ -25,7 +25,6 @@ description:
     - This module is used to configure VsVip object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.4"
 options:
     state:
         description:
@@ -104,7 +103,6 @@ options:
             - This is only used when fip is used for vs on azure cloud.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: bool
     uuid:
         description:
@@ -128,7 +126,6 @@ options:
             - Checksum of cloud configuration for vsvip.
             - Internally set by cloud connector.
             - Field introduced in 17.2.9, 18.1.2.
-        version_added: "2.9"
         type: str
 extends_documentation_fragment:
     - vmware.nsx_alb.avi

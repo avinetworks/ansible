@@ -20,7 +20,6 @@ short_description: Avi API Module for update data vnics and vlan interfaces.
 description:
     - Module to update Service Engine's data vnics/vlans configurations.
 requirements: [ avisdk ]
-version_added: 2.9
 options:
     se_name:
         description:
@@ -101,7 +100,7 @@ obj:
 from ansible.module_utils.basic import AnsibleModule
 try:
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
-        avi_common_argument_spec, ansible_return, avi_obj_cmp,
+        avi_common_argument_spec, ansible_return, avi_ansible_api, avi_obj_cmp,
         cleanup_absent_fields, HAS_AVI)
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)

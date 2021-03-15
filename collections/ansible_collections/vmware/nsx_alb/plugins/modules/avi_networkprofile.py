@@ -25,7 +25,6 @@ description:
     - This module is used to configure NetworkProfile object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.3"
 options:
     state:
         description:
@@ -51,7 +50,6 @@ options:
             - Applicable only in legacy ha mode.
             - Field introduced in 18.1.3,18.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     description:
         description:

@@ -24,7 +24,6 @@ short_description: Avi API Module
 description:
     - This module can be used for calling any resources defined in Avi REST API. U(https://avinetworks.com/)
     - This module is useful for invoking HTTP Patch methods and accessing resources that do not have an REST object associated with them.
-version_added: 2.5
 requirements: [ avisdk ]
 options:
     data:
@@ -115,7 +114,7 @@ from copy import deepcopy
 
 try:
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
-        avi_common_argument_spec, ansible_return, avi_obj_cmp,
+        avi_common_argument_spec, ansible_return, AviCheckModeResponse, avi_obj_cmp,
         cleanup_absent_fields, HAS_AVI)
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)

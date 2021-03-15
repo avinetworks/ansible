@@ -72,6 +72,7 @@ options:
                 description:
                   - Avi controller tenant UUID
                 type: str
+                default: ''
             port:
                 description:
                   - Avi controller port
@@ -103,6 +104,7 @@ options:
         description:
             - It disables avi session information to be cached as a fact.
         type: bool
+        default: false
 
 notes:
   - For more information on using Ansible to manage Avi Network devices see U(https://www.ansible.com/ansible-avi-networks).

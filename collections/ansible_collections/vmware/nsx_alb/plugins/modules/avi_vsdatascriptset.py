@@ -25,7 +25,6 @@ description:
     - This module is used to configure VSDataScriptSet object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.4"
 options:
     state:
         description:
@@ -49,7 +48,6 @@ options:
         description:
             - Creator name.
             - Field introduced in 17.1.11,17.2.4.
-        version_added: "2.5"
         type: str
     datascript:
         description:
@@ -104,7 +102,6 @@ options:
             - It is a reference to an object of type protocolparser.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: list
     rate_limiters:
         description:

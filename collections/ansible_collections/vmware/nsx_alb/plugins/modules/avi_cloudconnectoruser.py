@@ -25,7 +25,6 @@ description:
     - This module is used to configure CloudConnectorUser object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.4"
 options:
     state:
         description:
@@ -49,20 +48,17 @@ options:
         description:
             - Field introduced in 17.2.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.5"
         type: dict
     azure_userpass:
         description:
             - Field introduced in 17.2.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.5"
         type: dict
     gcp_credentials:
         description:
             - Credentials for google cloud platform.
             - Field introduced in 18.2.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: dict
     name:
         description:
@@ -78,14 +74,12 @@ options:
     obj_password:
         description:
             - Password of cloudconnectoruser.
-        version_added: "2.9"
         type: str
     oci_credentials:
         description:
             - Credentials for oracle cloud infrastructure.
             - Field introduced in 18.2.1,18.1.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: dict
     private_key:
         description:
@@ -104,7 +98,6 @@ options:
             - Credentials for tencent cloud.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: dict
     url:
         description:

@@ -25,7 +25,6 @@ description:
     - This module is used to configure AuthProfile object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.4"
 options:
     state:
         description:
@@ -74,13 +73,11 @@ options:
             - It is a reference to an object of type pingaccessagent.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: str
     saml:
         description:
             - Saml settings.
             - Field introduced in 17.2.3.
-        version_added: "2.5"
         type: dict
     tacacs_plus:
         description:

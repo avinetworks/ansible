@@ -25,7 +25,6 @@ description:
     - This module is used to configure SSLKeyAndCertificate object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.3"
 options:
     state:
         description:
@@ -58,7 +57,6 @@ options:
         description:
             - States if the certificate is base64 encoded.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     certificate_management_profile_ref:
         description:
@@ -94,7 +92,6 @@ options:
             - Format of the key/certificate file.
             - Enum options - SSL_PEM, SSL_PKCS12.
             - Default value when not specified in API or module is interpreted by Avi Controller as SSL_PEM.
-        version_added: "2.9"
         type: str
     hardwaresecuritymodulegroup_ref:
         description:
@@ -108,7 +105,6 @@ options:
         description:
             - States if the private key is base64 encoded.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     key_params:
         description:
@@ -117,7 +113,6 @@ options:
     key_passphrase:
         description:
             - Passphrase used to encrypt the private key.
-        version_added: "2.9"
         type: str
     labels:
         description:
@@ -262,7 +257,7 @@ def main():
         return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
                                     'For more details visit https://github.com/avinetworks/sdk.')
 
-    return avi_ansible_api(module, 'sslkeyandcertificate', {'key', 'key_passphrase'})
+    return avi_ansible_api(module, 'sslkeyandcertificate', {'key_passphrase', 'key'})
 
 
 if __name__ == "__main__":

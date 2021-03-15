@@ -25,7 +25,6 @@ description:
     - This module is used to configure Backup object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.4"
 options:
     state:
         description:

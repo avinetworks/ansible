@@ -25,7 +25,6 @@ description:
     - This module is used to configure SSLProfile object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.3"
 options:
     state:
         description:
@@ -161,7 +160,6 @@ options:
             - Enum options - SSL_PROFILE_TYPE_APPLICATION, SSL_PROFILE_TYPE_SYSTEM.
             - Field introduced in 17.2.8.
             - Default value when not specified in API or module is interpreted by Avi Controller as SSL_PROFILE_TYPE_APPLICATION.
-        version_added: "2.6"
         type: str
     url:
         description:

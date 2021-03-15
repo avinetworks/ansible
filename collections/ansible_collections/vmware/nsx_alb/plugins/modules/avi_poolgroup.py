@@ -25,7 +25,6 @@ description:
     - This module is used to configure PoolGroup object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.3"
 options:
     state:
         description:
@@ -84,7 +83,6 @@ options:
             - Whether an implicit set of priority labels is generated.
             - Field introduced in 17.1.9,17.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
         type: bool
     labels:
         description:
@@ -122,7 +120,6 @@ options:
             - In openshift/kubernetes environments, app metadata info is stored.
             - Any user input to this field will be overwritten by avi vantage.
             - Field introduced in 17.2.14,18.1.5,18.2.1.
-        version_added: "2.9"
         type: str
     tenant_ref:
         description:

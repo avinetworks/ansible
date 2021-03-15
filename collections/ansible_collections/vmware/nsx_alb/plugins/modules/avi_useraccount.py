@@ -36,7 +36,6 @@ short_description: Avi UserAccount Module
 description:
     - This module can be used for updating the password of a user.
     - This module is useful for setting up admin password for Controller bootstrap.
-version_added: 2.6
 requirements: [ avisdk ]
 options:
     full_name:
@@ -56,8 +55,8 @@ options:
         description:
             - If specifically set to true then old password is tried first for controller and then the new password is
               tried. If not specified this flag then the new password is tried first.
-        version_added: "2.9"
         type: bool
+        default: false
 extends_documentation_fragment:
     - vmware.nsx_alb.avi
 '''

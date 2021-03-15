@@ -25,7 +25,6 @@ description:
     - This module is used to configure SystemConfiguration object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.3"
 options:
     state:
         description:
@@ -65,7 +64,6 @@ options:
             - Allowed in basic edition, essentials edition, enterprise edition.
             - Special default for basic edition is basic, essentials edition is essentials, enterprise is enterprise.
             - Default value when not specified in API or module is interpreted by Avi Controller as ENTERPRISE.
-        version_added: "2.5"
         type: str
     dns_configuration:
         description:
@@ -128,7 +126,6 @@ options:
         description:
             - Configure secure channel properties.
             - Field introduced in 18.1.4, 18.2.1.
-        version_added: "2.9"
         type: dict
     snmp_configuration:
         description:
@@ -157,7 +154,6 @@ options:
             - This flag is set once the initial controller setup workflow is complete.
             - Field introduced in 18.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
 extends_documentation_fragment:
     - vmware.nsx_alb.avi

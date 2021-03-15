@@ -25,7 +25,6 @@ description:
     - This module is used to configure VirtualService object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.3"
 options:
     state:
         description:
@@ -72,7 +71,6 @@ options:
             - Field introduced in 18.2.3.
             - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     analytics_policy:
         description:
@@ -90,7 +88,6 @@ options:
             - This is applicable only for service integration mode with cisco apic controller.
             - Field introduced in 17.2.12,18.1.2.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: str
     application_profile_ref:
         description:
@@ -129,7 +126,6 @@ options:
             - Azure availability set to which this vs is associated.
             - Internally set by the cloud connector.
             - Field introduced in 17.2.12, 18.1.2.
-        version_added: "2.9"
         type: str
     bot_policy_ref:
         description:
@@ -146,7 +142,6 @@ options:
             - Field introduced in 17.2.7, 18.1.1.
             - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.6"
         type: bool
     client_auth:
         description:
@@ -158,7 +153,6 @@ options:
             - Field introduced in 17.2.4.
             - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
         type: bool
     cloud_config_cksum:
         description:
@@ -230,7 +224,6 @@ options:
             - Dns policies applied on the dns traffic of the virtual service.
             - Field introduced in 17.1.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.4"
         type: list
     east_west_placement:
         description:
@@ -264,7 +257,6 @@ options:
             - It is a reference to an object of type errorpageprofile.
             - Field introduced in 17.2.4.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.5"
         type: str
     floating_ip:
         description:
@@ -337,7 +329,6 @@ options:
         description:
             - L4 policies applied to the data traffic of the virtual service.
             - Field introduced in 17.2.7.
-        version_added: "2.6"
         type: list
     labels:
         description:
@@ -367,7 +358,6 @@ options:
         description:
             - Minimum number of up pools to mark vs up.
             - Field introduced in 18.2.1, 17.2.12.
-        version_added: "2.9"
         type: int
     name:
         description:
@@ -395,7 +385,6 @@ options:
         description:
             - A list of nsx groups representing the clients which can access the virtual ip of the virtual service.
             - Field introduced in 17.1.1.
-        version_added: "2.4"
         type: list
     performance_limits:
         description:
@@ -430,7 +419,6 @@ options:
             - Application-specific saml config.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: dict
     scaleout_ecmp:
         description:
@@ -451,7 +439,6 @@ options:
             - It is a reference to an object of type securitypolicy.
             - Field introduced in 18.2.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: str
     server_network_profile_ref:
         description:
@@ -464,7 +451,6 @@ options:
             - Metadata pertaining to the service provided by this virtual service.
             - In openshift/kubernetes environments, egress pod info is stored.
             - Any user input to this field will be overwritten by avi vantage.
-        version_added: "2.4"
         type: str
     service_pool_select:
         description:
@@ -478,7 +464,6 @@ options:
     sideband_profile:
         description:
             - Sideband configuration to be used for this virtualservice.it can be used for sending traffic to sideband vips for external inspection etc.
-        version_added: "2.4"
         type: dict
     snat_ip:
         description:
@@ -492,7 +477,6 @@ options:
             - This is a read-only field for the user.
             - It is a reference to an object of type pool.
             - Field introduced in 17.2.2.
-        version_added: "2.5"
         type: list
     ssl_key_and_certificate_refs:
         description:
@@ -509,7 +493,6 @@ options:
             - Select ssl profile based on client ip address match.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: list
     ssl_sess_cache_avg_size:
         description:
@@ -523,7 +506,6 @@ options:
             - Field deprecated in 18.2.3.
             - Field introduced in 18.2.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: dict
     sso_policy_ref:
         description:
@@ -531,7 +513,6 @@ options:
             - It is a reference to an object of type ssopolicy.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: str
     static_dns_records:
         description:
@@ -565,7 +546,6 @@ options:
             - Topology policies applied on the dns traffic of the virtual service based ongslb topology algorithm.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: list
     traffic_clone_profile_ref:
         description:
@@ -573,7 +553,6 @@ options:
             - It is a reference to an object of type trafficcloneprofile.
             - Field introduced in 17.1.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.4"
         type: str
     traffic_enabled:
         description:
@@ -581,7 +560,6 @@ options:
             - This setting is effective only when the enabled flag is set to true.
             - Field introduced in 17.2.8.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.6"
         type: bool
     type:
         description:
@@ -609,7 +587,6 @@ options:
             - Field introduced in 17.1.9,17.2.3.
             - Allowed in essentials(allowed values- false) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
         type: bool
     uuid:
         description:
@@ -643,7 +620,6 @@ options:
             - List of virtual service ips.
             - While creating a 'shared vs',please use vsvip_ref to point to the shared entities.
             - Field introduced in 17.1.1.
-        version_added: "2.4"
         type: list
     vrf_context_ref:
         description:
@@ -660,14 +636,12 @@ options:
             - Checksum of cloud configuration for vsvip.
             - Internally set by cloud connector.
             - Field introduced in 17.2.9, 18.1.2.
-        version_added: "2.9"
         type: str
     vsvip_ref:
         description:
             - Mostly used during the creation of shared vs, this field refers to entities that can be shared across virtual services.
             - It is a reference to an object of type vsvip.
             - Field introduced in 17.1.1.
-        version_added: "2.4"
         type: str
     waf_policy_ref:
         description:
@@ -675,7 +649,6 @@ options:
             - It is a reference to an object of type wafpolicy.
             - Field introduced in 17.2.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.5"
         type: str
     weight:
         description:

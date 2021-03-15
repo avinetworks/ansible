@@ -24,7 +24,6 @@ description:
     - This module is used to configure ErrorPageBody object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.5"
 options:
     state:
         description:
@@ -56,7 +55,6 @@ options:
             - Enum options - ERROR_PAGE_FORMAT_HTML, ERROR_PAGE_FORMAT_JSON.
             - Field introduced in 18.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as ERROR_PAGE_FORMAT_HTML.
-        version_added: "2.9"
         type: str
     labels:
         description:

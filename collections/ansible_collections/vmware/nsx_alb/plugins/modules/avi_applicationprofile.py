@@ -25,7 +25,6 @@ description:
     - This module is used to configure ApplicationProfile object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.3"
 options:
     state:
         description:
@@ -50,13 +49,11 @@ options:
             - Checksum of application profiles.
             - Internally set by cloud connector.
             - Field introduced in 17.2.14, 18.1.5, 18.2.1.
-        version_added: "2.9"
         type: str
     created_by:
         description:
             - Name of the application profile creator.
             - Field introduced in 17.2.14, 18.1.5, 18.2.1.
-        version_added: "2.9"
         type: str
     description:
         description:
@@ -90,7 +87,6 @@ options:
             - Specifies if we need to preserve client port while preserving client ip for backend connections.
             - Field introduced in 17.2.7.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.6"
         type: bool
     preserve_dest_ip_port:
         description:
@@ -104,7 +100,6 @@ options:
             - Specifies various sip service related controls for virtual service.
             - Field introduced in 17.2.8, 18.1.3, 18.2.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: dict
     tcp_app_profile:
         description:

@@ -37,13 +37,24 @@ author: Chaitanya Deshpande (@chaitanyaavi) <chaitanya.deshpande@avinetworks.com
 short_description: Avi WAF Policy Module
 description:
     - This module can be used for creation, updation and deletion of a user.
-version_added: 2.9
 options:
     state:
         description:
             - The state that should be applied on the entity.
         default: present
         choices: ["absent", "present"]
+        type: str
+    avi_api_update_method:
+        description:
+            - Default method for object update is HTTP PUT.
+            - Setting to patch will override that behavior to use HTTP PATCH.
+        default: put
+        choices: ["put", "patch"]
+        type: str
+    avi_api_patch_op:
+        description:
+            - Patch operation to use when using avi_api_update_method as patch.
+        choices: ["add", "replace", "delete"]
         type: str
     name:
         description:
@@ -60,6 +71,86 @@ options:
             - File path of json patch file
         required: true
         type: str
+    tenant_ref:
+        description:
+            - It is a reference to an object of type tenant.
+        type: str
+    url:
+        description:
+            - Avi controller URL of the object.
+        type: str
+    uuid:
+        description:
+            - Unique object identifier of the object.
+        type: str
+    allow_mode_delegation:
+        description:
+            - Allow Rules to overwrite the policy mode.
+            - This must be set if the policy mode is set to enforcement.
+        type: bool
+    created_by:
+        description:
+            - Creator name.
+        type: str
+    crs_groups:
+        description:
+            - WAF Rules are categorized in to groups based on their characterization.
+            - These groups are system created with CRS groups.
+        type: list
+    description:
+        description:
+            - Free-text comment about this exclusion.
+        type: str
+    enable_app_learning:
+        description:
+            - Enable Application Learning for this WAF policy.
+        type: bool
+    failure_mode:
+        description:
+            - WAF Policy failure mode. This can be 'Open' or 'Closed'.
+        type: str
+    learning:
+        description:
+            - Configure parameters for WAF learning.
+        type: dict
+    mode:
+        description:
+            - WAF Rule mode. This can be detection or enforcement.
+            - If this is not set, the Policy mode is used.
+            - This only takes effect if the policy allows delegation.
+        type: str
+    paranoia_level:
+        description:
+            - WAF Ruleset paranoia mode. This is used to select Rules based on the paranoia-level.
+        type: str
+    positive_security_model:
+        description:
+            - The Positive Security Model.
+            - This is used to describe how the request or parts of the request should look like.
+            - It is executed in the Request Body Phase of Avi WAF.",
+        type: dict
+    post_crs_groups:
+        description:
+            - WAF Rules are categorized in to groups based on their characterization.
+            - These groups are created by the user and will be enforced after the CRS groups.
+        type: list
+    pre_crs_groups:
+        description:
+            - WAF Rules are categorized in to groups based on their characterization.
+            - These groups are created by the user and will be enforced before the CRS groups.
+        type: list
+    waf_crs_ref:
+        description:
+            - It is a reference to an object of type waf crs.
+        type: str
+    waf_profile_ref:
+        description:
+            - It is a reference to an object of type waf profile.
+        type: str
+    whitelist:
+        description:
+            - Rules to bypass WAF.
+        type: dict
 extends_documentation_fragment:
     - vmware.nsx_alb.avi
 '''

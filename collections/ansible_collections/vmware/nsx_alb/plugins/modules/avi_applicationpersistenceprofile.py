@@ -25,7 +25,6 @@ description:
     - This module is used to configure ApplicationPersistenceProfile object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.3"
 options:
     state:
         description:
@@ -72,7 +71,6 @@ options:
             - If the field is set to true, then the object is replicated across the federation.
             - Field introduced in 17.1.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.4"
         type: bool
     labels:
         description:

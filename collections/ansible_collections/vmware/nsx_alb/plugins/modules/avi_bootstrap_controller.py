@@ -30,12 +30,11 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 DOCUMENTATION = '''
 ---
 module: avi_bootstrap_controller
-author: Shrikant Chaudhari (shrikant.chaudhari@avinetworks.com)
+author: Shrikant Chaudhari (@gitshrikant) <shrikant.chaudhari@avinetworks.com>
 short_description: avi bootstrap controller module.
 description:
     - This module can be used for initializing the password of a user.
     - This module is useful for setting up admin password for Controller bootstrap.
-version_added: 2.9
 requirements: [ avisdk ]
 options:
     password:
@@ -53,6 +52,17 @@ options:
             - Avoid check for login with given password and re-initialise controller
               with given password even if controller password is initialised before
         type: bool
+        default: false
+    con_wait_time:
+        description:
+            - Wait for controller to come up for given con_wait_time.
+        default: 3600
+        type: int
+    round_wait:
+        description:
+            - Wait for controller to come up for given round_wait.
+        default: 10
+        type: int
 extends_documentation_fragment:
     - vmware.nsx_alb.avi
 '''

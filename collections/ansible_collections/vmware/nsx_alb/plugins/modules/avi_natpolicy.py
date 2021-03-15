@@ -24,7 +24,6 @@ description:
     - This module is used to configure NatPolicy object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.9"
 options:
     state:
         description:

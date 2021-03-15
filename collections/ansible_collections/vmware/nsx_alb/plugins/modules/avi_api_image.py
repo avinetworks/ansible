@@ -25,7 +25,6 @@ author: Sandeep Bandi (@sabandi) <sabandi@vmware.com>
 short_description: Avi API Module for image
 description:
     - This module can be used for calling image resources to upload upgrade/patch files
-version_added: 2.11.0
 requirements: [ avisdk, requests_toolbelt ]
 options:
     file_path:

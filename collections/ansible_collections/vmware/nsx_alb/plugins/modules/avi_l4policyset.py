@@ -24,7 +24,6 @@ description:
     - This module is used to configure L4PolicySet object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.6"
 options:
     state:
         description:

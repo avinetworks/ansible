@@ -25,7 +25,6 @@ description:
     - This module is used to configure GslbService object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.4"
 options:
     state:
         description:
@@ -50,7 +49,6 @@ options:
             - The federated application persistence associated with gslbservice site persistence functionality.
             - It is a reference to an object of type applicationpersistenceprofile.
             - Field introduced in 17.2.1.
-        version_added: "2.5"
         type: str
     controller_health_status_enabled:
         description:
@@ -110,7 +108,6 @@ options:
         description:
             - This field is an internal field and is used in se.
             - Field introduced in 18.2.2.
-        version_added: "2.9"
         type: bool
     is_federated:
         description:
@@ -132,7 +129,6 @@ options:
             - Special values are 0 - 'disable'.
             - Field introduced in 17.2.4.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.5"
         type: int
     name:
         description:
@@ -152,21 +148,18 @@ options:
             - Enum options - GSLB_SERVICE_ALGORITHM_PRIORITY, GSLB_SERVICE_ALGORITHM_GEO.
             - Field introduced in 17.2.3.
             - Default value when not specified in API or module is interpreted by Avi Controller as GSLB_SERVICE_ALGORITHM_PRIORITY.
-        version_added: "2.5"
         type: str
     resolve_cname:
         description:
             - This field indicates that for a cname query, respond with resolved cnames in the additional section with a records.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.9"
         type: bool
     site_persistence_enabled:
         description:
             - Enable site-persistence for the gslbservice.
             - Field introduced in 17.2.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
         type: bool
     tenant_ref:
         description:

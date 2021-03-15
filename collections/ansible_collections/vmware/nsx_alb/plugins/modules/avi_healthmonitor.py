@@ -25,7 +25,6 @@ description:
     - This module is used to configure HealthMonitor object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.3"
 options:
     state:
         description:
@@ -112,7 +111,6 @@ options:
             - Field introduced in 17.1.3.
             - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.4"
         type: bool
     monitor_port:
         description:
@@ -141,7 +139,6 @@ options:
             - Health monitor for radius.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: dict
     receive_timeout:
         description:
@@ -164,7 +161,6 @@ options:
             - Health monitor for sip.
             - Field introduced in 17.2.8, 18.1.3, 18.2.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: dict
     smtp_monitor:
         description:

@@ -37,7 +37,6 @@ author: Shrikant Chaudhari (@gitshrikant) <shrikant.chaudhari@avinetworks.com>
 short_description: Avi User Module
 description:
     - This module can be used for creation, updation and deletion of a user.
-version_added: 2.9
 requirements: [ avisdk ]
 options:
     state:
@@ -88,6 +87,7 @@ options:
         description:
             - Patch operation to use when using avi_api_update_method as patch.
         choices: ["add", "replace", "delete"]
+        type: str
     user_profile_ref:
         description:
             - Refer user profile.
@@ -152,7 +152,7 @@ obj:
 from ansible.module_utils.basic import AnsibleModule
 try:
     from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
-        avi_common_argument_spec, ansible_return, HAS_AVI)
+        avi_common_argument_spec, avi_ansible_api, ansible_return, HAS_AVI)
 except ImportError:
     HAS_AVI = False
 

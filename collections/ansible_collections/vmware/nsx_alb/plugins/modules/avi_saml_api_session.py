@@ -11,32 +11,8 @@
 #
 """
 
-from ansible.module_utils.basic import AnsibleModule
-try:
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_obj_cmp, cleanup_absent_fields, avi_common_argument_spec,
-        ansible_return)
-    from pkg_resources import parse_version
-    from requests import ConnectionError
-    from ssl import SSLError
-    from requests.exceptions import ChunkedEncodingError
-    from avi.sdk.saml_avi_api import OktaSAMLApiSession, OneloginSAMLApiSession
-    import avi.sdk
-    sdk_version = getattr(avi.sdk, '__version__', None)
-    if ((sdk_version is None) or
-            (sdk_version and
-             (parse_version(sdk_version) < parse_version('17.2.2b3')))):
-        # It allows the __version__ to be '' as that value is used in development builds
-        raise ImportError
-    HAS_AVI = True
-except ImportError:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
-        avi_common_argument_spec, ansible_return, avi_obj_cmp,
-        cleanup_absent_fields, HAS_AVI)
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
-        ApiSession, AviCredentials)
-
+from __future__ import absolute_import, division, print_function
+__metaclass__ = type
 
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
@@ -46,12 +22,11 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 DOCUMENTATION = '''
 ---
 module: avi_saml_api_session
-author: Shrikant Chaudhari (shrikant.chaudhari@avinetworks.com)
+author: Shrikant Chaudhari (@gitshrikant) <shrikant.chaudhari@avinetworks.com>
 short_description: Avi API Module
 description:
     - This module is useful to get SAML session after successful SAML authentication from a given IDP.
     - This module return api_context and token after successful authentication from IDP.
-version_added: 2.9
 requirements: [ avisdk ]
 options:
     idp_class:
@@ -115,6 +90,33 @@ obj:
     returned: success, changed
     type: dict
 '''
+
+
+from ansible.module_utils.basic import AnsibleModule
+try:
+    from avi.sdk.avi_api import ApiSession, AviCredentials
+    from avi.sdk.utils.ansible_utils import (
+        avi_obj_cmp, cleanup_absent_fields, avi_common_argument_spec,
+        ansible_return)
+    from pkg_resources import parse_version
+    from requests import ConnectionError
+    from ssl import SSLError
+    from requests.exceptions import ChunkedEncodingError
+    from avi.sdk.saml_avi_api import OktaSAMLApiSession, OneloginSAMLApiSession
+    import avi.sdk
+    sdk_version = getattr(avi.sdk, '__version__', None)
+    if ((sdk_version is None) or
+            (sdk_version and
+             (parse_version(sdk_version) < parse_version('17.2.2b3')))):
+        # It allows the __version__ to be '' as that value is used in development builds
+        raise ImportError
+    HAS_AVI = True
+except ImportError:
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
+        avi_common_argument_spec, ansible_return, avi_obj_cmp,
+        cleanup_absent_fields, HAS_AVI)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
+        ApiSession, AviCredentials)
 
 
 def get_idp_class(idp):

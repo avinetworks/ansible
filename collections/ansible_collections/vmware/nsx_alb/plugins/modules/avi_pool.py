@@ -25,7 +25,6 @@ description:
     - This module is used to configure Pool object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.3"
 options:
     state:
         description:
@@ -65,14 +64,12 @@ options:
         description:
             - Determines analytics settings for the pool.
             - Field introduced in 18.1.5, 18.2.1.
-        version_added: "2.9"
         type: dict
     analytics_profile_ref:
         description:
             - Specifies settings related to analytics.
             - It is a reference to an object of type analyticsprofile.
             - Field introduced in 18.1.4,18.2.1.
-        version_added: "2.9"
         type: str
     apic_epg_name:
         description:
@@ -125,7 +122,6 @@ options:
         description:
             - Connnection pool properties.
             - Field introduced in 18.2.1.
-        version_added: "2.9"
         type: dict
     connection_ramp_duration:
         description:
@@ -158,7 +154,6 @@ options:
             - Field introduced in 18.2.3.
             - Allowed in basic(allowed values- true) edition, essentials(allowed values- true) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as True.
-        version_added: "2.9"
         type: bool
     description:
         description:
@@ -218,7 +213,6 @@ options:
             - Indicates if the pool is a site-persistence pool.
             - Field introduced in 17.2.1.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.5"
         type: bool
     health_monitor_refs:
         description:
@@ -282,7 +276,6 @@ options:
             - Field introduced in 17.1.3.
             - Allowed in basic(allowed values- 2) edition, essentials(allowed values- 2) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 2.
-        version_added: "2.4"
         type: int
     lb_algorithm_hash:
         description:
@@ -300,7 +293,6 @@ options:
             - Field introduced in 17.1.11,17.2.4.
             - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as False.
-        version_added: "2.5"
         type: bool
     max_concurrent_connections_per_server:
         description:
@@ -318,13 +310,11 @@ options:
             - Minimum number of health monitors in up state to mark server up.
             - Field introduced in 18.2.1, 17.2.12.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: int
     min_servers_up:
         description:
             - Minimum number of servers in up state for marking the pool up.
             - Field introduced in 18.2.1, 17.2.12.
-        version_added: "2.9"
         type: int
     name:
         description:
@@ -422,7 +412,6 @@ options:
             - Field introduced in 18.1.5,18.2.1.
             - Unit is milliseconds.
             - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-        version_added: "2.9"
         type: int
     servers:
         description:
@@ -436,7 +425,6 @@ options:
             - In openshift/kubernetes environments, app metadata info is stored.
             - Any user input to this field will be overwritten by avi vantage.
             - Field introduced in 17.2.14,18.1.5,18.2.1.
-        version_added: "2.9"
         type: str
     sni_enabled:
         description:

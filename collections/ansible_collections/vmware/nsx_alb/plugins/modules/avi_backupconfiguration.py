@@ -24,7 +24,6 @@ description:
     - This module is used to configure BackupConfiguration object
     - more examples at U(https://github.com/avinetworks/devops)
 requirements: [ avisdk ]
-version_added: "2.4"
 options:
     state:
         description:
@@ -49,21 +48,18 @@ options:
             - Aws access key id.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: str
     aws_bucket_id:
         description:
             - Aws bucket.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: str
     aws_secret_access:
         description:
             - Aws secret access key.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: str
     backup_file_prefix:
         description:
@@ -115,7 +111,6 @@ options:
             - Cloud backup.
             - Field introduced in 18.2.3.
             - Allowed in basic edition, essentials edition, enterprise edition.
-        version_added: "2.9"
         type: bool
     url:
         description:
@@ -184,7 +179,7 @@ def main():
         return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
                                     'For more details visit https://github.com/avinetworks/sdk.')
 
-    return avi_ansible_api(module, 'backupconfiguration', {'aws_access_key', 'aws_secret_access', 'backup_passphrase'})
+    return avi_ansible_api(module, 'backupconfiguration', {'backup_passphrase', 'aws_secret_access', 'aws_access_key'})
 
 
 if __name__ == "__main__":
