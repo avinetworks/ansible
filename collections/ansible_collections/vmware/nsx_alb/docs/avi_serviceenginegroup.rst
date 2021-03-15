@@ -6100,6 +6100,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create ServiceEngineGroup object
       vmware.nsx_alb.avi_serviceenginegroup:
         controller: 192.168.15.18

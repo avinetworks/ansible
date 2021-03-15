@@ -1062,6 +1062,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create UpgradeStatusInfo object
       vmware.nsx_alb.avi_upgradestatusinfo:
         controller: 192.168.15.18

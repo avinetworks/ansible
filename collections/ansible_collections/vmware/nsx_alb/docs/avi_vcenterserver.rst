@@ -285,6 +285,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create VCenterServer object
       vmware.nsx_alb.avi_vcenterserver:
         controller: 192.168.15.18

@@ -359,6 +359,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create PKIProfile object
       vmware.nsx_alb.avi_pkiprofile:
         controller: 192.168.15.18

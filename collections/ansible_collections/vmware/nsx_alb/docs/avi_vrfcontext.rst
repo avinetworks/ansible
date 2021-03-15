@@ -415,6 +415,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create VrfContext object
       vmware.nsx_alb.avi_vrfcontext:
         controller: 192.168.15.18

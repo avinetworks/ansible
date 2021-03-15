@@ -267,6 +267,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create NatPolicy object
       vmware.nsx_alb.avi_natpolicy:
         controller: 192.168.15.18

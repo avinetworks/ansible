@@ -511,6 +511,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create ServerAutoScalePolicy object
       vmware.nsx_alb.avi_serverautoscalepolicy:
         controller: 192.168.15.18

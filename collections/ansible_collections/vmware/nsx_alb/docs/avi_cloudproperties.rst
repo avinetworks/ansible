@@ -215,6 +215,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create CloudProperties object
       vmware.nsx_alb.avi_cloudproperties:
         controller: 192.168.15.18

@@ -389,6 +389,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create Network object
       vmware.nsx_alb.avi_network:
         controller: 192.168.15.18

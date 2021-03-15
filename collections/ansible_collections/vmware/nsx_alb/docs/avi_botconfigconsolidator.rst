@@ -230,6 +230,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create BotConfigConsolidator object
       vmware.nsx_alb.avi_botconfigconsolidator:
         controller: 192.168.15.18

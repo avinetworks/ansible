@@ -403,6 +403,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create ALBServicesConfig object
       vmware.nsx_alb.avi_albservicesconfig:
         controller: 192.168.15.18

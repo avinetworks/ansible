@@ -232,6 +232,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create AlertEmailConfig object
       vmware.nsx_alb.avi_alertemailconfig:
         controller: 192.168.15.18

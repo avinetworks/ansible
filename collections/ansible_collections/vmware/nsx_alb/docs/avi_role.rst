@@ -224,6 +224,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create Role object
       vmware.nsx_alb.avi_role:
         controller: 192.168.15.18

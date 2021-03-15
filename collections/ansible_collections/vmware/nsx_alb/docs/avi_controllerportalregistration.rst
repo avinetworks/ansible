@@ -215,6 +215,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create ControllerPortalRegistration object
       vmware.nsx_alb.avi_controllerportalregistration:
         controller: 192.168.15.18

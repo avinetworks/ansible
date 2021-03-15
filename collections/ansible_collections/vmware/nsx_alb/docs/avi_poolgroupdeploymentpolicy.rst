@@ -385,6 +385,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create PoolGroupDeploymentPolicy object
       vmware.nsx_alb.avi_poolgroupdeploymentpolicy:
         controller: 192.168.15.18

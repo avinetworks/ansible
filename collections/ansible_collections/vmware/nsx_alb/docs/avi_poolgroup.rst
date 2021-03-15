@@ -459,6 +459,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create PoolGroup object
       vmware.nsx_alb.avi_poolgroup:
         controller: 192.168.15.18

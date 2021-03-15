@@ -259,6 +259,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create FederationCheckpoint object
       vmware.nsx_alb.avi_federationcheckpoint:
         controller: 192.168.15.18

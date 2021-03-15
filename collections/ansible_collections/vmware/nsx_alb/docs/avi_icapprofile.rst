@@ -567,6 +567,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create IcapProfile object
       vmware.nsx_alb.avi_icapprofile:
         controller: 192.168.15.18

@@ -371,6 +371,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create SecurityPolicy object
       vmware.nsx_alb.avi_securitypolicy:
         controller: 192.168.15.18

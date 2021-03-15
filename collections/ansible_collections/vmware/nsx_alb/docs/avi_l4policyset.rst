@@ -290,6 +290,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create L4PolicySet object
       vmware.nsx_alb.avi_l4policyset:
         controller: 192.168.15.18

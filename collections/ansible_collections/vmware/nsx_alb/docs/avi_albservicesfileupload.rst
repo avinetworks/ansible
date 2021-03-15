@@ -293,6 +293,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create ALBServicesFileUpload object
       vmware.nsx_alb.avi_albservicesfileupload:
         controller: 192.168.15.18

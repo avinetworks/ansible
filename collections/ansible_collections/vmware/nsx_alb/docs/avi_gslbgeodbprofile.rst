@@ -282,6 +282,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create GslbGeoDbProfile object
       vmware.nsx_alb.avi_gslbgeodbprofile:
         controller: 192.168.15.18

@@ -285,6 +285,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create SSOPolicy object
       vmware.nsx_alb.avi_ssopolicy:
         controller: 192.168.15.18

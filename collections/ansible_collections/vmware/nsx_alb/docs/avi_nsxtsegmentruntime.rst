@@ -499,6 +499,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create NsxtSegmentRuntime object
       vmware.nsx_alb.avi_nsxtsegmentruntime:
         controller: 192.168.15.18

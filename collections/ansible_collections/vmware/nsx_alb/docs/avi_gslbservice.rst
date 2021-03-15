@@ -682,6 +682,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create GslbService object
       vmware.nsx_alb.avi_gslbservice:
         controller: 192.168.15.18

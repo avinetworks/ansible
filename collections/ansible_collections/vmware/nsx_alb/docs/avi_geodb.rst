@@ -279,6 +279,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create GeoDB object
       vmware.nsx_alb.avi_geodb:
         controller: 192.168.15.18

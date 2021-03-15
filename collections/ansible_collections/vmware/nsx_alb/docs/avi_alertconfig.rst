@@ -508,6 +508,7 @@ Examples
 --------
 
 .. code-block:: yaml
+    
     - name: Example to create AlertConfig object
       vmware.nsx_alb.avi_alertconfig:
         controller: 192.168.15.18

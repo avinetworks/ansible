@@ -9,7 +9,7 @@ new_obj = {
         "servers": [
             {
                 "ip": {
-                    "addr": "10.10.2.20",
+                    "addr": "192.168.2.20",
                     "type": "V4"
                 }
             }
@@ -22,7 +22,7 @@ existing_object = {
         "servers": [
             {
                 "ip": {
-                    "addr": "10.10.2.20",
+                    "addr": "192.168.2.20",
                     "type": "V4"
                 }
             }
