@@ -276,7 +276,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create TrafficCloneProfile object
       vmware.nsx_alb.avi_trafficcloneprofile:
         controller: 192.168.15.18

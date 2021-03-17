@@ -90,28 +90,26 @@ obj:
 import time
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from avi.sdk.avi_api import ApiSession, AviCredentials
-    from avi.sdk.utils.ansible_utils import (
-        avi_obj_cmp, cleanup_absent_fields, avi_common_argument_spec,
-        ansible_return)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
+        avi_common_argument_spec, ansible_return, avi_obj_cmp,
+        cleanup_absent_fields, HAS_REQUESTS)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.avi_api import (
+        ApiSession, AviCredentials)
+
     from pkg_resources import parse_version
-    import avi.sdk
+    import ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk as sdk
     import subprocess
     import requests
 
-    sdk_version = getattr(avi.sdk, '__version__', None)
+    sdk_version = getattr(sdk, '__version__', None)
     if ((sdk_version is None) or
             (sdk_version and
              (parse_version(sdk_version) < parse_version('17.2.2b3')))):
         # It allows the __version__ to be '' as that value is used in development builds
         raise ImportError
-    HAS_AVI = True
+    HAS_REQUESTS = True
 except ImportError:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
-        avi_common_argument_spec, ansible_return, avi_obj_cmp,
-        cleanup_absent_fields, HAS_AVI)
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
-        ApiSession, AviCredentials)
+    HAS_REQUESTS = False
 
 
 def controller_wait(controller_ip, port=None, round_wait=10, wait_time=3600):
@@ -152,11 +150,10 @@ def main():
     )
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(argument_spec=argument_specs)
-    if not HAS_AVI:
+    if not HAS_REQUESTS:
         return module.fail_json(msg=(
             'Avi python API SDK (avisdk) is not installed. '
             'For more details visit https://github.com/avinetworks/sdk.'))
-
     api_creds = AviCredentials()
     api_creds.update_from_ansible_module(module)
     new_password = module.params.get('password')

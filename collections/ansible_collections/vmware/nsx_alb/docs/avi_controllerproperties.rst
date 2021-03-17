@@ -1998,7 +1998,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create ControllerProperties object
       vmware.nsx_alb.avi_controllerproperties:
         controller: 192.168.15.18

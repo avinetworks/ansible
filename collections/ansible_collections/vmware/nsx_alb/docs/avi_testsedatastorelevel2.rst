@@ -201,7 +201,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create TestSeDatastoreLevel2 object
       vmware.nsx_alb.avi_testsedatastorelevel2:
         controller: 192.168.15.18

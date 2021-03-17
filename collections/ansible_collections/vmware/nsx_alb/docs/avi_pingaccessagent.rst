@@ -302,7 +302,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create PingAccessAgent object
       vmware.nsx_alb.avi_pingaccessagent:
         controller: 192.168.15.18

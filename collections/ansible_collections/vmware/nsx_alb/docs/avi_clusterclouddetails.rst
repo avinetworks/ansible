@@ -201,7 +201,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create ClusterCloudDetails object
       vmware.nsx_alb.avi_clusterclouddetails:
         controller: 192.168.15.18

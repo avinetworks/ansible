@@ -244,7 +244,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create Webhook object
       vmware.nsx_alb.avi_webhook:
         controller: 192.168.15.18

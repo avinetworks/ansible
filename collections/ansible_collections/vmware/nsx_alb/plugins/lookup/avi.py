@@ -53,7 +53,7 @@ from ansible.errors import AnsibleError, AnsibleParserError
 from ansible.plugins.lookup import LookupBase
 from ansible.utils.display import Display
 from avi.sdk.avi_api import ApiSession, AviCredentials
-from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (AviServerError,
+from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.avi_api import (AviServerError,
                                                                              ObjectNotFound,
                                                                              APIError)
 

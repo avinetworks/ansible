@@ -238,7 +238,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create CertificateManagementProfile object
       vmware.nsx_alb.avi_certificatemanagementprofile:
         controller: 192.168.15.18

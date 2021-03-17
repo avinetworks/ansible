@@ -224,7 +224,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create HardwareSecurityModuleGroup object
       vmware.nsx_alb.avi_hardwaresecuritymodulegroup:
         controller: 192.168.15.18

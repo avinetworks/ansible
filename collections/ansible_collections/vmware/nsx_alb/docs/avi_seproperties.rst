@@ -195,7 +195,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create SeProperties object
       vmware.nsx_alb.avi_seproperties:
         controller: 192.168.15.18

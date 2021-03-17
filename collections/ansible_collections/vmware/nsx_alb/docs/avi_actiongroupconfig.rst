@@ -350,7 +350,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create ActionGroupConfig object
       vmware.nsx_alb.avi_actiongroupconfig:
         controller: 192.168.15.18

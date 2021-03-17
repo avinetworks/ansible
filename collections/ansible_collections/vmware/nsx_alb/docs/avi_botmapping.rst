@@ -216,7 +216,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create BotMapping object
       vmware.nsx_alb.avi_botmapping:
         controller: 192.168.15.18

@@ -354,7 +354,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create IPReputationDB object
       vmware.nsx_alb.avi_ipreputationdb:
         controller: 192.168.15.18

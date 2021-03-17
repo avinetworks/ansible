@@ -288,7 +288,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create UserAccountProfile object
       vmware.nsx_alb.avi_useraccountprofile:
         controller: 192.168.15.18

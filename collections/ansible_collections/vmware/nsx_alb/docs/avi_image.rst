@@ -425,7 +425,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create Image object
       vmware.nsx_alb.avi_image:
         controller: 192.168.15.18

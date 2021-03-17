@@ -259,7 +259,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create ProtocolParser object
       vmware.nsx_alb.avi_protocolparser:
         controller: 192.168.15.18

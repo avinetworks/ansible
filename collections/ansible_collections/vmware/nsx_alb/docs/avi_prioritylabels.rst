@@ -255,7 +255,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create PriorityLabels object
       vmware.nsx_alb.avi_prioritylabels:
         controller: 192.168.15.18

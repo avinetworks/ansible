@@ -207,7 +207,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create SecurityManagerData object
       vmware.nsx_alb.avi_securitymanagerdata:
         controller: 192.168.15.18

@@ -107,13 +107,13 @@ except ImportError:
     HAS_LIB = False
 
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi import (
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
         avi_common_argument_spec, ansible_return, avi_obj_cmp,
-        cleanup_absent_fields, HAS_AVI)
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
+        cleanup_absent_fields, HAS_REQUESTS)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.avi_api import (
         ApiSession, AviCredentials)
 except ImportError:
-    HAS_AVI = False
+    HAS_REQUESTS = False
 
 
 def main():
@@ -128,7 +128,7 @@ def main():
     )
     argument_specs.update(avi_common_argument_spec())
     module = AnsibleModule(argument_spec=argument_specs)
-    if not HAS_AVI:
+    if not HAS_REQUESTS:
         return module.fail_json(msg=(
             'Avi python API SDK (avisdk>=17.1) or requests is not installed. '
             'For more details visit https://github.com/avinetworks/sdk.'))

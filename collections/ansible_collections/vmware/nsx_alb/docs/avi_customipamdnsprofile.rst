@@ -227,7 +227,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create CustomIpamDnsProfile object
       vmware.nsx_alb.avi_customipamdnsprofile:
         controller: 192.168.15.18

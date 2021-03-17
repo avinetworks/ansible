@@ -269,7 +269,7 @@ Examples
 --------
 
 .. code-block:: yaml
-    
+
     - name: Example to create Backup object
       vmware.nsx_alb.avi_backup:
         controller: 192.168.15.18
