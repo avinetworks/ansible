@@ -1,1 +1,2 @@
-avisdk
+requests
+mock

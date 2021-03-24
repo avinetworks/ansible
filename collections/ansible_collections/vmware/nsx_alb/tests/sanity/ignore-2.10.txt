@@ -46,7 +46,6 @@ plugins/modules/avi_securitymanagerdata.py validate-modules:parameter-list-no-el
 plugins/modules/avi_securitypolicy.py validate-modules:parameter-list-no-elements
 plugins/modules/avi_serverautoscalepolicy.py validate-modules:parameter-list-no-elements
 plugins/modules/avi_serviceengine.py validate-modules:parameter-list-no-elements
-plugins/modules/avi_serviceenginegroup.py validate-modules:parameter-list-no-elements
 plugins/modules/avi_snmptrapprofile.py validate-modules:parameter-list-no-elements
 plugins/modules/avi_sslkeyandcertificate.py validate-modules:parameter-list-no-elements
 plugins/modules/avi_sslprofile.py validate-modules:parameter-list-no-elements

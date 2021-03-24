@@ -2,12 +2,12 @@
   "mock_create_resp": {
 	"changed": true,
 	"obj": {
-		"url": "https://10.79.168.139/api/pool/pool-f0bac3d4-e1fa-4dd6-a1db-2033cc93479b#testpool1",
+		"url": "https://192.168.15.18/api/pool/pool-f0bac3d4-e1fa-4dd6-a1db-2033cc93479b#testpool1",
 		"uuid": "pool-f0bac3d4-e1fa-4dd6-a1db-2033cc93479b",
 		"name": "testpool1",
 		"enabled": true,
-		"tenant_ref": "https://10.79.168.139/api/tenant/admin#admin",
-		"cloud_ref": "https://10.79.168.139/api/cloud/cloud-7ccd7aa9-96f2-4878-a8da-905a49e7fce5#Default-Cloud",
+		"tenant_ref": "https://192.168.15.18/api/tenant/admin#admin",
+		"cloud_ref": "https://192.168.15.18/api/cloud/cloud-7ccd7aa9-96f2-4878-a8da-905a49e7fce5#Default-Cloud",
 		"_last_modified": "1614922242398624",
 		"default_server_port": 80,
 		"graceful_disable_timeout": 1,
@@ -15,10 +15,10 @@
 		"max_concurrent_connections_per_server": 0,
 		"servers": [{
 			"ip": {
-				"addr": "10.10.2.20",
+				"addr": "192.168.15.19",
 				"type": "V4"
 			},
-			"hostname": "10.10.2.20",
+			"hostname": "192.168.15.19",
 			"enabled": true,
 			"ratio": 1,
 			"verify_network": false,
@@ -27,10 +27,10 @@
 			"rewrite_host_header": false
 		}, {
 			"ip": {
-				"addr": "10.10.2.21",
+				"addr": "192.168.15.20",
 				"type": "V4"
 			},
-			"hostname": "10.10.2.21",
+			"hostname": "192.168.15.20",
 			"enabled": true,
 			"ratio": 1,
 			"verify_network": false,
@@ -59,14 +59,14 @@
 		"enable_http2": false,
 		"ignore_server_port": false,
 		"routing_pool": false,
-		"health_monitor_refs": ["https://10.79.168.139/api/healthmonitor/healthmonitor-b9d65ec1-8b1f-43c9-95b8-ea001965feab#System-HTTP"],
-		"vrf_ref": "https://10.79.168.139/api/vrfcontext/vrfcontext-1bbf74b9-c296-4ca9-853a-7369808be47a#global",
-		"analytics_profile_ref": "https://10.79.168.139/api/analyticsprofile/analyticsprofile-56c224e8-79eb-4ecd-aeaf-198fe60693e6#System-Analytics-Profile"
+		"health_monitor_refs": ["https://192.168.15.18/api/healthmonitor/healthmonitor-b9d65ec1-8b1f-43c9-95b8-ea001965feab#System-HTTP"],
+		"vrf_ref": "https://192.168.15.18/api/vrfcontext/vrfcontext-1bbf74b9-c296-4ca9-853a-7369808be47a#global",
+		"analytics_profile_ref": "https://192.168.15.18/api/analyticsprofile/analyticsprofile-56c224e8-79eb-4ecd-aeaf-198fe60693e6#System-Analytics-Profile"
 	},
 	"old_obj": null,
 	"ansible_facts": {
 		"avi_api_context": {
-			"10.79.168.139:admin:None": {
+			"192.168.15.18:admin:None": {
 				"session_id": "jg3ilyh7dwlnd1i88cljub8rfz816c62",
 				"csrftoken": "BdTk5KzqjdY1ZVhgYCXupufAVGUjQpb9"
 			}
@@ -76,7 +76,7 @@
 	"invocation": {
 		"module_args": {
 			"avi_credentials": {
-				"controller": "10.79.168.139",
+				"controller": "192.168.15.18",
 				"username": "admin",
 				"password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
 				"api_version": "21.1.1",
@@ -94,12 +94,12 @@
 			"health_monitor_refs": ["/api/healthmonitor?name=System-HTTP"],
 			"servers": [{
 				"ip": {
-					"addr": "10.10.2.20",
+					"addr": "192.168.15.19",
 					"type": "V4"
 				}
 			}, {
 				"ip": {
-					"addr": "10.10.2.21",
+					"addr": "192.168.15.20",
 					"type": "V4"
 				}
 			}],
@@ -187,12 +187,12 @@
   "mock_update_resp": {
 	"changed": true,
 	"obj": {
-		"url": "https://10.79.168.139/api/pool/pool-7d5dc50b-5624-4992-a69a-eb2f0770cd65#testpool1",
+		"url": "https://192.168.15.18/api/pool/pool-7d5dc50b-5624-4992-a69a-eb2f0770cd65#testpool1",
 		"uuid": "pool-7d5dc50b-5624-4992-a69a-eb2f0770cd65",
 		"name": "testpool1",
 		"enabled": true,
-		"tenant_ref": "https://10.79.168.139/api/tenant/admin#admin",
-		"cloud_ref": "https://10.79.168.139/api/cloud/cloud-7ccd7aa9-96f2-4878-a8da-905a49e7fce5#Default-Cloud",
+		"tenant_ref": "https://192.168.15.18/api/tenant/admin#admin",
+		"cloud_ref": "https://192.168.15.18/api/cloud/cloud-7ccd7aa9-96f2-4878-a8da-905a49e7fce5#Default-Cloud",
 		"_last_modified": "1614923337963822",
 		"default_server_port": 80,
 		"graceful_disable_timeout": 1,
@@ -200,10 +200,10 @@
 		"max_concurrent_connections_per_server": 0,
 		"servers": [{
 			"ip": {
-				"addr": "10.10.2.20",
+				"addr": "192.168.15.19",
 				"type": "V4"
 			},
-			"hostname": "10.10.2.20",
+			"hostname": "192.168.15.19",
 			"enabled": true,
 			"ratio": 1,
 			"verify_network": false,
@@ -212,10 +212,10 @@
 			"rewrite_host_header": false
 		}, {
 			"ip": {
-				"addr": "10.10.2.22",
+				"addr": "192.168.15.21",
 				"type": "V4"
 			},
-			"hostname": "10.10.2.22",
+			"hostname": "192.168.15.21",
 			"enabled": true,
 			"ratio": 1,
 			"verify_network": false,
@@ -244,27 +244,27 @@
 		"enable_http2": false,
 		"ignore_server_port": false,
 		"routing_pool": false,
-		"health_monitor_refs": ["https://10.79.168.139/api/healthmonitor/healthmonitor-b9d65ec1-8b1f-43c9-95b8-ea001965feab#System-HTTP"],
-		"vrf_ref": "https://10.79.168.139/api/vrfcontext/vrfcontext-1bbf74b9-c296-4ca9-853a-7369808be47a#global",
-		"analytics_profile_ref": "https://10.79.168.139/api/analyticsprofile/analyticsprofile-56c224e8-79eb-4ecd-aeaf-198fe60693e6#System-Analytics-Profile"
+		"health_monitor_refs": ["https://192.168.15.18/api/healthmonitor/healthmonitor-b9d65ec1-8b1f-43c9-95b8-ea001965feab#System-HTTP"],
+		"vrf_ref": "https://192.168.15.18/api/vrfcontext/vrfcontext-1bbf74b9-c296-4ca9-853a-7369808be47a#global",
+		"analytics_profile_ref": "https://192.168.15.18/api/analyticsprofile/analyticsprofile-56c224e8-79eb-4ecd-aeaf-198fe60693e6#System-Analytics-Profile"
 	},
 	"old_obj": {
-		"url": "https://10.79.168.139/api/pool/pool-7d5dc50b-5624-4992-a69a-eb2f0770cd65#testpool1",
+		"url": "https://192.168.15.18/api/pool/pool-7d5dc50b-5624-4992-a69a-eb2f0770cd65#testpool1",
 		"uuid": "pool-7d5dc50b-5624-4992-a69a-eb2f0770cd65",
 		"name": "testpool1",
 		"enabled": true,
-		"tenant_ref": "https://10.79.168.139/api/tenant/admin#admin",
-		"cloud_ref": "https://10.79.168.139/api/cloud/cloud-7ccd7aa9-96f2-4878-a8da-905a49e7fce5#Default-Cloud",
+		"tenant_ref": "https://192.168.15.18/api/tenant/admin#admin",
+		"cloud_ref": "https://192.168.15.18/api/cloud/cloud-7ccd7aa9-96f2-4878-a8da-905a49e7fce5#Default-Cloud",
 		"default_server_port": 80,
 		"graceful_disable_timeout": 1,
 		"connection_ramp_duration": 10,
 		"max_concurrent_connections_per_server": 0,
 		"servers": [{
 			"ip": {
-				"addr": "10.10.2.20",
+				"addr": "192.168.15.19",
 				"type": "V4"
 			},
-			"hostname": "10.10.2.20",
+			"hostname": "192.168.15.19",
 			"enabled": true,
 			"ratio": 1,
 			"verify_network": false,
@@ -273,10 +273,10 @@
 			"rewrite_host_header": false
 		}, {
 			"ip": {
-				"addr": "10.10.2.21",
+				"addr": "192.168.15.20",
 				"type": "V4"
 			},
-			"hostname": "10.10.2.21",
+			"hostname": "192.168.15.20",
 			"enabled": true,
 			"ratio": 1,
 			"verify_network": false,
@@ -305,13 +305,13 @@
 		"enable_http2": false,
 		"ignore_server_port": false,
 		"routing_pool": false,
-		"health_monitor_refs": ["https://10.79.168.139/api/healthmonitor/healthmonitor-b9d65ec1-8b1f-43c9-95b8-ea001965feab#System-HTTP"],
-		"vrf_ref": "https://10.79.168.139/api/vrfcontext/vrfcontext-1bbf74b9-c296-4ca9-853a-7369808be47a#global",
-		"analytics_profile_ref": "https://10.79.168.139/api/analyticsprofile/analyticsprofile-56c224e8-79eb-4ecd-aeaf-198fe60693e6#System-Analytics-Profile"
+		"health_monitor_refs": ["https://192.168.15.18/api/healthmonitor/healthmonitor-b9d65ec1-8b1f-43c9-95b8-ea001965feab#System-HTTP"],
+		"vrf_ref": "https://192.168.15.18/api/vrfcontext/vrfcontext-1bbf74b9-c296-4ca9-853a-7369808be47a#global",
+		"analytics_profile_ref": "https://192.168.15.18/api/analyticsprofile/analyticsprofile-56c224e8-79eb-4ecd-aeaf-198fe60693e6#System-Analytics-Profile"
 	},
 	"ansible_facts": {
 		"avi_api_context": {
-			"10.79.168.139:admin:None": {
+			"192.168.15.18:admin:None": {
 				"session_id": "6ac8ksoco4jkg1fvd0kjpw7cd25k9wty",
 				"csrftoken": "3W6OdCk4HeOIWguCTy6LBt2SC0PRAuQp"
 			}
@@ -321,7 +321,7 @@
 	"invocation": {
 		"module_args": {
 			"avi_credentials": {
-				"controller": "10.79.168.139",
+				"controller": "192.168.15.18",
 				"username": "admin",
 				"password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
 				"api_version": "21.1.1",
@@ -342,12 +342,12 @@
 			"health_monitor_refs": ["/api/healthmonitor?name=System-HTTP"],
 			"servers": [{
 				"ip": {
-					"addr": "10.10.2.20",
+					"addr": "192.168.15.19",
 					"type": "V4"
 				}
 			}, {
 				"ip": {
-					"addr": "10.10.2.22",
+					"addr": "192.168.15.19",
 					"type": "V4"
 				}
 			}],
@@ -433,12 +433,12 @@
 	"changed": true,
 	"obj": null,
 	"old_obj": {
-		"url": "https://10.79.168.139/api/pool/pool-7d5dc50b-5624-4992-a69a-eb2f0770cd65#testpool1",
+		"url": "https://192.168.15.18/api/pool/pool-7d5dc50b-5624-4992-a69a-eb2f0770cd65#testpool1",
 		"uuid": "pool-7d5dc50b-5624-4992-a69a-eb2f0770cd65",
 		"name": "testpool1",
 		"enabled": true,
-		"tenant_ref": "https://10.79.168.139/api/tenant/admin#admin",
-		"cloud_ref": "https://10.79.168.139/api/cloud/cloud-7ccd7aa9-96f2-4878-a8da-905a49e7fce5#Default-Cloud",
+		"tenant_ref": "https://192.168.15.18/api/tenant/admin#admin",
+		"cloud_ref": "https://192.168.15.18/api/cloud/cloud-7ccd7aa9-96f2-4878-a8da-905a49e7fce5#Default-Cloud",
 		"_last_modified": "1614923337963822",
 		"default_server_port": 80,
 		"graceful_disable_timeout": 1,
@@ -446,10 +446,10 @@
 		"max_concurrent_connections_per_server": 0,
 		"servers": [{
 			"ip": {
-				"addr": "10.10.2.20",
+				"addr": "192.168.15.19",
 				"type": "V4"
 			},
-			"hostname": "10.10.2.20",
+			"hostname": "192.168.15.19",
 			"enabled": true,
 			"ratio": 1,
 			"verify_network": false,
@@ -458,10 +458,10 @@
 			"rewrite_host_header": false
 		}, {
 			"ip": {
-				"addr": "10.10.2.22",
+				"addr": "192.168.15.21",
 				"type": "V4"
 			},
-			"hostname": "10.10.2.22",
+			"hostname": "192.168.15.21",
 			"enabled": true,
 			"ratio": 1,
 			"verify_network": false,
@@ -490,13 +490,13 @@
 		"enable_http2": false,
 		"ignore_server_port": false,
 		"routing_pool": false,
-		"health_monitor_refs": ["https://10.79.168.139/api/healthmonitor/healthmonitor-b9d65ec1-8b1f-43c9-95b8-ea001965feab#System-HTTP"],
-		"vrf_ref": "https://10.79.168.139/api/vrfcontext/vrfcontext-1bbf74b9-c296-4ca9-853a-7369808be47a#global",
-		"analytics_profile_ref": "https://10.79.168.139/api/analyticsprofile/analyticsprofile-56c224e8-79eb-4ecd-aeaf-198fe60693e6#System-Analytics-Profile"
+		"health_monitor_refs": ["https://192.168.15.18/api/healthmonitor/healthmonitor-b9d65ec1-8b1f-43c9-95b8-ea001965feab#System-HTTP"],
+		"vrf_ref": "https://192.168.15.18/api/vrfcontext/vrfcontext-1bbf74b9-c296-4ca9-853a-7369808be47a#global",
+		"analytics_profile_ref": "https://192.168.15.18/api/analyticsprofile/analyticsprofile-56c224e8-79eb-4ecd-aeaf-198fe60693e6#System-Analytics-Profile"
 	},
 	"ansible_facts": {
 		"avi_api_context": {
-			"10.79.168.139:admin:None": {
+			"192.168.15.18:admin:None": {
 				"session_id": "vdly4n4ul524k0owcsfkz0janxf6kck0",
 				"csrftoken": "SgJUuJH7dyIifkbHCmkzrVvNsJaf5pcl"
 			}
@@ -506,7 +506,7 @@
 	"invocation": {
 		"module_args": {
 			"avi_credentials": {
-				"controller": "10.79.168.139",
+				"controller": "192.168.15.18",
 				"username": "admin",
 				"password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
 				"api_version": "21.1.1",

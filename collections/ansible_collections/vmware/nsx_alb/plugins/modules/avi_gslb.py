@@ -20,6 +20,7 @@ DOCUMENTATION = '''
 ---
 module: avi_gslb
 author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
+
 short_description: Module for setup of Gslb Avi RESTful Object
 description:
     - This module is used to configure Gslb object
@@ -301,9 +302,10 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, avi_ansible_api, HAS_REQUESTS)
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.avi_api import ApiSession, AviCredentials
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+        avi_common_argument_spec, avi_ansible_api)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import ApiSession, AviCredentials
+    HAS_REQUESTS = True
 except ImportError:
     HAS_REQUESTS = False
 
@@ -413,10 +415,10 @@ def main():
         view_id=dict(type='int',),
     )
     argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
+    module = AnsibleModule(
+        argument_spec=argument_specs, supports_check_mode=True)
     if not HAS_REQUESTS:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
+        return module.fail_json(msg='python API `requests` is not installed.')
     api_method = module.params['avi_api_update_method']
     if str(api_method).lower() == 'patch':
         patch_op = module.params['avi_api_patch_op']
@@ -450,8 +452,9 @@ def main():
                 }
             )
 
-    return avi_ansible_api(module, 'gslb', set())
+    return avi_ansible_api(module, 'gslb',
+                           set())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

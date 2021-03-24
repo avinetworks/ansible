@@ -225,6 +225,41 @@ Parameters
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>append_port</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                                            </td>
+            <td>
+                                                <div style="font-size: small">
+                  - Allows the option to append port to hostname in the host header while sending a request to the server.
+                </div>
+                                <div style="font-size: small">
+                  - By default, port is appended for non-default ports.
+                </div>
+                                <div style="font-size: small">
+                  - This setting will apply for pool's 'rewrite host header to server name', 'rewrite host header to sni' features and server's 'rewrite host header'
+                </div>
+                                <div style="font-size: small">
+                  - settings as well as http healthmonitors attached to pools.
+                </div>
+                                <div style="font-size: small">
+                  - Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS.
+                </div>
+                                <div style="font-size: small">
+                  - Field introduced in 21.1.1.
+                </div>
+                                <div style="font-size: small">
+                  - Default value when not specified in API or module is interpreted by Avi Controller as NON_DEFAULT_80_443.
+                </div>
+                                            </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
                 <b>application_persistence_profile_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">

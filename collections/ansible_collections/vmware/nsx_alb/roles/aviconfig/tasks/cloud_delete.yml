@@ -68,6 +68,7 @@
     uuid: "{{ item.uuid | default(omit) }}"
     vca_configuration: "{{ item.vca_configuration | default(omit) }}"
     vcenter_configuration: "{{ item.vcenter_configuration | default(omit) }}"
+    vmc_deployment: "{{ item.vmc_deployment | default(omit) }}"
     vtype: "{{ item.vtype | default(omit) }}"
   when:
     - (item.name | length > 0)

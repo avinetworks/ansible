@@ -549,7 +549,7 @@ Parameters
                   - The vendor of the icap server.
                 </div>
                                 <div style="font-size: small">
-                  - Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT.
+                  - Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE.
                 </div>
                                 <div style="font-size: small">
                   - Field introduced in 20.1.1.

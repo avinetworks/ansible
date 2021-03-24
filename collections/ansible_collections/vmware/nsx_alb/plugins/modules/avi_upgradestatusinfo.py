@@ -19,6 +19,7 @@ DOCUMENTATION = '''
 ---
 module: avi_upgradestatusinfo
 author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
+
 short_description: Module for setup of UpgradeStatusInfo Avi RESTful Object
 description:
     - This module is used to configure UpgradeStatusInfo object
@@ -85,6 +86,11 @@ options:
             - Enqueue time of upgrade operation.
             - Field introduced in 18.2.6.
         type: str
+    fips_mode:
+        description:
+            - Fips mode for the entire system.
+            - Field introduced in 20.1.5.
+        type: bool
     history:
         description:
             - Record of past operations on this node.
@@ -143,8 +149,8 @@ options:
     patch_list:
         description:
             - List of patches applied to this node.
-            - Example  base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied, this field will indicate the [{'6p1', '6p1_image_uuid'},
-            - {'6p5', '6p5_image_uuid'}] value.
+            - Example  base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied.
+            - This field will indicate the [{'6p1', '6p1_image_uuid'}, {'6p5', '6p5_image_uuid'}] value.
             - Field introduced in 18.2.8, 20.1.1.
         type: list
     patch_reboot:
@@ -311,8 +317,9 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, avi_ansible_api, HAS_REQUESTS)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+        avi_common_argument_spec, avi_ansible_api)
+    HAS_REQUESTS = True
 except ImportError:
     HAS_REQUESTS = False
 
@@ -332,6 +339,7 @@ def main():
         enable_rollback=dict(type='bool',),
         end_time=dict(type='str',),
         enqueue_time=dict(type='str',),
+        fips_mode=dict(type='bool',),
         history=dict(type='list',),
         image_path=dict(type='str',),
         image_ref=dict(type='str',),
@@ -370,12 +378,13 @@ def main():
         version=dict(type='str',),
     )
     argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
+    module = AnsibleModule(
+        argument_spec=argument_specs, supports_check_mode=True)
     if not HAS_REQUESTS:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
-    return avi_ansible_api(module, 'upgradestatusinfo', set())
+        return module.fail_json(msg='python API `requests` is not installed.')
+    return avi_ansible_api(module, 'upgradestatusinfo',
+                           set())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

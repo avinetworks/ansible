@@ -486,6 +486,9 @@ Parameters
                                                 <div style="font-size: small">
                   - Http authentication configuration for protected resources.
                 </div>
+                                <div style="font-size: small">
+                  - Field deprecated in 21.1.1.
+                </div>
                                             </td>
         </tr>
                 <tr>
@@ -1225,6 +1228,26 @@ Parameters
                 </div>
                                 <div style="font-size: small">
                   - Maximum of 4 items allowed.
+                </div>
+                                            </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>ldap_vs_config</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">dict</span>
+                </div>
+            </td>
+            <td>
+                                                            </td>
+            <td>
+                                                <div style="font-size: small">
+                  - Application-specific ldap config.
+                </div>
+                                <div style="font-size: small">
+                  - Field introduced in 21.1.1.
                 </div>
                                             </td>
         </tr>

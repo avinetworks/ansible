@@ -19,6 +19,7 @@ DOCUMENTATION = '''
 ---
 module: avi_dynamicdnsrecord
 author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
+
 short_description: Module for setup of DynamicDnsRecord Avi RESTful Object
 description:
     - This module is used to configure DynamicDnsRecord object
@@ -120,7 +121,6 @@ options:
             - Allowed values are 0-20.
             - Special values are 0- 'return all records'.
             - Field introduced in 20.1.3.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 0.
         type: int
     service_locators:
         description:
@@ -193,8 +193,9 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, avi_ansible_api, HAS_REQUESTS)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+        avi_common_argument_spec, avi_ansible_api)
+    HAS_REQUESTS = True
 except ImportError:
     HAS_REQUESTS = False
 
@@ -229,12 +230,13 @@ def main():
         wildcard_match=dict(type='bool',),
     )
     argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
+    module = AnsibleModule(
+        argument_spec=argument_specs, supports_check_mode=True)
     if not HAS_REQUESTS:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
-    return avi_ansible_api(module, 'dynamicdnsrecord', set())
+        return module.fail_json(msg='python API `requests` is not installed.')
+    return avi_ansible_api(module, 'dynamicdnsrecord',
+                           set())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

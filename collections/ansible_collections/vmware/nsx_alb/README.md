@@ -5,15 +5,13 @@
 
 This collection has been tested against following Ansible versions: **>=2.9.10**.
 
-Plugins and modules within a collection may be tested with only specific Ansible versions.
-A collection may contain metadata that identifies these versions.
 <!--end requires_ansible-->
 
 ## Installation and Usage
 
 ### Installing the Collection from Ansible Galaxy
 
-Before using the VMware community collection, you need to install the collection with the `ansible-galaxy` CLI:
+We can install the collection with the `ansible-galaxy` CLI:
 
     ansible-galaxy collection install vmware.nsx_alb
 
@@ -28,11 +26,11 @@ collections:
 
 Nsx alb community collection depends upon following third party libraries:
 
-* [`Avisdk`](https://github.com/avinetworks/sdk) >= 18.2.8
+* [`requests`]
 
 ### Installing required libraries and SDK
 
-Installing collection does not install any required third party Python libraries or SDKs. You need to install the required Python libraries using following command:
+You need to install the required Python libraries using following command:
 
     pip install -r ~/.ansible/collections/ansible_collections/vmware/nsx_alb/requirements.txt
 
@@ -146,14 +144,20 @@ Refer [testing](testing.md) for more information.
 Examples
 --------
 
-    - name: Example to create create Pool object
-      vmware.nsx_alb.avi_pool:
-        controller: "192.168.15.18"
-        username: "admin"
-        password: "password"
-        name: app1-pool
-        lb_algorithm: LB_ALGORITHM_LEAST_LOAD
-        servers:
-        - ip:
-             addr: "192.168.12.15"
-             type: 'V4'
+    - hosts: localhost
+      connection: local
+      collections:
+        - vmware.nsx_alb
+      tasks:
+        - name: Example to create create Pool object
+          avi_pool:
+            controller: "192.168.15.18"
+            username: "admin"
+            password: "password"
+            name: app1-pool
+            lb_algorithm: LB_ALGORITHM_LEAST_LOAD
+            servers:
+            - ip:
+                 addr: "192.168.12.15"
+                 type: 'V4'
+

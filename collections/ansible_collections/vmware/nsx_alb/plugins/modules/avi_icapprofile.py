@@ -19,6 +19,7 @@ DOCUMENTATION = '''
 ---
 module: avi_icapprofile
 author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
+
 short_description: Module for setup of IcapProfile Avi RESTful Object
 description:
     - This module is used to configure IcapProfile object
@@ -164,7 +165,7 @@ options:
     vendor:
         description:
             - The vendor of the icap server.
-            - Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT.
+            - Enum options - ICAP_VENDOR_GENERIC, ICAP_VENDOR_OPSWAT, ICAP_VENDOR_LASTLINE.
             - Field introduced in 20.1.1.
             - Default value when not specified in API or module is interpreted by Avi Controller as ICAP_VENDOR_OPSWAT.
         type: str
@@ -191,8 +192,9 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, avi_ansible_api, HAS_REQUESTS)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+        avi_common_argument_spec, avi_ansible_api)
+    HAS_REQUESTS = True
 except ImportError:
     HAS_REQUESTS = False
 
@@ -223,12 +225,13 @@ def main():
         vendor=dict(type='str',),
     )
     argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
+    module = AnsibleModule(
+        argument_spec=argument_specs, supports_check_mode=True)
     if not HAS_REQUESTS:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
-    return avi_ansible_api(module, 'icapprofile', set())
+        return module.fail_json(msg='python API `requests` is not installed.')
+    return avi_ansible_api(module, 'icapprofile',
+                           set())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

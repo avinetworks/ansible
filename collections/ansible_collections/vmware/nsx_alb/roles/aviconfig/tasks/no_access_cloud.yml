@@ -1,8 +1,9 @@
 # Automatically Generated File
 # Copyright Avi Networks
+
 ---
 - name: Avi Cloud | Setup No Access Cloud
-  no_log: "False"
+  no_log: "{{ avi_role_config_log_mode | default(False)}}"
   vmware.nsx_alb.avi_cloud:
 
     controller: "{{ avi_controller | default(omit)}}"

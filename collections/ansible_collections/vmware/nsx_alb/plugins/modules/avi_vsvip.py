@@ -20,6 +20,7 @@ DOCUMENTATION = '''
 ---
 module: avi_vsvip
 author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
+
 short_description: Module for setup of VsVip Avi RESTful Object
 description:
     - This module is used to configure VsVip object
@@ -82,6 +83,12 @@ options:
             - Field introduced in 17.1.1.
         required: true
         type: str
+    peer_labels:
+        description:
+            - Select bgp peers, using peer label, for vsvip advertisement.
+            - Field introduced in 20.1.5.
+            - Maximum of 128 items allowed.
+        type: list
     tenant_ref:
         description:
             - It is a reference to an object of type tenant.
@@ -162,8 +169,9 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, avi_ansible_api, HAS_REQUESTS)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+        avi_common_argument_spec, avi_ansible_api)
+    HAS_REQUESTS = True
 except ImportError:
     HAS_REQUESTS = False
 
@@ -181,6 +189,7 @@ def main():
         ipam_selector=dict(type='dict',),
         labels=dict(type='list',),
         name=dict(type='str', required=True),
+        peer_labels=dict(type='list',),
         tenant_ref=dict(type='str',),
         tier1_lr=dict(type='str',),
         url=dict(type='str',),
@@ -191,12 +200,13 @@ def main():
         vsvip_cloud_config_cksum=dict(type='str',),
     )
     argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
+    module = AnsibleModule(
+        argument_spec=argument_specs, supports_check_mode=True)
     if not HAS_REQUESTS:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
-    return avi_ansible_api(module, 'vsvip', set())
+        return module.fail_json(msg='python API `requests` is not installed.')
+    return avi_ansible_api(module, 'vsvip',
+                           set())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

@@ -11,16 +11,10 @@ else:
     from urllib.parse import urlparse
 
 from datetime import datetime, timedelta
-
-try:
-    from requests import ConnectionError
-    from requests import Response
-    from requests.exceptions import ChunkedEncodingError
-    from requests.sessions import Session
-    HAS_REQUESTS = True
-except ImportError:
-    HAS_REQUESTS = False
-
+from requests import ConnectionError
+from requests import Response
+from requests.exceptions import ChunkedEncodingError
+from requests.sessions import Session
 from ssl import SSLError
 
 

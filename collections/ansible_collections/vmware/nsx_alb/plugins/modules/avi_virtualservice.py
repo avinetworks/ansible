@@ -20,6 +20,7 @@ DOCUMENTATION = '''
 ---
 module: avi_virtualservice
 author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
+
 short_description: Module for setup of VirtualService Avi RESTful Object
 description:
     - This module is used to configure VirtualService object
@@ -146,6 +147,7 @@ options:
     client_auth:
         description:
             - Http authentication configuration for protected resources.
+            - Field deprecated in 21.1.1.
         type: dict
     close_client_conn_on_config_update:
         description:
@@ -337,6 +339,11 @@ options:
             - Field introduced in 20.1.2.
             - Maximum of 4 items allowed.
         type: list
+    ldap_vs_config:
+        description:
+            - Application-specific ldap config.
+            - Field introduced in 21.1.1.
+        type: dict
     limit_doser:
         description:
             - Limit potential dos attackers who exceed max_cps_per_client significantly to a fraction of max_cps_per_client for a while.
@@ -693,8 +700,9 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, avi_ansible_api, HAS_REQUESTS)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+        avi_common_argument_spec, avi_ansible_api)
+    HAS_REQUESTS = True
 except ImportError:
     HAS_REQUESTS = False
 
@@ -756,6 +764,7 @@ def main():
         jwt_config=dict(type='dict',),
         l4_policies=dict(type='list',),
         labels=dict(type='list',),
+        ldap_vs_config=dict(type='dict',),
         limit_doser=dict(type='bool',),
         max_cps_per_client=dict(type='int',),
         microservice_ref=dict(type='str',),
@@ -814,12 +823,13 @@ def main():
         weight=dict(type='int',),
     )
     argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
+    module = AnsibleModule(
+        argument_spec=argument_specs, supports_check_mode=True)
     if not HAS_REQUESTS:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
-    return avi_ansible_api(module, 'virtualservice', set())
+        return module.fail_json(msg='python API `requests` is not installed.')
+    return avi_ansible_api(module, 'virtualservice',
+                           set())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

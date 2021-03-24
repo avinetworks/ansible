@@ -11,7 +11,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 """
-from __future__ import absolute_import, division, print_function
+from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
 
@@ -107,11 +107,12 @@ except ImportError:
     HAS_LIB = False
 
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
         avi_common_argument_spec, ansible_return, avi_obj_cmp,
-        cleanup_absent_fields, HAS_REQUESTS)
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.avi_api import (
+        cleanup_absent_fields)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)
+    HAS_REQUESTS = True
 except ImportError:
     HAS_REQUESTS = False
 
@@ -130,8 +131,7 @@ def main():
     module = AnsibleModule(argument_spec=argument_specs)
     if not HAS_REQUESTS:
         return module.fail_json(msg=(
-            'Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
+            'Python API requests is not installed.'))
     if not HAS_LIB:
         return module.fail_json(
             msg='avi_api_fileservice, requests_toolbelt is required for this module')

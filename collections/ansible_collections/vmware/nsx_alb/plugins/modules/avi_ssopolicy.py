@@ -19,6 +19,7 @@ DOCUMENTATION = '''
 ---
 module: avi_ssopolicy
 author: Chaitanya Deshpande (@chaitanyaavi) <chaitanya.deshpande@avinetworks.com>
+
 short_description: Module for setup of SSOPolicy Avi RESTful Object
 description:
     - This module is used to configure SSOPolicy object
@@ -76,7 +77,7 @@ options:
     type:
         description:
             - Sso policy type.
-            - Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT.
+            - Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP.
             - Field introduced in 18.2.5.
             - Default value when not specified in API or module is interpreted by Avi Controller as SSO_TYPE_SAML.
         type: str
@@ -112,8 +113,9 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, avi_ansible_api, HAS_REQUESTS)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+        avi_common_argument_spec, avi_ansible_api)
+    HAS_REQUESTS = True
 except ImportError:
     HAS_REQUESTS = False
 
@@ -135,12 +137,13 @@ def main():
         uuid=dict(type='str',),
     )
     argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
+    module = AnsibleModule(
+        argument_spec=argument_specs, supports_check_mode=True)
     if not HAS_REQUESTS:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
-    return avi_ansible_api(module, 'ssopolicy', set())
+        return module.fail_json(msg='python API `requests` is not installed.')
+    return avi_ansible_api(module, 'ssopolicy',
+                           set())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

@@ -1,20 +1,16 @@
+from avi.sdk.avi_api import ApiSession, \
+    sessionDict, APIError
+import requests
 import re
 import urllib
+# import urlparse
 import json
 from datetime import datetime
+from requests import ConnectionError
+from requests.exceptions import ChunkedEncodingError
 from ssl import SSLError
 import time
 import logging
-
-try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.avi_api import (
-        ApiSession, sessionDict, APIError)
-    import requests
-    from requests import ConnectionError
-    from requests.exceptions import ChunkedEncodingError
-    HAS_REQUESTS = True
-except ImportError:
-    HAS_REQUESTS = False
 
 logger = logging.getLogger(__name__)
 

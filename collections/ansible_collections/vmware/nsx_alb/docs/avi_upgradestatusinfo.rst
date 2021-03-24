@@ -268,6 +268,26 @@ Parameters
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>fips_mode</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">bool</span>
+                </div>
+            </td>
+            <td>
+                                                            </td>
+            <td>
+                                                <div style="font-size: small">
+                  - Fips mode for the entire system.
+                </div>
+                                <div style="font-size: small">
+                  - Field introduced in 20.1.5.
+                </div>
+                                            </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
                 <b>history</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
@@ -496,10 +516,10 @@ Parameters
                   - List of patches applied to this node.
                 </div>
                                 <div style="font-size: small">
-                  - Example  base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied, this field will indicate the [{'6p1', '6p1_image_uuid'},
+                  - Example  base-image is 18.2.6 and a patch 6p1 is applied, then a patch 6p5 applied.
                 </div>
                                 <div style="font-size: small">
-                  - {'6p5', '6p5_image_uuid'}] value.
+                  - This field will indicate the [{'6p1', '6p1_image_uuid'}, {'6p5', '6p5_image_uuid'}] value.
                 </div>
                                 <div style="font-size: small">
                   - Field introduced in 18.2.8, 20.1.1.

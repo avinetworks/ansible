@@ -20,6 +20,7 @@ DOCUMENTATION = '''
 ---
 module: avi_controllerproperties
 author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
+
 short_description: Module for setup of ControllerProperties Avi RESTful Object
 description:
     - This module is used to configure ControllerProperties object
@@ -177,6 +178,15 @@ options:
             - Field introduced in 18.2.6.
             - Unit is sec.
             - Default value when not specified in API or module is interpreted by Avi Controller as 60.
+        type: int
+    del_offline_se_after_reboot_delay:
+        description:
+            - The amount of time the controller will wait before deleting an offline se after it has been rebooted.
+            - For unresponsive ses, the total time will be  unresponsive_se_reboot + del_offline_se_after_reboot_delay.
+            - For crashed ses, the total time will be crashed_se_reboot + del_offline_se_after_reboot_delay.
+            - Field introduced in 20.1.5.
+            - Unit is sec.
+            - Default value when not specified in API or module is interpreted by Avi Controller as 300.
         type: int
     dns_refresh_period:
         description:
@@ -462,6 +472,11 @@ options:
         description:
             - Avi controller URL of the object.
         type: str
+    user_agent_cache_config:
+        description:
+            - Configuration for user-agent cache used in bot management.
+            - Field introduced in 21.1.1.
+        type: dict
     uuid:
         description:
             - Unique object identifier of the object.
@@ -564,8 +579,9 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, avi_ansible_api, HAS_REQUESTS)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+        avi_common_argument_spec, avi_ansible_api)
+    HAS_REQUESTS = True
 except ImportError:
     HAS_REQUESTS = False
 
@@ -598,6 +614,7 @@ def main():
         crashed_se_reboot=dict(type='int',),
         dead_se_detection_timer=dict(type='int',),
         default_minimum_api_timeout=dict(type='int',),
+        del_offline_se_after_reboot_delay=dict(type='int',),
         dns_refresh_period=dict(type='int',),
         dummy=dict(type='int',),
         edit_system_limits=dict(type='bool',),
@@ -643,6 +660,7 @@ def main():
         upgrade_lease_time=dict(type='int',),
         upgrade_se_per_vs_scale_ops_txn_time=dict(type='int',),
         url=dict(type='str',),
+        user_agent_cache_config=dict(type='dict',),
         uuid=dict(type='str',),
         vnic_op_fail_time=dict(type='int',),
         vs_apic_scaleout_timeout=dict(type='int',),
@@ -659,12 +677,13 @@ def main():
         warmstart_vs_resync_wait_time=dict(type='int',),
     )
     argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
+    module = AnsibleModule(
+        argument_spec=argument_specs, supports_check_mode=True)
     if not HAS_REQUESTS:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
-    return avi_ansible_api(module, 'controllerproperties', {'portal_token'})
+        return module.fail_json(msg='python API `requests` is not installed.')
+    return avi_ansible_api(module, 'controllerproperties',
+                           {'portal_token'})
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

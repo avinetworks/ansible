@@ -64,6 +64,7 @@
     jwt_config: "{{ item.jwt_config | default(omit) }}"
     l4_policies: "{{ item.l4_policies | default(omit) }}"
     labels: "{{ item.labels | default(omit) }}"
+    ldap_vs_config: "{{ item.ldap_vs_config | default(omit) }}"
     limit_doser: "{{ item.limit_doser | default(omit) }}"
     max_cps_per_client: "{{ item.max_cps_per_client | default(omit) }}"
     microservice_ref: "{{ item.microservice_ref | default(omit) }}"

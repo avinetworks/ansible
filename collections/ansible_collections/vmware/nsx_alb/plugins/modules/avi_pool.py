@@ -20,6 +20,7 @@ DOCUMENTATION = '''
 ---
 module: avi_pool
 author: Gaurav Rastogi (@grastogi23) <grastogi@avinetworks.com>
+
 short_description: Module for setup of Pool Avi RESTful Object
 description:
     - This module is used to configure Pool object
@@ -74,6 +75,16 @@ options:
     apic_epg_name:
         description:
             - Synchronize cisco apic epg members with pool servers.
+        type: str
+    append_port:
+        description:
+            - Allows the option to append port to hostname in the host header while sending a request to the server.
+            - By default, port is appended for non-default ports.
+            - This setting will apply for pool's 'rewrite host header to server name', 'rewrite host header to sni' features and server's 'rewrite host header'
+            - settings as well as http healthmonitors attached to pools.
+            - Enum options - NON_DEFAULT_80_443, NEVER, ALWAYS.
+            - Field introduced in 21.1.1.
+            - Default value when not specified in API or module is interpreted by Avi Controller as NON_DEFAULT_80_443.
         type: str
     application_persistence_profile_ref:
         description:
@@ -521,8 +532,9 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
-        avi_common_argument_spec, avi_ansible_api, HAS_REQUESTS)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+        avi_common_argument_spec, avi_ansible_api)
+    HAS_REQUESTS = True
 except ImportError:
     HAS_REQUESTS = False
 
@@ -540,6 +552,7 @@ def main():
         analytics_policy=dict(type='dict',),
         analytics_profile_ref=dict(type='str',),
         apic_epg_name=dict(type='str',),
+        append_port=dict(type='str',),
         application_persistence_profile_ref=dict(type='str',),
         autoscale_launch_config_ref=dict(type='str',),
         autoscale_networks=dict(type='list',),
@@ -608,12 +621,13 @@ def main():
         vrf_ref=dict(type='str',),
     )
     argument_specs.update(avi_common_argument_spec())
-    module = AnsibleModule(argument_spec=argument_specs, supports_check_mode=True)
+    module = AnsibleModule(
+        argument_spec=argument_specs, supports_check_mode=True)
     if not HAS_REQUESTS:
-        return module.fail_json(msg='Avi python API SDK (avisdk>=17.1) or requests is not installed. '
-                                    'For more details visit https://github.com/avinetworks/sdk.')
-    return avi_ansible_api(module, 'pool', set())
+        return module.fail_json(msg='python API `requests` is not installed.')
+    return avi_ansible_api(module, 'pool',
+                           set())
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

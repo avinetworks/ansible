@@ -10,9 +10,9 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 """
-
-from __future__ import absolute_import, division, print_function
+from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
+
 
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
@@ -94,23 +94,16 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.utils.ansible_utils import (
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
         avi_common_argument_spec, ansible_return, avi_obj_cmp,
-        cleanup_absent_fields, HAS_REQUESTS)
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.avi_api import (
+        cleanup_absent_fields)
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)
     from pkg_resources import parse_version
     from requests import ConnectionError
     from ssl import SSLError
     from requests.exceptions import ChunkedEncodingError
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk.saml_avi_api import OktaSAMLApiSession, OneloginSAMLApiSession
-    import ansible_collections.vmware.nsx_alb.plugins.module_utils.sdk as sdk
-    sdk_version = getattr(sdk, '__version__', None)
-    if ((sdk_version is None) or
-            (sdk_version and
-             (parse_version(sdk_version) < parse_version('17.2.2b3')))):
-        # It allows the __version__ to be '' as that value is used in development builds
-        raise ImportError
+    from ansible_collections.vmware.nsx_alb.plugins.module_utils.saml_avi_api import OktaSAMLApiSession, OneloginSAMLApiSession
     HAS_REQUESTS = True
 except ImportError:
     HAS_REQUESTS = False
@@ -141,8 +134,7 @@ def main():
 
     if not HAS_REQUESTS:
         return module.fail_json(msg=(
-            'Avi python API SDK (avisdk) is not installed. '
-            'For more details visit https://github.com/avinetworks/sdk.'))
+            'Python libary requests is not installed.'))
     idp_class = module.params.get("idp_class", None)
     idp = get_idp_class(idp_class)
     if not idp:

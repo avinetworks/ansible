@@ -230,7 +230,7 @@ Parameters
                   - Sso policy type.
                 </div>
                                 <div style="font-size: small">
-                  - Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT.
+                  - Enum options - SSO_TYPE_SAML, SSO_TYPE_PINGACCESS, SSO_TYPE_JWT, SSO_TYPE_LDAP.
                 </div>
                                 <div style="font-size: small">
                   - Field introduced in 18.2.5.
