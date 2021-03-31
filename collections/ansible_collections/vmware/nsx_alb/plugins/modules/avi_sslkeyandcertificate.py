@@ -259,7 +259,7 @@ def main():
     if not HAS_REQUESTS:
         return module.fail_json(msg='python API `requests` is not installed.')
     return avi_ansible_api(module, 'sslkeyandcertificate',
-                           {'key_passphrase', 'key'})
+                           {'key', 'key_passphrase'})
 
 
 if __name__ == '__main__':
