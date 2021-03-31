@@ -3,7 +3,6 @@
 ---
 - name: Avi Image | Create or Update Image
   vmware.nsx_alb.avi_image:
-
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

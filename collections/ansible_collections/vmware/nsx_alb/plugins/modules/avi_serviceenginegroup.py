@@ -352,6 +352,7 @@ options:
             - Allowed values are 1-1000.
             - Field introduced in 21.1.1.
             - Unit is milliseconds.
+            - Allowed in basic edition, essentials edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 1.
         type: int
     dp_aggressive_enq_interval_msec:
@@ -360,6 +361,7 @@ options:
             - Allowed values are 1-1000.
             - Field introduced in 21.1.1.
             - Unit is milliseconds.
+            - Allowed in basic edition, essentials edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 1.
         type: int
     dp_aggressive_hb_frequency:
@@ -381,6 +383,7 @@ options:
             - Allowed values are 1-1000.
             - Field introduced in 21.1.1.
             - Unit is milliseconds.
+            - Allowed in basic edition, essentials edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 20.
         type: int
     dp_enq_interval_msec:
@@ -389,6 +392,7 @@ options:
             - Allowed values are 1-1000.
             - Field introduced in 21.1.1.
             - Unit is milliseconds.
+            - Allowed in basic edition, essentials edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 20.
         type: int
     dp_hb_frequency:
@@ -928,6 +932,7 @@ options:
             - Allowed values are 1-1000.
             - Field introduced in 21.1.1.
             - Unit is milliseconds.
+            - Allowed in basic edition, essentials edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 20.
         type: int
     num_dispatcher_cores:
@@ -1482,6 +1487,7 @@ options:
             - Allowed values are 10-600.
             - Field introduced in 21.1.1.
             - Unit is seconds.
+            - Allowed in basic edition, essentials edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 300.
         type: int
     service_ip6_subnets:
@@ -1668,12 +1674,14 @@ options:
             - Allowed values are 1-1000.
             - Field introduced in 21.1.1.
             - Unit is sec.
+            - Allowed in basic edition, essentials edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 6.
         type: int
     vnic_dhcp_ip_max_retries:
         description:
             - Dhcp ip max retries.
             - Field introduced in 21.1.1.
+            - Allowed in basic edition, essentials edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 10.
         type: int
     vnic_ip_delete_interval:
@@ -1681,6 +1689,7 @@ options:
             - Wait interval before deleting ip.
             - Field introduced in 21.1.1.
             - Unit is sec.
+            - Allowed in basic edition, essentials edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 5.
         type: int
     vnic_probe_interval:
@@ -1688,6 +1697,7 @@ options:
             - Probe vnic interval.
             - Field introduced in 21.1.1.
             - Unit is sec.
+            - Allowed in basic edition, essentials edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 5.
         type: int
     vnic_rpc_retry_interval:
@@ -1695,6 +1705,7 @@ options:
             - Time interval for retrying the failed vnic rpc requests.
             - Field introduced in 21.1.1.
             - Unit is sec.
+            - Allowed in basic edition, essentials edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 5.
         type: int
     vnicdb_cmd_history_size:
@@ -1702,6 +1713,7 @@ options:
             - Size of vnicdb command history.
             - Allowed values are 0-65535.
             - Field introduced in 21.1.1.
+            - Allowed in basic edition, essentials edition, enterprise edition.
             - Default value when not specified in API or module is interpreted by Avi Controller as 256.
         type: int
     vs_host_redundancy:

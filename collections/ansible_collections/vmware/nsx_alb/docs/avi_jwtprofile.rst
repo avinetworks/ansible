@@ -1,11 +1,11 @@
-.. vmware.nsx_alb.avi_securitypolicy:
+.. vmware.nsx_alb.avi_jwtprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_securitypolicy
+vmware.nsx_alb.avi_jwtprofile
 *****************************
 
-**Module for setup of SecurityPolicy Avi RESTful Object**
+**Module for setup of JWTProfile Avi RESTful Object**
 
 
 Version added: "1.0.0"
@@ -17,7 +17,7 @@ Version added: "1.0.0"
 
 Synopsis
 --------
-- This module is used to configure SecurityPolicy object.
+- This module is used to configure JWTProfile object.
 - More examples at (https://github.com/avinetworks/devops).
 
 
@@ -102,112 +102,84 @@ Parameters
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>description</b>
+                <b>is_federated</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
-                    <span style="color: purple">str</span>
+                    <span style="color: purple">bool</span>
                 </div>
             </td>
             <td>
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  - Security policy is used to specify various configuration information used to perform distributed denial of service (ddos) attacks detection and
+                  - This field describes the object's replication scope.
                 </div>
                                 <div style="font-size: small">
-                  - mitigation.
+                  - If the field is set to false, then the object is visible within the controller-cluster.
                 </div>
                                 <div style="font-size: small">
-                  - Field introduced in 18.2.1.
+                  - If the field is set to true, then the object is replicated across the federation.
+                </div>
+                                <div style="font-size: small">
+                  - Field introduced in 20.1.5.
+                </div>
+                                <div style="font-size: small">
+                  - Allowed in basic(allowed values- false) edition, essentials(allowed values- false) edition, enterprise edition.
+                </div>
+                                <div style="font-size: small">
+                  - Default value when not specified in API or module is interpreted by Avi Controller as False.
                 </div>
                                             </td>
         </tr>
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>dns_amplification_denyports</b>
-                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">dict</span>
-                </div>
-            </td>
-            <td>
-                                                            </td>
-            <td>
-                                                <div style="font-size: small">
-                  - Source ports and port ranges to deny in dns amplification attacks.
-                </div>
-                                <div style="font-size: small">
-                  - Field introduced in 21.1.1.
-                </div>
-                                            </td>
-        </tr>
-                <tr>
-            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>dns_attacks</b>
-                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">dict</span>
-                </div>
-            </td>
-            <td>
-                                                            </td>
-            <td>
-                                                <div style="font-size: small">
-                  - Attacks utilizing the dns protocol operations.
-                </div>
-                                <div style="font-size: small">
-                  - Field introduced in 18.2.1.
-                </div>
-                                            </td>
-        </tr>
-                <tr>
-            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>dns_policy_index</b>
-                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">int</span>
-                </div>
-            </td>
-            <td>
-                                                            </td>
-            <td>
-                                                <div style="font-size: small">
-                  - Index of the dns policy to use for the mitigation rules applied to the dns attacks.
-                </div>
-                                <div style="font-size: small">
-                  - Field introduced in 18.2.1.
-                </div>
-                                <div style="font-size: small">
-                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-                </div>
-                                            </td>
-        </tr>
-                <tr>
-            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>labels</b>
+                <b>jwks_keys</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
                     <span style="color: purple">list</span>
                 </div>
             </td>
             <td>
-                                                            </td>
+                                <div style="font-size: small">
+                <b>required: true</b>
+                </div>
+                            </td>
             <td>
                                                 <div style="font-size: small">
-                  - Key value pairs for granular object access control.
+                  - Jwk keys used for signing/validating the jwt.
                 </div>
                                 <div style="font-size: small">
-                  - Also allows for classification and tagging of similar objects.
+                  - Field introduced in 20.1.5.
                 </div>
                                 <div style="font-size: small">
-                  - Field introduced in 20.1.2.
+                  - Minimum of 1 items required.
+                </div>
+                                            </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>jwt_auth_type</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">str</span>
+                </div>
+            </td>
+            <td>
+                                <div style="font-size: small">
+                <b>required: true</b>
+                </div>
+                            </td>
+            <td>
+                                                <div style="font-size: small">
+                  - Jwt auth type for jwt validation.
                 </div>
                                 <div style="font-size: small">
-                  - Maximum of 4 items allowed.
+                  - Enum options - JWT_TYPE_JWS.
+                </div>
+                                <div style="font-size: small">
+                  - Field introduced in 20.1.5.
                 </div>
                                             </td>
         </tr>
@@ -227,79 +199,10 @@ Parameters
                             </td>
             <td>
                                                 <div style="font-size: small">
-                  - The name of the security policy.
+                  - A user friendly name for this jwt profile.
                 </div>
                                 <div style="font-size: small">
-                  - Field introduced in 18.2.1.
-                </div>
-                                            </td>
-        </tr>
-                <tr>
-            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>network_security_policy_index</b>
-                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">int</span>
-                </div>
-            </td>
-            <td>
-                                                            </td>
-            <td>
-                                                <div style="font-size: small">
-                  - Index of the network security policy to use for the mitigation rules applied to the attacks.
-                </div>
-                                <div style="font-size: small">
-                  - Field introduced in 18.2.1.
-                </div>
-                                <div style="font-size: small">
-                  - Default value when not specified in API or module is interpreted by Avi Controller as 0.
-                </div>
-                                            </td>
-        </tr>
-                <tr>
-            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>oper_mode</b>
-                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">str</span>
-                </div>
-            </td>
-            <td>
-                                                            </td>
-            <td>
-                                                <div style="font-size: small">
-                  - Mode of dealing with the attacks - perform detection only, or detect and mitigate the attacks.
-                </div>
-                                <div style="font-size: small">
-                  - Enum options - DETECTION, MITIGATION.
-                </div>
-                                <div style="font-size: small">
-                  - Field introduced in 18.2.1.
-                </div>
-                                <div style="font-size: small">
-                  - Default value when not specified in API or module is interpreted by Avi Controller as DETECTION.
-                </div>
-                                            </td>
-        </tr>
-                <tr>
-            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>tcp_attacks</b>
-                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">dict</span>
-                </div>
-            </td>
-            <td>
-                                                            </td>
-            <td>
-                                                <div style="font-size: small">
-                  - Attacks utilizing the tcp protocol operations.
-                </div>
-                                <div style="font-size: small">
-                  - Field introduced in 18.2.1.
+                  - Field introduced in 20.1.5.
                 </div>
                                             </td>
         </tr>
@@ -316,33 +219,13 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  - Tenancy of the security policy.
+                  - Uuid of the tenant.
                 </div>
                                 <div style="font-size: small">
                   - It is a reference to an object of type tenant.
                 </div>
                                 <div style="font-size: small">
-                  - Field introduced in 18.2.1.
-                </div>
-                                            </td>
-        </tr>
-                <tr>
-            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>udp_attacks</b>
-                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">dict</span>
-                </div>
-            </td>
-            <td>
-                                                            </td>
-            <td>
-                                                <div style="font-size: small">
-                  - Attacks utilizing the udp protocol operations.
-                </div>
-                                <div style="font-size: small">
-                  - Field introduced in 18.2.1.
+                  - Field introduced in 20.1.5.
                 </div>
                                             </td>
         </tr>
@@ -376,10 +259,10 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  - The uuid of the security policy.
+                  - Uuid of the jwt profile.
                 </div>
                                 <div style="font-size: small">
-                  - Field introduced in 18.2.1.
+                  - Field introduced in 20.1.5.
                 </div>
                                             </td>
         </tr>
@@ -392,13 +275,13 @@ Examples
 
 .. code-block:: yaml
 
-    - name: Example to create SecurityPolicy object
-      vmware.nsx_alb.avi_securitypolicy:
+    - name: Example to create JWTProfile object
+      vmware.nsx_alb.avi_jwtprofile:
         controller: 192.168.15.18
         username: admin
         password: something
         state: present
-        name: sample_securitypolicy
+        name: sample_jwtprofile
 
 
 Authors

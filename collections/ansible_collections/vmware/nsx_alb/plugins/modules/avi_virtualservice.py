@@ -128,6 +128,12 @@ options:
             - Internally set by the cloud connector.
             - Field introduced in 17.2.12, 18.1.2.
         type: str
+    bgp_peer_labels:
+        description:
+            - Select bgp peers, using peer label, for vsvip advertisement.
+            - Field introduced in 20.1.5.
+            - Maximum of 128 items allowed.
+        type: list
     bot_policy_ref:
         description:
             - Bot detection policy for the virtual service.
@@ -727,6 +733,7 @@ def main():
         avi_allocated_fip=dict(type='bool',),
         avi_allocated_vip=dict(type='bool',),
         azure_availability_set=dict(type='str',),
+        bgp_peer_labels=dict(type='list',),
         bot_policy_ref=dict(type='str',),
         bulk_sync_kvcache=dict(type='bool',),
         client_auth=dict(type='dict',),

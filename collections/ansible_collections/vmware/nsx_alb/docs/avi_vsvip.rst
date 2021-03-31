@@ -102,6 +102,29 @@ Parameters
                 <tr>
             <td colspan="2">
                 <div class="ansibleOptionAnchor" id="parameter-"></div>
+                <b>bgp_peer_labels</b>
+                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">list</span>
+                </div>
+            </td>
+            <td>
+                                                            </td>
+            <td>
+                                                <div style="font-size: small">
+                  - Select bgp peers, using peer label, for vsvip advertisement.
+                </div>
+                                <div style="font-size: small">
+                  - Field introduced in 20.1.5.
+                </div>
+                                <div style="font-size: small">
+                  - Maximum of 128 items allowed.
+                </div>
+                                            </td>
+        </tr>
+                <tr>
+            <td colspan="2">
+                <div class="ansibleOptionAnchor" id="parameter-"></div>
                 <b>cloud_ref</b>
                 <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
                 <div style="font-size: small">
@@ -240,29 +263,6 @@ Parameters
                 </div>
                                 <div style="font-size: small">
                   - Field introduced in 17.1.1.
-                </div>
-                                            </td>
-        </tr>
-                <tr>
-            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-"></div>
-                <b>peer_labels</b>
-                <a class="ansibleOptionLink" href="#parameter-" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">list</span>
-                </div>
-            </td>
-            <td>
-                                                            </td>
-            <td>
-                                                <div style="font-size: small">
-                  - Select bgp peers, using peer label, for vsvip advertisement.
-                </div>
-                                <div style="font-size: small">
-                  - Field introduced in 20.1.5.
-                </div>
-                                <div style="font-size: small">
-                  - Maximum of 128 items allowed.
                 </div>
                                             </td>
         </tr>

@@ -129,13 +129,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  - Enable common criteria compliance mode (disabled by default).
-                </div>
-                                <div style="font-size: small">
-                  - Warn  toggling this field is disruptive and will result in reduced behavior with ssh and tls protocols.
-                </div>
-                                <div style="font-size: small">
-                  - Expect possible warm start of control and data planes.
+                  - Common criteria mode's current state.
                 </div>
                                 <div style="font-size: small">
                   - Field introduced in 20.1.3.
@@ -296,7 +290,7 @@ Parameters
                                                             </td>
             <td>
                                                 <div style="font-size: small">
-                  - Enable fips mode.
+                  - Fips mode current state.
                 </div>
                                 <div style="font-size: small">
                   - Field introduced in 20.1.1.
