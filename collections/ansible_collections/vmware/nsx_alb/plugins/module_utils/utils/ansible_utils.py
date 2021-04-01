@@ -8,13 +8,8 @@ import re
 import sys
 import logging
 from copy import deepcopy
-
-try:
-    from avi.sdk.avi_api import ApiSession, ObjectNotFound, avi_sdk_syslog_logger, \
-         AviCredentials
-except ImportError:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import ApiSession, \
-         ObjectNotFound, avi_sdk_syslog_logger, AviCredentials
+from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import ApiSession, ObjectNotFound, avi_sdk_syslog_logger, \
+    AviCredentials
 
 if os.environ.get('AVI_LOG_HANDLER', '') != 'syslog':
     log = logging.getLogger(__name__)
