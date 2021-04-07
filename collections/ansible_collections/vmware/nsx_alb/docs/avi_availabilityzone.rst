@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_availabilityzone:
+.. vmware.alb.avi_availabilityzone:
 
 
 *****************************
-vmware.nsx_alb.avi_availabilityzone
+vmware.alb.avi_availabilityzone
 *****************************
 
 **Module for setup of AvailabilityZone Avi RESTful Object**
@@ -244,7 +244,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create AvailabilityZone object
-      vmware.nsx_alb.avi_availabilityzone:
+      vmware.alb.avi_availabilityzone:
         controller: 192.168.15.18
         username: admin
         password: something

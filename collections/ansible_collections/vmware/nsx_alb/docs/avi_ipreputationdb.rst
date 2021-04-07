@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_ipreputationdb:
+.. vmware.alb.avi_ipreputationdb:
 
 
 *****************************
-vmware.nsx_alb.avi_ipreputationdb
+vmware.alb.avi_ipreputationdb
 *****************************
 
 **Module for setup of IPReputationDB Avi RESTful Object**
@@ -356,7 +356,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create IPReputationDB object
-      vmware.nsx_alb.avi_ipreputationdb:
+      vmware.alb.avi_ipreputationdb:
         controller: 192.168.15.18
         username: admin
         password: something

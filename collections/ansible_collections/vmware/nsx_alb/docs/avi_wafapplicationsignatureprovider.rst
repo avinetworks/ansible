@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_wafapplicationsignatureprovider:
+.. vmware.alb.avi_wafapplicationsignatureprovider:
 
 
 *****************************
-vmware.nsx_alb.avi_wafapplicationsignatureprovider
+vmware.alb.avi_wafapplicationsignatureprovider
 *****************************
 
 **Module for setup of WafApplicationSignatureProvider Avi RESTful Object**
@@ -335,7 +335,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create WafApplicationSignatureProvider object
-      vmware.nsx_alb.avi_wafapplicationsignatureprovider:
+      vmware.alb.avi_wafapplicationsignatureprovider:
         controller: 192.168.15.18
         username: admin
         password: something

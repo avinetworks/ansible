@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_alertscriptconfig:
+.. vmware.alb.avi_alertscriptconfig:
 
 
 *****************************
-vmware.nsx_alb.avi_alertscriptconfig
+vmware.alb.avi_alertscriptconfig
 *****************************
 
 **Module for setup of AlertScriptConfig Avi RESTful Object**
@@ -200,7 +200,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create Alert Script to perform AWS server autoscaling
-        vmware.nsx_alb.avi_alertscriptconfig:
+        vmware.alb.avi_alertscriptconfig:
           username: '{{ username }}'
           controller: '{{ controller }}'
           password: '{{ password }}'

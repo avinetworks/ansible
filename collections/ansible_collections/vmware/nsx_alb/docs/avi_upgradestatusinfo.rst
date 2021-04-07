@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_upgradestatusinfo:
+.. vmware.alb.avi_upgradestatusinfo:
 
 
 *****************************
-vmware.nsx_alb.avi_upgradestatusinfo
+vmware.alb.avi_upgradestatusinfo
 *****************************
 
 **Module for setup of UpgradeStatusInfo Avi RESTful Object**
@@ -1084,7 +1084,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create UpgradeStatusInfo object
-      vmware.nsx_alb.avi_upgradestatusinfo:
+      vmware.alb.avi_upgradestatusinfo:
         controller: 192.168.15.18
         username: admin
         password: something

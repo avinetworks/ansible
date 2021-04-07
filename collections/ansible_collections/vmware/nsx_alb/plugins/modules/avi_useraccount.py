@@ -20,6 +20,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
+# Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 #
 """
 from __future__ import (absolute_import, division, print_function)
@@ -60,12 +61,12 @@ options:
         type: bool
         default: false
 extends_documentation_fragment:
-    - vmware.nsx_alb.avi
+    - vmware.alb.avi
 '''
 
 EXAMPLES = '''
   - name: Update user password
-    vmware.nsx_alb.avi_useraccount:
+    vmware.alb.avi_useraccount:
       controller: ""
       username: ""
       password: ""
@@ -75,7 +76,7 @@ EXAMPLES = '''
       api_version: ""
       force_change: false
   - name: Update user password using avi_credentials
-    vmware.nsx_alb.avi_useraccount:
+    vmware.alb.avi_useraccount:
       avi_credentials: ""
       old_password: ""
       force_change: false
@@ -94,10 +95,10 @@ from ansible.module_utils.basic import AnsibleModule
 from copy import deepcopy
 
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+    from ansible_collections.vmware.alb.plugins.module_utils.utils.ansible_utils import (
         avi_common_argument_spec, ansible_return, avi_obj_cmp,
         cleanup_absent_fields)
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
+    from ansible_collections.vmware.alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)
     HAS_REQUESTS = True
 except ImportError:

@@ -20,6 +20,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
+# Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 #
 """
 from __future__ import (absolute_import, division, print_function)
@@ -100,12 +101,12 @@ options:
         default: /api/tenant?name=admin
         type: str
 extends_documentation_fragment:
-    - vmware.nsx_alb.avi
+    - vmware.alb.avi
 '''
 
 EXAMPLES = '''
   - name: user creation
-    vmware.nsx_alb.avi_user:
+    vmware.alb.avi_user:
       controller: ""
       username: ""
       password: ""
@@ -123,7 +124,7 @@ EXAMPLES = '''
       default_tenant_ref: "/api/tenant?name=admin"
 
   - name: user creation
-    vmware.nsx_alb.avi_user:
+    vmware.alb.avi_user:
       controller: "192.0.2.10"
       username: ""
       password: ""
@@ -151,7 +152,7 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+    from ansible_collections.vmware.alb.plugins.module_utils.utils.ansible_utils import (
         avi_common_argument_spec, avi_ansible_api, ansible_return)
     HAS_REQUESTS = True
 except ImportError:

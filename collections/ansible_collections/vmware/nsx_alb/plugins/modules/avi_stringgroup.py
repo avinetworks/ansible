@@ -5,7 +5,7 @@
 # module_check: supported
 # Avi Version: 17.1.1
 #
-# Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
+# Copyright 2021 VMware, Inc.  All rights reserved. VMware Confidential
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 from __future__ import (absolute_import, division, print_function)
@@ -91,12 +91,12 @@ options:
             - Uuid of the string group.
         type: str
 extends_documentation_fragment:
-    - vmware.nsx_alb.avi
+    - vmware.alb.avi
 '''
 
 EXAMPLES = """
   - name: Create a string group configuration
-    vmware.nsx_alb.avi_stringgroup:
+    vmware.alb.avi_stringgroup:
       controller: '{{ controller }}'
       password: '{{ password }}'
       username: '{{ username }}'
@@ -124,7 +124,7 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+    from ansible_collections.vmware.alb.plugins.module_utils.utils.ansible_utils import (
         avi_common_argument_spec, avi_ansible_api)
     HAS_REQUESTS = True
 except ImportError:

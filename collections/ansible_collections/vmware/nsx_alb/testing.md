@@ -1,12 +1,12 @@
-# Testing Ansible Collection: vmware.nsx_alb
+# Testing Ansible Collection: vmware.alb
 
 ### Testing with `ansible-test`
 
 ##### Install collection tar
 
 ```
-$ ansible-galaxy collection install vmware-nsx_alb-1.0.0.tar.gz
-$ cd ~/.ansible/collections/ansible_collections/vmware/nsx_alb
+$ ansible-galaxy collection install vmware-alb-1.0.0.tar.gz
+$ cd ~/.ansible/collections/ansible_collections/vmware/alb
 ```
 ##### Run ansible tests
 

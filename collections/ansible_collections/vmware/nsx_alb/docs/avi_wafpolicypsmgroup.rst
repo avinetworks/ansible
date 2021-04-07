@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_wafpolicypsmgroup:
+.. vmware.alb.avi_wafpolicypsmgroup:
 
 
 *****************************
-vmware.nsx_alb.avi_wafpolicypsmgroup
+vmware.alb.avi_wafpolicypsmgroup
 *****************************
 
 **Module for setup of WafPolicyPSMGroup Avi RESTful Object**
@@ -368,7 +368,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create WafPolicyPSMGroup object
-      vmware.nsx_alb.avi_wafpolicypsmgroup:
+      vmware.alb.avi_wafpolicypsmgroup:
         controller: 192.168.15.18
         username: admin
         password: something

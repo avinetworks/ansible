@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_serviceenginegroup:
+.. vmware.alb.avi_serviceenginegroup:
 
 
 *****************************
-vmware.nsx_alb.avi_serviceenginegroup
+vmware.alb.avi_serviceenginegroup
 *****************************
 
 **Module for setup of ServiceEngineGroup Avi RESTful Object**
@@ -6687,7 +6687,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create ServiceEngineGroup object
-      vmware.nsx_alb.avi_serviceenginegroup:
+      vmware.alb.avi_serviceenginegroup:
         controller: 192.168.15.18
         username: admin
         password: something

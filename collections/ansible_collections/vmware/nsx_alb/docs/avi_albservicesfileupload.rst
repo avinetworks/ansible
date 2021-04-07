@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_albservicesfileupload:
+.. vmware.alb.avi_albservicesfileupload:
 
 
 *****************************
-vmware.nsx_alb.avi_albservicesfileupload
+vmware.alb.avi_albservicesfileupload
 *****************************
 
 **Module for setup of ALBServicesFileUpload Avi RESTful Object**
@@ -295,7 +295,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create ALBServicesFileUpload object
-      vmware.nsx_alb.avi_albservicesfileupload:
+      vmware.alb.avi_albservicesfileupload:
         controller: 192.168.15.18
         username: admin
         password: something

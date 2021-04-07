@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_analyticsprofile:
+.. vmware.alb.avi_analyticsprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_analyticsprofile
+vmware.alb.avi_analyticsprofile
 *****************************
 
 **Module for setup of AnalyticsProfile Avi RESTful Object**
@@ -2396,7 +2396,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create a custom Analytics profile object
-        vmware.nsx_alb.avi_analyticsprofile:
+        vmware.alb.avi_analyticsprofile:
           controller: '{{ controller }}'
           username: '{{ username }}'
           password: '{{ password }}'

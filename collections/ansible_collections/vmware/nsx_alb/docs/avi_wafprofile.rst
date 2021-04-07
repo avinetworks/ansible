@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_wafprofile:
+.. vmware.alb.avi_wafprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_wafprofile
+vmware.alb.avi_wafprofile
 *****************************
 
 **Module for setup of WafProfile Avi RESTful Object**
@@ -272,7 +272,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create WafProfile object
-      vmware.nsx_alb.avi_wafprofile:
+      vmware.alb.avi_wafprofile:
         controller: 192.168.15.18
         username: admin
         password: something

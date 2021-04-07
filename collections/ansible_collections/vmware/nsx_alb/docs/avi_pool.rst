@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_pool:
+.. vmware.alb.avi_pool:
 
 
 *****************************
-vmware.nsx_alb.avi_pool
+vmware.alb.avi_pool
 *****************************
 
 **Module for setup of Pool Avi RESTful Object**
@@ -1794,7 +1794,7 @@ Examples
 .. code-block:: yaml
         
     - name: Create a Pool with two servers and HTTP monitor
-      vmware.nsx_alb.avi_pool:
+      vmware.alb.avi_pool:
         controller: 192.168.138.18
         username: avi_user
         password: avi_password
@@ -1812,7 +1812,7 @@ Examples
                 type: V4
 
     - name: Patch pool with a single server using patch op and avi_credentials
-      vmware.nsx_alb.avi_pool:
+      vmware.alb.avi_pool:
         avi_api_update_method: patch
         avi_api_patch_op: delete
         avi_credentials: "{{avi_credentials}}"

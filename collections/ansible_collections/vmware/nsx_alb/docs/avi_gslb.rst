@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_gslb:
+.. vmware.alb.avi_gslb:
 
 
 *****************************
-vmware.nsx_alb.avi_gslb
+vmware.alb.avi_gslb
 *****************************
 
 **Module for setup of Gslb Avi RESTful Object**
@@ -601,7 +601,7 @@ Examples
 .. code-block:: yaml
         
     - name: Example to create Gslb object
-      vmware.nsx_alb.avi_gslb:
+      vmware.alb.avi_gslb:
         name: "test-gslb"
         avi_credentials:
           username: '{{ username }}'
@@ -634,7 +634,7 @@ Examples
         leader_cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
 
     - name: Update Gslb site's configurations (Patch Add Operation)
-      vmware.nsx_alb.avi_gslb:
+      vmware.alb.avi_gslb:
         avi_credentials:
           username: '{{ username }}'
           password: '{{ password }}'
@@ -659,7 +659,7 @@ Examples
             cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
 
     - name: Update Gslb site's configurations (Patch Replace Operation)
-      vmware.nsx_alb.avi_gslb:
+      vmware.alb.avi_gslb:
         avi_credentials:
           username: "{{ username }}"
           password: "{{ password }}"
@@ -685,7 +685,7 @@ Examples
             cluster_uuid: "cluster-d4ee5fcc-3e0a-4d4f-9ae6-4182bc605829"
 
     - name: Delete Gslb site's den_vses configurations (Patch Delete(dns_vses) Operation)
-      vmware.nsx_alb.avi_gslb:
+      vmware.alb.avi_gslb:
         avi_credentials:
           username: "{{ username }}"
           password: "{{ password }}"
@@ -701,7 +701,7 @@ Examples
           - ip_addresses: "192.168.138.23"
 
     - name: Delete Gslb complete site's configurations (Patch Delete(site) Operation)
-      vmware.nsx_alb.avi_gslb:
+      vmware.alb.avi_gslb:
         avi_credentials: "{{ avi_credentials }}"
         api_version: 18.2.8
         avi_api_update_method: patch

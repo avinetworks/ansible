@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_clusterclouddetails:
+.. vmware.alb.avi_clusterclouddetails:
 
 
 *****************************
-vmware.nsx_alb.avi_clusterclouddetails
+vmware.alb.avi_clusterclouddetails
 *****************************
 
 **Module for setup of ClusterCloudDetails Avi RESTful Object**
@@ -203,7 +203,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create ClusterCloudDetails object
-      vmware.nsx_alb.avi_clusterclouddetails:
+      vmware.alb.avi_clusterclouddetails:
         controller: 192.168.15.18
         username: admin
         password: something

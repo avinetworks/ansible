@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_dynamicdnsrecord:
+.. vmware.alb.avi_dynamicdnsrecord:
 
 
 *****************************
-vmware.nsx_alb.avi_dynamicdnsrecord
+vmware.alb.avi_dynamicdnsrecord
 *****************************
 
 **Module for setup of DynamicDnsRecord Avi RESTful Object**
@@ -592,7 +592,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create DynamicDnsRecord object
-      vmware.nsx_alb.avi_dynamicdnsrecord:
+      vmware.alb.avi_dynamicdnsrecord:
         controller: 192.168.15.18
         username: admin
         password: something

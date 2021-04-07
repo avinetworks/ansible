@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_cloud:
+.. vmware.alb.avi_cloud:
 
 
 *****************************
-vmware.nsx_alb.avi_cloud
+vmware.alb.avi_cloud
 *****************************
 
 **Module for setup of Cloud Avi RESTful Object**
@@ -968,7 +968,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create a VMWare cloud with write access mode
-        vmware.nsx_alb.avi_cloud:
+        vmware.alb.avi_cloud:
           username: '{{ username }}'
           controller: '{{ controller }}'
           password: '{{ password }}'

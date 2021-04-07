@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_networksecuritypolicy:
+.. vmware.alb.avi_networksecuritypolicy:
 
 
 *****************************
-vmware.nsx_alb.avi_networksecuritypolicy
+vmware.alb.avi_networksecuritypolicy
 *****************************
 
 **Module for setup of NetworkSecurityPolicy Avi RESTful Object**
@@ -323,7 +323,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create a network security policy to block clients represented by ip group known_attackers
-        vmware.nsx_alb.avi_networksecuritypolicy:
+        vmware.alb.avi_networksecuritypolicy:
           controller: '{{ controller }}'
           username: '{{ username }}'
           password: '{{ password }}'

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_nsxtsegmentruntime:
+.. vmware.alb.avi_nsxtsegmentruntime:
 
 
 *****************************
-vmware.nsx_alb.avi_nsxtsegmentruntime
+vmware.alb.avi_nsxtsegmentruntime
 *****************************
 
 **Module for setup of NsxtSegmentRuntime Avi RESTful Object**
@@ -501,7 +501,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create NsxtSegmentRuntime object
-      vmware.nsx_alb.avi_nsxtsegmentruntime:
+      vmware.alb.avi_nsxtsegmentruntime:
         controller: 192.168.15.18
         username: admin
         password: something

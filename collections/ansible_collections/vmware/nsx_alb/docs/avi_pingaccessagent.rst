@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_pingaccessagent:
+.. vmware.alb.avi_pingaccessagent:
 
 
 *****************************
-vmware.nsx_alb.avi_pingaccessagent
+vmware.alb.avi_pingaccessagent
 *****************************
 
 **Module for setup of PingAccessAgent Avi RESTful Object**
@@ -304,7 +304,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create PingAccessAgent object
-      vmware.nsx_alb.avi_pingaccessagent:
+      vmware.alb.avi_pingaccessagent:
         controller: 192.168.15.18
         username: admin
         password: something

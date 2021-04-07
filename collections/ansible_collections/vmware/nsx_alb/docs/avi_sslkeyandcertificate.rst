@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_sslkeyandcertificate:
+.. vmware.alb.avi_sslkeyandcertificate:
 
 
 *****************************
-vmware.nsx_alb.avi_sslkeyandcertificate
+vmware.alb.avi_sslkeyandcertificate
 *****************************
 
 **Module for setup of SSLKeyAndCertificate Avi RESTful Object**
@@ -641,7 +641,7 @@ Examples
 .. code-block:: yaml
         
     - name: Create a SSL Key and Certificate
-      vmware.nsx_alb.avi_sslkeyandcertificate:
+      vmware.alb.avi_sslkeyandcertificate:
         controller: 192.168.138.18
         username: admin
         password: password

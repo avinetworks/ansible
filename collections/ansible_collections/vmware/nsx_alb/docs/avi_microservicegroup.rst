@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_microservicegroup:
+.. vmware.alb.avi_microservicegroup:
 
 
 *****************************
-vmware.nsx_alb.avi_microservicegroup
+vmware.alb.avi_microservicegroup
 *****************************
 
 **Module for setup of MicroServiceGroup Avi RESTful Object**
@@ -234,7 +234,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create a Microservice Group that can be used for setting up Network security policy
-        vmware.nsx_alb.avi_microservicegroup:
+        vmware.alb.avi_microservicegroup:
           controller: '{{ controller }}'
           username: '{{ username }}'
           password: '{{ password }}'

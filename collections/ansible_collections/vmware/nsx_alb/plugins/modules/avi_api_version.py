@@ -6,8 +6,7 @@
 #
 # module_check: not supported
 #
-# Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
-#                     Vilian Atmadzhov, <vilian.atmadzhov@paddypowerbetfair.com>
+# Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 """
@@ -30,12 +29,12 @@ description:
 requirements: [ avisdk ]
 options: {}
 extends_documentation_fragment:
-    - vmware.nsx_alb.avi
+    - vmware.alb.avi
 '''
 
 EXAMPLES = '''
   - name: Get AVI API version
-    vmware.nsx_alb.avi_api_version:
+    vmware.alb.avi_api_version:
       controller: ""
       username: ""
       password: ""
@@ -54,10 +53,10 @@ obj:
 from ansible.module_utils.basic import AnsibleModule
 
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+    from ansible_collections.vmware.alb.plugins.module_utils.utils.ansible_utils import (
         avi_common_argument_spec, ansible_return, avi_obj_cmp,
         cleanup_absent_fields)
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
+    from ansible_collections.vmware.alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)
     HAS_REQUESTS = True
 except ImportError:

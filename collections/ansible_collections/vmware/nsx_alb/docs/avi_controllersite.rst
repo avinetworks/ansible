@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_controllersite:
+.. vmware.alb.avi_controllersite:
 
 
 *****************************
-vmware.nsx_alb.avi_controllersite
+vmware.alb.avi_controllersite
 *****************************
 
 **Module for setup of ControllerSite Avi RESTful Object**
@@ -241,7 +241,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create ControllerSite object
-      vmware.nsx_alb.avi_controllersite:
+      vmware.alb.avi_controllersite:
         controller: 192.168.15.18
         username: admin
         password: something

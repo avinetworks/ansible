@@ -20,6 +20,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
+# Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 #
 """
 from __future__ import (absolute_import, division, print_function)
@@ -67,12 +68,12 @@ options:
         default: 10
         type: int
 extends_documentation_fragment:
-    - vmware.nsx_alb.avi
+    - vmware.alb.avi
 '''
 
 EXAMPLES = '''
   - name: Initialize user password
-    vmware.nsx_alb.avi_bootstrap_controller:
+    vmware.alb.avi_bootstrap_controller:
       avi_credentials:
         controller: "controller_ip"
         port: "443"
@@ -93,10 +94,10 @@ obj:
 import time
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+    from ansible_collections.vmware.alb.plugins.module_utils.utils.ansible_utils import (
         avi_common_argument_spec, ansible_return, avi_obj_cmp,
         cleanup_absent_fields)
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
+    from ansible_collections.vmware.alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)
 
     from pkg_resources import parse_version

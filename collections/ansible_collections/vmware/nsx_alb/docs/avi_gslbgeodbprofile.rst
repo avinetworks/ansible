@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_gslbgeodbprofile:
+.. vmware.alb.avi_gslbgeodbprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_gslbgeodbprofile
+vmware.alb.avi_gslbgeodbprofile
 *****************************
 
 **Module for setup of GslbGeoDbProfile Avi RESTful Object**
@@ -284,7 +284,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create GslbGeoDbProfile object
-      vmware.nsx_alb.avi_gslbgeodbprofile:
+      vmware.alb.avi_gslbgeodbprofile:
         controller: 192.168.15.18
         username: admin
         password: something

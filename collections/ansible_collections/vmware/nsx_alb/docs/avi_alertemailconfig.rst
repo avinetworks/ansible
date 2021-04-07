@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_alertemailconfig:
+.. vmware.alb.avi_alertemailconfig:
 
 
 *****************************
-vmware.nsx_alb.avi_alertemailconfig
+vmware.alb.avi_alertemailconfig
 *****************************
 
 **Module for setup of AlertEmailConfig Avi RESTful Object**
@@ -234,7 +234,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create AlertEmailConfig object
-      vmware.nsx_alb.avi_alertemailconfig:
+      vmware.alb.avi_alertemailconfig:
         controller: 192.168.15.18
         username: admin
         password: something

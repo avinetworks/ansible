@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_cluster:
+.. vmware.alb.avi_cluster:
 
 
 *****************************
-vmware.nsx_alb.avi_cluster
+vmware.alb.avi_cluster
 *****************************
 
 **Module for setup of Cluster Avi RESTful Object**
@@ -243,7 +243,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create Cluster object
-      vmware.nsx_alb.avi_cluster:
+      vmware.alb.avi_cluster:
         controller: 192.168.15.18
         username: admin
         password: something

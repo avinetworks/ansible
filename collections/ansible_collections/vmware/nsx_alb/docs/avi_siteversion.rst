@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_siteversion:
+.. vmware.alb.avi_siteversion:
 
 
 *****************************
-vmware.nsx_alb.avi_siteversion
+vmware.alb.avi_siteversion
 *****************************
 
 **Module for setup of SiteVersion Avi RESTful Object**
@@ -381,7 +381,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create SiteVersion object
-      vmware.nsx_alb.avi_siteversion:
+      vmware.alb.avi_siteversion:
         controller: 192.168.15.18
         username: admin
         password: something

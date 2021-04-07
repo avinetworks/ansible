@@ -71,5 +71,6 @@ plugins/modules/avi_wafpolicy.py validate-modules:parameter-list-no-elements
 plugins/modules/avi_wafpolicy.py validate-modules:parameter-list-no-elements
 plugins/modules/avi_wafpolicy.py validate-modules:parameter-list-no-elements
 plugins/modules/avi_user.py validate-modules:parameter-list-no-elements
+plugins/modules/avi_jwtprofile.py validate-modules:parameter-list-no-elements
 plugins/modules/avi_saml_api_session.py validate-modules:doc-type-does-not-match-spec
 plugins/modules/avi_bootstrap_controller.py validate-modules:doc-required-mismatch

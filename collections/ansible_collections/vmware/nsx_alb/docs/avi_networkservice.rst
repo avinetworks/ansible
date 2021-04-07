@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_networkservice:
+.. vmware.alb.avi_networkservice:
 
 
 *****************************
-vmware.nsx_alb.avi_networkservice
+vmware.alb.avi_networkservice
 *****************************
 
 **Module for setup of NetworkService Avi RESTful Object**
@@ -333,7 +333,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create NetworkService object
-      vmware.nsx_alb.avi_networkservice:
+      vmware.alb.avi_networkservice:
         controller: 192.168.15.18
         username: admin
         password: something

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_sslprofile:
+.. vmware.alb.avi_sslprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_sslprofile
+vmware.alb.avi_sslprofile
 *****************************
 
 **Module for setup of SSLProfile Avi RESTful Object**
@@ -589,7 +589,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create SSL profile with list of allowed ciphers
-        vmware.nsx_alb.avi_sslprofile:
+        vmware.alb.avi_sslprofile:
           controller: '{{ controller }}'
           username: '{{ username }}'
           password: '{{ password }}'

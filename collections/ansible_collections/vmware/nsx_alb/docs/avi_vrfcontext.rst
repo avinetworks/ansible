@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_vrfcontext:
+.. vmware.alb.avi_vrfcontext:
 
 
 *****************************
-vmware.nsx_alb.avi_vrfcontext
+vmware.alb.avi_vrfcontext
 *****************************
 
 **Module for setup of VrfContext Avi RESTful Object**
@@ -417,7 +417,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create VrfContext object
-      vmware.nsx_alb.avi_vrfcontext:
+      vmware.alb.avi_vrfcontext:
         controller: 192.168.15.18
         username: admin
         password: something

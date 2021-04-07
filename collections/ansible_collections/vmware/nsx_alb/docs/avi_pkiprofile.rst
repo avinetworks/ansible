@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_pkiprofile:
+.. vmware.alb.avi_pkiprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_pkiprofile
+vmware.alb.avi_pkiprofile
 *****************************
 
 **Module for setup of PKIProfile Avi RESTful Object**
@@ -361,7 +361,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create PKIProfile object
-      vmware.nsx_alb.avi_pkiprofile:
+      vmware.alb.avi_pkiprofile:
         controller: 192.168.15.18
         username: admin
         password: something

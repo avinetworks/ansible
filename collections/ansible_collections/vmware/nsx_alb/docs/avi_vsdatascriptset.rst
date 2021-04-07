@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_vsdatascriptset:
+.. vmware.alb.avi_vsdatascriptset:
 
 
 *****************************
-vmware.nsx_alb.avi_vsdatascriptset
+vmware.alb.avi_vsdatascriptset
 *****************************
 
 **Module for setup of VSDataScriptSet Avi RESTful Object**
@@ -438,7 +438,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create VSDataScriptSet object
-      vmware.nsx_alb.avi_vsdatascriptset:
+      vmware.alb.avi_vsdatascriptset:
         controller: 192.168.15.18
         username: admin
         password: something

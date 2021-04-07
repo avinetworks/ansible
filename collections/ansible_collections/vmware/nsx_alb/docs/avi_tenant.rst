@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_tenant:
+.. vmware.alb.avi_tenant:
 
 
 *****************************
-vmware.nsx_alb.avi_tenant
+vmware.alb.avi_tenant
 *****************************
 
 **Module for setup of Tenant Avi RESTful Object**
@@ -260,7 +260,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create Tenant using Service Engines in provider mode
-        vmware.nsx_alb.avi_tenant:
+        vmware.alb.avi_tenant:
           controller: '{{ controller }}'
           password: '{{ password }}'
           username: '{{ username }}'

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_systemconfiguration:
+.. vmware.alb.avi_systemconfiguration:
 
 
 *****************************
-vmware.nsx_alb.avi_systemconfiguration
+vmware.alb.avi_systemconfiguration
 *****************************
 
 **Module for setup of SystemConfiguration Avi RESTful Object**
@@ -546,7 +546,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create SystemConfiguration object
-      vmware.nsx_alb.avi_systemconfiguration:
+      vmware.alb.avi_systemconfiguration:
         controller: 192.168.15.18
         username: admin
         password: something

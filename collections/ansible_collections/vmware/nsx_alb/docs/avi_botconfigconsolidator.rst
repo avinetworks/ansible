@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_botconfigconsolidator:
+.. vmware.alb.avi_botconfigconsolidator:
 
 
 *****************************
-vmware.nsx_alb.avi_botconfigconsolidator
+vmware.alb.avi_botconfigconsolidator
 *****************************
 
 **Module for setup of BotConfigConsolidator Avi RESTful Object**
@@ -232,7 +232,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create BotConfigConsolidator object
-      vmware.nsx_alb.avi_botconfigconsolidator:
+      vmware.alb.avi_botconfigconsolidator:
         controller: 192.168.15.18
         username: admin
         password: something

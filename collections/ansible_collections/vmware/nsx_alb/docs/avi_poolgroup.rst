@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_poolgroup:
+.. vmware.alb.avi_poolgroup:
 
 
 *****************************
-vmware.nsx_alb.avi_poolgroup
+vmware.alb.avi_poolgroup
 *****************************
 
 **Module for setup of PoolGroup Avi RESTful Object**
@@ -461,7 +461,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create PoolGroup object
-      vmware.nsx_alb.avi_poolgroup:
+      vmware.alb.avi_poolgroup:
         controller: 192.168.15.18
         username: admin
         password: something

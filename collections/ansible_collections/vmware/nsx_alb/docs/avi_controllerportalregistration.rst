@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_controllerportalregistration:
+.. vmware.alb.avi_controllerportalregistration:
 
 
 *****************************
-vmware.nsx_alb.avi_controllerportalregistration
+vmware.alb.avi_controllerportalregistration
 *****************************
 
 **Module for setup of ControllerPortalRegistration Avi RESTful Object**
@@ -217,7 +217,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create ControllerPortalRegistration object
-      vmware.nsx_alb.avi_controllerportalregistration:
+      vmware.alb.avi_controllerportalregistration:
         controller: 192.168.15.18
         username: admin
         password: something

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_botmapping:
+.. vmware.alb.avi_botmapping:
 
 
 *****************************
-vmware.nsx_alb.avi_botmapping
+vmware.alb.avi_botmapping
 *****************************
 
 **Module for setup of BotMapping Avi RESTful Object**
@@ -215,7 +215,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create BotMapping object
-      vmware.nsx_alb.avi_botmapping:
+      vmware.alb.avi_botmapping:
         controller: 192.168.15.18
         username: admin
         password: something

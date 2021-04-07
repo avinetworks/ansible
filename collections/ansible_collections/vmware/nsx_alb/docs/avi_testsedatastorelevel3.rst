@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_testsedatastorelevel3:
+.. vmware.alb.avi_testsedatastorelevel3:
 
 
 *****************************
-vmware.nsx_alb.avi_testsedatastorelevel3
+vmware.alb.avi_testsedatastorelevel3
 *****************************
 
 **Module for setup of TestSeDatastoreLevel3 Avi RESTful Object**
@@ -183,7 +183,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create TestSeDatastoreLevel3 object
-      vmware.nsx_alb.avi_testsedatastorelevel3:
+      vmware.alb.avi_testsedatastorelevel3:
         controller: 192.168.15.18
         username: admin
         password: something

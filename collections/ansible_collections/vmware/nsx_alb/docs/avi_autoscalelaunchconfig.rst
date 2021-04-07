@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_autoscalelaunchconfig:
+.. vmware.alb.avi_autoscalelaunchconfig:
 
 
 *****************************
-vmware.nsx_alb.avi_autoscalelaunchconfig
+vmware.alb.avi_autoscalelaunchconfig
 *****************************
 
 **Module for setup of AutoScaleLaunchConfig Avi RESTful Object**
@@ -300,7 +300,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create an Autoscale Launch configuration.
-        vmware.nsx_alb.avi_autoscalelaunchconfig:
+        vmware.alb.avi_autoscalelaunchconfig:
           controller: '{{ controller }}'
           username: '{{ username }}'
           password: '{{ password }}'

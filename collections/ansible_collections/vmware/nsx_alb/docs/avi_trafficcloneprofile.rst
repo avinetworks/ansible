@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_trafficcloneprofile:
+.. vmware.alb.avi_trafficcloneprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_trafficcloneprofile
+vmware.alb.avi_trafficcloneprofile
 *****************************
 
 **Module for setup of TrafficCloneProfile Avi RESTful Object**
@@ -278,7 +278,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create TrafficCloneProfile object
-      vmware.nsx_alb.avi_trafficcloneprofile:
+      vmware.alb.avi_trafficcloneprofile:
         controller: 192.168.15.18
         username: admin
         password: something

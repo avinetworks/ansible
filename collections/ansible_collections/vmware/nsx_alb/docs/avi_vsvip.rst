@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_vsvip:
+.. vmware.alb.avi_vsvip:
 
 
 *****************************
-vmware.nsx_alb.avi_vsvip
+vmware.alb.avi_vsvip
 *****************************
 
 **Module for setup of VsVip Avi RESTful Object**
@@ -451,7 +451,7 @@ Examples
 .. code-block:: yaml
         
     - name: Create vsvip for virtualservice for newtestvs
-      vmware.nsx_alb.avi_vsvip:
+      vmware.alb.avi_vsvip:
         name: vsvip-newtestvs-Default-Cloud
         avi_credentials: '{{ avi_credentials }}'
         api_context: '{{avi_api_context | default(omit)}}'

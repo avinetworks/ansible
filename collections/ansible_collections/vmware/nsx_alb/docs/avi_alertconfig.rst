@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_alertconfig:
+.. vmware.alb.avi_alertconfig:
 
 
 *****************************
-vmware.nsx_alb.avi_alertconfig
+vmware.alb.avi_alertconfig
 *****************************
 
 **Module for setup of AlertConfig Avi RESTful Object**
@@ -510,7 +510,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create AlertConfig object
-      vmware.nsx_alb.avi_alertconfig:
+      vmware.alb.avi_alertconfig:
         controller: 192.168.15.18
         username: admin
         password: something

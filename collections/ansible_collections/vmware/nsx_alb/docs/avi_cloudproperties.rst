@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_cloudproperties:
+.. vmware.alb.avi_cloudproperties:
 
 
 *****************************
-vmware.nsx_alb.avi_cloudproperties
+vmware.alb.avi_cloudproperties
 *****************************
 
 **Module for setup of CloudProperties Avi RESTful Object**
@@ -217,7 +217,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create CloudProperties object
-      vmware.nsx_alb.avi_cloudproperties:
+      vmware.alb.avi_cloudproperties:
         controller: 192.168.15.18
         username: admin
         password: something

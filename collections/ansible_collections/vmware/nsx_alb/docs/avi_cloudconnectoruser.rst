@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_cloudconnectoruser:
+.. vmware.alb.avi_cloudconnectoruser:
 
 
 *****************************
-vmware.nsx_alb.avi_cloudconnectoruser
+vmware.alb.avi_cloudconnectoruser
 *****************************
 
 **Module for setup of CloudConnectorUser Avi RESTful Object**
@@ -383,7 +383,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create a Cloud connector user that is used for integration into cloud platforms
-        vmware.nsx_alb.avi_cloudconnectoruser:
+        vmware.alb.avi_cloudconnectoruser:
           controller: '{{ controller }}'
           name: root
           password: '{{ password }}'

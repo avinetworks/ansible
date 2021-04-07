@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_customipamdnsprofile:
+.. vmware.alb.avi_customipamdnsprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_customipamdnsprofile
+vmware.alb.avi_customipamdnsprofile
 *****************************
 
 **Module for setup of CustomIpamDnsProfile Avi RESTful Object**
@@ -229,7 +229,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create CustomIpamDnsProfile object
-      vmware.nsx_alb.avi_customipamdnsprofile:
+      vmware.alb.avi_customipamdnsprofile:
         controller: 192.168.15.18
         username: admin
         password: something

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_backup:
+.. vmware.alb.avi_backup:
 
 
 *****************************
-vmware.nsx_alb.avi_backup
+vmware.alb.avi_backup
 *****************************
 
 **Module for setup of Backup Avi RESTful Object**
@@ -271,7 +271,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create Backup object
-      vmware.nsx_alb.avi_backup:
+      vmware.alb.avi_backup:
         controller: 192.168.15.18
         username: admin
         password: something

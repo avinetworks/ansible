@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_systemlimits:
+.. vmware.alb.avi_systemlimits:
 
 
 *****************************
-vmware.nsx_alb.avi_systemlimits
+vmware.alb.avi_systemlimits
 *****************************
 
 **Module for setup of SystemLimits Avi RESTful Object**
@@ -206,7 +206,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create SystemLimits object
-      vmware.nsx_alb.avi_systemlimits:
+      vmware.alb.avi_systemlimits:
         controller: 192.168.15.18
         username: admin
         password: something

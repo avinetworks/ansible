@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_serverautoscalepolicy:
+.. vmware.alb.avi_serverautoscalepolicy:
 
 
 *****************************
-vmware.nsx_alb.avi_serverautoscalepolicy
+vmware.alb.avi_serverautoscalepolicy
 *****************************
 
 **Module for setup of ServerAutoScalePolicy Avi RESTful Object**
@@ -513,7 +513,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create ServerAutoScalePolicy object
-      vmware.nsx_alb.avi_serverautoscalepolicy:
+      vmware.alb.avi_serverautoscalepolicy:
         controller: 192.168.15.18
         username: admin
         password: something

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_jwtprofile:
+.. vmware.alb.avi_jwtprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_jwtprofile
+vmware.alb.avi_jwtprofile
 *****************************
 
 **Module for setup of JWTProfile Avi RESTful Object**
@@ -155,6 +155,9 @@ Parameters
                                 <div style="font-size: small">
                   - Minimum of 1 items required.
                 </div>
+                                <div style="font-size: small">
+                  - Maximum of 1 items allowed.
+                </div>
                                             </td>
         </tr>
                 <tr>
@@ -276,7 +279,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create JWTProfile object
-      vmware.nsx_alb.avi_jwtprofile:
+      vmware.alb.avi_jwtprofile:
         controller: 192.168.15.18
         username: admin
         password: something

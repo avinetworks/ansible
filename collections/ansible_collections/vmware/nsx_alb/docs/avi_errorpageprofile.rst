@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_errorpageprofile:
+.. vmware.alb.avi_errorpageprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_errorpageprofile
+vmware.alb.avi_errorpageprofile
 *****************************
 
 **Module for setup of ErrorPageProfile Avi RESTful Object**
@@ -298,7 +298,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create ErrorPageProfile object
-      vmware.nsx_alb.avi_errorpageprofile:
+      vmware.alb.avi_errorpageprofile:
         controller: 192.168.15.18
         username: admin
         password: something

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_certificatemanagementprofile:
+.. vmware.alb.avi_certificatemanagementprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_certificatemanagementprofile
+vmware.alb.avi_certificatemanagementprofile
 *****************************
 
 **Module for setup of CertificateManagementProfile Avi RESTful Object**
@@ -240,7 +240,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create CertificateManagementProfile object
-      vmware.nsx_alb.avi_certificatemanagementprofile:
+      vmware.alb.avi_certificatemanagementprofile:
         controller: 192.168.15.18
         username: admin
         password: something

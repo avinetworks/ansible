@@ -6,7 +6,7 @@ import os
 import unittest
 from ansible.module_utils import basic
 from ansible.module_utils.common.text.converters import to_bytes
-from ansible_collections.vmware.nsx_alb.plugins.modules import avi_pool
+from ansible_collections.vmware.alb.plugins.modules import avi_pool
 
 try:
     from unittest.mock import MagicMock

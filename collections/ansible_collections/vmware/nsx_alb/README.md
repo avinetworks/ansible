@@ -1,4 +1,5 @@
-# Ansible Collection: vmware.nsx_alb
+# VMware Advanced Load Balancer (formerly Avi) Ansible Collection 
+# Ansible collection: vmware.alb
 
 <!--start requires_ansible-->
 ## Ansible version compatibility

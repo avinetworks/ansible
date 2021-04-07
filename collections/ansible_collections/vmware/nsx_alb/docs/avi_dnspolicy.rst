@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_dnspolicy:
+.. vmware.alb.avi_dnspolicy:
 
 
 *****************************
-vmware.nsx_alb.avi_dnspolicy
+vmware.alb.avi_dnspolicy
 *****************************
 
 **Module for setup of DnsPolicy Avi RESTful Object**
@@ -272,7 +272,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create DnsPolicy object
-      vmware.nsx_alb.avi_dnspolicy:
+      vmware.alb.avi_dnspolicy:
         controller: 192.168.15.18
         username: admin
         password: something

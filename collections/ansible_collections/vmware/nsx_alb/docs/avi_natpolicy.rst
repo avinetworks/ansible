@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_natpolicy:
+.. vmware.alb.avi_natpolicy:
 
 
 *****************************
-vmware.nsx_alb.avi_natpolicy
+vmware.alb.avi_natpolicy
 *****************************
 
 **Module for setup of NatPolicy Avi RESTful Object**
@@ -269,7 +269,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create NatPolicy object
-      vmware.nsx_alb.avi_natpolicy:
+      vmware.alb.avi_natpolicy:
         controller: 192.168.15.18
         username: admin
         password: something

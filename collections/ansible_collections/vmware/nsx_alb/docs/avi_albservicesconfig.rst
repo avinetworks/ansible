@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_albservicesconfig:
+.. vmware.alb.avi_albservicesconfig:
 
 
 *****************************
-vmware.nsx_alb.avi_albservicesconfig
+vmware.alb.avi_albservicesconfig
 *****************************
 
 **Module for setup of ALBServicesConfig Avi RESTful Object**
@@ -405,7 +405,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create ALBServicesConfig object
-      vmware.nsx_alb.avi_albservicesconfig:
+      vmware.alb.avi_albservicesconfig:
         controller: 192.168.15.18
         username: admin
         password: something

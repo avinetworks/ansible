@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_scheduler:
+.. vmware.alb.avi_scheduler:
 
 
 *****************************
-vmware.nsx_alb.avi_scheduler
+vmware.alb.avi_scheduler
 *****************************
 
 **Module for setup of Scheduler Avi RESTful Object**
@@ -360,7 +360,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create Scheduler object
-      vmware.nsx_alb.avi_scheduler:
+      vmware.alb.avi_scheduler:
         controller: 192.168.15.18
         username: admin
         password: something

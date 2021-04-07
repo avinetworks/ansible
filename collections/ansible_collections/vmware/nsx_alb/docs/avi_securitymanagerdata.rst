@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_securitymanagerdata:
+.. vmware.alb.avi_securitymanagerdata:
 
 
 *****************************
-vmware.nsx_alb.avi_securitymanagerdata
+vmware.alb.avi_securitymanagerdata
 *****************************
 
 **Module for setup of SecurityManagerData Avi RESTful Object**
@@ -209,7 +209,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create SecurityManagerData object
-      vmware.nsx_alb.avi_securitymanagerdata:
+      vmware.alb.avi_securitymanagerdata:
         controller: 192.168.15.18
         username: admin
         password: something

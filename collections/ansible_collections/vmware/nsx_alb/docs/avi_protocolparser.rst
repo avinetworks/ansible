@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_protocolparser:
+.. vmware.alb.avi_protocolparser:
 
 
 *****************************
-vmware.nsx_alb.avi_protocolparser
+vmware.alb.avi_protocolparser
 *****************************
 
 **Module for setup of ProtocolParser Avi RESTful Object**
@@ -261,7 +261,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create ProtocolParser object
-      vmware.nsx_alb.avi_protocolparser:
+      vmware.alb.avi_protocolparser:
         controller: 192.168.15.18
         username: admin
         password: something

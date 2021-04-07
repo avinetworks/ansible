@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_webhook:
+.. vmware.alb.avi_webhook:
 
 
 *****************************
-vmware.nsx_alb.avi_webhook
+vmware.alb.avi_webhook
 *****************************
 
 **Module for setup of Webhook Avi RESTful Object**
@@ -246,7 +246,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create Webhook object
-      vmware.nsx_alb.avi_webhook:
+      vmware.alb.avi_webhook:
         controller: 192.168.15.18
         username: admin
         password: something

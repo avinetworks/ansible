@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_networkprofile:
+.. vmware.alb.avi_networkprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_networkprofile
+vmware.alb.avi_networkprofile
 *****************************
 
 **Module for setup of NetworkProfile Avi RESTful Object**
@@ -269,7 +269,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create a network profile for an UDP application
-        vmware.nsx_alb.avi_networkprofile:
+        vmware.alb.avi_networkprofile:
           controller: '{{ controller }}'
           username: '{{ username }}'
           password: '{{ password }}'

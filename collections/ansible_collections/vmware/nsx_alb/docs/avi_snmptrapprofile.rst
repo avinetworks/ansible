@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_snmptrapprofile:
+.. vmware.alb.avi_snmptrapprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_snmptrapprofile
+vmware.alb.avi_snmptrapprofile
 *****************************
 
 **Module for setup of SnmpTrapProfile Avi RESTful Object**
@@ -197,7 +197,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create SnmpTrapProfile object
-      vmware.nsx_alb.avi_snmptrapprofile:
+      vmware.alb.avi_snmptrapprofile:
         controller: 192.168.15.18
         username: admin
         password: something

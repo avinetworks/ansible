@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_stringgroup:
+.. vmware.alb.avi_stringgroup:
 
 
 *****************************
-vmware.nsx_alb.avi_stringgroup
+vmware.alb.avi_stringgroup
 *****************************
 
 **Module for setup of StringGroup Avi RESTful Object**
@@ -289,7 +289,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create a string group configuration
-        vmware.nsx_alb.avi_stringgroup:
+        vmware.alb.avi_stringgroup:
           controller: '{{ controller }}'
           password: '{{ password }}'
           username: '{{ username }}'

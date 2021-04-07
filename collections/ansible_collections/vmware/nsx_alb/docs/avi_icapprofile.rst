@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_icapprofile:
+.. vmware.alb.avi_icapprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_icapprofile
+vmware.alb.avi_icapprofile
 *****************************
 
 **Module for setup of IcapProfile Avi RESTful Object**
@@ -569,7 +569,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create IcapProfile object
-      vmware.nsx_alb.avi_icapprofile:
+      vmware.alb.avi_icapprofile:
         controller: 192.168.15.18
         username: admin
         password: something

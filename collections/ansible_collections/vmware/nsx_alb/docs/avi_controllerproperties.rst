@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_controllerproperties:
+.. vmware.alb.avi_controllerproperties:
 
 
 *****************************
-vmware.nsx_alb.avi_controllerproperties
+vmware.alb.avi_controllerproperties
 *****************************
 
 **Module for setup of ControllerProperties Avi RESTful Object**
@@ -2052,7 +2052,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create ControllerProperties object
-      vmware.nsx_alb.avi_controllerproperties:
+      vmware.alb.avi_controllerproperties:
         controller: 192.168.15.18
         username: admin
         password: something

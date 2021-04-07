@@ -1,12 +1,12 @@
 namespace: vmware
-name: nsx_alb
+name: alb
 version: 1.0.0
 readme: README.md
 authors:
 - Gaurav Rastogi <grastogi@vmware.com>
 - Sandeep Bandi <sabandi@vmware.com>
 - Amol Shinde <samol@vmware.com>
-description: Ansible NSX ALB collection by VMWare
+description: VMware Advanced Load Balancer (formerly Avi) Ansible Collection
 license:
 - GPL-2.0-or-later
 license_file: ''

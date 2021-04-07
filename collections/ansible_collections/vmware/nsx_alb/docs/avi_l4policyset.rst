@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_l4policyset:
+.. vmware.alb.avi_l4policyset:
 
 
 *****************************
-vmware.nsx_alb.avi_l4policyset
+vmware.alb.avi_l4policyset
 *****************************
 
 **Module for setup of L4PolicySet Avi RESTful Object**
@@ -292,7 +292,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create L4PolicySet object
-      vmware.nsx_alb.avi_l4policyset:
+      vmware.alb.avi_l4policyset:
         controller: 192.168.15.18
         username: admin
         password: something

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_authprofile:
+.. vmware.alb.avi_authprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_authprofile
+vmware.alb.avi_authprofile
 *****************************
 
 **Module for setup of AuthProfile Avi RESTful Object**
@@ -340,7 +340,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create user authorization profile based on the LDAP
-        vmware.nsx_alb.avi_authprofile:
+        vmware.alb.avi_authprofile:
           controller: '{{ controller }}'
           password: '{{ password }}'
           username: '{{ username }}'

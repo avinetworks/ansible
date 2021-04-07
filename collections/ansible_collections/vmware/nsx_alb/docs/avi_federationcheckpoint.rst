@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_federationcheckpoint:
+.. vmware.alb.avi_federationcheckpoint:
 
 
 *****************************
-vmware.nsx_alb.avi_federationcheckpoint
+vmware.alb.avi_federationcheckpoint
 *****************************
 
 **Module for setup of FederationCheckpoint Avi RESTful Object**
@@ -261,7 +261,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create FederationCheckpoint object
-      vmware.nsx_alb.avi_federationcheckpoint:
+      vmware.alb.avi_federationcheckpoint:
         controller: 192.168.15.18
         username: admin
         password: something

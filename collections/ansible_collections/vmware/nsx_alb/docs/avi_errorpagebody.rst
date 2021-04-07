@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_errorpagebody:
+.. vmware.alb.avi_errorpagebody:
 
 
 *****************************
-vmware.nsx_alb.avi_errorpagebody
+vmware.alb.avi_errorpagebody
 *****************************
 
 **Module for setup of ErrorPageBody Avi RESTful Object**
@@ -258,7 +258,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create ErrorPageBody object
-      vmware.nsx_alb.avi_errorpagebody:
+      vmware.alb.avi_errorpagebody:
         controller: 192.168.15.18
         username: admin
         password: something

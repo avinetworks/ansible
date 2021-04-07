@@ -6,7 +6,7 @@
 #
 # module_check: not supported
 #
-# Copyright: (c) 2017 Gaurav Rastogi, <grastogi@avinetworks.com>
+# Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 #
 """
@@ -36,12 +36,12 @@ options:
         required: true
         type: str
 extends_documentation_fragment:
-    - vmware.nsx_alb.avi
+    - vmware.alb.avi
 '''
 
 EXAMPLES = '''
   - name: Get SAML Session
-    vmware.nsx_alb.avi_saml_api_session:
+    vmware.alb.avi_saml_api_session:
       idp_class: "{{ avi_credentials.idp_class }}"
       username: "{{ avi_credentials.username }}"
       password: "{{ avi_credentials.password }}"
@@ -51,7 +51,7 @@ EXAMPLES = '''
   - set_fact:
       saml_api_context: "{{ saml_api_session.ansible_facts.avi_api_context }}"
   - name: Create Pool
-    vmware.nsx_alb.avi_pool:
+    vmware.alb.avi_pool:
       api_context: "{{ saml_api_context | default(omit) }}"
       avi_credentials: "{{ avi_credentials }}"
       state: "{{ state | default(present) }}"
@@ -68,7 +68,7 @@ EXAMPLES = '''
           addr: 10.90.64.13
           type: 'V4'
   - name: Create Virtual Service
-    vmware.nsx_alb.avi_virtualservice:
+    vmware.alb.avi_virtualservice:
       api_context: "{{ saml_api_context | default(omit) }}"
       avi_credentials: "{{ avi_credentials }}"
       state: "{{ state | default(present) }}"
@@ -94,16 +94,16 @@ obj:
 
 from ansible.module_utils.basic import AnsibleModule
 try:
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.utils.ansible_utils import (
+    from ansible_collections.vmware.alb.plugins.module_utils.utils.ansible_utils import (
         avi_common_argument_spec, ansible_return, avi_obj_cmp,
         cleanup_absent_fields)
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import (
+    from ansible_collections.vmware.alb.plugins.module_utils.avi_api import (
         ApiSession, AviCredentials)
     from pkg_resources import parse_version
     from requests import ConnectionError
     from ssl import SSLError
     from requests.exceptions import ChunkedEncodingError
-    from ansible_collections.vmware.nsx_alb.plugins.module_utils.saml_avi_api import OktaSAMLApiSession, OneloginSAMLApiSession
+    from ansible_collections.vmware.alb.plugins.module_utils.saml_avi_api import OktaSAMLApiSession, OneloginSAMLApiSession
     HAS_REQUESTS = True
 except ImportError:
     HAS_REQUESTS = False

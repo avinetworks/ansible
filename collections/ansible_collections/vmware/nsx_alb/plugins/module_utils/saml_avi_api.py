@@ -1,4 +1,4 @@
-from ansible_collections.vmware.nsx_alb.plugins.module_utils.avi_api import ApiSession, \
+from ansible_collections.vmware.alb.plugins.module_utils.avi_api import ApiSession, \
     sessionDict, APIError
 import requests
 import re

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_httppolicyset:
+.. vmware.alb.avi_httppolicyset:
 
 
 *****************************
-vmware.nsx_alb.avi_httppolicyset
+vmware.alb.avi_httppolicyset
 *****************************
 
 **Module for setup of HTTPPolicySet Avi RESTful Object**
@@ -377,7 +377,7 @@ Examples
 .. code-block:: yaml
         
     - name: Create a HTTP Policy set two switch between testpool1 and testpool2
-      vmware.nsx_alb.avi_httppolicyset:
+      vmware.alb.avi_httppolicyset:
         controller: 192.168.138.18
         username: admin
         password: password

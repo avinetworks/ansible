@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_ipamdnsproviderprofile:
+.. vmware.alb.avi_ipamdnsproviderprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_ipamdnsproviderprofile
+vmware.alb.avi_ipamdnsproviderprofile
 *****************************
 
 **Module for setup of IpamDnsProviderProfile Avi RESTful Object**
@@ -446,7 +446,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create IPAM DNS provider setting
-        vmware.nsx_alb.avi_ipamdnsproviderprofile:
+        vmware.alb.avi_ipamdnsproviderprofile:
           controller: '{{ controller }}'
           username: '{{ username }}'
           password: '{{ password }}'

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_licenseledgerdetails:
+.. vmware.alb.avi_licenseledgerdetails:
 
 
 *****************************
-vmware.nsx_alb.avi_licenseledgerdetails
+vmware.alb.avi_licenseledgerdetails
 *****************************
 
 **Module for setup of LicenseLedgerDetails Avi RESTful Object**
@@ -206,7 +206,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create LicenseLedgerDetails object
-      vmware.nsx_alb.avi_licenseledgerdetails:
+      vmware.alb.avi_licenseledgerdetails:
         controller: 192.168.15.18
         username: admin
         password: something

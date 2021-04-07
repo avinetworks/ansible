@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_virtualservice:
+.. vmware.alb.avi_virtualservice:
 
 
 *****************************
-vmware.nsx_alb.avi_virtualservice
+vmware.alb.avi_virtualservice
 *****************************
 
 **Module for setup of VirtualService Avi RESTful Object**
@@ -2527,7 +2527,7 @@ Examples
 .. code-block:: yaml
         
     - name: Create SSL Virtual Service using Pool testpool2
-      vmware.nsx_alb.avi_virtualservice:
+      vmware.alb.avi_virtualservice:
         controller: 192.168.138.18
         username: admin
         password: password

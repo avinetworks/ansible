@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_ssopolicy:
+.. vmware.alb.avi_ssopolicy:
 
 
 *****************************
-vmware.nsx_alb.avi_ssopolicy
+vmware.alb.avi_ssopolicy
 *****************************
 
 **Module for setup of SSOPolicy Avi RESTful Object**
@@ -287,7 +287,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create SSOPolicy object
-      vmware.nsx_alb.avi_ssopolicy:
+      vmware.alb.avi_ssopolicy:
         controller: 192.168.15.18
         username: admin
         password: something

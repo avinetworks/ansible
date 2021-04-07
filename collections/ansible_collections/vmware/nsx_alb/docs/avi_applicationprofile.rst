@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_applicationprofile:
+.. vmware.alb.avi_applicationprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_applicationprofile
+vmware.alb.avi_applicationprofile
 *****************************
 
 **Module for setup of ApplicationProfile Avi RESTful Object**
@@ -435,7 +435,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create an Application Profile for HTTP application enabled for SSL traffic
-        vmware.nsx_alb.avi_applicationprofile:
+        vmware.alb.avi_applicationprofile:
           controller: '{{ controller }}'
           username: '{{ username }}'
           password: '{{ password }}'

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_ipaddrgroup:
+.. vmware.alb.avi_ipaddrgroup:
 
 
 *****************************
-vmware.nsx_alb.avi_ipaddrgroup
+vmware.alb.avi_ipaddrgroup
 *****************************
 
 **Module for setup of IpAddrGroup Avi RESTful Object**
@@ -365,7 +365,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create an IP Address Group configuration
-        vmware.nsx_alb.avi_ipaddrgroup:
+        vmware.alb.avi_ipaddrgroup:
           controller: '{{ controller }}'
           username: '{{ username }}'
           password: '{{ password }}'

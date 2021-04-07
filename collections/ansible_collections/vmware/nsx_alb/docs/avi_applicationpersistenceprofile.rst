@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_applicationpersistenceprofile:
+.. vmware.alb.avi_applicationpersistenceprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_applicationpersistenceprofile
+vmware.alb.avi_applicationpersistenceprofile
 *****************************
 
 **Module for setup of ApplicationPersistenceProfile Avi RESTful Object**
@@ -384,7 +384,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create an Application Persistence setting using http cookie.
-        vmware.nsx_alb.avi_applicationpersistenceprofile:
+        vmware.alb.avi_applicationpersistenceprofile:
           controller: '{{ controller }}'
           username: '{{ username }}'
           password: '{{ password }}'

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_gslbservice:
+.. vmware.alb.avi_gslbservice:
 
 
 *****************************
-vmware.nsx_alb.avi_gslbservice
+vmware.alb.avi_gslbservice
 *****************************
 
 **Module for setup of GslbService Avi RESTful Object**
@@ -684,7 +684,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create GslbService object
-      vmware.nsx_alb.avi_gslbservice:
+      vmware.alb.avi_gslbservice:
         controller: 192.168.15.18
         username: admin
         password: something

@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_prioritylabels:
+.. vmware.alb.avi_prioritylabels:
 
 
 *****************************
-vmware.nsx_alb.avi_prioritylabels
+vmware.alb.avi_prioritylabels
 *****************************
 
 **Module for setup of PriorityLabels Avi RESTful Object**
@@ -257,7 +257,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create PriorityLabels object
-      vmware.nsx_alb.avi_prioritylabels:
+      vmware.alb.avi_prioritylabels:
         controller: 192.168.15.18
         username: admin
         password: something

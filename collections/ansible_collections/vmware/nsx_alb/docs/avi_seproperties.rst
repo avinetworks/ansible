@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_seproperties:
+.. vmware.alb.avi_seproperties:
 
 
 *****************************
-vmware.nsx_alb.avi_seproperties
+vmware.alb.avi_seproperties
 *****************************
 
 **Module for setup of SeProperties Avi RESTful Object**
@@ -197,7 +197,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create SeProperties object
-      vmware.nsx_alb.avi_seproperties:
+      vmware.alb.avi_seproperties:
         controller: 192.168.15.18
         username: admin
         password: something

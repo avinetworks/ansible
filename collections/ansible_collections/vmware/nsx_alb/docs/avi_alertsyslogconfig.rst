@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_alertsyslogconfig:
+.. vmware.alb.avi_alertsyslogconfig:
 
 
 *****************************
-vmware.nsx_alb.avi_alertsyslogconfig
+vmware.alb.avi_alertsyslogconfig
 *****************************
 
 **Module for setup of AlertSyslogConfig Avi RESTful Object**
@@ -214,7 +214,7 @@ Examples
 .. code-block:: yaml
         
       - name: Create Alert Syslog object to forward all events to external syslog server
-        vmware.nsx_alb.avi_alertsyslogconfig:
+        vmware.alb.avi_alertsyslogconfig:
           controller: '{{ controller }}'
           name: Roberts-syslog
           password: '{{ password }}'

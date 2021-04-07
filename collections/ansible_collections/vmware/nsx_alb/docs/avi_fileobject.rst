@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_fileobject:
+.. vmware.alb.avi_fileobject:
 
 
 *****************************
-vmware.nsx_alb.avi_fileobject
+vmware.alb.avi_fileobject
 *****************************
 
 **Module for setup of FileObject Avi RESTful Object**
@@ -456,7 +456,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create FileObject object
-      vmware.nsx_alb.avi_fileobject:
+      vmware.alb.avi_fileobject:
         controller: 192.168.15.18
         username: admin
         password: something

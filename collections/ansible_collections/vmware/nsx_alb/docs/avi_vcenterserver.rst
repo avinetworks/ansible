@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_vcenterserver:
+.. vmware.alb.avi_vcenterserver:
 
 
 *****************************
-vmware.nsx_alb.avi_vcenterserver
+vmware.alb.avi_vcenterserver
 *****************************
 
 **Module for setup of VCenterServer Avi RESTful Object**
@@ -287,7 +287,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create VCenterServer object
-      vmware.nsx_alb.avi_vcenterserver:
+      vmware.alb.avi_vcenterserver:
         controller: 192.168.15.18
         username: admin
         password: something

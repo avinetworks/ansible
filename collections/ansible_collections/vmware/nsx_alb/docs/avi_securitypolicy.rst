@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_securitypolicy:
+.. vmware.alb.avi_securitypolicy:
 
 
 *****************************
-vmware.nsx_alb.avi_securitypolicy
+vmware.alb.avi_securitypolicy
 *****************************
 
 **Module for setup of SecurityPolicy Avi RESTful Object**
@@ -393,7 +393,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create SecurityPolicy object
-      vmware.nsx_alb.avi_securitypolicy:
+      vmware.alb.avi_securitypolicy:
         controller: 192.168.15.18
         username: admin
         password: something

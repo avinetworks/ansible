@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_jwtserverprofile:
+.. vmware.alb.avi_jwtserverprofile:
 
 
 *****************************
-vmware.nsx_alb.avi_jwtserverprofile
+vmware.alb.avi_jwtserverprofile
 *****************************
 
 **Module for setup of JWTServerProfile Avi RESTful Object**
@@ -238,7 +238,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create JWTServerProfile object
-      vmware.nsx_alb.avi_jwtserverprofile:
+      vmware.alb.avi_jwtserverprofile:
         controller: 192.168.15.18
         username: admin
         password: something

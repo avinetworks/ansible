@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_healthmonitor:
+.. vmware.alb.avi_healthmonitor:
 
 
 *****************************
-vmware.nsx_alb.avi_healthmonitor
+vmware.alb.avi_healthmonitor
 *****************************
 
 **Module for setup of HealthMonitor Avi RESTful Object**
@@ -746,7 +746,7 @@ Examples
 .. code-block:: yaml
         
     - name: Create a HTTPS health monitor
-      vmware.nsx_alb.avi_healthmonitor:
+      vmware.alb.avi_healthmonitor:
         controller: 192.168.138.18
         username: admin
         password: password

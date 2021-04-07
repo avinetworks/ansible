@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_hardwaresecuritymodulegroup:
+.. vmware.alb.avi_hardwaresecuritymodulegroup:
 
 
 *****************************
-vmware.nsx_alb.avi_hardwaresecuritymodulegroup
+vmware.alb.avi_hardwaresecuritymodulegroup
 *****************************
 
 **Module for setup of HardwareSecurityModuleGroup Avi RESTful Object**
@@ -226,7 +226,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create HardwareSecurityModuleGroup object
-      vmware.nsx_alb.avi_hardwaresecuritymodulegroup:
+      vmware.alb.avi_hardwaresecuritymodulegroup:
         controller: 192.168.15.18
         username: admin
         password: something

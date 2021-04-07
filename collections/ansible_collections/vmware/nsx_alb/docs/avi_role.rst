@@ -1,8 +1,8 @@
-.. vmware.nsx_alb.avi_role:
+.. vmware.alb.avi_role:
 
 
 *****************************
-vmware.nsx_alb.avi_role
+vmware.alb.avi_role
 *****************************
 
 **Module for setup of Role Avi RESTful Object**
@@ -226,7 +226,7 @@ Examples
 .. code-block:: yaml
 
     - name: Example to create Role object
-      vmware.nsx_alb.avi_role:
+      vmware.alb.avi_role:
         controller: 192.168.15.18
         username: admin
         password: something
