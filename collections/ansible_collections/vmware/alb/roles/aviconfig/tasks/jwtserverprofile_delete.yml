@@ -1,8 +1,8 @@
 # Automatically Generated File
-# Copyright Avi Networks
+# Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 ---
 - name: Avi JWTServerProfile | Delete JWTServerProfile
-  vmware.nsx_alb.avi_jwtserverprofile:
+  vmware.alb.avi_jwtserverprofile:
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

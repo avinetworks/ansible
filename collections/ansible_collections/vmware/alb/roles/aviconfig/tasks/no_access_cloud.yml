@@ -1,10 +1,10 @@
 # Automatically Generated File
-# Copyright Avi Networks
+# Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 
 ---
 - name: Avi Cloud | Setup No Access Cloud
   no_log: "{{ avi_role_config_log_mode | default(False)}}"
-  vmware.nsx_alb.avi_cloud:
+  vmware.alb.avi_cloud:
     controller: "{{ avi_controller | default(omit)}}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

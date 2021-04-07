@@ -4172,7 +4172,7 @@ Parameters
                   - Field introduced in 20.1.1.
                 </div>
                                 <div style="font-size: small">
-                  - Default value when not specified in API or module is interpreted by Avi Controller as 2.
+                  - Default value when not specified in API or module is interpreted by Avi Controller as 3.
                 </div>
                                             </td>
         </tr>

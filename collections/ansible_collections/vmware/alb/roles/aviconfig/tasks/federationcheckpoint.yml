@@ -1,8 +1,8 @@
 # Automatically Generated File
-# Copyright Avi Networks
+# Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 ---
 - name: Avi FederationCheckpoint | Create or Update FederationCheckpoint
-  vmware.nsx_alb.avi_federationcheckpoint:
+  vmware.alb.avi_federationcheckpoint:
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"

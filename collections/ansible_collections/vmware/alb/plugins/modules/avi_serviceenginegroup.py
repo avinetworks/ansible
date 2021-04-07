@@ -1132,7 +1132,7 @@ options:
             - This version is reported by secondary se to primary se in heartbeat response messages.
             - Allowed values are 1-3.
             - Field introduced in 20.1.1.
-            - Default value when not specified in API or module is interpreted by Avi Controller as 2.
+            - Default value when not specified in API or module is interpreted by Avi Controller as 3.
         type: int
     se_dp_vnic_queue_stall_event_sleep:
         description:

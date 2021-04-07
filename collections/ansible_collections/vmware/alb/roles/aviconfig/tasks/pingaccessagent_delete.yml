@@ -1,8 +1,8 @@
 # Automatically Generated File
-# Copyright Avi Networks
+# Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 ---
 - name: Avi PingAccessAgent | Delete PingAccessAgent
-  vmware.nsx_alb.avi_pingaccessagent:
+  vmware.alb.avi_pingaccessagent:
     controller: "{{ avi_controller | default(omit) }}"
     username: "{{ avi_username | default(omit) }}"
     password: "{{ avi_password | default(omit) }}"
