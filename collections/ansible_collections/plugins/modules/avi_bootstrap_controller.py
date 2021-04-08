@@ -1,25 +1,21 @@
 #!/usr/bin/python3
-"""
-#
 # module_check: not supported
-#
+
 # This file is part of Ansible
-#
+
 # Ansible is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-#
+
 # Ansible is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-#
+
 # You should have received a copy of the GNU General Public License
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 # Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
-#
-"""
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
@@ -145,7 +141,8 @@ def main():
     module = AnsibleModule(argument_spec=argument_specs)
     if not HAS_REQUESTS:
         return module.fail_json(msg=(
-            'Python library requests is not installed.'))
+                    'Python requests package is not installed. '
+                    'For installation instructions, visit https://pypi.org/project/requests.'))
     api_creds = AviCredentials()
     api_creds.update_from_ansible_module(module)
     new_password = module.params.get('password')

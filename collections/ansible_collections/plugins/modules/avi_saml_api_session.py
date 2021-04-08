@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""
 # module_check: not supported
+
 # Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
-"""
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
@@ -128,7 +127,8 @@ def main():
 
     if not HAS_REQUESTS:
         return module.fail_json(msg=(
-            'Python libary requests is not installed.'))
+                    'Python requests package is not installed. '
+                    'For installation instructions, visit https://pypi.org/project/requests.'))
     idp_class = module.params.get("idp_class", None)
     idp = get_idp_class(idp_class)
     if not idp:

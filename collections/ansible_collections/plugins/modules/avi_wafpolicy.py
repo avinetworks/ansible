@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
 # module_check: supported
-#
+
 # This file is part of Ansible
 #
 # Ansible is free software: you can redistribute it and/or modify
@@ -17,8 +16,6 @@
 # You should have received a copy of the GNU General Public License
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 # Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
-#
-"""
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
@@ -263,7 +260,8 @@ def main():
                            supports_check_mode=True)
     if not HAS_REQUESTS:
         return module.fail_json(msg=(
-            'Python library requests is not installed.'))
+                    'Python requests package is not installed. '
+                    'For installation instructions, visit https://pypi.org/project/requests.'))
     api_creds = AviCredentials()
     api_creds.update_from_ansible_module(module)
     api = ApiSession.get_session(

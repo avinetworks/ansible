@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # module_check: supported
+
 # Avi Version: 17.1.1
 # Copyright 2021 VMware, Inc.  All rights reserved. VMware Confidential
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
@@ -165,7 +166,9 @@ def main():
     module = AnsibleModule(
         argument_spec=argument_specs, supports_check_mode=True)
     if not HAS_REQUESTS:
-        return module.fail_json(msg='python API `requests` is not installed.')
+        return module.fail_json(msg=(
+                    'Python requests package is not installed. '
+                    'For installation instructions, visit https://pypi.org/project/requests.'))
     return avi_ansible_api(module, 'network',
                            set())
 
