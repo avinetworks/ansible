@@ -3,9 +3,10 @@
 
 # Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
-
 
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
@@ -20,7 +21,6 @@ author: Chaitanya Deshpande (@chaitanyaavi) <chaitanya.deshpande@avinetworks.com
 short_description: Avi API Module for fileservice
 description:
     - This module can be used for calling fileservice resources to upload/download files
-requirements: [ avisdk, requests_toolbelt ]
 options:
     upload:
         description:
@@ -86,7 +86,6 @@ obj:
     returned: success, changed
     type: dict
 '''
-
 
 import json
 import os

@@ -1,23 +1,11 @@
 #!/usr/bin/python3
 # module_check: supported
 
-# This file is part of Ansible
-# Ansible is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-
-# Ansible is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-
-# You should have received a copy of the GNU General Public License
-# along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 # Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
-
 
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
@@ -30,7 +18,6 @@ author: Shrikant Chaudhari (@gitshrikant) <shrikant.chaudhari@avinetworks.com>
 short_description: Avi User Module
 description:
     - This module can be used for creation, updation and deletion of a user.
-requirements: [ avisdk ]
 options:
     state:
         description:
@@ -140,7 +127,6 @@ obj:
     returned: success, changed
     type: dict
 '''
-
 
 from ansible.module_utils.basic import AnsibleModule
 try:

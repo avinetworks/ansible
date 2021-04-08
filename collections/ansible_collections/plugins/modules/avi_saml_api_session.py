@@ -3,9 +3,10 @@
 
 # Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
-
 
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
@@ -20,7 +21,6 @@ short_description: Avi API Module
 description:
     - This module is useful to get SAML session after successful SAML authentication from a given IDP.
     - This module return api_context and token after successful authentication from IDP.
-requirements: [ avisdk ]
 options:
     idp_class:
         description:
@@ -83,7 +83,6 @@ obj:
     returned: success, changed
     type: dict
 '''
-
 
 from ansible.module_utils.basic import AnsibleModule
 try:

@@ -3,9 +3,10 @@
 
 # Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
-
 
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
@@ -20,7 +21,6 @@ short_description: Avi API Module
 description:
     - This module can be used for calling any resources defined in Avi REST API. U(https://avinetworks.com/)
     - This module is useful for invoking HTTP Patch methods and accessing resources that do not have an REST object associated with them.
-requirements: [ avisdk ]
 options:
     data:
         description:

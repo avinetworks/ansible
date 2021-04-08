@@ -3,9 +3,10 @@
 
 # Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
-
 
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
@@ -19,7 +20,6 @@ author: Sandeep Bandi (@sabandi) <sabandi@vmware.com>
 short_description: Avi API Module for image
 description:
     - This module can be used for calling image resources to upload upgrade/patch files
-requirements: [ avisdk, requests_toolbelt ]
 options:
     file_path:
         description:
@@ -56,7 +56,6 @@ obj:
     returned: success, changed
     type: dict
 '''
-
 
 import json
 import os

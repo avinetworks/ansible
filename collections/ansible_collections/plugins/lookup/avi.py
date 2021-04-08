@@ -1,4 +1,5 @@
 # Avi Version: 16.3.4
+
 # Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
@@ -7,7 +8,7 @@ __metaclass__ = type
 
 DOCUMENTATION = '''
 lookup: avi
-author: Sandeep Bandi <sandeepb@avinetworks.com>
+author: Sandeep Bandi <sabandi@vmware.com>
 short_description: Look up ``Avi`` objects.
 description:
     - Given an object_type, fetch all the objects of that type or fetch

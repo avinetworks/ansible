@@ -3,9 +3,10 @@
 
 # Copyright 2021 VMware, Inc. All rights reserved. VMware Confidential
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
-
 
 ANSIBLE_METADATA = {'metadata_version': '1.1',
                     'status': ['preview'],
@@ -18,7 +19,6 @@ author: Shrikant Chaudhari (@gitshrikant) <shrikant.chaudhari@avinetworks.com>
 short_description: Avi API Module for update data vnics and vlan interfaces.
 description:
     - Module to update Service Engine's data vnics/vlans configurations.
-requirements: [ avisdk ]
 options:
     se_name:
         description:
