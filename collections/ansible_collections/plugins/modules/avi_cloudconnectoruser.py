@@ -170,7 +170,7 @@ def main():
     if not HAS_REQUESTS:
         return module.fail_json(msg='python API `requests` is not installed.')
     return avi_ansible_api(module, 'cloudconnectoruser',
-                           {'password', 'private_key'})
+                           {'private_key', 'password'})
 
 
 if __name__ == '__main__':

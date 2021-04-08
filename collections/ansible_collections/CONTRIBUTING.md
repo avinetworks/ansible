@@ -2,7 +2,7 @@
 
 # Contributing to this collection
 
-The VMware Advanced Load Balancer (alb) project team welcomes contributions from the community. If you wish to contribute code and you have not
+The VMware Advanced Load Balancer (ALB) Ansible Collection team welcomes contributions from the community. If you wish to contribute code and you have not
 signed our contributor license agreement (CLA), our bot will update the issue when you open a Pull Request. For any
 questions about the CLA process, please refer to our [FAQ](https://cla.vmware.com/faq).
 
@@ -21,7 +21,7 @@ This is a rough outline of what a contributor's workflow looks like:
 Example:
 
 ``` shell
-git remote add upstream https://github.com/avinetworks/ansible-collection-alb
+git remote add upstream https://github.com/vmware/ansible-collection-alb
 git checkout -b my-new-feature master
 git commit -a
 git push origin my-new-feature

@@ -18,6 +18,6 @@ tags:
   - load
   - balancer
   - sdk
-repository: https://github.com/avinetworks/ansible-collection-alb
-issues: https://github.com/avinetworks/ansible-collection-alb/issue
+repository: https://github.com/vmware/ansible-collection-alb
+issues: https://github.com/vmware/ansible-collection-alb/issue
 
