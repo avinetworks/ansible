@@ -19,9 +19,9 @@ Install ALB collection using `ansible-galaxy` CLI:
 ansible-galaxy collection install vmware.alb
 ```
 
-Install ALB collection using 'requirements.yml` file:
+Install ALB collection using `requirements.yml` file:
 
-Create requirements.yml file using below contents
+Create `requirements.yml` file using below contents
 ```yaml
 collections:
 - name: vmware.alb
@@ -42,7 +42,7 @@ ALB collection depends upon following third party libraries:
 
 After ALB collection installation we need to install the required python libraries using following command:
 ```
-pip install -r ~/.ansible/collections/ansible_collections/requirements.txt
+pip install requests
 ```
 
 ### Modules

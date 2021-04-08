@@ -20,7 +20,6 @@ short_description: Module for setup of NetworkSecurityPolicy Avi RESTful Object
 description:
     - This module is used to configure NetworkSecurityPolicy object
     - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
 options:
     state:
         description:

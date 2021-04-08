@@ -20,7 +20,6 @@ short_description: Module for setup of CertificateManagementProfile Avi RESTful 
 description:
     - This module is used to configure CertificateManagementProfile object
     - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
 options:
     state:
         description:

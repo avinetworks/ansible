@@ -19,7 +19,6 @@ short_description: Module for setup of BotDetectionPolicy Avi RESTful Object
 description:
     - This module is used to configure BotDetectionPolicy object
     - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
 options:
     state:
         description:

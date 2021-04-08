@@ -19,7 +19,6 @@ short_description: Module for setup of ControllerPortalRegistration Avi RESTful 
 description:
     - This module is used to configure ControllerPortalRegistration object
     - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
 options:
     state:
         description:

@@ -19,5 +19,5 @@ tags:
   - balancer
   - sdk
 repository: https://github.com/vmware/ansible-collection-alb
-issues: https://github.com/vmware/ansible-collection-alb/issue
+issues: https://github.com/vmware/ansible-collection-alb/issues
 

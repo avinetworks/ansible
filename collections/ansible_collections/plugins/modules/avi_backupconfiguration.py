@@ -19,7 +19,6 @@ short_description: Module for setup of BackupConfiguration Avi RESTful Object
 description:
     - This module is used to configure BackupConfiguration object
     - more examples at U(https://github.com/avinetworks/devops)
-requirements: [ avisdk ]
 options:
     state:
         description:
@@ -176,7 +175,7 @@ def main():
     if not HAS_REQUESTS:
         return module.fail_json(msg='python API `requests` is not installed.')
     return avi_ansible_api(module, 'backupconfiguration',
-                           {'aws_access_key', 'backup_passphrase', 'aws_secret_access'})
+                           {'backup_passphrase', 'aws_access_key', 'aws_secret_access'})
 
 
 if __name__ == '__main__':
