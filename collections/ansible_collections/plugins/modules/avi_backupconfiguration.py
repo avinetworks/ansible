@@ -176,7 +176,7 @@ def main():
     if not HAS_REQUESTS:
         return module.fail_json(msg='python API `requests` is not installed.')
     return avi_ansible_api(module, 'backupconfiguration',
-                           {'aws_access_key', 'aws_secret_access', 'backup_passphrase'})
+                           {'backup_passphrase', 'aws_access_key', 'aws_secret_access'})
 
 
 if __name__ == '__main__':
